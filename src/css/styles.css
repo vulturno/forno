@@ -6,3 +6,15 @@
 
 @import '_reset';
 @import '_variables';
+
+.barra {
+    fill: var(--barColor);
+}
+
+* {
+    font-family: var(--fontSystem);
+}
+
+.textoBarras {
+    font-size: 12px;
+}

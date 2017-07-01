@@ -2,7 +2,7 @@ var datos = [];
 
 var margin = {top: 30, right: 50, bottom: 30, left: 50},
     width = 900 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+    height = 350 - margin.top - margin.bottom;
 
 function loadCSV() {
     d3.csv('temperaturas-prueba.csv', function(err, data) {
@@ -13,16 +13,16 @@ function loadCSV() {
 
 function pintando() {
 
-
     var svg = d3.select('body')
         .append('svg')
-        .attr("width", width)
-        .attr("height", height);
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
 
     svg.selectAll("rect")
         .data(datos)
         .enter()
         .append("rect")
+        .attr("class", "barra")
         .attr("x", 0)
         .attr("y", 0)
         .attr("width", 20)
@@ -35,7 +35,7 @@ function pintando() {
             return d.maxima;
         })
         .attr("y", function(d) {
-            return h - d.maxima;
+            return height - d.maxima;
         })
 
     svg.selectAll("text")
@@ -46,11 +46,12 @@ function pintando() {
             return d.maxima;
         })
         .attr("x", function(d, i) {
-            return i * 21 + 40; // +5
+            return i * 21 + 30;
         })
         .attr("y", function(d) {
-            return h - d.maxima - 3; // +15
+            return height - d.maxima - 3;
         })
+        .attr("class", "textoBarras")
 }
 
 
