@@ -1,14 +1,23 @@
 var datos = [];
 
 var margin = {top: 30, right: 50, bottom: 30, left: 110},
-    width = 1600 - margin.left - margin.right,
+    width = 1300 - margin.left - margin.right,
     height = 550 - margin.top - margin.bottom;
     widthBar = width / 62;
+
+    var color = d3.scale.linear()
+        .domain([20, 35])
+        .range([ "#fcde9c",
+            "#e34f6f",
+            "#7c1d6f"]);
+
+
+
 
 function loadCSV() {
     d3.csv('temperaturas-prueba.csv', function(err, data) {
         datos = data;
-        datos = data.filter(function(d) { return String(d.fecha).match(/01-09/); });
+        datos = data.filter(function(d) { return String(d.fecha).match(/04-07/); });
 
         function getYear(stringDate){
             return stringDate.split('-')[2];
@@ -18,14 +27,14 @@ function loadCSV() {
             d.maxima = +d.maxima;
             d.minima = +d.minima;
             d.year = getYear(d.fecha);
-            // console.log(d.year)
+            console.log(d.maxima)
         });
+
         pintando();
     });
 }
 
 function pintando() {
-
 
     var svg = d3.select('body')
         .append('svg')
@@ -33,6 +42,7 @@ function pintando() {
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
 
     xRange = d3.scale.linear()
         .range([30, width])
@@ -54,6 +64,14 @@ function pintando() {
             })
         ])
 
+        var points = d3.range(1, 5).map(function(i) {
+          return [i * width / 5, 50 + Math.random() * (height - 100)];
+        });
+
+        svg.append("path")
+            .datum(points)
+            .attr("class", "line")
+
         var xAxis = d3.svg.axis()
             .scale(xRange)
             .orient("bottom")
@@ -74,6 +92,9 @@ function pintando() {
             .attr("transform", "translate(30, 0)")
             .call(yAxis);
 
+
+
+
         var lineFunc = d3.svg.line()
             .x(function(d) {
                 return xRange(d.year);
@@ -81,11 +102,23 @@ function pintando() {
             .y(function(d) {
                 return yRange(d.maxima);
             })
-            .interpolate('cardinal');
+            .interpolate('linear');
 
-        svg.append("svg:path")
-            .attr("d", lineFunc(datos))
-            .attr("class", "linea");
+        // svg.append("svg:path")
+        //     .attr("d", lineFunc(datos))
+        //     .attr("class", "linea");
+
+        svg.selectAll("dot")
+            .data(datos)
+            .enter().append("circle")
+            .attr("r", function (d) { return 4 * Math.sqrt(d.maxima / Math.PI); })
+            .style("fill", function(d) { return color(d.maxima); })
+            .attr("cx", function(d) {
+                return xRange(d.year);
+            })
+            .attr("cy", function(d) {
+                return yRange(d.maxima);
+            });
 
 
 }

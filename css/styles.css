@@ -478,4 +478,9 @@ path {
     stroke: black;
 }
 
+.circulo {
+    fill: red;
+    stroke: red;
+}
+
 /*# sourceMappingURL=styles.css.map */
