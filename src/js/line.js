@@ -32,9 +32,7 @@ function pintando() {
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
-        .attr("transform", "translate(50, 0)")
-
-
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     xRange = d3.scale.linear()
         .range([30, width])
@@ -59,7 +57,7 @@ function pintando() {
         var xAxis = d3.svg.axis()
             .scale(xRange)
             .orient("bottom")
-            .ticks(62);
+            .ticks(20);
 
         svg.append("g")
             .attr("class", "axis")
