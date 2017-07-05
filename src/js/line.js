@@ -11,13 +11,11 @@ var margin = {top: 30, right: 50, bottom: 30, left: 110},
             "#e34f6f",
             "#7c1d6f"]);
 
-
-
-
 function loadCSV() {
     d3.csv('temperaturas-prueba.csv', function(err, data) {
         datos = data;
-        datos = data.filter(function(d) { return String(d.fecha).match(/04-07/); });
+        datos = data.filter(function(d) { return String(d.fecha).match(/01-06/); });
+
 
         function getYear(stringDate){
             return stringDate.split('-')[2];
@@ -29,6 +27,12 @@ function loadCSV() {
             d.year = getYear(d.fecha);
             console.log(d.maxima)
         });
+
+        maxTemp = d3.max(datos, function(d) { return d.maxima; });
+        minTemp = d3.min(datos, function(d) { return d.maxima; });
+        console.log(maxTemp)
+        console.log(minTemp)
+        console.log(datos)
 
         pintando();
     });
@@ -42,6 +46,11 @@ function pintando() {
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var div = d3.select("body")
+        .append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 1);
 
 
     xRange = d3.scale.linear()
@@ -92,9 +101,6 @@ function pintando() {
             .attr("transform", "translate(30, 0)")
             .call(yAxis);
 
-
-
-
         var lineFunc = d3.svg.line()
             .x(function(d) {
                 return xRange(d.year);
@@ -111,13 +117,45 @@ function pintando() {
         svg.selectAll("dot")
             .data(datos)
             .enter().append("circle")
-            .attr("r", function (d) { return 4 * Math.sqrt(d.maxima / Math.PI); })
-            .style("fill", function(d) { return color(d.maxima); })
+            .transition()
+            .duration(500)
+            .attr("r", function (d) {  })
+            // .style("fill", function(d) { return color(d.maxima); })
+            .style("r", function(d) {
+                if (d.maxima === maxTemp) {
+                    return 6 * Math.sqrt(d.maxima / Math.PI);
+                } else if (d.maxima === minTemp) {
+                    return 6 * Math.sqrt(d.maxima / Math.PI);
+                } else {
+                    return 4 * Math.sqrt(d.maxima / Math.PI);
+                }
+            ;})
+            .style("fill", function(d) {
+                if (d.maxima === maxTemp) {
+                    return "#70284a"
+                } else if (d.maxima === minTemp) {
+                    return "#045275"
+                } else {
+                    return color(d.maxima)
+                }
+            ;})
             .attr("cx", function(d) {
                 return xRange(d.year);
             })
             .attr("cy", function(d) {
                 return yRange(d.maxima);
+            })
+            .on("mouseover", function(d) {
+                        div.transition()
+                            .duration(200)
+            div.style("opacity", .9)
+                    .html(formatTime(d.maxima) + "<br/>"  + d.year)
+                    .style("left", (d3.event.pageX) + "px")
+                    .style("top", (d3.event.pageY - 28) + "px");
+                })
+            .on("mouseout", function(d) { div.transition()
+                    .duration(500)
+                    .style("opacity", 0);
             });
 
 
