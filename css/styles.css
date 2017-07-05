@@ -502,4 +502,9 @@ path {
     color: #f1f1f1;
 }
 
+.tick line {
+    fill: none;
+    stroke: #111;
+}
+
 /*# sourceMappingURL=styles.css.map */
