@@ -483,4 +483,23 @@ path {
     stroke: red;
 }
 
+.tooltip {
+    position: absolute;
+    width: 60px;
+    margin-left: 20px;
+    height: 50px;
+    padding: 0.63rem;
+    background: #192021;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px -2px rgba(0, 0, 0, .75);
+}
+
+.tooltipYear,
+.tooltipTemp {
+    font-weight: bold;
+    font-size: 0.88rem;
+    margin: 0.31rem 0;
+    color: #f1f1f1;
+}
+
 /*# sourceMappingURL=styles.css.map */

@@ -36,3 +36,22 @@ path {
     fill: red;
     stroke: red;
 }
+
+.tooltip {
+    position: absolute;
+    width: 60px;
+    margin-left: 20px;
+    height: 50px;
+    padding: 10px;
+    background: #192021;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px -2px rgba(0, 0, 0, .75);
+}
+
+.tooltipYear,
+.tooltipTemp {
+    font-weight: bold;
+    font-size: 14px;
+    margin: 5px 0;
+    color: #f1f1f1;
+}
