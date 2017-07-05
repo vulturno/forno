@@ -50,7 +50,7 @@ function pintando() {
     var div = d3.select("body")
         .append("div")
         .attr("class", "tooltip")
-        .style("opacity", 1);
+        .style("opacity", 0);
 
 
     xRange = d3.scale.linear()
@@ -116,11 +116,24 @@ function pintando() {
 
         svg.selectAll("dot")
             .data(datos)
-            .enter().append("circle")
+            .enter()
+            .append("circle")
+            .on("mouseover", function(d) {
+                    div.transition()
+                    .duration(200)
+                    div.style("opacity", 1)
+                    .html('<p class="tooltipYear">' + d.year + '<p/>' + '<p class="tooltipTemp">' + d.maxima + 'º<p/>')
+                    .style("left", (d3.event.pageX) + "px")
+                    .style("top", (d3.event.pageY - 28) + "px");
+                })
+            .on("mouseout", function(d) {
+                    div.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+            })
             .transition()
-            .duration(500)
-            .attr("r", function (d) {  })
-            // .style("fill", function(d) { return color(d.maxima); })
+            .duration(1000)
+            .ease('linear')
             .style("r", function(d) {
                 if (d.maxima === maxTemp) {
                     return 6 * Math.sqrt(d.maxima / Math.PI);
@@ -144,21 +157,7 @@ function pintando() {
             })
             .attr("cy", function(d) {
                 return yRange(d.maxima);
-            })
-            .on("mouseover", function(d) {
-                        div.transition()
-                            .duration(200)
-            div.style("opacity", .9)
-                    .html(formatTime(d.maxima) + "<br/>"  + d.year)
-                    .style("left", (d3.event.pageX) + "px")
-                    .style("top", (d3.event.pageY - 28) + "px");
-                })
-            .on("mouseout", function(d) { div.transition()
-                    .duration(500)
-                    .style("opacity", 0);
             });
-
-
 }
 
 loadCSV();
