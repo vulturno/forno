@@ -84,6 +84,8 @@ function pintando() {
         var xAxis = d3.svg.axis()
             .scale(xRange)
             .orient("bottom")
+            .innerTickSize(-height)
+            .outerTickSize(0)
             .ticks(20);
 
         svg.append("g")
@@ -94,6 +96,8 @@ function pintando() {
         var yAxis = d3.svg.axis()
             .scale(yRange)
             .orient("left")
+            .innerTickSize(-width)
+            .outerTickSize(0)
             .ticks(6);
 
         svg.append("g")
