@@ -16,7 +16,8 @@
 }
 
 .textoBarras,
-.axis {
+.xAxis,
+.yAxis {
     font-size: 16px;
     text {
         font-size: 16px;
@@ -59,4 +60,5 @@ path {
 .tick line {
     fill: none;
     stroke: #ccc;
+    stroke-dasharray: 3px 3px;
 }

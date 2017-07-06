@@ -461,11 +461,12 @@ template {
 }
 
 .textoBarras,
-.axis {
+.xAxis,
+.yAxis {
     font-size: 1rem;
 }
 
-.textoBarras text, .axis text {
+.textoBarras text, .xAxis text, .yAxis text {
         font-size: 1rem;
     }
 
@@ -505,6 +506,7 @@ path {
 .tick line {
     fill: none;
     stroke: #ccc;
+    stroke-dasharray: 3px 3px;
 }
 
 /*# sourceMappingURL=styles.css.map */
