@@ -11,11 +11,19 @@ var margin = {top: 50, right: 50, bottom: 50, left: 110},
             "#e34f6f",
             "#7c1d6f"]);
 
+function update() {
+    var valueDate = d3.select("#updateButton").property("value");
+    var reValueDate = new RegExp("^.*" + valueDate + ".*", "gi");
+    // console.log(reValueDate)
+
+    return reValueDate;
+}
+
 function loadCSV() {
     d3.csv('temperaturas-prueba.csv', function(err, data) {
-        datos = data;
-        datos = data.filter(function(d) { return String(d.fecha).match(/06-07/); });
 
+        datos = data;
+        datos = data.filter(function(d) { return String(d.fecha).match(update()); });
 
         function getYear(stringDate){
             return stringDate.split('-')[2];
@@ -25,14 +33,14 @@ function loadCSV() {
             d.maxima = +d.maxima;
             d.minima = +d.minima;
             d.year = getYear(d.fecha);
-            console.log(d.maxima)
+            // console.log(d.maxima)
         });
 
         maxTemp = d3.max(datos, function(d) { return d.maxima; });
         minTemp = d3.min(datos, function(d) { return d.maxima; });
-        console.log(maxTemp)
-        console.log(minTemp)
-        console.log(datos)
+        // console.log(maxTemp)
+        // console.log(minTemp)
+        // console.log(datos)
 
         pintando();
     });
