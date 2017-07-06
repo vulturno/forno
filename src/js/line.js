@@ -1,6 +1,6 @@
 var datos = [];
 
-var margin = {top: 30, right: 50, bottom: 30, left: 110},
+var margin = {top: 50, right: 50, bottom: 50, left: 110},
     width = 1300 - margin.left - margin.right,
     height = 550 - margin.top - margin.bottom;
     widthBar = width / 62;
@@ -14,7 +14,7 @@ var margin = {top: 30, right: 50, bottom: 30, left: 110},
 function loadCSV() {
     d3.csv('temperaturas-prueba.csv', function(err, data) {
         datos = data;
-        datos = data.filter(function(d) { return String(d.fecha).match(/01-06/); });
+        datos = data.filter(function(d) { return String(d.fecha).match(/06-07/); });
 
 
         function getYear(stringDate){
@@ -86,11 +86,13 @@ function pintando() {
             .orient("bottom")
             .innerTickSize(-height)
             .outerTickSize(0)
+            .tickPadding(15)
+            .tickFormat(d3.format("d"))
             .ticks(20);
 
         svg.append("g")
-            .attr("class", "axis")
-            .attr("transform", "translate(0,490)")
+            .attr("class", "xAxis")
+            .attr("transform", "translate(0,450)")
             .call(xAxis);
 
         var yAxis = d3.svg.axis()
@@ -98,10 +100,11 @@ function pintando() {
             .orient("left")
             .innerTickSize(-width)
             .outerTickSize(0)
+            .tickPadding(15)
             .ticks(6);
 
         svg.append("g")
-            .attr("class", "axis")
+            .attr("class", "yAxis")
             .attr("transform", "translate(30, 0)")
             .call(yAxis);
 
@@ -113,10 +116,6 @@ function pintando() {
                 return yRange(d.maxima);
             })
             .interpolate('linear');
-
-        // svg.append("svg:path")
-        //     .attr("d", lineFunc(datos))
-        //     .attr("class", "linea");
 
         svg.selectAll("dot")
             .data(datos)
@@ -140,9 +139,9 @@ function pintando() {
             .ease('linear')
             .style("r", function(d) {
                 if (d.maxima === maxTemp) {
-                    return 6 * Math.sqrt(d.maxima / Math.PI);
+                    return 10 * Math.sqrt(d.maxima / Math.PI);
                 } else if (d.maxima === minTemp) {
-                    return 6 * Math.sqrt(d.maxima / Math.PI);
+                    return 10 * Math.sqrt(d.maxima / Math.PI);
                 } else {
                     return 4 * Math.sqrt(d.maxima / Math.PI);
                 }
