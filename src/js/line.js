@@ -13,7 +13,7 @@ var margin = {top: 50, right: 50, bottom: 50, left: 110},
 
 function update() {
     d3.select("svg").remove();
-    var svg = d3.select("body").transition();
+    var svg = d3.select(".grafica-temp").transition();
     var valueDate = d3.select("#updateButton").property("value");
     var reValueDate = new RegExp("^.*" + valueDate + ".*", "gi");
 
@@ -73,14 +73,14 @@ function loadCSV() {
 
 function pintando() {
 
-    var svg = d3.select('body')
+    var svg = d3.select('.grafica-temp')
         .append('svg')
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    var div = d3.select("body")
+    var div = d3.select(".grafica-temp")
         .append("div")
         .attr("class", "tooltip")
         .style("opacity", 0);
