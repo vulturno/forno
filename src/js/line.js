@@ -3,19 +3,30 @@ var margin = { top: 50, right: 50, bottom: 50, left: 110 },
     height = 550 - margin.top - margin.bottom;
 widthBar = width / 62;
 
+//Creando una escala de color
 var color = d3.scale.linear()
     .domain([20, 35])
     .range(["#fcde9c", "#e34f6f", "#7c1d6f"]);
 
+//Creando los div que contendrán los tooltips con la información del año y de la temperatura
+var div = d3.select(".grafica-temp")
+    .append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
+//Eliminando el año para quedarnos solamente con el día y la fecha en formato: DD-MM
+function getYear(stringDate) {
+    return stringDate.split('-')[2];
+}
+
 d3.csv('temperaturas-prueba.csv', function(err, data) {
 
-    datos = data.filter(function(d) {
-        return String(d.fecha).match(/07-07/); });
 
-    function getYear(stringDate) {
-        return stringDate.split('-')[2];
-    }
-    datos.forEach(function(d) {
+    dataFiltered = data.filter(function(d) {
+        return String(d.fecha).match(/07-07/);
+    });
+
+    dataFiltered.forEach(function(d) {
         d.fecha = d.fecha;
         d.maxima = +d.maxima;
         d.minima = +d.minima;
@@ -23,18 +34,21 @@ d3.csv('temperaturas-prueba.csv', function(err, data) {
         // console.log(d.maxima)
     });
 
-    maxTemp = d3.max(datos, function(d) {
-        return d.maxima; });
-    minTemp = d3.min(datos, function(d) {
-        return d.maxima; });
+    maxTemp = d3.max(dataFiltered, function(d) {
+        return d.maxima;
+    });
+    minTemp = d3.min(dataFiltered, function(d) {
+        return d.maxima;
+    });
     // console.log(maxTemp)
     // console.log(minTemp)
-    // console.log(datos)
+    // console.log(dataFiltered)
 
-    pintando();
+    draw(dataFiltered);
 });
 
-function pintando() {
+
+function draw(datos) {
 
     var svg = d3.select('.grafica-temp')
         .append('svg')
@@ -43,39 +57,25 @@ function pintando() {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    var div = d3.select(".grafica-temp")
-        .append("div")
-        .attr("class", "tooltip")
-        .style("opacity", 0);
-
-
     xRange = d3.scale.linear()
         .range([30, width])
-        .domain([d3.min(datos, function(d) {
+        .domain([d3.min(dataFiltered, function(d) {
                 return d.year;
             }),
-            d3.max(datos, function(d) {
+            d3.max(dataFiltered, function(d) {
                 return d.year;
             })
         ])
 
     yRange = d3.scale.linear()
         .range([height, 0])
-        .domain([d3.min(datos, function(d) {
+        .domain([d3.min(dataFiltered, function(d) {
                 return d.maxima;
             }),
-            d3.max(datos, function(d) {
+            d3.max(dataFiltered, function(d) {
                 return d.maxima;
             })
         ])
-
-    var points = d3.range(1, 5).map(function(i) {
-        return [i * width / 5, 50 + Math.random() * (height - 100)];
-    });
-
-    svg.append("path")
-        .datum(points)
-        .attr("class", "line")
 
     var xAxis = d3.svg.axis()
         .scale(xRange)
@@ -120,7 +120,7 @@ function pintando() {
         .interpolate('linear');
 
     svg.selectAll("dot")
-        .data(datos)
+        .data(dataFiltered)
         .enter()
         .append("circle")
         .on("mouseover", function(d) {
@@ -173,13 +173,14 @@ function update() {
 
     d3.csv('temperaturas-prueba.csv', function(err, data) {
 
-        datos = data.filter(function(d) {
-            return String(d.fecha).match(reValueDate); });
+        dataFiltered = data.filter(function(d) {
+            return String(d.fecha).match(reValueDate);
+        });
 
         function getYear(stringDate) {
             return stringDate.split('-')[2];
         }
-        datos.forEach(function(d) {
+        dataFiltered.forEach(function(d) {
             d.fecha = d.fecha;
             d.maxima = +d.maxima;
             d.minima = +d.minima;
@@ -187,14 +188,16 @@ function update() {
             // console.log(d.maxima)
         });
 
-        maxTemp = d3.max(datos, function(d) {
-            return d.maxima; });
-        minTemp = d3.min(datos, function(d) {
-            return d.maxima; });
+        maxTemp = d3.max(dataFiltered, function(d) {
+            return d.maxima;
+        });
+        minTemp = d3.min(dataFiltered, function(d) {
+            return d.maxima;
+        });
         // console.log(maxTemp)
         // console.log(minTemp)
-        // console.log(datos)
+        // console.log(dataFiltered)
 
-        pintando();
+        draw(dataFiltered);
     });
 }
