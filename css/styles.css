@@ -509,4 +509,23 @@ path {
     stroke-dasharray: 3px 3px;
 }
 
+.input-update-grafica {
+    border: 1px solid #111;
+    height: 55.5px;
+    padding: 0 1.25rem;
+}
+
+.btn-update-grafica {
+    background-color: #111;
+    color: #fff;
+    border: 0;
+    padding: 1.25rem;
+    margin-left: -4px;
+}
+
+.container-update-grafica {
+    display: block;
+    text-align: center;
+}
+
 /*# sourceMappingURL=styles.css.map */
