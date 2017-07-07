@@ -12,18 +12,43 @@ var margin = {top: 50, right: 50, bottom: 50, left: 110},
             "#7c1d6f"]);
 
 function update() {
+    d3.select("svg").remove();
+    var svg = d3.select("body").transition();
     var valueDate = d3.select("#updateButton").property("value");
     var reValueDate = new RegExp("^.*" + valueDate + ".*", "gi");
-    // console.log(reValueDate)
 
-    return reValueDate;
+
+    d3.csv('temperaturas-prueba.csv', function(err, data) {
+
+        datos = data;
+        datos = data.filter(function(d) { return String(d.fecha).match(reValueDate); });
+
+        function getYear(stringDate){
+            return stringDate.split('-')[2];
+        }
+        datos.forEach(function(d) {
+            d.fecha = d.fecha;
+            d.maxima = +d.maxima;
+            d.minima = +d.minima;
+            d.year = getYear(d.fecha);
+            // console.log(d.maxima)
+        });
+
+        maxTemp = d3.max(datos, function(d) { return d.maxima; });
+        minTemp = d3.min(datos, function(d) { return d.maxima; });
+        // console.log(maxTemp)
+        // console.log(minTemp)
+        // console.log(datos)
+
+        pintando();
+    });
 }
 
 function loadCSV() {
     d3.csv('temperaturas-prueba.csv', function(err, data) {
 
         datos = data;
-        datos = data.filter(function(d) { return String(d.fecha).match(update()); });
+        datos = data.filter(function(d) { return String(d.fecha).match(/07-07/); });
 
         function getYear(stringDate){
             return stringDate.split('-')[2];
@@ -101,6 +126,9 @@ function pintando() {
         svg.append("g")
             .attr("class", "xAxis")
             .attr("transform", "translate(0,450)")
+            .transition()
+            .duration(1000)
+            .ease('linear')
             .call(xAxis);
 
         var yAxis = d3.svg.axis()
@@ -114,6 +142,9 @@ function pintando() {
         svg.append("g")
             .attr("class", "yAxis")
             .attr("transform", "translate(30, 0)")
+            .transition()
+            .duration(1000)
+            .ease('linear')
             .call(yAxis);
 
         var lineFunc = d3.svg.line()
