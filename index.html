@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="css/styles.css">
-        <script src="https://d3js.org/d3.v3.min.js"></script>
-        <script src="js/index.js"></script>
-    </head>
-    <body>
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
 
-        <input name="updateButton"
-                   type="button"
-                   value="Update"
-                   onclick="updateData()" />
+<body>
+    <header class="header">
+        <picture>
+            <source sizes="(max-width: 1380px) 100vw, 1380px" type="image/webp" srcset="
+                    img/zaragoza_360.webp 360w,
+                    img/zaragoza_719.webp 719w,
+                    img/zaragoza_983.webp 983w,
+                    img/zaragoza_1156.webp 1156w,
+                    img/zaragoza_1300.webp 1300w,
+                    img/zaragoza_1380.webp 1380w"/>
+            <img sizes="(max-width: 1380px) 100vw, 1380px" srcset="
+                    img/zaragoza_360.jpg 360w,
+                    img/zaragoza_719.jpg 719w,
+                    img/zaragoza_983.jpg 983w,
+                    img/zaragoza_1156.jpg 1156w,
+                    img/zaragoza_1300.jpg 1300w,
+                    img/zaragoza_1380.jpg 1380w"
+            src="img/zaragoza_1380.jpg" alt="Atardecer desde la margen izquierda de Zaragoza">
+        </picture>
+    </header>
+</body>
 
-    </body>
 </html>
