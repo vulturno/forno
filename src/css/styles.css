@@ -81,3 +81,13 @@ path {
     display: block;
     text-align: center;
 }
+
+.header {
+    width: 100%;
+}
+
+.header-photo {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
