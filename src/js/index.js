@@ -5,13 +5,11 @@ var margin = {top: 30, right: 50, bottom: 30, left: 110},
     height = 550 - margin.top - margin.bottom;
     widthBar = width / 62;
 
-
-
 function loadCSV() {
     d3.csv('temperaturas-prueba.csv', function(err, data) {
         datos = data;
         datos = data.filter(function(d) { return String(d.fecha).match(/01-09/); });
-        console.log(datos)
+        // console.log(datos)
 
         function getYear(stringDate){
             return stringDate.split('-')[2];
@@ -21,18 +19,13 @@ function loadCSV() {
             d.maxima = +d.maxima;
             d.minima = +d.minima;
             d.year = getYear(d.fecha);
-            console.log(d.year)
+            // console.log(d.year)
         });
-
         pintando();
-
-
-
     });
 }
 
 function pintando() {
-
     // var maxTemp = d3.max(datos, function(d){
 
     //       return d.maxima;
@@ -140,7 +133,7 @@ function pintando() {
 
         svg.append("g")
             .attr("class", "axis")
-            .attr("transform", "translate(30, 5)")
+            .attr("transform", "translate(30, 0)")
             .call(yAxis);
 
         svg.attr("class", "principal")

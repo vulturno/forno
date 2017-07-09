@@ -16,10 +16,11 @@
 }
 
 .textoBarras,
-.axis {
-    font-size: 8px;
+.xAxis,
+.yAxis {
+    font-size: 16px;
     text {
-        font-size: 8px;
+        font-size: 16px;
     }
 }
 
@@ -30,4 +31,63 @@
 path {
     fill: none;
     stroke: black;
+}
+
+.circulo {
+    fill: red;
+    stroke: red;
+}
+
+.tooltip {
+    position: absolute;
+    width: 60px;
+    margin-left: 20px;
+    height: 50px;
+    padding: 10px;
+    background: #192021;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px -2px rgba(0, 0, 0, .75);
+}
+
+.tooltipYear,
+.tooltipTemp {
+    font-weight: bold;
+    font-size: 14px;
+    margin: 5px 0;
+    color: #f1f1f1;
+}
+
+.tick line {
+    fill: none;
+    stroke: #ccc;
+    stroke-dasharray: 3px 3px;
+}
+
+.input-update-grafica {
+    border: 1px solid #111;
+    height: 55.5px;
+    padding: 0 20px;
+}
+
+.btn-update-grafica {
+    background-color: #111;
+    color: #fff;
+    border: 0;
+    padding: 20px;
+    margin-left: -4px;
+}
+
+.container-update-grafica {
+    display: block;
+    text-align: center;
+}
+
+.header {
+    width: 100%;
+}
+
+.header-photo {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
 }

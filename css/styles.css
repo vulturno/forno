@@ -461,12 +461,13 @@ template {
 }
 
 .textoBarras,
-.axis {
-    font-size: 0.5rem;
+.xAxis,
+.yAxis {
+    font-size: 1rem;
 }
 
-.textoBarras text, .axis text {
-        font-size: 0.5rem;
+.textoBarras text, .xAxis text, .yAxis text {
+        font-size: 1rem;
     }
 
 .principal {
@@ -476,6 +477,65 @@ template {
 path {
     fill: none;
     stroke: black;
+}
+
+.circulo {
+    fill: red;
+    stroke: red;
+}
+
+.tooltip {
+    position: absolute;
+    width: 60px;
+    margin-left: 20px;
+    height: 50px;
+    padding: 0.63rem;
+    background: #192021;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px -2px rgba(0, 0, 0, .75);
+}
+
+.tooltipYear,
+.tooltipTemp {
+    font-weight: bold;
+    font-size: 0.88rem;
+    margin: 0.31rem 0;
+    color: #f1f1f1;
+}
+
+.tick line {
+    fill: none;
+    stroke: #ccc;
+    stroke-dasharray: 3px 3px;
+}
+
+.input-update-grafica {
+    border: 1px solid #111;
+    height: 55.5px;
+    padding: 0 1.25rem;
+}
+
+.btn-update-grafica {
+    background-color: #111;
+    color: #fff;
+    border: 0;
+    padding: 1.25rem;
+    margin-left: -4px;
+}
+
+.container-update-grafica {
+    display: block;
+    text-align: center;
+}
+
+.header {
+    width: 100%;
+}
+
+.header-photo {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
 }
 
 /*# sourceMappingURL=styles.css.map */
