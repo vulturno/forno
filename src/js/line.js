@@ -168,18 +168,6 @@ d3.csv('temperaturas-prueba.csv', function(err, data) {
 });
 
 function update() {
-    d3.select("svg").remove();
-    var svg = d3.select('.grafica-temp');
-    svg.selectAll("circle")
-        .style("fill", function(d) {
-            if (d.maxima === maxTemp) {
-                return "red"
-            } else if (d.maxima === minTemp) {
-                return "red"
-            } else {
-                return color(d.maxima)
-            };
-        });
     var valueDate = d3.select("#updateButton").property("value");
     var reValueDate = new RegExp("^.*" + valueDate + ".*", "gi");
 
@@ -197,13 +185,72 @@ function update() {
             // console.log(d.maxima)
         });
 
-        maxTemp = d3.max(dataFiltered, function(d) {
-            return d.maxima;
-        });
-        minTemp = d3.min(dataFiltered, function(d) {
-            return d.maxima;
-        });
+        xRange.domain([d3.min(dataFiltered, function(d) {
+                return d.year;
+            }),
+            d3.max(dataFiltered, function(d) {
+                return d.year;
+            })
+        ]);
 
+        yRange.domain([d3.min(dataFiltered, function(d) {
+                return d.maxima;
+            }),
+            d3.max(dataFiltered, function(d) {
+                return d.maxima;
+            })
+        ]);
+
+        d3.select('.yAxis')
+            .transition()
+            .duration(1000)
+            .call(yAxis);
+
+        svg.selectAll("dot")
+            .data(dataFiltered)
+            .enter()
+            .append("circle")
+            .on("mouseover", function(d) {
+                div.transition()
+                    .duration(200)
+                div.style("opacity", 1)
+                    .html('<p class="tooltipYear">' + d.year + '<p/>' + '<p class="tooltipTemp">' + d.maxima + 'º<p/>')
+                    .style("left", (d3.event.pageX) + "px")
+                    .style("top", (d3.event.pageY - 28) + "px");
+            })
+            .on("mouseout", function(d) {
+                div.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+            })
+            .transition()
+            .duration(1000)
+            .ease('linear')
+            .style("r", function(d) {
+                if (d.maxima === maxTemp) {
+                    return 10 * Math.sqrt(d.maxima / Math.PI);
+                } else if (d.maxima === minTemp) {
+                    return 10 * Math.sqrt(d.maxima / Math.PI);
+                } else {
+                    return 4 * Math.sqrt(d.maxima / Math.PI);
+                };
+            })
+            .style("fill", function(d) {
+                if (d.maxima === maxTemp) {
+                    return "#70284a"
+                } else if (d.maxima === minTemp) {
+                    return "#045275"
+                } else {
+                    return color(d.maxima)
+                };
+            })
+            .attr("cx", function(d) {
+                return xRange(d.year);
+            })
+            .attr("cy", function(d) {
+                return yRange(d.maxima);
+            });
 
     });
+
 }
