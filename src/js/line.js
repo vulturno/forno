@@ -1,3 +1,9 @@
+var dataFiltered;
+var xRange;
+var yRange;
+var xAxis;
+var yAxis;
+
 var margin = { top: 50, right: 50, bottom: 50, left: 110 },
     width = 1300 - margin.left - margin.right,
     height = 550 - margin.top - margin.bottom;
@@ -19,6 +25,36 @@ function getYear(stringDate) {
     return stringDate.split('-')[2];
 }
 
+var svg = d3.select('.grafica-temp')
+    .append('svg')
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var xRange = d3.scale.linear()
+        .range([30, width]);
+
+var yRange = d3.scale.linear()
+        .range([height, 0]);
+
+var xAxis = d3.svg.axis()
+    .scale(xRange)
+    .orient("bottom")
+    .innerTickSize(-height)
+    .outerTickSize(0)
+    .tickPadding(15)
+    .tickFormat(d3.format("d"))
+    .ticks(20);
+
+var yAxis = d3.svg.axis()
+    .scale(yRange)
+    .orient("left")
+    .innerTickSize(-width)
+    .outerTickSize(0)
+    .tickPadding(15)
+    .ticks(6);
+
 d3.csv('temperaturas-prueba.csv', function(err, data) {
 
 
@@ -34,81 +70,29 @@ d3.csv('temperaturas-prueba.csv', function(err, data) {
         // console.log(d.maxima)
     });
 
+
     maxTemp = d3.max(dataFiltered, function(d) {
         return d.maxima;
     });
     minTemp = d3.min(dataFiltered, function(d) {
         return d.maxima;
     });
-    // console.log(maxTemp)
-    // console.log(minTemp)
-    // console.log(dataFiltered)
 
-    draw(dataFiltered);
-});
+    xRange.domain([d3.min(dataFiltered, function(d) {
+            return d.year;
+        }),
+        d3.max(dataFiltered, function(d) {
+            return d.year;
+        })
+    ]);
 
-
-function draw(datos) {
-
-    var svg = d3.select('.grafica-temp')
-        .append('svg')
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-    xRange = d3.scale.linear()
-        .range([30, width])
-        .domain([d3.min(dataFiltered, function(d) {
-                return d.year;
-            }),
-            d3.max(dataFiltered, function(d) {
-                return d.year;
-            })
-        ])
-
-    yRange = d3.scale.linear()
-        .range([height, 0])
-        .domain([d3.min(dataFiltered, function(d) {
-                return d.maxima;
-            }),
-            d3.max(dataFiltered, function(d) {
-                return d.maxima;
-            })
-        ])
-
-    var xAxis = d3.svg.axis()
-        .scale(xRange)
-        .orient("bottom")
-        .innerTickSize(-height)
-        .outerTickSize(0)
-        .tickPadding(15)
-        .tickFormat(d3.format("d"))
-        .ticks(20);
-
-    svg.append("g")
-        .attr("class", "xAxis")
-        .attr("transform", "translate(0,450)")
-        .transition()
-        .duration(1000)
-        .ease('linear')
-        .call(xAxis);
-
-    var yAxis = d3.svg.axis()
-        .scale(yRange)
-        .orient("left")
-        .innerTickSize(-width)
-        .outerTickSize(0)
-        .tickPadding(15)
-        .ticks(6);
-
-    svg.append("g")
-        .attr("class", "yAxis")
-        .attr("transform", "translate(30, 0)")
-        .transition()
-        .duration(1000)
-        .ease('linear')
-        .call(yAxis);
+    yRange.domain([d3.min(dataFiltered, function(d) {
+            return d.maxima;
+        }),
+        d3.max(dataFiltered, function(d) {
+            return d.maxima;
+        })
+    ]);
 
     var lineFunc = d3.svg.line()
         .x(function(d) {
@@ -163,13 +147,39 @@ function draw(datos) {
         .attr("cy", function(d) {
             return yRange(d.maxima);
         });
-}
+
+        svg.append("g")
+            .attr("class", "xAxis")
+            .attr("transform", "translate(0,450)")
+            .transition()
+            .duration(1000)
+            .ease('linear')
+            .call(xAxis);
+
+        svg.append("g")
+            .attr("class", "yAxis")
+            .attr("transform", "translate(30, 0)")
+            .transition()
+            .duration(1000)
+            .ease('linear')
+            .call(yAxis);
+});
 
 function update() {
     d3.select("svg").remove();
+    var svg = d3.select('.grafica-temp');
+    svg.selectAll("circle")
+    .style("fill", function(d) {
+        if (d.maxima === maxTemp) {
+            return "red"
+        } else if (d.maxima === minTemp) {
+            return "red"
+        } else {
+            return color(d.maxima)
+        };
+    });
     var valueDate = d3.select("#updateButton").property("value");
     var reValueDate = new RegExp("^.*" + valueDate + ".*", "gi");
-
 
     d3.csv('temperaturas-prueba.csv', function(err, data) {
 
@@ -177,9 +187,6 @@ function update() {
             return String(d.fecha).match(reValueDate);
         });
 
-        function getYear(stringDate) {
-            return stringDate.split('-')[2];
-        }
         dataFiltered.forEach(function(d) {
             d.fecha = d.fecha;
             d.maxima = +d.maxima;
@@ -194,10 +201,7 @@ function update() {
         minTemp = d3.min(dataFiltered, function(d) {
             return d.maxima;
         });
-        // console.log(maxTemp)
-        // console.log(minTemp)
-        // console.log(dataFiltered)
 
-        draw(dataFiltered);
+
     });
 }
