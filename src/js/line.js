@@ -33,10 +33,10 @@ var svg = d3.select('.grafica-temp')
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 var xRange = d3.scale.linear()
-        .range([30, width]);
+    .range([30, width]);
 
 var yRange = d3.scale.linear()
-        .range([height, 0]);
+    .range([height, 0]);
 
 var xAxis = d3.svg.axis()
     .scale(xRange)
@@ -103,6 +103,22 @@ d3.csv('temperaturas-prueba.csv', function(err, data) {
         })
         .interpolate('linear');
 
+    svg.append("g")
+        .attr("class", "xAxis")
+        .attr("transform", "translate(0,450)")
+        .transition()
+        .duration(1000)
+        .ease('linear')
+        .call(xAxis);
+
+    svg.append("g")
+        .attr("class", "yAxis")
+        .attr("transform", "translate(30, 0)")
+        .transition()
+        .duration(1000)
+        .ease('linear')
+        .call(yAxis);
+
     svg.selectAll("dot")
         .data(dataFiltered)
         .enter()
@@ -148,36 +164,22 @@ d3.csv('temperaturas-prueba.csv', function(err, data) {
             return yRange(d.maxima);
         });
 
-        svg.append("g")
-            .attr("class", "xAxis")
-            .attr("transform", "translate(0,450)")
-            .transition()
-            .duration(1000)
-            .ease('linear')
-            .call(xAxis);
 
-        svg.append("g")
-            .attr("class", "yAxis")
-            .attr("transform", "translate(30, 0)")
-            .transition()
-            .duration(1000)
-            .ease('linear')
-            .call(yAxis);
 });
 
 function update() {
     d3.select("svg").remove();
     var svg = d3.select('.grafica-temp');
     svg.selectAll("circle")
-    .style("fill", function(d) {
-        if (d.maxima === maxTemp) {
-            return "red"
-        } else if (d.maxima === minTemp) {
-            return "red"
-        } else {
-            return color(d.maxima)
-        };
-    });
+        .style("fill", function(d) {
+            if (d.maxima === maxTemp) {
+                return "red"
+            } else if (d.maxima === minTemp) {
+                return "red"
+            } else {
+                return color(d.maxima)
+            };
+        });
     var valueDate = d3.select("#updateButton").property("value");
     var reValueDate = new RegExp("^.*" + valueDate + ".*", "gi");
 
