@@ -186,6 +186,13 @@ function update() {
             // console.log(d.maxima)
         });
 
+        maxTemp = d3.max(dataFiltered, function(d) {
+            return d.maxima;
+        });
+        minTemp = d3.min(dataFiltered, function(d) {
+            return d.maxima;
+        });
+
         xRange.domain([d3.min(dataFiltered, function(d) {
                 return d.year;
             }),
@@ -211,8 +218,7 @@ function update() {
         var circles = svg.selectAll("circle")
             .data(dataFiltered);
 
-        circles
-            .transition()
+        circles.transition()
             .duration(1000)
             .ease('linear')
             .style("r", function(d) {
@@ -232,14 +238,14 @@ function update() {
             });
 
         circles.style("fill", function(d) {
-                if (d.maxima === maxTemp) {
-                    return "#70284a"
-                } else if (d.maxima === minTemp) {
-                    return "#045275"
-                } else {
-                    return color(d.maxima)
-                };
-            })
+            if (d.maxima === maxTemp) {
+                return "#70284a"
+            } else if (d.maxima === minTemp) {
+                return "#045275"
+            } else {
+                return color(d.maxima)
+            };
+        })
 
     });
 
