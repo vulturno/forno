@@ -123,6 +123,7 @@ d3.csv('temperaturas-prueba.csv', function(err, data) {
         .data(dataFiltered)
         .enter()
         .append("circle")
+        .attr("class", "circles")
         .on("mouseover", function(d) {
             div.transition()
                 .duration(200)
@@ -201,28 +202,16 @@ function update() {
             })
         ]);
 
+
         d3.select('.yAxis')
             .transition()
             .duration(1000)
             .call(yAxis);
 
-        svg.selectAll("dot")
-            .data(dataFiltered)
-            .enter()
-            .append("circle")
-            .on("mouseover", function(d) {
-                div.transition()
-                    .duration(200)
-                div.style("opacity", 1)
-                    .html('<p class="tooltipYear">' + d.year + '<p/>' + '<p class="tooltipTemp">' + d.maxima + 'º<p/>')
-                    .style("left", (d3.event.pageX) + "px")
-                    .style("top", (d3.event.pageY - 28) + "px");
-            })
-            .on("mouseout", function(d) {
-                div.transition()
-                    .duration(500)
-                    .style("opacity", 0);
-            })
+        var circles = svg.selectAll("circle")
+            .data(dataFiltered);
+
+        circles
             .transition()
             .duration(1000)
             .ease('linear')
@@ -235,7 +224,14 @@ function update() {
                     return 4 * Math.sqrt(d.maxima / Math.PI);
                 };
             })
-            .style("fill", function(d) {
+            .attr("cx", function(d) {
+                return xRange(d.year);
+            })
+            .attr("cy", function(d) {
+                return yRange(d.maxima);
+            });
+
+        circles.style("fill", function(d) {
                 if (d.maxima === maxTemp) {
                     return "#70284a"
                 } else if (d.maxima === minTemp) {
@@ -244,12 +240,6 @@ function update() {
                     return color(d.maxima)
                 };
             })
-            .attr("cx", function(d) {
-                return xRange(d.year);
-            })
-            .attr("cy", function(d) {
-                return yRange(d.maxima);
-            });
 
     });
 
