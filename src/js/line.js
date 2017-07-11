@@ -59,7 +59,7 @@ d3.csv('temperaturas-prueba.csv', function(err, data) {
 
 
     dataFiltered = data.filter(function(d) {
-        return String(d.fecha).match(/07-07/);
+        return String(d.fecha).match(/01-06/);
     });
 
     dataFiltered.forEach(function(d) {
@@ -215,6 +215,11 @@ function update() {
             .duration(1000)
             .call(yAxis);
 
+        d3.select('.xAxis')
+            .transition()
+            .duration(1000)
+            .call(xAxis);
+
         var circles = svg.selectAll("circle")
             .data(dataFiltered);
 
@@ -235,7 +240,8 @@ function update() {
             })
             .attr("cy", function(d) {
                 return yRange(d.maxima);
-            });
+            })
+            ;
 
         circles.style("fill", function(d) {
             if (d.maxima === maxTemp) {
@@ -247,6 +253,8 @@ function update() {
             };
         })
 
+        circles.exit()
+            .remove()
     });
 
 }
