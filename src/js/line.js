@@ -59,7 +59,7 @@ d3.csv('temperaturas-prueba.csv', function(err, data) {
 
 
     dataFiltered = data.filter(function(d) {
-        return String(d.fecha).match(/07-07/);
+        return String(d.fecha).match(/01-06/);
     });
 
     dataFiltered.forEach(function(d) {
@@ -111,6 +111,7 @@ d3.csv('temperaturas-prueba.csv', function(err, data) {
         .ease('linear')
         .call(xAxis);
 
+
     svg.append("g")
         .attr("class", "yAxis")
         .attr("transform", "translate(30, 0)")
@@ -118,6 +119,13 @@ d3.csv('temperaturas-prueba.csv', function(err, data) {
         .duration(1000)
         .ease('linear')
         .call(yAxis);
+
+    svg.append("text")
+          .attr("transform", "rotate(0)")
+          .attr("y", -5)
+          .attr("x", 375)
+          .style("text-anchor", "end")
+          .text("Temperaturas máximas registradas en Zaragoza");
 
     svg.selectAll("dot")
         .data(dataFiltered)
@@ -186,6 +194,13 @@ function update() {
             // console.log(d.maxima)
         });
 
+        maxTemp = d3.max(dataFiltered, function(d) {
+            return d.maxima;
+        });
+        minTemp = d3.min(dataFiltered, function(d) {
+            return d.maxima;
+        });
+
         xRange.domain([d3.min(dataFiltered, function(d) {
                 return d.year;
             }),
@@ -208,11 +223,15 @@ function update() {
             .duration(1000)
             .call(yAxis);
 
+        d3.select('.xAxis')
+            .transition()
+            .duration(1000)
+            .call(xAxis);
+
         var circles = svg.selectAll("circle")
             .data(dataFiltered);
 
-        circles
-            .transition()
+        circles.transition()
             .duration(1000)
             .ease('linear')
             .style("r", function(d) {
@@ -229,18 +248,21 @@ function update() {
             })
             .attr("cy", function(d) {
                 return yRange(d.maxima);
-            });
+            })
+            ;
 
         circles.style("fill", function(d) {
-                if (d.maxima === maxTemp) {
-                    return "#70284a"
-                } else if (d.maxima === minTemp) {
-                    return "#045275"
-                } else {
-                    return color(d.maxima)
-                };
-            })
+            if (d.maxima === maxTemp) {
+                return "#70284a"
+            } else if (d.maxima === minTemp) {
+                return "#045275"
+            } else {
+                return color(d.maxima)
+            };
+        })
 
+        circles.exit()
+            .remove()
     });
 
 }
