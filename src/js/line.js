@@ -111,6 +111,7 @@ d3.csv('temperaturas-prueba.csv', function(err, data) {
         .ease('linear')
         .call(xAxis);
 
+
     svg.append("g")
         .attr("class", "yAxis")
         .attr("transform", "translate(30, 0)")
@@ -118,6 +119,13 @@ d3.csv('temperaturas-prueba.csv', function(err, data) {
         .duration(1000)
         .ease('linear')
         .call(yAxis);
+
+    svg.append("text")
+          .attr("transform", "rotate(0)")
+          .attr("y", -5)
+          .attr("x", 375)
+          .style("text-anchor", "end")
+          .text("Temperaturas máximas registradas en Zaragoza");
 
     svg.selectAll("dot")
         .data(dataFiltered)
