@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="css/styles.css">
-    </head>
-    <body>
 
-        <article class="grafica-temp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
 
-        </article>
-
+<body>
+    <article class="grafica-temp">
+    </article>
     <div class="container-update-grafica">
-        <input class="input-update-grafica" id="updateButton" type="text" value="02-07"/>
+        <svg class="icon-temp-max" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125"><path d="M50 61.095c-6.119 0-11.097-4.978-11.097-11.096S43.881 38.904 50 38.904c6.118 0 11.096 4.978 11.096 11.096S56.118 61.095 50 61.095zm0-20.191c-5.016 0-9.097 4.08-9.097 9.096s4.081 9.096 9.097 9.096c5.016 0 9.096-4.08 9.096-9.096S55.015 40.904 50 40.904zm0 30.81a1 1 0 0 1-1-1V65.38a1 1 0 0 1 2 0v5.334a1 1 0 0 1-1 1zm0-36.095a1 1 0 0 1-1-1v-5.334a1 1 0 0 1 2 0v5.334a1 1 0 0 1-1 1zM70.715 51h-5.333a1 1 0 0 1 0-2h5.333a1 1 0 0 1 0 2zm-36.096 0h-5.334a1 1 0 0 1 0-2h5.334a1 1 0 0 1 0 2zm.733 14.648a.999.999 0 0 1-.707-1.707l3.772-3.771a.999.999 0 1 1 1.414 1.414l-3.772 3.771a.997.997 0 0 1-.707.293zm25.524-25.525a.999.999 0 0 1-.707-1.707l3.771-3.77a.999.999 0 1 1 1.414 1.414l-3.771 3.77a.997.997 0 0 1-.707.293zm3.771 25.525a.997.997 0 0 1-.707-.293l-3.771-3.771a.999.999 0 1 1 1.414-1.414l3.771 3.771a.999.999 0 0 1-.707 1.707zM39.123 40.123a.997.997 0 0 1-.707-.293l-3.771-3.77a.999.999 0 1 1 1.414-1.414l3.771 3.77a.999.999 0 0 1-.707 1.707z"/></svg>
+        <input class="input-update-grafica" id="updateButton" type="text" value="02-07" />
         <button class="btn-update-grafica" id="update" onclick="update()">Actualizar</button>
     </div>
-
     <div class="container-update-grafica">
-        <input class="input-update-grafica" id="updateButtonMin" type="text" value="02-07"/>
+        <svg class="icon-temp-min" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125"><path d="M70.715 49h-3.961l2.668-2.668a.999.999 0 1 0-1.414-1.414L63.926 49h-5.588a8.42 8.42 0 0 0-.254-1.266l3.4-1.408a1 1 0 0 0-.766-1.848l-3.399 1.408a8.422 8.422 0 0 0-.72-1.071l3.955-3.955h5.773a1 1 0 0 0 0-2h-3.773l2.801-2.801a.999.999 0 1 0-1.414-1.414l-2.801 2.801v-3.773a1 1 0 0 0-2 0v5.773l-3.955 3.955a8.445 8.445 0 0 0-1.07-.72l1.408-3.399a1.001 1.001 0 0 0-1.848-.766l-1.408 3.4A8.286 8.286 0 0 0 51 41.662v-5.588l4.082-4.082a.999.999 0 1 0-1.414-1.414L51 33.246v-3.961a1 1 0 0 0-2 0v3.961l-2.668-2.668a.999.999 0 1 0-1.414 1.414L49 36.074v5.588a8.42 8.42 0 0 0-1.266.254l-1.408-3.4a1 1 0 1 0-1.848.766l1.408 3.399a8.422 8.422 0 0 0-1.071.72l-3.955-3.955v-5.773a1 1 0 0 0-2 0v3.773l-2.801-2.801a.999.999 0 1 0-1.414 1.414l2.801 2.801h-3.773a1 1 0 0 0 0 2h5.773l3.955 3.955a8.282 8.282 0 0 0-.72 1.071l-3.399-1.408a1 1 0 1 0-.766 1.848l3.4 1.408A8.42 8.42 0 0 0 41.662 49h-5.588l-4.082-4.082a.999.999 0 1 0-1.414 1.414L33.246 49h-3.961a1 1 0 0 0 0 2h3.961l-2.668 2.668a.999.999 0 1 0 1.414 1.414L36.074 51h5.589c.052.433.139.855.254 1.266l-3.4 1.408a1 1 0 0 0 .765 1.848l3.399-1.408c.212.376.454.733.72 1.071l-3.955 3.955h-5.773a1 1 0 0 0 0 2h3.773l-2.801 2.801a.999.999 0 1 0 1.414 1.414l2.801-2.801v3.773a1 1 0 0 0 2 0v-5.773l3.955-3.955c.338.266.695.508 1.071.72l-1.408 3.399a1.001 1.001 0 0 0 .923 1.384 1 1 0 0 0 .924-.618l1.408-3.4a8.42 8.42 0 0 0 1.266.254v5.588l-4.082 4.082a.999.999 0 1 0 1.414 1.414L49 66.753v3.961a1 1 0 0 0 2 0v-3.961l2.668 2.668a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414L51 63.925v-5.588a8.395 8.395 0 0 0 1.266-.254l1.409 3.4a1.001 1.001 0 0 0 1.306.541 1 1 0 0 0 .541-1.307l-1.408-3.399a8.34 8.34 0 0 0 1.07-.72l3.955 3.955v5.773a1 1 0 0 0 2 0v-3.773l2.801 2.801a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414l-2.801-2.801h3.773a1 1 0 0 0 0-2h-5.773l-3.955-3.955c.266-.337.507-.694.72-1.071l3.399 1.408a.995.995 0 0 0 1.306-.541 1.001 1.001 0 0 0-.541-1.307l-3.4-1.408a8.42 8.42 0 0 0 .254-1.266h5.589l4.082 4.082a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414L66.754 51h3.961a1 1 0 0 0 0-2zM50 56.402a6.41 6.41 0 0 1-6.402-6.403c0-3.53 2.872-6.402 6.402-6.402s6.402 2.872 6.402 6.402A6.41 6.41 0 0 1 50 56.402z"/></svg>
+        <input class="input-update-grafica" id="updateButtonMin" type="text" value="02-07" />
         <button class="btn-update-grafica" id="updateMin" onclick="updateMin()">Minimas</button>
     </div>
-
     <script src="https://d3js.org/d3.v3.min.js"></script>
-
     <script src="js/line.js"></script>
-
-    </body>
+</body>
 </html>
