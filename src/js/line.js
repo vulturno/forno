@@ -121,11 +121,12 @@ d3.csv('temperaturas-prueba.csv', function(err, data) {
         .call(yAxis);
 
     svg.append("text")
-          .attr("transform", "rotate(0)")
-          .attr("y", -5)
-          .attr("x", 375)
-          .style("text-anchor", "end")
-          .text("Temperaturas máximas registradas en Zaragoza");
+        .attr("class","legend-top")
+        .attr("transform", "rotate(0)")
+        .attr("y", -5)
+        .attr("x", 375)
+        .style("text-anchor", "end")
+        .text("Temperaturas máximas registradas en Zaragoza");
 
     svg.selectAll("dot")
         .data(dataFiltered)
@@ -134,7 +135,7 @@ d3.csv('temperaturas-prueba.csv', function(err, data) {
         .attr("class", "circles")
         .on("mouseover", function(d) {
             div.transition()
-                .duration(200)
+                // .duration(200)
             div.style("opacity", 1)
                 .html('<p class="tooltipYear">' + d.year + '<p/>' + '<p class="tooltipTemp">' + d.maxima + 'º<p/>')
                 .style("left", (d3.event.pageX) + "px")
@@ -142,7 +143,7 @@ d3.csv('temperaturas-prueba.csv', function(err, data) {
         })
         .on("mouseout", function(d) {
             div.transition()
-                .duration(500)
+                .duration(200)
                 .style("opacity", 0);
         })
         .transition()
@@ -228,6 +229,9 @@ function update() {
             .duration(1000)
             .call(xAxis);
 
+        d3.select('.legend-top')
+            .text("Temperaturas máximas registradas en Zaragoza");
+
         var circles = svg.selectAll("circle")
             .data(dataFiltered);
 
@@ -248,8 +252,7 @@ function update() {
             })
             .attr("cy", function(d) {
                 return yRange(d.maxima);
-            })
-            ;
+            });
 
         circles.style("fill", function(d) {
             if (d.maxima === maxTemp) {
@@ -263,6 +266,109 @@ function update() {
 
         circles.exit()
             .remove()
+    });
+
+}
+
+function updateMin() {
+    var valueDate = d3.select("#updateButtonMin").property("value");
+    var reValueDate = new RegExp("^.*" + valueDate + ".*", "gi");
+
+    d3.csv('temperaturas-prueba.csv', function(err, data) {
+
+        dataFiltered = data.filter(function(d) {
+            return String(d.fecha).match(reValueDate);
+        });
+
+        dataFiltered.forEach(function(d) {
+            d.fecha = d.fecha;
+            d.maxima = +d.maxima;
+            d.minima = +d.minima;
+            d.year = getYear(d.fecha);
+            // console.log(d.maxima)
+        });
+
+        maxTemp = d3.max(dataFiltered, function(d) {
+            return d.minima;
+        });
+        minTemp = d3.min(dataFiltered, function(d) {
+            return d.minima;
+        });
+
+        xRange.domain([d3.min(dataFiltered, function(d) {
+                return d.year;
+            }),
+            d3.max(dataFiltered, function(d) {
+                return d.year;
+            })
+        ]);
+
+        yRange.domain([d3.min(dataFiltered, function(d) {
+                return d.minima;
+            }),
+            d3.max(dataFiltered, function(d) {
+                return d.minima;
+            })
+        ]);
+
+
+        d3.select('.yAxis')
+            .transition()
+            .duration(1000)
+            .call(yAxis);
+
+        d3.select('.xAxis')
+            .transition()
+            .duration(1000)
+            .call(xAxis);
+
+
+        d3.select('.legend-top')
+            .text("Temperaturas mínimas registradas en Zaragoza");
+
+        var circles = svg.selectAll("circle")
+            .data(dataFiltered);
+
+        circles.transition()
+            .duration(1000)
+            .ease('linear')
+            .style("r", function(d) {
+                if (d.minima === maxTemp) {
+                    return 10 * Math.sqrt(d.minima / Math.PI);
+                } else if (d.minima === minTemp) {
+                    return 10 * Math.sqrt(d.minima / Math.PI);
+                } else {
+                    return 4 * Math.sqrt(d.minima / Math.PI);
+                };
+            })
+            .attr("cx", function(d) {
+                return xRange(d.year);
+            })
+            .attr("cy", function(d) {
+                return yRange(d.minima);
+            });
+
+        circles.style("fill", function(d) {
+            if (d.minima === maxTemp) {
+                return "#70284a"
+            } else if (d.minima === minTemp) {
+                return "#045275"
+            } else {
+                return color(d.minima)
+            };
+        });
+
+        circles.on("mouseover", function(d) {
+            div.transition()
+                // .duration(200)
+            div.style("opacity", 1)
+                .html('<p class="tooltipYear">' + d.year + '<p/>' + '<p class="tooltipTemp">' + d.minima + 'º<p/>')
+                .style("left", (d3.event.pageX) + "px")
+                .style("top", (d3.event.pageY - 28) + "px");
+        });
+
+        circles.exit()
+            .remove();
     });
 
 }
