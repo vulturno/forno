@@ -505,26 +505,19 @@ path {
 
 .tick line {
     fill: none;
-    stroke: #ccc;
+    stroke: #fff;
     stroke-dasharray: 3px 3px;
 }
 
 .input-update-grafica {
     border: 1px solid #111;
-    height: 55.5px;
+    height: 58px;
+    max-width: 100px;
     padding: 0 1.25rem;
 }
 
-.btn-update-grafica {
-    background-color: #111;
-    color: #fff;
-    border: 0;
-    padding: 1.25rem;
-    margin-left: -4px;
-}
-
 .container-update-grafica {
-    display: block;
+    display: inline-block;
     text-align: center;
 }
 
@@ -536,6 +529,47 @@ path {
     width: 100%;
     max-width: 100%;
     object-fit: cover;
+}
+
+body {
+    height: 100vh;
+}
+
+.icon-temp-min,
+.icon-temp-max {
+    width: 24px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.btn-update-max,
+.btn-update-min {
+    background-color: #b13f64;
+    border: 1px solid #112;
+    border-left: 0;
+    color: #112;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 1.25rem 1.88rem;
+    margin-left: -4px;
+}
+
+.btn-update-max:hover, .btn-update-min:hover {
+        background-color: #e1456c;
+        transition: all .3s ease-in;
+    }
+
+.btn-update-min {
+    background-color: #3b738f;
+}
+
+.btn-update-min:hover {
+        background-color: #9DCEA0;
+    }
+
+.container-buttons {
+    text-align: center;
+    margin: 1.88rem 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
