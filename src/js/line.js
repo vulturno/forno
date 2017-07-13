@@ -311,7 +311,9 @@ function updateMin() {
             })
         ]);
 
-
+        var color = d3.scale.linear()
+            .domain([0, 25])
+            .range(["#fcde9c", "#e34f6f", "#7c1d6f"]);
         d3.select('.yAxis')
             .transition()
             .duration(1000)
@@ -337,8 +339,14 @@ function updateMin() {
                     return 10 * Math.sqrt(d.minima / Math.PI);
                 } else if (d.minima === minTemp) {
                     return 10 * Math.sqrt(d.minima / Math.PI);
-                } else {
-                    return 4 * Math.sqrt(d.minima / Math.PI);
+                } else if (d.minima >= 10) {
+                    return 12;
+                } else if (d.minima >= 5) {
+                    return 10;
+                }else if (d.minima >= 0) {
+                    return 8;
+                }else if (d.minima <= 0) {
+                    return 6;
                 };
             })
             .attr("cx", function(d) {
