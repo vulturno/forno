@@ -135,7 +135,6 @@ d3.csv('temperaturas-prueba.csv', function(err, data) {
         .attr("class", "circles")
         .on("mouseover", function(d) {
             div.transition()
-                // .duration(200)
             div.style("opacity", 1)
                 .html('<p class="tooltipYear">' + d.year + '<p/>' + '<p class="tooltipTemp">' + d.maxima + 'º<p/>')
                 .style("left", (d3.event.pageX) + "px")
@@ -262,7 +261,20 @@ function update() {
             } else {
                 return color(d.maxima)
             };
+        });
+
+        circles.on("mouseover", function(d) {
+            div.transition()
+            div.style("opacity", 1)
+                .html('<p class="tooltipYear">' + d.year + '<p/>' + '<p class="tooltipTemp">' + d.maxima + 'º<p/>')
+                .style("left", (d3.event.pageX) + "px")
+                .style("top", (d3.event.pageY - 28) + "px");
         })
+        .on("mouseout", function(d) {
+            div.transition()
+                .duration(200)
+                .style("opacity", 0);
+        });
 
         circles.exit()
             .remove()
@@ -373,6 +385,11 @@ function updateMin() {
                 .html('<p class="tooltipYear">' + d.year + '<p/>' + '<p class="tooltipTemp">' + d.minima + 'º<p/>')
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
+        })
+        .on("mouseout", function(d) {
+            div.transition()
+                .duration(200)
+                .style("opacity", 0);
         });
 
         circles.exit()
