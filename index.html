@@ -8,13 +8,27 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
     <script src="https://d3js.org/d3.v3.min.js"></script>
     <script src="js/index.js"></script>
 </head>
 
 <body>
     <header class="header">
-        <picture>
+
+    </header>
+
+    <div class="bgc">
+        <div class="container-texto">
+            <h1 class="title">FORNO</h1>
+            <p class="texto">Una visualización de datos para ver la evolución de las temperaturas en la ciudad de Zaragoza. </p>
+            <p class="texto">A través de gráficas vamos a ver, y a consultar las temperaturas máximas y mínimas que se han recogido en el Aeropuerto de Zaragoza entre los años 1951 y 2017.</p>
+        </div>
+    </div>
+
+
+    <div class="container-img">
+        <picture class="title-img">
             <source sizes="(max-width: 1380px) 100vw, 1380px" type="image/webp" srcset="
                     img/zaragoza_360.webp 360w,
                     img/zaragoza_719.webp 719w,
@@ -29,9 +43,15 @@
                     img/zaragoza_1156.jpg 1156w,
                     img/zaragoza_1300.jpg 1300w,
                     img/zaragoza_1380.jpg 1380w"
-            src="img/zaragoza_1380.jpg" alt="Atardecer desde la margen izquierda de Zaragoza">
+            src="img/zaragoza_1380.jpg" alt="atardecer desde la margen izquierda de zaragoza">
+            <div class="legend">
+                <h2 class="legend-title">El clima de Zaragoza</h2>
+                <p class="legend-text">Zaragoza tiene un clima semiárido frío, que es el propio de la depresión del Ebro. Los inviernos son ligeramente fríos, siendo normales las heladas nocturnas y las nieblas que produce la inversión térmica en los meses de diciembre y enero. Los veranos son cálidos, superando casi siempre los 35°C e incluso pasando los 40°C muchos días. Las lluvias escasas se concentran en primavera. El promedio anual es bastante escaso, de unos 315 mm influenciado sobre todo por el efecto foehn o efecto adiabático.
+                    <a href="https://es.wikipedia.org/wiki/Zaragoza#Clima">Fuente Wikipedia</a></p>
+            </div>
         </picture>
-    </header>
+    </div>
+
 </body>
 
 </html>
