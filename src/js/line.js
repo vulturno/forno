@@ -219,11 +219,13 @@ function update() {
 
 
         d3.select('.yAxis')
+            .attr("class", "maximas")
             .transition()
             .duration(1000)
             .call(yAxis);
 
         d3.select('.xAxis')
+            .attr("class", "maximas")
             .transition()
             .duration(1000)
             .call(xAxis);
@@ -326,12 +328,15 @@ function updateMin() {
         var color = d3.scale.linear()
             .domain([0, 25])
             .range(["#fcde9c", "#e34f6f", "#7c1d6f"]);
+
         d3.select('.yAxis')
+            .attr("class", "minimas")
             .transition()
             .duration(1000)
             .call(yAxis);
 
         d3.select('.xAxis')
+            .attr("class", "minimas")
             .transition()
             .duration(1000)
             .call(xAxis);
@@ -397,3 +402,4 @@ function updateMin() {
     });
 
 }
+
