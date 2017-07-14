@@ -13,6 +13,7 @@
 
 * {
     font-family: var(--fontSystem);
+    line-height: 1.5;
 }
 
 .textoBarras,
@@ -80,7 +81,7 @@ path {
 }
 
 .input-update-grafica {
-    border: 1px solid #111;
+    border: 1px solid var(--impureBlack);
     height: 58px;
     max-width: 100px;
     padding: 0 20px;
@@ -141,4 +142,92 @@ body {
 .container-buttons {
     text-align: center;
     margin: 30px 0;
+}
+
+.bgc {
+    height: 100vh;
+    background: linear-gradient(150deg, var(--gradient1) 15%, var(--gradient2) 70%, var(--gradient3) 94%);
+    &:after {
+        content: '';
+        border-left: 100vw solid transparent;
+        border-bottom: 50vh solid #fff;
+        bottom: 0;
+        height: 0;
+        width: 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+    &:before {
+        content: '';
+        border-left: 100vw solid transparent;
+        border-top: 50vh solid #fff;
+        top: 0;
+        height: 0;
+        width: 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+}
+
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100px;
+    font-weight: bold;
+    color: var(--impureBlack);
+    margin: 5px 0;
+    &:before {
+        content: '';
+        display: block;
+        border-bottom: 1px solid var(--impureBlack);
+        width: 1em;
+    }
+    &:after {
+        content: '';
+        display: block;
+        border-bottom: 1px solid var(--impureBlack);
+        width: 1em;
+    }
+}
+
+.container-texto {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    max-width: 35%;
+    z-index: 1;
+}
+
+.texto {
+    font-size: 18px;
+    font-family: var(--fontSystem);
+}
+
+.container-img {
+    position: relative;
+}
+
+.legend {
+    position: absolute;
+    border: 1px solid var(--impureGrey);
+    left: 5%;
+    top: 10%;
+    border-radius: 4px;
+    background-color: var(--legendBgc);
+    max-width: 30%;
+    padding: 40px;
+    box-shadow: 4px 4px 52px -9px rgba(0, 0, 0, .85);
+}
+
+.legend-title {
+    color: var(--legendTxt);
+    font-weight: bold;
+    font-size: 32px;
+    margin: 5px 0;
+}
+
+.legend-text {
+    font-size: 16px;
+    color: var(--impureBlack);
 }

@@ -458,6 +458,7 @@ template {
 
 * {
     font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
+    line-height: 1.5;
 }
 
 .textoBarras,
@@ -581,6 +582,98 @@ body {
 .container-buttons {
     text-align: center;
     margin: 1.88rem 0;
+}
+
+.bgc {
+    height: 100vh;
+    background: linear-gradient(150deg, #fcde9c 15%, #e34f6f 70%, #7c1d6f 94%);
+}
+
+.bgc:after {
+        content: '';
+        border-left: 100vw solid transparent;
+        border-bottom: 50vh solid #fff;
+        bottom: 0;
+        height: 0;
+        width: 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+
+.bgc:before {
+        content: '';
+        border-left: 100vw solid transparent;
+        border-top: 50vh solid #fff;
+        top: 0;
+        height: 0;
+        width: 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 6.25rem;
+    font-weight: bold;
+    color: #111;
+    margin: 0.31rem 0;
+}
+
+.title:before {
+        content: '';
+        display: block;
+        border-bottom: 1px solid #111;
+        width: 1em;
+    }
+
+.title:after {
+        content: '';
+        display: block;
+        border-bottom: 1px solid #111;
+        width: 1em;
+    }
+
+.container-texto {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    max-width: 35%;
+    z-index: 1;
+}
+
+.texto {
+    font-size: 1.13rem;
+    font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.container-img {
+    position: relative;
+}
+
+.legend {
+    position: absolute;
+    border: 1px solid #ccc;
+    left: 5%;
+    top: 10%;
+    border-radius: 4px;
+    background-color: #ece5b3;
+    max-width: 30%;
+    padding: 2.5rem;
+    box-shadow: 4px 4px 52px -9px rgba(0, 0, 0, .85);
+}
+
+.legend-title {
+    color: #10174e;
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 0.31rem 0;
+}
+
+.legend-text {
+    font-size: 1rem;
+    color: #111;
 }
 
 /*# sourceMappingURL=styles.css.map */
