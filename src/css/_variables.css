@@ -2,4 +2,11 @@
   --fontSystem: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
   --monospace: 'SFMono-Regular', Consolas, Menlo, Courier, monospace;
   --barColor: #642626;
+  --impureBlack: #111;
+  --impureGrey: #ccc;
+  --gradient1: #fcde9c;
+  --gradient2: #e34f6f;
+  --gradient3: #7c1d6f;
+  --legendBgc: #ece5b3;
+  --legendTxt: #10174e;
 }
