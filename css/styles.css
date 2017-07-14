@@ -505,9 +505,17 @@ path {
 
 .tick line {
     fill: none;
-    stroke: #fff;
+    stroke: crimson;
     stroke-dasharray: 3px 3px;
 }
+
+.minimas .tick line {
+            stroke: lightblue;
+        }
+
+.maximas .tick line {
+            stroke: crimson;
+        }
 
 .input-update-grafica {
     border: 1px solid #111;
@@ -544,14 +552,15 @@ body {
 
 .btn-update-max,
 .btn-update-min {
-    background-color: #b13f64;
+    background-color: #e71c20;
     border: 1px solid #112;
     border-left: 0;
-    color: #112;
+    color: #1af8e5;
     cursor: pointer;
     font-weight: bold;
     padding: 1.25rem 1.88rem;
     margin-left: -4px;
+    letter-spacing: 0.13rem;
 }
 
 .btn-update-max:hover, .btn-update-min:hover {
@@ -560,11 +569,13 @@ body {
     }
 
 .btn-update-min {
-    background-color: #3b738f;
+    background-color: #067993;
+    color: #262626;
 }
 
 .btn-update-min:hover {
-        background-color: #9DCEA0;
+        background-color: #262626;
+        color: #067993;
     }
 
 .container-buttons {
