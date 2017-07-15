@@ -622,14 +622,14 @@ body {
 .title:before {
         content: '';
         display: block;
-        border-bottom: 1px solid #111;
+        border-bottom: 5px solid #111;
         width: 1em;
     }
 
 .title:after {
         content: '';
         display: block;
-        border-bottom: 1px solid #111;
+        border-bottom: 5px solid #111;
         width: 1em;
     }
 
@@ -664,11 +664,19 @@ body {
 }
 
 .legend-title {
+    font-family: 'Montserrat', sans-serif;
     color: #10174e;
     font-weight: bold;
     font-size: 2rem;
     margin: 0.31rem 0;
 }
+
+.legend-title:before {
+        content: '';
+        display: block;
+        border-bottom: 5px solid #e34f6f;
+        width: 3em;
+    }
 
 .legend-text {
     font-size: 1rem;
@@ -688,7 +696,6 @@ body {
 .clima-legend {
     max-width: 80%;
     padding: 1.25rem;
-    border-left: 2px solid #e34f6f;
 }
 
 .clima-link {

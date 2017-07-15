@@ -170,7 +170,7 @@ body {
 }
 
 .title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--montserrat);
     font-size: 100px;
     font-weight: bold;
     color: var(--impureBlack);
@@ -178,13 +178,13 @@ body {
     &:before {
         content: '';
         display: block;
-        border-bottom: 1px solid var(--impureBlack);
+        border-bottom: 5px solid var(--impureBlack);
         width: 1em;
     }
     &:after {
         content: '';
         display: block;
-        border-bottom: 1px solid var(--impureBlack);
+        border-bottom: 5px solid var(--impureBlack);
         width: 1em;
     }
 }
@@ -220,10 +220,17 @@ body {
 }
 
 .legend-title {
+    font-family: var(--montserrat);
     color: var(--legendTxt);
     font-weight: bold;
     font-size: 32px;
     margin: 5px 0;
+    &:before {
+        content: '';
+        display: block;
+        border-bottom: 5px solid var(--gradient2);
+        width: 3em;
+    }
 }
 
 .legend-text {
@@ -244,7 +251,6 @@ body {
 .clima-legend {
     max-width: 80%;
     padding: 20px;
-    border-left: 2px solid var(--gradient2);
 }
 
 .clima-link {
