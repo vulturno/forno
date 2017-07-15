@@ -7,10 +7,6 @@
 @import '_reset';
 @import '_variables';
 
-.barra {
-    fill: var(--barColor);
-}
-
 * {
     font-family: var(--fontSystem);
     line-height: 1.5;
@@ -206,24 +202,8 @@ body {
     font-family: var(--fontSystem);
 }
 
-.container-img {
-    position: relative;
-    &:before {
-        content: '';
-        border-left: 100vw solid transparent;
-        border-top: 35vh solid #fff;
-        top: 0;
-        height: 0;
-        width: 0;
-        position: absolute;
-        left: 0;
-        right: 0;
-    }
-}
-
 .zaragoza-img {
-    height: 100vh;
-    width: 100vw;
+    max-width: 100%;
     object-fit: cover;
 }
 
@@ -249,4 +229,25 @@ body {
 .legend-text {
     font-size: 16px;
     color: var(--impureBlack);
+}
+
+.clima-intro {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.clima-legend {
+    max-width: 80%;
+    padding: 20px;
+    border-left: 2px solid var(--gradient2);
+}
+
+.clima-link {
+    display: block;
+    margin-top: 10px;
 }
