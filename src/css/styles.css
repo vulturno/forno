@@ -41,11 +41,12 @@ path {
 
 .tooltip {
     position: absolute;
-    width: 60px;
+    width: 70px;
     margin-left: 20px;
-    height: 50px;
+    height: 60px;
     padding: 10px;
-    background: #192021;
+    background: #f1f1f1;
+    border: 1px solid var(--impureGrey);
     border-radius: 5px;
     box-shadow: 5px 5px 5px -2px rgba(0, 0, 0, .75);
 }
@@ -55,7 +56,7 @@ path {
     font-weight: bold;
     font-size: 14px;
     margin: 5px 0;
-    color: #f1f1f1;
+    color: var(impureBlack);
 }
 
 .tick line {
@@ -82,6 +83,7 @@ path {
 
 .input-update-grafica {
     border: 1px solid var(--impureBlack);
+    border-right: 0;
     height: 58px;
     max-width: 100px;
     padding: 0 20px;
@@ -122,7 +124,7 @@ body {
     cursor: pointer;
     font-weight: bold;
     padding: 20px 30px;
-    margin-left: -4px;
+    margin-left: -5px;
     letter-spacing: 2px;
     &:hover {
         background-color: #e1456c;
@@ -206,17 +208,34 @@ body {
 
 .container-img {
     position: relative;
+    &:before {
+        content: '';
+        border-left: 100vw solid transparent;
+        border-top: 35vh solid #fff;
+        top: 0;
+        height: 0;
+        width: 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+}
+
+.zaragoza-img {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
 }
 
 .legend {
     position: absolute;
     border: 1px solid var(--impureGrey);
     left: 5%;
-    top: 10%;
+    top: 20%;
     border-radius: 4px;
     background-color: var(--legendBgc);
     max-width: 30%;
-    padding: 40px;
+    padding: 25px;
     box-shadow: 4px 4px 52px -9px rgba(0, 0, 0, .85);
 }
 
