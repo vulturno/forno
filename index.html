@@ -9,8 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
-    <script src="https://d3js.org/d3.v3.min.js"></script>
-    <script src="js/index.js"></script>
 </head>
 
 <body>
@@ -28,7 +26,7 @@
 
 
     <div class="container-img">
-        <picture class="title-img">
+        <picture>
             <source sizes="(max-width: 1380px) 100vw, 1380px" type="image/webp" srcset="
                     img/zaragoza_360.webp 360w,
                     img/zaragoza_719.webp 719w,
@@ -36,14 +34,14 @@
                     img/zaragoza_1156.webp 1156w,
                     img/zaragoza_1300.webp 1300w,
                     img/zaragoza_1380.webp 1380w"/>
-            <img sizes="(max-width: 1380px) 100vw, 1380px" srcset="
+            <img class="zaragoza-img" sizes="(max-width: 1380px) 100vw, 1380px" srcset="
                     img/zaragoza_360.jpg 360w,
                     img/zaragoza_719.jpg 719w,
                     img/zaragoza_983.jpg 983w,
                     img/zaragoza_1156.jpg 1156w,
                     img/zaragoza_1300.jpg 1300w,
                     img/zaragoza_1380.jpg 1380w"
-            src="img/zaragoza_1380.jpg" alt="atardecer desde la margen izquierda de zaragoza">
+            src="img/zaragoza_1380.jpg" alt="Atardecer desde la margen izquierda de Zaragoza">
             <div class="legend">
                 <h2 class="legend-title">El clima de Zaragoza</h2>
                 <p class="legend-text">Zaragoza tiene un clima semiárido frío, que es el propio de la depresión del Ebro. Los inviernos son ligeramente fríos, siendo normales las heladas nocturnas y las nieblas que produce la inversión térmica en los meses de diciembre y enero. Los veranos son cálidos, superando casi siempre los 35°C e incluso pasando los 40°C muchos días. Las lluvias escasas se concentran en primavera. El promedio anual es bastante escaso, de unos 315 mm influenciado sobre todo por el efecto foehn o efecto adiabático.
@@ -51,6 +49,23 @@
             </div>
         </picture>
     </div>
+
+    <article class="grafica-temp">
+    </article>
+    <article class="container-buttons">
+        <p>Para consultar cualquier día del año hay que introducir el día y el año con el siguiente formato: DD-MM. Si queremos buscar el 4 de abril introduciremos 04-04</p>
+        <div class="container-update-grafica">
+            <input class="input-update-grafica" id="updateButton" type="text" value="02-07" />
+            <button class="btn-update-grafica btn-update-max" id="update" onclick="update()">MAXIMAS</button>
+        </div>
+        <div class="container-update-grafica">
+            <input class="input-update-grafica" id="updateButtonMin" type="text" value="02-07" />
+            <button class="btn-update-grafica btn-update-min" id="updateMin" onclick="updateMin()">MINIMAS</button>
+        </div>
+    </article>
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="js/index.js"></script>
 
 </body>
 
