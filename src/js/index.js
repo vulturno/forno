@@ -52,7 +52,7 @@ var yAxis = d3.svg.axis()
     .orient("left")
     .innerTickSize(-width)
     .outerTickSize(0)
-    .tickPadding(15)
+    .tickPadding(10)
     .ticks(6);
 
 d3.csv('temperaturas-prueba.csv', function(err, data) {
