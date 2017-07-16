@@ -5,9 +5,9 @@ var xAxis;
 var yAxis;
 
 var margin = { top: 50, right: 50, bottom: 50, left: 110 },
-    width = 1300 - margin.left - margin.right,
+    width = 1200 - margin.left - margin.right,
     height = 550 - margin.top - margin.bottom;
-widthBar = width / 62;
+    widthBar = width / 62;
 
 //Creando una escala de color
 var color = d3.scale.linear()
@@ -27,10 +27,10 @@ function getYear(stringDate) {
 
 var svg = d3.select('.grafica-temp')
     .append('svg')
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr('class', 'chart-temp')
+    .attr("viewBox","0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom))
     .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform", "translate(" + (margin.left - margin.right) + "," + margin.top + ")");
 
 var xRange = d3.scale.linear()
     .range([30, width]);
@@ -404,4 +404,3 @@ function updateMin() {
     });
 
 }
-
