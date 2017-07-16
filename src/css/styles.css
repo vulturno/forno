@@ -61,22 +61,6 @@ path {
     stroke-dasharray: 3px 3px;
 }
 
-.minimas {
-    .tick {
-        line {
-            stroke: lightblue;
-        }
-    }
-}
-
-.maximas {
-    .tick {
-        line {
-            stroke: crimson;
-        }
-    }
-}
-
 .input-update-grafica {
     border: 1px solid var(--impureBlack);
     border-right: 0;
@@ -116,7 +100,7 @@ body {
     background-color: #e71c20;
     border: 1px solid #112;
     border-left: 0;
-    color: #1af8e5;
+    color: #fff;
     cursor: pointer;
     font-weight: bold;
     padding: 20px 30px;
@@ -130,10 +114,8 @@ body {
 
 .btn-update-min {
     background-color: #067993;
-    color: #262626;
     &:hover {
         background-color: #262626;
-        color: #067993;
     }
 }
 
@@ -178,13 +160,13 @@ body {
     &:before {
         content: '';
         display: block;
-        border-bottom: 5px solid var(--impureBlack);
+        border-bottom: 2px solid var(--impureBlack);
         width: 1em;
     }
     &:after {
         content: '';
         display: block;
-        border-bottom: 5px solid var(--impureBlack);
+        border-bottom: 2px solid var(--impureBlack);
         width: 1em;
     }
 }
@@ -223,13 +205,13 @@ body {
     font-family: var(--montserrat);
     color: var(--legendTxt);
     font-weight: bold;
-    font-size: 32px;
+    font-size: 80px;
     margin: 5px 0;
     &:before {
         content: '';
         display: block;
         border-bottom: 5px solid var(--gradient2);
-        width: 3em;
+        width: 1em;
     }
 }
 
