@@ -57,7 +57,7 @@ path {
 
 .tick line {
     fill: none;
-    stroke: crimson;
+    stroke: #ccc;
     stroke-dasharray: 3px 3px;
 }
 
