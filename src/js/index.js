@@ -219,13 +219,11 @@ function update() {
 
 
         d3.select('.yAxis')
-            .attr("class", "maximas")
             .transition()
             .duration(1000)
             .call(yAxis);
 
         d3.select('.xAxis')
-            .attr("class", "maximas")
             .transition()
             .duration(1000)
             .call(xAxis);
@@ -330,13 +328,11 @@ function updateMin() {
             .range(["#b0f2bc","#89e8ac","#67dba5","#4cc8a3","#38b2a3","#2c98a0","#257d98"]);
 
         d3.select('.yAxis')
-            .attr("class", "minimas")
             .transition()
             .duration(1000)
             .call(yAxis);
 
         d3.select('.xAxis')
-            .attr("class", "minimas")
             .transition()
             .duration(1000)
             .call(xAxis);
@@ -362,7 +358,7 @@ function updateMin() {
                     return 10;
                 }else if (d.minima >= 0) {
                     return 8;
-                }else if (d.minima <= 0) {
+                } else if (d.minima <= 0) {
                     return 6;
                 };
             })
