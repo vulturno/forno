@@ -352,14 +352,20 @@ function updateMin() {
                     return 10 * Math.sqrt(d.minima / Math.PI);
                 } else if (d.minima === minTemp) {
                     return 10 * Math.sqrt(d.minima / Math.PI);
-                } else if (d.minima >= 10) {
-                    return 12;
-                } else if (d.minima >= 5) {
+                } else if (d.minima >= 20) {
+                    return 11;
+                } else if (d.minima >= 18) {
                     return 10;
-                }else if (d.minima >= 0) {
+                } else if (d.minima >= 14) {
+                    return 9;
+                } else if (d.minima >= 10) {
                     return 8;
-                } else if (d.minima <= 0) {
+                } else if (d.minima >= 5) {
+                    return 7;
+                }else if (d.minima >= 0) {
                     return 6;
+                } else if (d.minima <= 0) {
+                    return 4;
                 };
             })
             .attr("cx", function(d) {
@@ -374,8 +380,14 @@ function updateMin() {
                 return "#70284a";
             } else if (d.minima === minTemp) {
                 return "#045275";
-            } else if (d.minima >= 10) {
+            } else if (d.minima >= 20) {
+                return "#b0f2bc";
+            } else if (d.minima >= 18) {
                 return "#89e8ac";
+            } else if (d.minima >= 14) {
+                return "#67dba5";
+            } else if (d.minima >= 10) {
+                return "#4cc8a3";
             } else if (d.minima >= 5) {
                 return "#38b2a3";
             } else if (d.minima >= 0) {
