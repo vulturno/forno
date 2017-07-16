@@ -452,10 +452,6 @@ template {
   display: none;
 }
 
-.barra {
-    fill: #642626;
-}
-
 * {
     font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
     line-height: 1.5;
@@ -507,17 +503,9 @@ path {
 
 .tick line {
     fill: none;
-    stroke: crimson;
+    stroke: #ccc;
     stroke-dasharray: 3px 3px;
 }
-
-.minimas .tick line {
-            stroke: lightblue;
-        }
-
-.maximas .tick line {
-            stroke: crimson;
-        }
 
 .input-update-grafica {
     border: 1px solid #111;
@@ -558,7 +546,7 @@ body {
     background-color: #e71c20;
     border: 1px solid #112;
     border-left: 0;
-    color: #1af8e5;
+    color: #fff;
     cursor: pointer;
     font-weight: bold;
     padding: 1.25rem 1.88rem;
@@ -573,12 +561,10 @@ body {
 
 .btn-update-min {
     background-color: #067993;
-    color: #262626;
 }
 
 .btn-update-min:hover {
         background-color: #262626;
-        color: #067993;
     }
 
 .container-buttons {
@@ -626,14 +612,14 @@ body {
 .title:before {
         content: '';
         display: block;
-        border-bottom: 1px solid #111;
+        border-bottom: 2px solid #111;
         width: 1em;
     }
 
 .title:after {
         content: '';
         display: block;
-        border-bottom: 1px solid #111;
+        border-bottom: 2px solid #111;
         width: 1em;
     }
 
@@ -650,25 +636,8 @@ body {
     font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
 }
 
-.container-img {
-    position: relative;
-}
-
-.container-img:before {
-        content: '';
-        border-left: 100vw solid transparent;
-        border-top: 35vh solid #fff;
-        top: 0;
-        height: 0;
-        width: 0;
-        position: absolute;
-        left: 0;
-        right: 0;
-    }
-
 .zaragoza-img {
-    height: 100vh;
-    width: 100vw;
+    max-width: 100%;
     object-fit: cover;
 }
 
@@ -685,15 +654,43 @@ body {
 }
 
 .legend-title {
+    font-family: 'Montserrat', sans-serif;
     color: #10174e;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 5rem;
     margin: 0.31rem 0;
 }
+
+.legend-title:before {
+        content: '';
+        display: block;
+        border-bottom: 5px solid #e34f6f;
+        width: 1em;
+    }
 
 .legend-text {
     font-size: 1rem;
     color: #111;
+}
+
+.clima-intro {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.clima-legend {
+    max-width: 80%;
+    padding: 1.25rem;
+}
+
+.clima-link {
+    display: block;
+    margin-top: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map */

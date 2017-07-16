@@ -5,9 +5,9 @@ var xAxis;
 var yAxis;
 
 var margin = { top: 50, right: 50, bottom: 50, left: 110 },
-    width = 1300 - margin.left - margin.right,
+    width = 1200 - margin.left - margin.right,
     height = 550 - margin.top - margin.bottom;
-widthBar = width / 62;
+    widthBar = width / 62;
 
 //Creando una escala de color
 var color = d3.scale.linear()
@@ -27,10 +27,10 @@ function getYear(stringDate) {
 
 var svg = d3.select('.grafica-temp')
     .append('svg')
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr('class', 'chart-temp')
+    .attr("viewBox","0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom))
     .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform", "translate(" + (margin.left - margin.right) + "," + margin.top + ")");
 
 var xRange = d3.scale.linear()
     .range([30, width]);
@@ -219,13 +219,11 @@ function update() {
 
 
         d3.select('.yAxis')
-            .attr("class", "maximas")
             .transition()
             .duration(1000)
             .call(yAxis);
 
         d3.select('.xAxis')
-            .attr("class", "maximas")
             .transition()
             .duration(1000)
             .call(xAxis);
@@ -330,13 +328,11 @@ function updateMin() {
             .range(["#b0f2bc","#89e8ac","#67dba5","#4cc8a3","#38b2a3","#2c98a0","#257d98"]);
 
         d3.select('.yAxis')
-            .attr("class", "minimas")
             .transition()
             .duration(1000)
             .call(yAxis);
 
         d3.select('.xAxis')
-            .attr("class", "minimas")
             .transition()
             .duration(1000)
             .call(xAxis);
@@ -356,14 +352,20 @@ function updateMin() {
                     return 10 * Math.sqrt(d.minima / Math.PI);
                 } else if (d.minima === minTemp) {
                     return 10 * Math.sqrt(d.minima / Math.PI);
-                } else if (d.minima >= 10) {
-                    return 12;
-                } else if (d.minima >= 5) {
+                } else if (d.minima >= 20) {
+                    return 11;
+                } else if (d.minima >= 18) {
                     return 10;
-                }else if (d.minima >= 0) {
+                } else if (d.minima >= 14) {
+                    return 9;
+                } else if (d.minima >= 10) {
                     return 8;
-                }else if (d.minima <= 0) {
+                } else if (d.minima >= 5) {
+                    return 7;
+                }else if (d.minima >= 0) {
                     return 6;
+                } else if (d.minima <= 0) {
+                    return 4;
                 };
             })
             .attr("cx", function(d) {
@@ -378,8 +380,14 @@ function updateMin() {
                 return "#70284a";
             } else if (d.minima === minTemp) {
                 return "#045275";
-            } else if (d.minima >= 10) {
+            } else if (d.minima >= 20) {
+                return "#b0f2bc";
+            } else if (d.minima >= 18) {
                 return "#89e8ac";
+            } else if (d.minima >= 14) {
+                return "#67dba5";
+            } else if (d.minima >= 10) {
+                return "#4cc8a3";
             } else if (d.minima >= 5) {
                 return "#38b2a3";
             } else if (d.minima >= 0) {
@@ -408,4 +416,3 @@ function updateMin() {
     });
 
 }
-

@@ -7,10 +7,6 @@
 @import '_reset';
 @import '_variables';
 
-.barra {
-    fill: var(--barColor);
-}
-
 * {
     font-family: var(--fontSystem);
     line-height: 1.5;
@@ -61,24 +57,8 @@ path {
 
 .tick line {
     fill: none;
-    stroke: crimson;
+    stroke: #ccc;
     stroke-dasharray: 3px 3px;
-}
-
-.minimas {
-    .tick {
-        line {
-            stroke: lightblue;
-        }
-    }
-}
-
-.maximas {
-    .tick {
-        line {
-            stroke: crimson;
-        }
-    }
 }
 
 .input-update-grafica {
@@ -120,7 +100,7 @@ body {
     background-color: #e71c20;
     border: 1px solid #112;
     border-left: 0;
-    color: #1af8e5;
+    color: #fff;
     cursor: pointer;
     font-weight: bold;
     padding: 20px 30px;
@@ -134,10 +114,8 @@ body {
 
 .btn-update-min {
     background-color: #067993;
-    color: #262626;
     &:hover {
         background-color: #262626;
-        color: #067993;
     }
 }
 
@@ -174,7 +152,7 @@ body {
 }
 
 .title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--montserrat);
     font-size: 100px;
     font-weight: bold;
     color: var(--impureBlack);
@@ -182,13 +160,13 @@ body {
     &:before {
         content: '';
         display: block;
-        border-bottom: 1px solid var(--impureBlack);
+        border-bottom: 2px solid var(--impureBlack);
         width: 1em;
     }
     &:after {
         content: '';
         display: block;
-        border-bottom: 1px solid var(--impureBlack);
+        border-bottom: 2px solid var(--impureBlack);
         width: 1em;
     }
 }
@@ -206,24 +184,8 @@ body {
     font-family: var(--fontSystem);
 }
 
-.container-img {
-    position: relative;
-    &:before {
-        content: '';
-        border-left: 100vw solid transparent;
-        border-top: 35vh solid #fff;
-        top: 0;
-        height: 0;
-        width: 0;
-        position: absolute;
-        left: 0;
-        right: 0;
-    }
-}
-
 .zaragoza-img {
-    height: 100vh;
-    width: 100vw;
+    max-width: 100%;
     object-fit: cover;
 }
 
@@ -240,13 +202,40 @@ body {
 }
 
 .legend-title {
+    font-family: var(--montserrat);
     color: var(--legendTxt);
     font-weight: bold;
-    font-size: 32px;
+    font-size: 80px;
     margin: 5px 0;
+    &:before {
+        content: '';
+        display: block;
+        border-bottom: 5px solid var(--gradient2);
+        width: 1em;
+    }
 }
 
 .legend-text {
     font-size: 16px;
     color: var(--impureBlack);
+}
+
+.clima-intro {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.clima-legend {
+    max-width: 80%;
+    padding: 20px;
+}
+
+.clima-link {
+    display: block;
+    margin-top: 10px;
 }
