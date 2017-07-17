@@ -52,15 +52,19 @@
     </div>
 
     <article class="grafica-temp">
+        <h2 class="grafica-temp-title">TEMPERATURAS MÁXIMAS Y MÍNIMAS</h2>
+
     </article>
     <article class="container-buttons">
         <p class="text-button">Para consultar cualquier día del año hay que introducir la fecha con el siguiente formato: DD-MM.</p>
         <div class="container-update-grafica">
-            <input maxlength="5" class="input-update-grafica" id="updateButton" type="text" value="02-07" />
+            <input maxlength="2" class="input-update-grafica" id="updateButtonDay" type="text" value="01" />
+            <input maxlength="2" class="input-update-grafica" id="updateButtonMonth" type="text" value="01" />
             <button class="btn-update-grafica btn-update-max" id="update" onclick="update()">MAXIMAS</button>
         </div>
         <div class="container-update-grafica">
-            <input maxlength="5" class="input-update-grafica" id="updateButtonMin" type="text" value="02-07" />
+            <input maxlength="5" class="input-update-grafica" id="updateButtonDayMin" type="text" value="01" />
+            <input maxlength="5" class="input-update-grafica" id="updateButtonMonthMin" type="text" value="01" />
             <button class="btn-update-grafica btn-update-min" id="updateMin" onclick="updateMin()">MINIMAS</button>
         </div>
     </article>
