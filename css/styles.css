@@ -697,4 +697,19 @@ body {
     font-weight: bold;
 }
 
+.grafica-temp-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.88rem;
+    font-weight: bold;
+    color: #111;
+    margin-left: 90px;
+}
+
+.grafica-temp-title:after {
+        content: '';
+        display: block;
+        border-bottom: 5px solid #e34f6f;
+        width: 5em;
+    }
+
 /*# sourceMappingURL=styles.css.map */

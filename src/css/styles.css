@@ -243,3 +243,17 @@ body {
     font-size: 16px;
     font-weight: bold;
 }
+
+.grafica-temp-title {
+    font-family: var(--montserrat);
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--impureBlack);
+    margin-left: 90px;
+    &:after {
+        content: '';
+        display: block;
+        border-bottom: 5px solid var(--gradient2);
+        width: 5em;
+    }
+}
