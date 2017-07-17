@@ -6,7 +6,7 @@ var yAxis;
 
 var margin = { top: 50, right: 50, bottom: 50, left: 110 },
     width = 1200 - margin.left - margin.right,
-    height = 550 - margin.top - margin.bottom;
+    height = 500 - margin.top - margin.bottom;
     widthBar = width / 62;
 
 //Creando una escala de color
@@ -57,6 +57,7 @@ var yAxis = d3.svg.axis()
 
 d3.csv('temperaturas-prueba.csv', function(err, data) {
 
+    // console.log(data)
 
     dataFiltered = data.filter(function(d) {
         return String(d.fecha).match(/01-06/);
@@ -67,7 +68,6 @@ d3.csv('temperaturas-prueba.csv', function(err, data) {
         d.maxima = +d.maxima;
         d.minima = +d.minima;
         d.year = getYear(d.fecha);
-        // console.log(d.maxima)
     });
 
 
@@ -105,7 +105,7 @@ d3.csv('temperaturas-prueba.csv', function(err, data) {
 
     svg.append("g")
         .attr("class", "xAxis")
-        .attr("transform", "translate(0,450)")
+        .attr("transform", "translate(0,400)")
         .transition()
         .duration(1000)
         .ease('linear')
@@ -150,7 +150,7 @@ d3.csv('temperaturas-prueba.csv', function(err, data) {
         .ease('linear')
         .style("r", function(d) {
             if (d.maxima === maxTemp) {
-                return 10 * Math.sqrt(d.maxima / Math.PI);
+                return 8 * Math.sqrt(d.maxima / Math.PI);
             } else if (d.maxima === minTemp) {
                 return 10 * Math.sqrt(d.maxima / Math.PI);
             } else {
@@ -177,7 +177,10 @@ d3.csv('temperaturas-prueba.csv', function(err, data) {
 });
 
 function update() {
-    var valueDate = d3.select("#updateButton").property("value");
+    var valueDateDay = d3.select("#updateButtonDay").property("value");
+    var valueDateMonth = d3.select("#updateButtonMonth").property("value");
+    var valueDate = valueDateDay + '-' + valueDateMonth;
+    console.log(valueDate)
     var reValueDate = new RegExp("^.*" + valueDate + ".*", "gi");
 
     d3.csv('temperaturas-prueba.csv', function(err, data) {
@@ -239,7 +242,7 @@ function update() {
             .ease('linear')
             .style("r", function(d) {
                 if (d.maxima === maxTemp) {
-                    return 10 * Math.sqrt(d.maxima / Math.PI);
+                    return 8 * Math.sqrt(d.maxima / Math.PI);
                 } else if (d.maxima === minTemp) {
                     return 10 * Math.sqrt(d.maxima / Math.PI);
                 } else {
@@ -283,7 +286,10 @@ function update() {
 }
 
 function updateMin() {
-    var valueDate = d3.select("#updateButtonMin").property("value");
+    var valueDateDay = d3.select("#updateButtonDayMin").property("value");
+    var valueDateMonth = d3.select("#updateButtonMonthMin").property("value");
+    var valueDate = valueDateDay + '-' + valueDateMonth;
+    console.log(valueDate)
     var reValueDate = new RegExp("^.*" + valueDate + ".*", "gi");
 
     d3.csv('temperaturas-prueba.csv', function(err, data) {
