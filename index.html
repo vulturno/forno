@@ -13,9 +13,7 @@
 
 <body>
     <header class="header">
-
     </header>
-
     <div class="bgc">
         <div class="container-texto">
             <h1 class="title">FORNO</h1>
@@ -23,26 +21,18 @@
             <p class="texto">A través de gráficas vamos a ver, y a consultar las temperaturas máximas y mínimas que se han recogido en el Aeropuerto de Zaragoza entre los años 1951 y 2017.</p>
         </div>
     </div>
-
-
     <div class="clima-intro">
         <picture class="clima-img">
             <source sizes="(max-width: 1380px) 100vw, 1380px" type="image/webp" srcset="
                     img/zaragoza_320.webp 320w,
                     img/zaragoza_739.webp 739w,
                     img/zaragoza_1110.webp 1110w,
-                    img/zaragoza_1366.webp 1366w"
-            />
-            <img
-            sizes="(max-width: 1366px) 100vw, 1366px"
-            class="zaragoza-img"
-            srcset="
+                    img/zaragoza_1366.webp 1366w" />
+            <img sizes="(max-width: 1366px) 100vw, 1366px" class="zaragoza-img" srcset="
             img/zaragoza_320.jpg 320w,
             img/zaragoza_739.jpg 739w,
             img/zaragoza_1110.jpg 1110w,
-            img/zaragoza_1366.jpg 1366w"
-            src="zaragoza_moncayo_ohf3fq_c_scale,w_1366.jpg"
-            alt="Atardecer desde la margen izquierda de Zaragoza">
+            img/zaragoza_1366.jpg 1366w" src="zaragoza_moncayo_ohf3fq_c_scale,w_1366.jpg" alt="Atardecer desde la margen izquierda de Zaragoza">
         </picture>
         <div class="clima-legend">
             <h2 class="legend-title">CLIMA</h2>
@@ -50,28 +40,36 @@
                 <a class="clima-link" href="https://es.wikipedia.org/wiki/Zaragoza#Clima">Fuente</a></p>
         </div>
     </div>
-
     <article class="grafica-temp">
         <h2 class="grafica-temp-title">TEMPERATURAS MÁXIMAS Y MÍNIMAS</h2>
-
     </article>
     <article class="container-buttons">
-        <p class="text-button">Para consultar cualquier día del año hay que introducir la fecha con el siguiente formato: DD-MM.</p>
+        <p class="text-button">Actualiza la gráfica con cualquier día del año. Elige entre máximas o mínimas.</p>
         <div class="container-update-grafica">
-            <input maxlength="2" class="input-update-grafica" id="updateButtonDay" type="text" value="01" />
-            <input maxlength="2" class="input-update-grafica" id="updateButtonMonth" type="text" value="01" />
+            <div class="container-inputs">
+                <label class="inputs-label" for="updateButtonDay">Día</label>
+                <input maxlength="2" class="input-update-grafica" id="updateButtonDay" type="text" value="01" />
+            </div>
+            <div class="container-inputs">
+                <label class="inputs-label" for="updateButtonMonth">Mes</label>
+                <input maxlength="2" class="input-update-grafica" id="updateButtonMonth" type="text" value="01" />
+            </div>
             <button class="btn-update-grafica btn-update-max" id="update" onclick="update()">MAXIMAS</button>
         </div>
         <div class="container-update-grafica">
-            <input maxlength="5" class="input-update-grafica" id="updateButtonDayMin" type="text" value="01" />
-            <input maxlength="5" class="input-update-grafica" id="updateButtonMonthMin" type="text" value="01" />
+            <div class="container-inputs">
+                <label class="inputs-label" for="updateButtonDayMin">Día</label>
+                <input maxlength="2" class="input-update-grafica" id="updateButtonDayMin" type="text" value="01" />
+            </div>
+            <div class="container-inputs">
+                <label class="inputs-label" for="updateButtonMonthMin">Mes</label>
+                <input maxlength="2" class="input-update-grafica" id="updateButtonMonthMin" type="text" value="01" />
+            </div>
             <button class="btn-update-grafica btn-update-min" id="updateMin" onclick="updateMin()">MINIMAS</button>
         </div>
     </article>
-
     <script src="https://d3js.org/d3.v3.min.js"></script>
     <script src="js/index.js"></script>
-
 </body>
 
 </html>
