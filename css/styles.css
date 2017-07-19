@@ -768,4 +768,25 @@ body {
     align-items: center;
 }
 
+.tropicales,
+.heladas {
+    position: relative;
+    height: 100vh;
+}
+
+.tropicales:after {
+    content: "";
+    display: block;
+    width: 32rem;
+    height: 32rem;
+    background: #e34f6f;
+    position: absolute;
+    top: 1rem;
+    left: -60rem;
+    right: 0;
+    margin: auto;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
 /*# sourceMappingURL=styles.css.map */
