@@ -175,11 +175,11 @@ body {
     box-shadow: 4px 4px 52px -9px rgba(0, 0, 0, .85);
 }
 
-.legend-title {
+.subtitle {
     font-family: var(--montserrat);
-    color: var(--legendTxt);
+    color: #072a12;
     font-weight: bold;
-    font-size: 80px;
+    font-size: 60px;
     margin: 5px 0;
     &:before {
         content: '';
@@ -201,7 +201,8 @@ body {
     grid-row-gap: 20px;
     justify-items: center;
     align-items: center;
-    height: 100vh;
+    background-color: #f9d06b;
+    margin: 30vh 0;
 }
 
 .clima-legend {
@@ -218,20 +219,6 @@ body {
     font-size: 16px;
     font-weight: bold;
     margin-top: 0;
-}
-
-.grafica-temp-title {
-    font-family: var(--montserrat);
-    font-size: 30px;
-    font-weight: bold;
-    color: var(--impureBlack);
-    margin-left: 90px;
-    &:after {
-        content: '';
-        display: block;
-        border-bottom: 5px solid var(--gradient2);
-        width: 5em;
-    }
 }
 
 .btn-update-max,
@@ -252,8 +239,8 @@ body {
     opacity: 0;
     -webkit-transform: scale3d(.7, 1, 1);
     transform: scale3d(.7, 1, 1);
-    -webkit-transition: -webkit-transform .4s, opacity .4s;
-    transition: transform .4s, opacity .4s;
+    -webkit-transition: -webkit-transform 1s, opacity 1s;
+    transition: transform 1s, opacity 1s;
     -webkit-transition-timing-function: cubic-bezier(.2, 1, .3, 1);
     transition-timing-function: cubic-bezier(.2, 1, .3, 1);
 }
@@ -289,6 +276,7 @@ body {
     border: 1px solid #001e40;
     color: #001e40;
     position: relative;
+    font-weight: bold;
     z-index: 1;
     -webkit-backface-visibility: hidden;
     -moz-osx-font-smoothing: grayscale;
@@ -316,4 +304,13 @@ body {
     margin-bottom: 5px;
     text-align: left;
     font-weight: bold;
+}
+
+.grid-chart {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: center;
+    align-items: center;
 }
