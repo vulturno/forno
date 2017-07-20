@@ -659,6 +659,15 @@ body {
     top: -30px;
 }
 
+.clima-pie {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    font-size: 0.75rem;
+    color: #fff;
+    z-index: 1;
+}
+
 .clima-legend {
     padding: 1.25rem;
     font-family: 'Georgia', serif;
