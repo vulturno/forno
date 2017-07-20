@@ -190,24 +190,28 @@ body {
 }
 
 .legend-text {
-    font-size: 16px;
+    font-size: 18px;
+    font-family: var(--georgia);
     color: var(--impureBlack);
 }
 
 .clima-intro {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    justify-items: center;
-    align-items: center;
-    background-color: #f9d06b;
-    margin: 30vh 0;
+    margin: 15vh auto;
+    max-width: 50vw;
+    position: relative;
+}
+
+.clima-subtitle {
+    font-size: 90px;
+    position: absolute;
+    left: -80px;
+    top: -30px;
 }
 
 .clima-legend {
-    max-width: 80%;
     padding: 20px;
+    font-family: var(--georgia);
+    font-size: 18px;
 }
 
 .clima-link {
