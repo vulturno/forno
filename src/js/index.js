@@ -12,7 +12,7 @@ var margin = { top: 50, right: 50, bottom: 50, left: 110 },
 //Creando una escala de color
 var color = d3.scale.linear()
     .domain([20, 35])
-    .range(["#fcde9c", "#e34f6f", "#7c1d6f"]);
+    .range(["#d39c83", "#e34f6f", "#7c1d6f"]);
 
 //Creando los div que contendrán los tooltips con la información del año y de la temperatura
 var div = d3.select(".grafica-temp")
