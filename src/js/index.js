@@ -126,7 +126,7 @@ d3.csv('temperaturas-prueba.csv', function(err, data) {
         .attr("y", -20)
         .attr("x", 370)
         .style("text-anchor", "end")
-        .text("Temperaturas máximas registradas en Zaragoza");
+        .text("Temperaturas máximas");
 
     svg.selectAll("dot")
         .data(dataFiltered)
@@ -230,7 +230,7 @@ function update() {
             .call(xAxis);
 
         d3.select('.legend-top')
-            .text("Temperaturas máximas registradas en Zaragoza");
+            .text("Temperaturas máximas");
 
         var circles = svg.selectAll("circle")
             .data(dataFiltered);
@@ -349,7 +349,7 @@ function updateMin() {
 
 
         d3.select('.legend-top')
-            .text("Temperaturas mínimas registradas en Zaragoza");
+            .text("Temperaturas mínimas");
 
         var circles = svg.selectAll("circle")
             .data(dataFiltered);
