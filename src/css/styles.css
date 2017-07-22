@@ -100,62 +100,50 @@ body {
 
 .bgc {
     height: 100vh;
-    background: linear-gradient(150deg, var(--gradient1) 15%, var(--gradient2) 70%, var(--gradient3) 94%);
-    &:after {
-        content: '';
-        border-left: 100vw solid transparent;
-        border-bottom: 50vh solid #fff;
-        bottom: 0;
-        height: 0;
-        width: 0;
-        position: absolute;
-        left: 0;
-        right: 0;
-    }
-    &:before {
-        content: '';
-        border-left: 100vw solid transparent;
-        border-top: 50vh solid #fff;
-        top: 0;
-        height: 0;
-        width: 0;
-        position: absolute;
-        left: 0;
-        right: 0;
-    }
+     background: linear-gradient(150deg, var(--gradient1) 15%, var(--gradient2) 70%, var(--gradient3) 94%);
+    /* background: linear-gradient(to bottom, #86000b 0%, #b8000f 50%, #e16973 100%); */
+    display: grid;
+    grid-template-columns: 50% 40%;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: center;
+    align-items: center;
 }
 
 .title {
     font-family: var(--montserrat);
     font-size: 100px;
     font-weight: bold;
-    color: var(--impureBlack);
+    color: #000;
     margin: 5px 0;
-    &:before {
-        content: '';
-        display: block;
-        border-bottom: 2px solid var(--impureBlack);
-        width: 1em;
-    }
     &:after {
         content: '';
         display: block;
-        border-bottom: 2px solid var(--impureBlack);
-        width: 1em;
+        border-bottom: 1px solid var(--impureBlack);
+        width: .6em;
+    }
+    &:before {
+        content: '';
+        display: block;
+        border-bottom: 1px solid var(--impureBlack);
+        width: .6em;
     }
 }
 
 .container-texto {
-    position: absolute;
-    top: 20%;
-    left: 5%;
-    max-width: 35%;
-    z-index: 1;
+    padding-left: 20px;
+
 }
 
 .texto {
     font-size: 18px;
-    font-family: var(--fontSystem);
+    color: var(--impureBlack);
+    font-family: var(--georgia);
+}
+
+.bold {
+    font-family: var(--georgia);
+    font-weight: bold;
 }
 
 .zaragoza-img {
@@ -202,10 +190,7 @@ body {
 }
 
 .clima-subtitle {
-    font-size: 90px;
-    position: absolute;
-    left: -80px;
-    top: -30px;
+    font-size: 30px;
 }
 
 .clima-pie {
