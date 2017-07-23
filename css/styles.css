@@ -500,6 +500,25 @@ template {
 .wrapper-vw {
     width: 80vw;
     max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    box-shadow: -5px 7px 9px -8px rgba(0, 0, 0, .59);
+    padding: 0.94rem 0;
+    z-index: 2;
+}
+
+@supports (position: sticky) {
+
+    .header {
+        position: sticky;
+    }
 }
 
 .grid-intro {

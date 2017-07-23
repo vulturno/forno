@@ -7,6 +7,7 @@
 @import '_reset';
 @import '_variables';
 @import '_comun';
+@import '_header';
 @import '_principal';
 @import '_clima';
 @import '_maximas';
