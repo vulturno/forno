@@ -3,6 +3,7 @@ var xRange;
 var yRange;
 var xAxis;
 var yAxis;
+var temp = "ºC";
 
 var margin = { top: 50, right: 50, bottom: 50, left: 110 },
     width = 1200 - margin.left - margin.right,
@@ -53,6 +54,7 @@ var yAxis = d3.svg.axis()
     .innerTickSize(-width)
     .outerTickSize(0)
     .tickPadding(10)
+    .tickFormat(function(d) { return d + temp; })
     .ticks(6);
 
 d3.csv('temperaturas-prueba.csv', function(err, data) {
