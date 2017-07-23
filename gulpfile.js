@@ -181,6 +181,7 @@ gulp.task('webp', () =>
 gulp.task('default', ["browserSync"], function() {
     gulp.watch('./src/css/**', ['css']);
     gulp.watch('./src/img/**', ['images']);
+    gulp.watch('./src/js/**', ['compress']);
     gulp.watch(["./*.html", "css/*.css", "js/*.js"]).on("change", browserSync.reload);
 });
 
