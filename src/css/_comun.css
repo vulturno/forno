@@ -42,3 +42,8 @@
     justify-items: center;
     align-items: center;
 }
+
+.wrapper-vw {
+    width: 80vw;
+    max-width: 1200px;
+}

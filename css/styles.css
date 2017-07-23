@@ -497,7 +497,12 @@ template {
     align-items: center;
 }
 
-.bgc {
+.wrapper-vw {
+    width: 80vw;
+    max-width: 1200px;
+}
+
+.grid-intro {
     height: 100vh;
      background: linear-gradient(150deg, #fcde9c 15%, #e34f6f 70%, #7c1d6f 94%);
     /* background: linear-gradient(to bottom, #86000b 0%, #b8000f 50%, #e16973 100%); */
@@ -533,7 +538,6 @@ template {
 
 .clima-intro {
     margin: 10vh auto;
-    max-width: 75vw;
     position: relative;
     display: grid;
     grid-gap: 50px;
@@ -559,7 +563,7 @@ template {
 }
 
 .clima-pie {
-    font-size: 0.69rem;
+    font-size: 0.63rem;
     color: #111;
 }
 
@@ -576,7 +580,6 @@ template {
 .grafica-temp {
     margin: 10vh auto;
     margin-bottom: 0;
-    max-width: 75vw;
 }
 
 .text-button {
@@ -650,6 +653,11 @@ path {
 
 .container-texto {
     padding-left: 20px;
+}
+
+.container-buttons {
+    text-align: center;
+    margin: 0 0 1.88rem;
 }
 
 .btn-update-max,

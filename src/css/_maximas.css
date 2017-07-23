@@ -1,7 +1,6 @@
 .grafica-temp {
     margin: 10vh auto;
     margin-bottom: 0;
-    max-width: 75vw;
 }
 
 .text-button {
@@ -74,6 +73,11 @@ path {
 
 .container-texto {
     padding-left: 20px;
+}
+
+.container-buttons {
+    text-align: center;
+    margin: 0 0 30px;
 }
 
 .btn-update-max,

@@ -1,4 +1,4 @@
-.bgc {
+.grid-intro {
     height: 100vh;
      background: linear-gradient(150deg, var(--gradient1) 15%, var(--gradient2) 70%, var(--gradient3) 94%);
     /* background: linear-gradient(to bottom, #86000b 0%, #b8000f 50%, #e16973 100%); */
