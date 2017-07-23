@@ -23,7 +23,8 @@ webp = require('gulp-webp');
 gulp.task("browserSync", function() {
     browserSync({
         server: {
-            baseDir: "./"
+            baseDir: "./",
+            reloadDelay: 2000
         }
     })
 });
