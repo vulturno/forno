@@ -1,0 +1,50 @@
+* {
+    font-family: var(--fontSystem);
+    line-height: 1.5;
+}
+
+.bold {
+    font-family: var(--georgia);
+    font-weight: bold;
+}
+
+.subtitle {
+    font-family: var(--montserrat);
+    color: #072a12;
+    font-weight: bold;
+    font-size: 50px;
+    margin: 5px 0;
+    &:before {
+        content: '';
+        display: block;
+        border-bottom: 5px solid var(--gradient2);
+        width: 1em;
+    }
+}
+
+.texto {
+    font-size: 18px;
+    color: var(--impureBlack);
+    font-family: var(--georgia);
+}
+
+.tropicales,
+.heladas {
+    position: relative;
+    height: 100vh;
+}
+
+.grid-chart {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.wrapper-vw {
+    width: 80vw;
+    max-width: 1200px;
+    margin: 0 auto;
+}

@@ -13,25 +13,28 @@
 
 <body>
     <header class="header">
-        <nav>
-            <a href="">INICIO</a>
-            <a href="">CLIMA</a>
-            <a href="">TEMPERATURAS MÁXIMA Y MÍNIMAS</a>
-            <a href="">NOCHES TROPICALES</a>
-            <a href="">HELADAS</a>
+        <nav class="wrapper-vw">
+            <a href="#inicio">INICIO</a>
+            <a href="#clima">CLIMA</a>
+            <a href="#maximas">TEMPERATURAS MÁXIMA Y MÍNIMAS</a>
+            <a href="#tropicales">NOCHES TROPICALES</a>
+            <a href="#heladas">HELADAS</a>
         </nav>
     </header>
-    <div class="bgc">
+    <div class="grid-intro" id="inicio">
         <h1 class="title">FORNO</h1>
         <div class="container-texto">
-            <p class="texto">Una visualización de datos para ver la <span class="bold">evolución de las temperaturas</span> en la ciudad de Zaragoza. </p>
-            <p class="texto">A través de gráficas vamos a ver, y a consultar las <span class="bold">temperaturas máximas y mínimas</span> que se han registrado en el <span class="bold">Aeropuerto de Zaragoza entre los años 1951 y 2017</span>.</p>
+            <p class="texto">Una visualización de datos para ver como <span class="bold">el cambio climático</span> esta aumentando las temperaturas en la ciudad de Zaragoza. </p>
+            <p class="texto">A través de gráficas vamos a ver, y a consultar las <span class="bold">temperaturas máximas y mínimas, las noches tropicales y las heladas</span> que se han registrado en el <span class="bold">Aeropuerto de Zaragoza entre los años 1951 y 2017</span>.</p>
         </div>
     </div>
 
-    <div class="clima-intro">
-
-        <h2 class="subtitle clima-subtitle">El clima en Zaragoza</h2>
+    <div class="clima-intro wrapper-vw" id="clima">
+        <h2 class="subtitle clima-subtitle">EL CLIMA EN ZARAGOZA</h2>
+        <div class="clima-legend">
+            <p class="legend-text">Zaragoza tiene un <span class="bold">clima semiárido frío,</span> que es el propio de la depresión del Ebro. Los inviernos son <span class="bold">ligeramente fríos</span>, siendo normales las <span class="bold">heladas nocturnas y las nieblas</span> que produce la inversión térmica en los meses de diciembre y enero. Los <span class="bold">veranos son cálidos, superando casi siempre los 35°C e incluso pasando los 40°C</span> muchos días. Las lluvias escasas se concentran en primavera. El promedio anual es bastante escaso, de unos 315 mm influenciado sobre todo por el efecto foehn o efecto adiabático.
+                <a class="clima-link" href="https://es.wikipedia.org/wiki/Zaragoza#Clima">Fuente</a></p>
+        </div>
         <picture class="clima-img">
             <source sizes="(max-width: 1380px) 100vw, 1380px" type="image/webp" srcset="
                     img/zaragoza_320.webp 320w,
@@ -45,16 +48,13 @@
             img/zaragoza_1366.jpg 1366w" src="zaragoza_moncayo_ohf3fq_c_scale,w_1366.jpg" alt="Atardecer desde la margen izquierda de Zaragoza con el Moncayo al fondo">
             <span class="clima-pie">Atardecer de un día de verano desde la margen izquierda de Zaragoza con el Moncayo al fondo.</span>
         </picture>
-        <div class="clima-legend">
-            <p class="legend-text">Zaragoza tiene un clima semiárido frío, que es el propio de la depresión del Ebro. Los inviernos son ligeramente fríos, siendo normales las heladas nocturnas y las nieblas que produce la inversión térmica en los meses de diciembre y enero. Los veranos son cálidos, superando casi siempre los 35°C e incluso pasando los 40°C muchos días. Las lluvias escasas se concentran en primavera. El promedio anual es bastante escaso, de unos 315 mm influenciado sobre todo por el efecto foehn o efecto adiabático.
-                <a class="clima-link" href="https://es.wikipedia.org/wiki/Zaragoza#Clima">Fuente</a></p>
-        </div>
     </div>
-    <h2 class="subtitle">TEMPERATURAS MÁXIMAS Y MÍNIMAS</h2>
-    <article class="grafica-temp">
+
+    <article class="grafica-temp wrapper-vw" id="maximas">
+        <h2 class="subtitle">TEMPERATURAS MÁXIMAS Y MÍNIMAS</h2>
         <p>En la gráfica que vamos a ver a continuación se muestran todas las temperaturas máximas y mínimas recogida entre 1951 y 2017.</p>
     </article>
-    <article class="container-buttons">
+    <article class="container-buttons wrapper-vw">
         <p class="text-button">Puedes elegir actualizar la gráfica con la máxima o mínima de cualquier día del año.</p>
         <div class="container-update-grafica">
             <div class="container-inputs">
@@ -79,14 +79,14 @@
             <button class="btn-update-grafica btn-update-min" id="updateMin" onclick="updateMin()"> ACTUALIZAR MÍNIMAS</button>
         </div>
     </article>
-    <h2 class="subtitle">HELADAS</h2>
-    <article class="heladas grid-chart">
+    <h2 class="subtitle wrapper-vw">HELADAS</h2>
+    <article class="heladas grid-chart wrapper-vw" id="heladas">
         <div class="heladas-text">
             <p>Se considera la ocurrencia de heladas cuando la temperatura del aire, registrada en el abrigo meteorológico (es decir a 1,50 metros sobre el nivel del suelo), es de 0ºC. Esta forma de definir el fenómeno fue acordada por los meteorólogos y climatólogos, si bien muchas veces, la temperatura de la superficie del suelo puede llegar a ser 3 a 4ºC menor que la registrada en el abrigo meteorológico.</p>
         </div>
     </article>
-    <h2 class="subtitle">NOCHES TROPICALES</h2>
-    <article class="tropicales grid-chart">
+    <h2 class="subtitle wrapper-vw">NOCHES TROPICALES</h2>
+    <article class="tropicales grid-chart wrapper-vw" id="tropicales">
         <div class="tropicales-text">
             <p>Se podría definir como una noche en la que la temperatura mínima es igual o superior a 20ºC, una temperatura que se suele alcanzar poco después del amanecer.</p>
         </div>

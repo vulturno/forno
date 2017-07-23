@@ -1,0 +1,14 @@
+.tropicales:after {
+    content: "";
+    display: block;
+    width: 32rem;
+    height: 32rem;
+    background: var(--gradient2);
+    position: absolute;
+    top: 1rem;
+    left: -60rem;
+    right: 0;
+    margin: auto;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}

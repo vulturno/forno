@@ -23,7 +23,8 @@ webp = require('gulp-webp');
 gulp.task("browserSync", function() {
     browserSync({
         server: {
-            baseDir: "./"
+            baseDir: "./",
+            reloadDelay: 2000
         }
     })
 });
@@ -179,12 +180,10 @@ gulp.task('webp', () =>
 /* Tarea por defecto para compilar CSS y comprimir imagenes */
 gulp.task('default', ["browserSync"], function() {
     gulp.watch('./src/css/**', ['css']);
-    gulp.watch('./src/js/**', ['compress']);
     gulp.watch('./src/img/**', ['images']);
-    gulp.watch(["./*.html", "src/css/*.css", "src/js/*.js"]).on("change", browserSync.reload);
+    gulp.watch('./src/js/**', ['compress']);
+    gulp.watch(["./*.html", "css/*.css", "js/*.js"]).on("change", browserSync.reload);
 });
 
 /* Tarea final para comprimir CSS y JavaScript */
-gulp.task('build', ['minify', 'compress']);
-
-/* Tarea para meter todos los estilos entre etiquetas <style> si el CSS ocupa menos de 50kb */
+gulp.task('build', ['minify', 'compress', 'removecss', 'inline']);
