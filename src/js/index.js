@@ -11,7 +11,7 @@ var margin = { top: 50, right: 50, bottom: 50, left: 110 },
 
 //Creando una escala de color
 var color = d3.scale.linear()
-    .domain([20, 35])
+    .domain([10, 35])
     .range(["#d39c83", "#e34f6f", "#7c1d6f"]);
 
 //Creando los div que contendrán los tooltips con la información del año y de la temperatura
@@ -126,7 +126,7 @@ d3.csv('temperaturas-prueba.csv', function(err, data) {
         .attr("y", -20)
         .attr("x", 370)
         .style("text-anchor", "end")
-        .text("Temperaturas máximas registradas en Zaragoza");
+        .text("Temperaturas máximas");
 
     svg.selectAll("dot")
         .data(dataFiltered)
@@ -148,6 +148,12 @@ d3.csv('temperaturas-prueba.csv', function(err, data) {
         .transition()
         .duration(1000)
         .ease('linear')
+        .attr("cx", function(d) {
+            return xRange(d.year);
+        })
+        .attr("cy", function(d) {
+            return yRange(d.maxima);
+        })
         .style("r", function(d) {
             if (d.maxima === maxTemp) {
                 return 8 * Math.sqrt(d.maxima / Math.PI);
@@ -165,15 +171,7 @@ d3.csv('temperaturas-prueba.csv', function(err, data) {
             } else {
                 return color(d.maxima)
             };
-        })
-        .attr("cx", function(d) {
-            return xRange(d.year);
-        })
-        .attr("cy", function(d) {
-            return yRange(d.maxima);
         });
-
-
 });
 
 function update() {
@@ -232,7 +230,7 @@ function update() {
             .call(xAxis);
 
         d3.select('.legend-top')
-            .text("Temperaturas máximas registradas en Zaragoza");
+            .text("Temperaturas máximas");
 
         var circles = svg.selectAll("circle")
             .data(dataFiltered);
@@ -292,6 +290,12 @@ function updateMin() {
     console.log(valueDate)
     var reValueDate = new RegExp("^.*" + valueDate + ".*", "gi");
 
+    // if (isNaN(valueDateDay) || valueDateDay < 1 || valueDateDay > 31 && isNaN(valueDateMonth) || valueDateMonth < 1 || valueDateMonth > 12) {
+    //     alert("fail")
+    // } else {
+    //     alert("bien")
+    // }
+
     d3.csv('temperaturas-prueba.csv', function(err, data) {
 
         dataFiltered = data.filter(function(d) {
@@ -345,7 +349,7 @@ function updateMin() {
 
 
         d3.select('.legend-top')
-            .text("Temperaturas mínimas registradas en Zaragoza");
+            .text("Temperaturas mínimas");
 
         var circles = svg.selectAll("circle")
             .data(dataFiltered);
