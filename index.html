@@ -13,6 +13,13 @@
 
 <body>
     <header class="header">
+        <nav>
+            <a href="">INICIO</a>
+            <a href="">CLIMA</a>
+            <a href="">TEMPERATURAS MÁXIMA Y MÍNIMAS</a>
+            <a href="">NOCHES TROPICALES</a>
+            <a href="">HELADAS</a>
+        </nav>
     </header>
     <div class="bgc">
         <h1 class="title">FORNO</h1>
@@ -21,7 +28,9 @@
             <p class="texto">A través de gráficas vamos a ver, y a consultar las <span class="bold">temperaturas máximas y mínimas</span> que se han registrado en el <span class="bold">Aeropuerto de Zaragoza entre los años 1951 y 2017</span>.</p>
         </div>
     </div>
+
     <div class="clima-intro">
+
         <h2 class="subtitle clima-subtitle">El clima en Zaragoza</h2>
         <picture class="clima-img">
             <source sizes="(max-width: 1380px) 100vw, 1380px" type="image/webp" srcset="
@@ -34,12 +43,12 @@
             img/zaragoza_739.jpg 739w,
             img/zaragoza_1110.jpg 1110w,
             img/zaragoza_1366.jpg 1366w" src="zaragoza_moncayo_ohf3fq_c_scale,w_1366.jpg" alt="Atardecer desde la margen izquierda de Zaragoza con el Moncayo al fondo">
-            <p class="clima-pie">Atardecer desde la margen izquierda de Zaragoza con el Moncayo al fondo.</p>
+            <span class="clima-pie">Atardecer de un día de verano desde la margen izquierda de Zaragoza con el Moncayo al fondo.</span>
         </picture>
-    </div>
-    <div class="clima-legend">
-        <p class="legend-text">Zaragoza tiene un clima semiárido frío, que es el propio de la depresión del Ebro. Los inviernos son ligeramente fríos, siendo normales las heladas nocturnas y las nieblas que produce la inversión térmica en los meses de diciembre y enero. Los veranos son cálidos, superando casi siempre los 35°C e incluso pasando los 40°C muchos días. Las lluvias escasas se concentran en primavera. El promedio anual es bastante escaso, de unos 315 mm influenciado sobre todo por el efecto foehn o efecto adiabático.
-            <a class="clima-link" href="https://es.wikipedia.org/wiki/Zaragoza#Clima">Fuente</a></p>
+        <div class="clima-legend">
+            <p class="legend-text">Zaragoza tiene un clima semiárido frío, que es el propio de la depresión del Ebro. Los inviernos son ligeramente fríos, siendo normales las heladas nocturnas y las nieblas que produce la inversión térmica en los meses de diciembre y enero. Los veranos son cálidos, superando casi siempre los 35°C e incluso pasando los 40°C muchos días. Las lluvias escasas se concentran en primavera. El promedio anual es bastante escaso, de unos 315 mm influenciado sobre todo por el efecto foehn o efecto adiabático.
+                <a class="clima-link" href="https://es.wikipedia.org/wiki/Zaragoza#Clima">Fuente</a></p>
+        </div>
     </div>
     <h2 class="subtitle">TEMPERATURAS MÁXIMAS Y MÍNIMAS</h2>
     <article class="grafica-temp">
@@ -56,7 +65,7 @@
                 <label class="inputs-label" for="updateButtonMonth">Mes</label>
                 <input maxlength="2" class="input-update-grafica" id="updateButtonMonth" type="text" value="01" />
             </div>
-            <button class="btn-update-grafica btn-update-max" id="update" onclick="update()">MÁXIMAS</button>
+            <button class="btn-update-grafica btn-update-max" id="update" onclick="update()">ACTUALIZAR MÁXIMAS</button>
         </div>
         <div class="container-update-grafica">
             <div class="container-inputs">
@@ -67,7 +76,7 @@
                 <label class="inputs-label" for="updateButtonMonthMin">Mes</label>
                 <input maxlength="2" class="input-update-grafica" id="updateButtonMonthMin" type="text" value="01" />
             </div>
-            <button class="btn-update-grafica btn-update-min" id="updateMin" onclick="updateMin()">MÍNIMAS</button>
+            <button class="btn-update-grafica btn-update-min" id="updateMin" onclick="updateMin()"> ACTUALIZAR MÍNIMAS</button>
         </div>
     </article>
     <h2 class="subtitle">HELADAS</h2>

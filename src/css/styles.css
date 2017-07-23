@@ -167,7 +167,7 @@ body {
     font-family: var(--montserrat);
     color: #072a12;
     font-weight: bold;
-    font-size: 60px;
+    font-size: 50px;
     margin: 5px 0;
     &:before {
         content: '';
@@ -181,29 +181,32 @@ body {
     font-size: 18px;
     font-family: var(--georgia);
     color: var(--impureBlack);
+    margin-top: 0;
 }
 
 .clima-intro {
     margin: 15vh auto;
-    max-width: 50vw;
+    max-width: 70vw;
     position: relative;
+    display: grid;
+    grid-gap: 50px;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, 50%);
+
 }
 
 .clima-subtitle {
-    font-size: 30px;
+    font-size: 50px;
+    grid-column: 1/3;
 }
 
 .clima-pie {
-    position: absolute;
-    bottom: 5px;
-    right: 10px;
     font-size: 12px;
-    color: #fff;
-    z-index: 1;
+    color: var(--impureBlack);
 }
 
 .clima-legend {
-    padding: 20px;
+    padding: 0 20px;
     font-family: var(--georgia);
     font-size: 18px;
 }
