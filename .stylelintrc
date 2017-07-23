@@ -1,7 +1,7 @@
 {
     "rules": {
         "at-rule-empty-line-before": ["always", {
-            except: ["blockless-group", "first-nested"],
+            except: ["first-nested"],
             ignore: ["after-comment"],
             message: "Deja un espacio despues de una propiedad"
         }],
