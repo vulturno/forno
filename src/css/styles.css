@@ -5,11 +5,19 @@
 */
 
 @import '_reset';
+
 @import '_variables';
+
 @import '_comun';
+
 @import '_principal';
+
 @import '_clima';
+
 @import '_maximas';
+
 @import '_tropicales';
+
 @import '_heladas';
+
 @import '_records';
