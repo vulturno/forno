@@ -455,8 +455,7 @@ var xAxisH = d3.svg.axis()
 var yAxisH = d3.svg.axis()
     .scale(yRangeH)
     .orient("left")
-    .tickPadding(10)
-    .ticks(5);
+    .ticks(10);
 
 d3.csv('heladas.csv', function(err, data) {
 
@@ -475,10 +474,7 @@ d3.csv('heladas.csv', function(err, data) {
         })
     ]);
 
-    yRangeH.domain([d3.min(datosH, function(d) {
-            return d.dia;
-        }),
-        d3.max(datosH, function(d) {
+    yRangeH.domain([0, d3.max(datosH, function(d) {
             return d.dia;
         })
     ]);
@@ -498,18 +494,9 @@ d3.csv('heladas.csv', function(err, data) {
         .enter()
         .append("rect")
         .attr("class", "barra")
-        .attr("x", 0)
-        .attr("y", 0)
         .attr("width", widthBar)
-        .attr("height", 60)
         .attr('fill', 'crimson')
-        .attr("x", function(d, i) {
-            return i * 10 + 30
-        })
-        .attr("height", function(d) {
-            return d.dias * 4;
-        })
-        .attr("y", function(d) {
-            return height - d.dias * 4;
-        });
+        .attr("x", function(d) { return xRangeH(d.anyo); })
+        .attr("y", function(d) { return yRangeH(d.dias); })
+        .attr("height", function(d) { return height - yRangeH(d.dias); });
 });
