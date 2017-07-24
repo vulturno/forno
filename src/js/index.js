@@ -57,7 +57,7 @@ var yAxis = d3.svg.axis()
     .tickFormat(function(d) { return d + temp; })
     .ticks(6);
 
-d3.csv('temperaturas-prueba.csv', function(err, data) {
+d3.csv('temperaturas.csv', function(err, data) {
 
     // console.log(data)
 
