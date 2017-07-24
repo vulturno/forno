@@ -504,15 +504,6 @@ template {
     height: 100vh;
 }
 
-.grid-chart {
-    display: grid;
-    grid-template-columns: 30% 70%;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    justify-items: center;
-    align-items: center;
-}
-
 .wrapper-vw {
     width: 80vw;
     max-width: 1200px;
