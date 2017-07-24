@@ -13,12 +13,12 @@
 
 <body>
     <header class="header">
-        <nav class="wrapper-vw">
-            <a href="#inicio">INICIO</a>
-            <a href="#clima">CLIMA</a>
-            <a href="#maximas">TEMPERATURAS MÁXIMA Y MÍNIMAS</a>
-            <a href="#tropicales">NOCHES TROPICALES</a>
-            <a href="#heladas">HELADAS</a>
+        <nav class="header-nav wrapper-vw">
+            <a class="system-font" href="#inicio">INICIO</a>
+            <a class="system-font" href="#clima">CLIMA</a>
+            <a class="system-font" href="#maximas">TEMPERATURAS MÁXIMA Y MÍNIMAS</a>
+            <a class="system-font" href="#tropicales">NOCHES TROPICALES</a>
+            <a class="system-font" href="#heladas">HELADAS</a>
         </nav>
     </header>
     <div class="grid-intro" id="inicio">
@@ -52,10 +52,9 @@
 
     <article class="grafica-temp wrapper-vw" id="maximas">
         <h2 class="subtitle">TEMPERATURAS MÁXIMAS Y MÍNIMAS</h2>
-        <p>En la gráfica que vamos a ver a continuación se muestran todas las temperaturas máximas y mínimas recogida entre 1951 y 2017.</p>
     </article>
-    <article class="container-buttons wrapper-vw">
-        <p class="text-button">Puedes elegir actualizar la gráfica con la máxima o mínima de cualquier día del año.</p>
+    <article class="container-buttons">
+        <p class="text-button">Puedes actualizar la gráfica con la máxima o mínima de cualquier día del año.</p>
         <div class="container-update-grafica">
             <div class="container-inputs">
                 <label class="inputs-label" for="updateButtonDay">Día</label>
@@ -82,13 +81,13 @@
     <h2 class="subtitle wrapper-vw">HELADAS</h2>
     <article class="heladas grid-chart wrapper-vw" id="heladas">
         <div class="heladas-text">
-            <p>Se considera la ocurrencia de heladas cuando la temperatura del aire, registrada en el abrigo meteorológico (es decir a 1,50 metros sobre el nivel del suelo), es de 0ºC. Esta forma de definir el fenómeno fue acordada por los meteorólogos y climatólogos, si bien muchas veces, la temperatura de la superficie del suelo puede llegar a ser 3 a 4ºC menor que la registrada en el abrigo meteorológico.</p>
+            <p class="texto">Se considera la ocurrencia de heladas cuando la temperatura del aire, registrada en el abrigo meteorológico (es decir a 1,50 metros sobre el nivel del suelo), es de 0ºC. Esta forma de definir el fenómeno fue acordada por los meteorólogos y climatólogos, si bien muchas veces, la temperatura de la superficie del suelo puede llegar a ser 3 a 4ºC menor que la registrada en el abrigo meteorológico.</p>
         </div>
     </article>
     <h2 class="subtitle wrapper-vw">NOCHES TROPICALES</h2>
     <article class="tropicales grid-chart wrapper-vw" id="tropicales">
         <div class="tropicales-text">
-            <p>Se podría definir como una noche en la que la temperatura mínima es igual o superior a 20ºC, una temperatura que se suele alcanzar poco después del amanecer.</p>
+            <p class="texto">Se podría definir como una noche en la que la temperatura mínima es igual o superior a 20ºC, una temperatura que se suele alcanzar poco después del amanecer.</p>
         </div>
     </article>
     <script src="https://d3js.org/d3.v3.min.js"></script>
