@@ -4,7 +4,7 @@ var yRange;
 var xAxis;
 var yAxis;
 var temp = "ºC";
-var barPadding = 1;
+var barPadding = 5;
 
 var margin = { top: 50, right: 50, bottom: 50, left: 110 },
     width = 1200 - margin.left - margin.right,
@@ -496,7 +496,7 @@ d3.csv('heladas.csv', function(err, data) {
         .append("rect")
         .attr("class", "barra")
         .attr("width", width / datosH.length - barPadding)
-        .attr('fill', 'crimson')
+        .attr('fill', '#257d98')
         .attr("x", function(d) { return xRangeH(d.anyo); })
         .attr("y", function(d) { return yRangeH(d.dias); })
         .attr("height", function(d) { return height - yRangeH(d.dias); });
