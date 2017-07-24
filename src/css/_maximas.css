@@ -55,7 +55,7 @@ path {
 
 .tick line {
     fill: none;
-    stroke: #ccc;
+    stroke: #333;
     stroke-dasharray: 3px 3px;
 }
 
@@ -77,6 +77,10 @@ path {
 
 .container-buttons {
     text-align: center;
+    background-color: var(--impureWhite);
+    padding: 20px;
+    border-top: 1px solid var(--impureBlack);
+    border-bottom: 1px solid var(--impureBlack);
 }
 
 .btn-update-max,
