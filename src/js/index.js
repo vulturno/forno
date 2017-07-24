@@ -431,55 +431,85 @@ function updateMin() {
 
 //Heladas
 
-// var svgH = d3.select('.heladas')
-//     .append('svg')
-//     .attr('class', 'chart-heladas')
-//     .attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom))
-//     .append("g")
-//     .attr("transform", "translate(" + (margin.left - margin.right) + "," + margin.top + ")");
+var svgH = d3.select('.heladas')
+    .append('svg')
+    .attr('class', 'chart-heladas')
+    .attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom))
+    .append("g")
+    .attr("transform", "translate(" + (margin.left - margin.right) + "," + margin.top + ")");
 
-// d3.csv('heladas.csv', function(err, data) {
+widthBar = width / 66;
 
-//     data.forEach(function(d) {
-//         d.fecha = d.fecha;
-//         d.dia = +d.dia;
-//     });
+var xRangeH = d3.scale.linear()
+    .range([30, width]);
 
-//     svg.append("g")
-//         .attr("class", "xAxis")
-//         .attr("transform", "translate(0,400)")
-//         .transition()
-//         .duration(1000)
-//         .ease('linear')
-//         .call(xAxis);
+var yRangeH = d3.scale.linear()
+    .range([height, 0]);
 
-//     svg.append("g")
-//         .attr("class", "yAxis")
-//         .attr("transform", "translate(30, 0)")
-//         .transition()
-//         .duration(1000)
-//         .ease('linear')
-//         .call(yAxis);
+var xAxisH = d3.svg.axis()
+    .scale(xRangeH)
+    .outerTickSize(0)
+    .tickFormat(d3.format("d"))
+    .ticks(20);
 
-//     svg.selectAll("rect")
-//         .data(data)
-//         .enter()
-//         .append("rect")
-//         .attr("class", "barra")
-//         .attr("x", 0)
-//         .attr("y", 0)
-//         .attr("width", 30)
-//         .attr("height", 100)
-//         .transition()
-//         .duration(1000)
-//         .ease('linear')
-//         .attr("x", function(d, i) {
-//             return i * 21 + 300
-//         })
-//         .attr("height", function(d) {
-//             return d.dia * 5;
-//         })
-//         .attr("y", function(d) {
-//             return height - d.dia * 5;
-//         });
-// });
+var yAxisH = d3.svg.axis()
+    .scale(yRangeH)
+    .orient("left")
+    .tickPadding(10)
+    .ticks(5);
+
+d3.csv('heladas.csv', function(err, data) {
+
+    datosH = data;
+
+    datosH.forEach(function(d) {
+        d.anyo = d.fecha;
+        d.dia = d.dias;
+    });
+
+    xRangeH.domain([d3.min(datosH, function(d) {
+            return d.anyo;
+        }),
+        d3.max(datosH, function(d) {
+            return d.anyo;
+        })
+    ]);
+
+    yRangeH.domain([d3.min(datosH, function(d) {
+            return d.dia;
+        }),
+        d3.max(datosH, function(d) {
+            return d.dia;
+        })
+    ]);
+
+    svgH.append("g")
+        .attr("class", "xAxis")
+        .attr("transform", "translate(0,400)")
+        .call(xAxisH);
+
+    svgH.append("g")
+        .attr("class", "yAxis")
+        .attr("transform", "translate(30, 0)")
+        .call(yAxisH);
+
+    svgH.selectAll("rect")
+        .data(datosH)
+        .enter()
+        .append("rect")
+        .attr("class", "barra")
+        .attr("x", 0)
+        .attr("y", 0)
+        .attr("width", widthBar)
+        .attr("height", 60)
+        .attr('fill', 'crimson')
+        .attr("x", function(d, i) {
+            return i * 10 + 30
+        })
+        .attr("height", function(d) {
+            return d.dias * 4;
+        })
+        .attr("y", function(d) {
+            return height - d.dias * 4;
+        });
+});
