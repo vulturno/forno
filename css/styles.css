@@ -461,11 +461,27 @@ template {
     font-weight: bold;
 }
 
+.montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.georgia {
+    font-family: 'Georgia', serif;
+}
+
+.system-font {
+    font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.monospace {
+    font-family: 'SFMono-Regular', Consolas, Menlo, Courier, monospace;
+}
+
 .subtitle {
     font-family: 'Montserrat', sans-serif;
     color: #072a12;
     font-weight: bold;
-    font-size: 3.13rem;
+    font-size: 2.5rem;
     margin: 0.31rem 0;
 }
 
@@ -500,25 +516,25 @@ template {
 .wrapper-vw {
     width: 80vw;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 10vh auto;
 }
 
 .header {
-    position: fixed;
-    top: 0;
     width: 100%;
+    padding: 0.94rem 0;
     background-color: #fff;
     border-bottom: 1px solid #ccc;
     box-shadow: -5px 7px 9px -8px rgba(0, 0, 0, .59);
-    padding: 0.94rem 0;
+    top: 0;
     z-index: 2;
+    position: fixed;
+    /* stylelint-disable */
+    position: sticky;
+    /* stylelint-enable */
 }
 
-@supports (position: sticky) {
-
-    .header {
-        position: sticky;
-    }
+.header-nav {
+    margin: 0 auto;
 }
 
 .grid-intro {
@@ -654,7 +670,7 @@ path {
 
 .tick line {
     fill: none;
-    stroke: #ccc;
+    stroke: #333;
     stroke-dasharray: 3px 3px;
 }
 
@@ -676,6 +692,10 @@ path {
 
 .container-buttons {
     text-align: center;
+    background-color: #f1f1f1;
+    padding: 1.25rem;
+    border-top: 1px solid #111;
+    border-bottom: 1px solid #111;
 }
 
 .btn-update-max,

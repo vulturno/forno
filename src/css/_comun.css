@@ -8,11 +8,27 @@
     font-weight: bold;
 }
 
+.montserrat {
+    font-family: var(--montserrat);
+}
+
+.georgia {
+    font-family: var(--georgia);
+}
+
+.system-font {
+    font-family: var(--fontSystem);
+}
+
+.monospace {
+    font-family: var(--monospace);
+}
+
 .subtitle {
     font-family: var(--montserrat);
     color: #072a12;
     font-weight: bold;
-    font-size: 50px;
+    font-size: 40px;
     margin: 5px 0;
     &:before {
         content: '';
@@ -46,5 +62,5 @@
 .wrapper-vw {
     width: 80vw;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 10vh auto;
 }

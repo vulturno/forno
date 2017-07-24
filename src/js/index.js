@@ -8,7 +8,6 @@ var temp = "ºC";
 var margin = { top: 50, right: 50, bottom: 50, left: 110 },
     width = 1200 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
-    widthBar = width / 62;
 
 //Creando una escala de color
 var color = d3.scale.linear()
@@ -29,7 +28,7 @@ function getYear(stringDate) {
 var svg = d3.select('.grafica-temp')
     .append('svg')
     .attr('class', 'chart-temp')
-    .attr("viewBox","0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom))
+    .attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom))
     .append("g")
     .attr("transform", "translate(" + (margin.left - margin.right) + "," + margin.top + ")");
 
@@ -123,7 +122,7 @@ d3.csv('temperaturas-prueba.csv', function(err, data) {
         .call(yAxis);
 
     svg.append("text")
-        .attr("class","legend-top")
+        .attr("class", "legend-top")
         .attr("transform", "rotate(0)")
         .attr("y", -20)
         .attr("x", 370)
@@ -267,17 +266,17 @@ function update() {
         });
 
         circles.on("mouseover", function(d) {
-            div.transition()
-            div.style("opacity", 1)
-                .html('<p class="tooltipYear">' + d.year + '<p/>' + '<p class="tooltipTemp">' + d.maxima + 'º<p/>')
-                .style("left", (d3.event.pageX) + "px")
-                .style("top", (d3.event.pageY - 28) + "px");
-        })
-        .on("mouseout", function(d) {
-            div.transition()
-                .duration(200)
-                .style("opacity", 0);
-        });
+                div.transition()
+                div.style("opacity", 1)
+                    .html('<p class="tooltipYear">' + d.year + '<p/>' + '<p class="tooltipTemp">' + d.maxima + 'º<p/>')
+                    .style("left", (d3.event.pageX) + "px")
+                    .style("top", (d3.event.pageY - 28) + "px");
+            })
+            .on("mouseout", function(d) {
+                div.transition()
+                    .duration(200)
+                    .style("opacity", 0);
+            });
 
         circles.exit()
             .remove()
@@ -337,7 +336,7 @@ function updateMin() {
 
         var color = d3.scale.linear()
             .domain([0, 25])
-            .range(["#b0f2bc","#89e8ac","#67dba5","#4cc8a3","#38b2a3","#2c98a0","#257d98"]);
+            .range(["#b0f2bc", "#89e8ac", "#67dba5", "#4cc8a3", "#38b2a3", "#2c98a0", "#257d98"]);
 
         d3.select('.yAxis')
             .transition()
@@ -374,7 +373,7 @@ function updateMin() {
                     return 8;
                 } else if (d.minima >= 5) {
                     return 7;
-                }else if (d.minima >= 0) {
+                } else if (d.minima >= 0) {
                     return 6;
                 } else if (d.minima <= 0) {
                     return 4;
@@ -410,21 +409,77 @@ function updateMin() {
         });
 
         circles.on("mouseover", function(d) {
-            div.transition()
+                div.transition()
                 // .duration(200)
-            div.style("opacity", 1)
-                .html('<p class="tooltipYear">' + d.year + '<p/>' + '<p class="tooltipTemp">' + d.minima + 'º<p/>')
-                .style("left", (d3.event.pageX) + "px")
-                .style("top", (d3.event.pageY - 28) + "px");
-        })
-        .on("mouseout", function(d) {
-            div.transition()
-                .duration(200)
-                .style("opacity", 0);
-        });
+                div.style("opacity", 1)
+                    .html('<p class="tooltipYear">' + d.year + '<p/>' + '<p class="tooltipTemp">' + d.minima + 'º<p/>')
+                    .style("left", (d3.event.pageX) + "px")
+                    .style("top", (d3.event.pageY - 28) + "px");
+            })
+            .on("mouseout", function(d) {
+                div.transition()
+                    .duration(200)
+                    .style("opacity", 0);
+            });
 
         circles.exit()
             .remove();
     });
 
 }
+
+
+//Heladas
+
+// var svgH = d3.select('.heladas')
+//     .append('svg')
+//     .attr('class', 'chart-heladas')
+//     .attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom))
+//     .append("g")
+//     .attr("transform", "translate(" + (margin.left - margin.right) + "," + margin.top + ")");
+
+// d3.csv('heladas.csv', function(err, data) {
+
+//     data.forEach(function(d) {
+//         d.fecha = d.fecha;
+//         d.dia = +d.dia;
+//     });
+
+//     svg.append("g")
+//         .attr("class", "xAxis")
+//         .attr("transform", "translate(0,400)")
+//         .transition()
+//         .duration(1000)
+//         .ease('linear')
+//         .call(xAxis);
+
+//     svg.append("g")
+//         .attr("class", "yAxis")
+//         .attr("transform", "translate(30, 0)")
+//         .transition()
+//         .duration(1000)
+//         .ease('linear')
+//         .call(yAxis);
+
+//     svg.selectAll("rect")
+//         .data(data)
+//         .enter()
+//         .append("rect")
+//         .attr("class", "barra")
+//         .attr("x", 0)
+//         .attr("y", 0)
+//         .attr("width", 30)
+//         .attr("height", 100)
+//         .transition()
+//         .duration(1000)
+//         .ease('linear')
+//         .attr("x", function(d, i) {
+//             return i * 21 + 300
+//         })
+//         .attr("height", function(d) {
+//             return d.dia * 5;
+//         })
+//         .attr("y", function(d) {
+//             return height - d.dia * 5;
+//         });
+// });
