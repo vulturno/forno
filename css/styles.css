@@ -628,11 +628,15 @@ template {
 .textoBarras,
 .xAxis,
 .yAxis {
-    font-size: 1rem;
+    font-size: 0.75rem;
 }
 
 .textoBarras text, .xAxis text, .yAxis text {
-        font-size: 1rem;
+        font-size: 0.75rem;
+    }
+
+.yAxis path {
+        stroke: none;
     }
 
 path {
@@ -661,7 +665,7 @@ path {
 
 .tick line {
     fill: none;
-    stroke: #333;
+    stroke: #888;
     stroke-dasharray: 3px 3px;
 }
 
@@ -683,9 +687,7 @@ path {
 
 .container-buttons {
     text-align: center;
-    background-color: #f1f1f1;
     padding: 1.25rem;
-    border-top: 1px solid #111;
     border-bottom: 1px solid #111;
 }
 
@@ -765,12 +767,12 @@ path {
     color: #001e40;
 }
 
-.tropicales:after {
+/* .tropicales:after {
     content: "";
     display: block;
     width: 32rem;
     height: 32rem;
-    background: #e34f6f;
+    background: var(--gradient2);
     position: absolute;
     top: 1rem;
     left: -60rem;
@@ -779,5 +781,6 @@ path {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+*/
 
 /*# sourceMappingURL=styles.css.map */
