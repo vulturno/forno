@@ -11,7 +11,7 @@ var margin = { top: 50, right: 50, bottom: 50, left: 110 },
     height = 500 - margin.top - margin.bottom;
 
 //Creando una escala de color
-var color = d3.scale.linear()
+var color = d3.scaleLinear()
     .domain([10, 35])
     .range(["#d39c83", "#e34f6f", "#7c1d6f"]);
 
@@ -33,26 +33,20 @@ var svg = d3.select('.grafica-temp')
     .append("g")
     .attr("transform", "translate(" + (margin.left - margin.right) + "," + margin.top + ")");
 
-var xRange = d3.scale.linear()
+var xRange = d3.scaleLinear()
     .range([30, width]);
 
-var yRange = d3.scale.linear()
+var yRange = d3.scaleLinear()
     .range([height, 0]);
 
-var xAxis = d3.svg.axis()
+var xAxis = d3.axisBottom()
     .scale(xRange)
-    .orient("bottom")
-    .innerTickSize(-height)
-    .outerTickSize(0)
     .tickPadding(15)
     .tickFormat(d3.format("d"))
     .ticks(20);
 
-var yAxis = d3.svg.axis()
+var yAxis = d3.axisLeft()
     .scale(yRange)
-    .orient("left")
-    .innerTickSize(-width)
-    .outerTickSize(0)
     .tickPadding(10)
     .tickFormat(function(d) { return d + temp; })
     .ticks(6);
@@ -96,21 +90,11 @@ d3.csv('temperaturas.csv', function(err, data) {
         })
     ]);
 
-    var lineFunc = d3.svg.line()
-        .x(function(d) {
-            return xRange(d.year);
-        })
-        .y(function(d) {
-            return yRange(d.maxima);
-        })
-        .interpolate('linear');
-
     svg.append("g")
         .attr("class", "xAxis")
         .attr("transform", "translate(0,400)")
         .transition()
         .duration(1000)
-        .ease('linear')
         .call(xAxis);
 
 
@@ -119,7 +103,6 @@ d3.csv('temperaturas.csv', function(err, data) {
         .attr("transform", "translate(30, 0)")
         .transition()
         .duration(1000)
-        .ease('linear')
         .call(yAxis);
 
     svg.append("text")
@@ -149,14 +132,13 @@ d3.csv('temperaturas.csv', function(err, data) {
         })
         .transition()
         .duration(1000)
-        .ease('linear')
         .attr("cx", function(d) {
             return xRange(d.year);
         })
         .attr("cy", function(d) {
             return yRange(d.maxima);
         })
-        .style("r", function(d) {
+        .attr("r", function(d) {
             if (d.maxima === maxTemp) {
                 return 6 * Math.sqrt(d.maxima / Math.PI);
             } else if (d.maxima === minTemp) {
@@ -239,8 +221,7 @@ function update() {
 
         circles.transition()
             .duration(1000)
-            .ease('linear')
-            .style("r", function(d) {
+            .attr("r", function(d) {
                 if (d.maxima === maxTemp) {
                     return 6 * Math.sqrt(d.maxima / Math.PI);
                 } else if (d.maxima === minTemp) {
@@ -335,7 +316,7 @@ function updateMin() {
             })
         ]);
 
-        var color = d3.scale.linear()
+        var color = d3.scaleLinear()
             .domain([0, 25])
             .range(["#b0f2bc", "#89e8ac", "#67dba5", "#4cc8a3", "#38b2a3", "#2c98a0", "#257d98"]);
 
@@ -358,8 +339,7 @@ function updateMin() {
 
         circles.transition()
             .duration(1000)
-            .ease('linear')
-            .style("r", function(d) {
+            .attr("r", function(d) {
                 if (d.minima === maxTemp) {
                     return 10 * Math.sqrt(d.minima / Math.PI);
                 } else if (d.minima === minTemp) {
@@ -441,24 +421,22 @@ var svgH = d3.select('.heladas')
 
 widthBar = width / 66;
 
-var xRangeH = d3.scale.linear()
+var xRangeH = d3.scaleLinear()
     .range([30, width]);
 
-var yRangeH = d3.scale.linear()
+var yRangeH = d3.scaleLinear()
     .range([height, 0]);
 
-var xAxisH = d3.svg.axis()
+var xAxisH =  d3.axisBottom()
     .scale(xRangeH)
-    .outerTickSize(0)
     .tickFormat(d3.format("d"))
     .ticks(20);
 
-var yAxisH = d3.svg.axis()
+var yAxisH = d3.axisLeft()
     .scale(yRangeH)
-    .orient("left")
     .ticks(5);
 
-var colorsH = d3.scale.linear()
+var colorsH = d3.scaleLinear()
     .domain([10, 35])
     .range(["#68abb8","#4f90a6","#3b738f","#2a5674"]);
 
@@ -517,25 +495,23 @@ var svgT = d3.select('.tropicales')
 
 widthBar = width / 66;
 
-var xRangeT = d3.scale.linear()
+var xRangeT = d3.scaleLinear()
     .range([30, width]);
 
-var yRangeT = d3.scale.linear()
+var yRangeT = d3.scaleLinear()
     .range([height, 0]);
 
-var xAxisT = d3.svg.axis()
+var xAxisT = d3.axisBottom()
     .scale(xRangeT)
-    .outerTickSize(0)
     .tickFormat(d3.format("d"))
     .ticks(20);
 
-var yAxisT = d3.svg.axis()
+var yAxisT = d3.axisLeft()
     .scale(yRangeT)
-    .orient("left")
     .ticks(5);
 
-var colorsT = d3.scale.linear()
-    .domain([10, 35])
+var colorsT = d3.scaleLinear()
+    .domain([0, 45])
     .range(["#ffc6c4","#f4a3a8","#e38191","#cc607d","#ad466c","#8b3058","#672044"]);
 
 d3.csv('tropicales.csv', function(err, data) {
