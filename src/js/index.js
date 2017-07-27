@@ -99,7 +99,6 @@ d3.csv('temperaturas.csv', function(err, data) {
         .duration(1000)
         .call(xAxis);
 
-
     svg.append("g")
         .attr("class", "yAxis")
         .attr("transform", "translate(30, 0)")
@@ -436,7 +435,7 @@ var xAxisH =  d3.axisBottom()
 
 var yAxisH = d3.axisLeft()
     .scale(yRangeH)
-    .tickSize(-width + 30)
+    .tickSize(-width + 16)
     .ticks(5);
 
 var colorsH = d3.scaleLinear()
@@ -485,8 +484,8 @@ d3.csv('heladas.csv', function(err, data) {
             div.transition()
             div.style("opacity", 1)
                 .html('<p class="tooltipHeladas">' + d.anyo + '<p/>' + '<p class="tooltipHeladas">' + d.dia + '<p/>')
-                .style("left", (d3.event.pageX) + "px")
-                .style("top", (d3.event.pageY - 28) + "px");
+                .style("left", (d3.event.pageX) - 50 + "px")
+                .style("top", (d3.event.pageY - 100) + "px");
         })
         .on("mouseout", function(d) {
             div.transition()
@@ -531,7 +530,7 @@ var xAxisT = d3.axisBottom()
 
 var yAxisT = d3.axisLeft()
     .scale(yRangeT)
-    .tickSize(-width + 30)
+    .tickSize(-width + 16)
     .ticks(5);
 
 var colorsT = d3.scaleLinear()
