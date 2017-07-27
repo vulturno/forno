@@ -43,12 +43,14 @@ var xAxis = d3.axisBottom()
     .scale(xRange)
     .tickPadding(15)
     .tickFormat(d3.format("d"))
+    .tickSize(-height)
     .ticks(20);
 
 var yAxis = d3.axisLeft()
     .scale(yRange)
     .tickPadding(10)
     .tickFormat(function(d) { return d + temp; })
+    .tickSize(-width + 30)
     .ticks(6);
 
 d3.csv('temperaturas.csv', function(err, data) {
@@ -434,6 +436,7 @@ var xAxisH =  d3.axisBottom()
 
 var yAxisH = d3.axisLeft()
     .scale(yRangeH)
+    .tickSize(-width + 30)
     .ticks(5);
 
 var colorsH = d3.scaleLinear()
@@ -478,10 +481,30 @@ d3.csv('heladas.csv', function(err, data) {
         .append("rect")
         .attr("class", "barra")
         .attr("width", width / datosH.length - barPadding)
-        .attr("fill",function(d,i){return colorsH(i)})
-        .attr("x", function(d) { return xRangeH(d.anyo); })
-        .attr("y", function(d) { return yRangeH(d.dias); })
-        .attr("height", function(d) { return height - yRangeH(d.dias); });
+        .on("mouseover", function(d) {
+            div.transition()
+            div.style("opacity", 1)
+                .html('<p class="tooltipHeladas">' + d.anyo + '<p/>' + '<p class="tooltipHeladas">' + d.dia + '<p/>')
+                .style("left", (d3.event.pageX) + "px")
+                .style("top", (d3.event.pageY - 28) + "px");
+        })
+        .on("mouseout", function(d) {
+            div.transition()
+                .duration(200)
+                .style("opacity", 0);
+        })
+        .attr("fill",function(d,i){
+            return colorsH(i)
+        })
+        .attr("x", function(d) {
+            return xRangeH(d.anyo);
+        })
+        .attr("y", function(d) {
+            return yRangeH(d.dias);
+        })
+        .attr("height", function(d) {
+            return height - yRangeH(d.dias);
+        });
 });
 
 //Noches tropicales
@@ -508,6 +531,7 @@ var xAxisT = d3.axisBottom()
 
 var yAxisT = d3.axisLeft()
     .scale(yRangeT)
+    .tickSize(-width + 30)
     .ticks(5);
 
 var colorsT = d3.scaleLinear()
@@ -552,8 +576,28 @@ d3.csv('tropicales.csv', function(err, data) {
         .append("rect")
         .attr("class", "barra")
         .attr("width", width / datosT.length - barPadding)
-        .attr("fill",function(d,i){return colorsT(i)})
-        .attr("x", function(d) { return xRangeH(d.anyo); })
-        .attr("y", function(d) { return yRangeH(d.dias); })
-        .attr("height", function(d) { return height - yRangeH(d.dias); });
+        .on("mouseover", function(d) {
+            div.transition()
+            div.style("opacity", 1)
+                .html('<p class="tooltipTropicales">' + d.anyo + '<p/>' + '<p class="tooltipTropicales">' + d.dia + '<p/>')
+                .style("left", (d3.event.pageX) + "px")
+                .style("top", (d3.event.pageY - 28) + "px");
+        })
+        .on("mouseout", function(d) {
+            div.transition()
+                .duration(200)
+                .style("opacity", 0);
+        })
+        .attr("fill",function(d,i){
+            return colorsT(i)
+        })
+        .attr("x", function(d) {
+            return xRangeH(d.anyo);
+        })
+        .attr("y", function(d) {
+            return yRangeH(d.dias);
+        })
+        .attr("height", function(d) {
+            return height - yRangeH(d.dias);
+        });
 });
