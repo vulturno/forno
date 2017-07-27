@@ -36,6 +36,9 @@
         border-bottom: 5px solid var(--gradient2);
         width: 1em;
     }
+    &.wrapper-vw {
+        margin-bottom: 2vh;
+    }
 }
 
 .texto {
@@ -48,6 +51,15 @@
 .heladas {
     position: relative;
     height: 100vh;
+    .wrapper-vw {
+        margin-bottom: 0;
+    }
+}
+
+.tropicales-text {
+    &.wrapper-vw {
+        margin-top: 0;
+    }
 }
 
 .wrapper-vw {

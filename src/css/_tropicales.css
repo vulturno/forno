@@ -13,3 +13,11 @@
     transform: rotate(45deg);
 }
 */
+
+.chart-tropicales {
+    .tick {
+        line {
+                stroke-dasharray: 0;
+            }
+    }
+}

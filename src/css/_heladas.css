@@ -1,0 +1,7 @@
+.chart-heladas {
+    .tick {
+        line {
+                stroke-dasharray: 0;
+            }
+    }
+}
