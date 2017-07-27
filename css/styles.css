@@ -658,6 +658,7 @@ path {
 
 .tooltip {
     position: absolute;
+    z-index: 2;
     width: 70px;
     margin-left: 20px;
     height: 60px;
@@ -795,12 +796,21 @@ path {
 }
 */
 
-.chart-tropicales .tick line {
+.chart-tropicales .tick line, .chart-heladas .tick line {
                 stroke-dasharray: 0;
+                stroke: #111;
             }
 
-.chart-heladas .tick line {
-                stroke-dasharray: 0;
-            }
+.chart-tropicales .tooltip, .chart-heladas .tooltip {
+        background-color: #ccc;
+    }
+
+.tooltipHeladas,
+.tooltipTropicales {
+    font-weight: bold;
+    font-size: 0.88rem;
+    margin: 0 0 0.31rem;
+    color: #fff;
+}
 
 /*# sourceMappingURL=styles.css.map */
