@@ -2,24 +2,25 @@
 var barPadding = 2;
 
 var margin = { top: 50, right: 50, bottom: 50, left: 110 },
-    width = 1200 - margin.left - margin.right,
-    height = 450 - margin.top - margin.bottom;
+    widthT = 1200 - margin.left - margin.right,
+    heightT = 500 - margin.top - margin.bottom;
+
 
 var svgT = d3.select('.tropicales')
     .append('svg')
     .attr('class', 'chart-tropicales')
-    .attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom))
+    .attr("viewBox", "0 0 " + (widthT + margin.left + margin.right) + " " + (heightT + margin.top + margin.bottom))
     .attr("preserveAspectRatio", "xMinYMin meet")
     .append("g")
     .attr("transform", "translate(" + (margin.left - margin.right) + "," + margin.top + ")");
 
-widthBar = width / 66;
+widthBar = widthT / 66;
 
 var xRangeT = d3.scaleLinear()
-    .range([30, width]);
+    .range([30, widthT]);
 
 var yRangeT = d3.scaleLinear()
-    .range([height, 0]);
+    .range([heightT, 8]);
 
 var xAxisT = d3.axisBottom()
     .scale(xRangeT)
@@ -28,7 +29,7 @@ var xAxisT = d3.axisBottom()
 
 var yAxisT = d3.axisLeft()
     .scale(yRangeT)
-    .tickSize(-width + 16)
+    .tickSize(-widthT + 16)
     .ticks(5);
 
 var colorsT = d3.scaleLinear()
@@ -72,7 +73,7 @@ d3.csv('tropicales.csv', function(err, data) {
         .enter()
         .append("rect")
         .attr("class", "barra")
-        .attr("width", width / datosT.length - barPadding)
+        .attr("width", widthT / datosT.length - barPadding)
         .on("mouseover", function(d) {
             div.transition()
             div.style("opacity", 1)
@@ -95,6 +96,6 @@ d3.csv('tropicales.csv', function(err, data) {
             return yRangeH(d.dias);
         })
         .attr("height", function(d) {
-            return height - yRangeH(d.dias);
+            return heightT - yRangeH(d.dias);
         });
 });

@@ -1,25 +1,27 @@
 var barPadding = 2;
+var datosH = []
+
 var margin = { top: 50, right: 50, bottom: 50, left: 110 },
-    width = 1200 - margin.left - margin.right,
-    height = 450 - margin.top - margin.bottom;
+    widthH = 1200 - margin.left - margin.right,
+    heightH = 500 - margin.top - margin.bottom;
 
 //Heladas
 
 var svgH = d3.select('.heladas')
     .append('svg')
     .attr('class', 'chart-heladas')
-    .attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom))
-    .attr("preserveAspectRatio", "xMinYMin meet")
+    .attr("width", widthH + margin.left + margin.right)
+    .attr("height", heightH + margin.top + margin.bottom)
     .append("g")
     .attr("transform", "translate(" + (margin.left - margin.right) + "," + margin.top + ")");
 
-widthBar = width / 66;
+widthBar = widthH / 66;
 
 var xRangeH = d3.scaleLinear()
-    .range([30, width]);
+    .range([30, widthH]);
 
 var yRangeH = d3.scaleLinear()
-    .range([height, 0]);
+    .range([heightH, 0]);
 
 var xAxisH =  d3.axisBottom()
     .scale(xRangeH)
@@ -28,7 +30,7 @@ var xAxisH =  d3.axisBottom()
 
 var yAxisH = d3.axisLeft()
     .scale(yRangeH)
-    .tickSize(-width + 16)
+    .tickSize(-widthH + 16)
     .ticks(5);
 
 var colorsH = d3.scaleLinear()
@@ -72,7 +74,7 @@ d3.csv('heladas.csv', function(err, data) {
         .enter()
         .append("rect")
         .attr("class", "barra")
-        .attr("width", width / datosH.length - barPadding)
+        .attr("width", widthH / datosH.length - barPadding)
         .on("mouseover", function(d) {
             div.transition()
             div.style("opacity", 1)
@@ -95,6 +97,75 @@ d3.csv('heladas.csv', function(err, data) {
             return yRangeH(d.dias);
         })
         .attr("height", function(d) {
-            return height - yRangeH(d.dias);
+            return heightH - yRangeH(d.dias);
         });
 });
+
+d3.select(window).on('resize', resize);
+
+function resize() {
+
+
+
+    widthH = parseInt(d3.select('#heladas').style('width'));
+    widthH = widthH - 15;
+
+    var svgH = d3.select('.chart-heladas')
+
+    barpadding = 1;
+
+    svgH.selectAll("rect")
+        .attr("width", widthH / datosH.length - barPadding)
+        .on("mouseover", function(d) {
+            div.transition()
+            div.style("opacity", 1)
+                .html('<p class="tooltipHeladas">' + d.anyo + '<p/>' + '<p class="tooltipHeladas">' + d.dia + '<p/>')
+                .style("left", (d3.event.pageX) - 50 + "px")
+                .style("top", (d3.event.pageY - 100) + "px");
+        })
+        .on("mouseout", function(d) {
+            div.transition()
+                .duration(200)
+                .style("opacity", 0);
+        })
+        .attr("fill",function(d,i){
+            return colorsH(i)
+        })
+        .attr("x", function(d) {
+            return xRangeH(d.anyo);
+        })
+        .attr("y", function(d) {
+            return yRangeH(d.dias);
+        })
+        .attr("height", function(d) {
+            return heightH - yRangeH(d.dias);
+        });
+
+    svgH
+    .data(datosH)
+    .attr('width', widthH)
+    .select("g")
+    .attr("transform", "translate(10,0)");
+
+    console.log(widthH)
+
+
+
+
+    // reset x range
+    xRangeH = d3.scaleLinear()
+        .domain([d3.min(datosH, function(d) {
+                return d.anyo;
+            }),
+            d3.max(datosH, function(d) {
+                return d.anyo;
+            })
+        ])
+        .range([30, widthH]);
+    var xAxisH =  d3.axisBottom()
+        .scale(xRangeH)
+        .tickFormat(d3.format("d"))
+        .ticks(5);
+
+    // do the actual resize...
+}
