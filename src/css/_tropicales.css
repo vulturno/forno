@@ -1,4 +1,4 @@
-.tropicales:after {
+/* .tropicales:after {
     content: "";
     display: block;
     width: 32rem;
@@ -11,4 +11,26 @@
     margin: auto;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+*/
+
+.chart-tropicales,
+.chart-heladas {
+    .tick {
+        line {
+                stroke-dasharray: 0;
+                stroke: var(--impureBlack);
+            }
+    }
+    .tooltip {
+        background-color: var(--impureGrey);
+    }
+}
+
+.tooltipHeladas,
+.tooltipTropicales {
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0 0 5px;
+    color: #fff;
 }

@@ -23,9 +23,15 @@
 .textoBarras,
 .xAxis,
 .yAxis {
-    font-size: 16px;
+    font-size: 12px;
     text {
-        font-size: 16px;
+        font-size: 12px;
+    }
+}
+
+.yAxis {
+    path {
+        stroke: none;
     }
 }
 
@@ -36,6 +42,7 @@ path {
 
 .tooltip {
     position: absolute;
+    z-index: 2;
     width: 70px;
     margin-left: 20px;
     height: 60px;
@@ -55,7 +62,7 @@ path {
 
 .tick line {
     fill: none;
-    stroke: #333;
+    stroke: #888;
     stroke-dasharray: 3px 3px;
 }
 
@@ -77,9 +84,7 @@ path {
 
 .container-buttons {
     text-align: center;
-    background-color: var(--impureWhite);
     padding: 20px;
-    border-top: 1px solid var(--impureBlack);
     border-bottom: 1px solid var(--impureBlack);
 }
 
