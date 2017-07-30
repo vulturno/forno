@@ -108,7 +108,7 @@ function resize() {
 
 
     widthH = parseInt(d3.select('#heladas').style('width'));
-    widthH = widthH - 15;
+    widthH = widthH;
 
     var svgH = d3.select('.chart-heladas')
 
@@ -145,7 +145,7 @@ function resize() {
     .data(datosH)
     .attr('width', widthH)
     .select("g")
-    .attr("transform", "translate(10,0)");
+    .attr("transform", "translate(0,0)");
 
     console.log(widthH)
 
@@ -167,5 +167,9 @@ function resize() {
         .tickFormat(d3.format("d"))
         .ticks(5);
 
-    // do the actual resize...
+    var yAxisH = d3.axisLeft()
+        .scale(yRangeH)
+        .tickSize(-widthH + 16)
+        .ticks(5);
+
 }
