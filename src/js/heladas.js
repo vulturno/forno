@@ -1,10 +1,7 @@
 var barPadding = 2;
-
 var margin = { top: 50, right: 50, bottom: 50, left: 110 },
     width = 1200 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
-
-
+    height = 450 - margin.top - margin.bottom;
 
 //Heladas
 
