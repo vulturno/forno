@@ -1,4 +1,5 @@
 //Noches tropicales
+var datosT = [];
 var barPadding = 2;
 
 var margin = { top: 50, right: 50, bottom: 50, left: 110 },
@@ -9,8 +10,8 @@ var margin = { top: 50, right: 50, bottom: 50, left: 110 },
 var svgT = d3.select('.tropicales')
     .append('svg')
     .attr('class', 'chart-tropicales')
-    .attr("viewBox", "0 0 " + (widthT + margin.left + margin.right) + " " + (heightT + margin.top + margin.bottom))
-    .attr("preserveAspectRatio", "xMinYMin meet")
+    .attr("width", widthT + margin.left + margin.right)
+    .attr("height", heightT + margin.top + margin.bottom)
     .append("g")
     .attr("transform", "translate(" + (margin.left - margin.right) + "," + margin.top + ")");
 
@@ -34,7 +35,7 @@ var yAxisT = d3.axisLeft()
 
 var colorsT = d3.scaleLinear()
     .domain([0, 45])
-    .range(["#ffc6c4","#f4a3a8","#e38191","#cc607d","#ad466c","#8b3058","#672044"]);
+    .range(["#ffc6c4", "#f4a3a8", "#e38191", "#cc607d", "#ad466c", "#8b3058", "#672044"]);
 
 d3.csv('tropicales.csv', function(err, data) {
 
@@ -54,9 +55,8 @@ d3.csv('tropicales.csv', function(err, data) {
     ]);
 
     yRangeT.domain([0, d3.max(datosT, function(d) {
-            return d.dia;
-        })
-    ]);
+        return d.dia;
+    })]);
 
     svgT.append("g")
         .attr("class", "xAxis")
@@ -86,16 +86,82 @@ d3.csv('tropicales.csv', function(err, data) {
                 .duration(200)
                 .style("opacity", 0);
         })
-        .attr("fill",function(d,i){
+        .attr("fill", function(d, i) {
             return colorsT(i)
         })
         .attr("x", function(d) {
-            return xRangeH(d.anyo);
+            return xRangeT(d.anyo);
         })
         .attr("y", function(d) {
-            return yRangeH(d.dias);
+            return yRangeT(d.dias);
         })
         .attr("height", function(d) {
-            return heightT - yRangeH(d.dias);
+            return heightT - yRangeT(d.dias);
         });
+});
+
+function resizeT() {
+
+    widthT = parseInt(d3.select('#tropicales').style('width'));
+    widthT = widthH - 25;
+
+    var svgT = d3.select('.chart-tropicales')
+
+    barpadding = 1;
+
+    xRangeT = d3.scaleLinear()
+        .domain([d3.min(datosT, function(d) {
+                return d.anyo;
+            }),
+            d3.max(datosT, function(d) {
+                return d.anyo;
+            })
+        ])
+        .range([30, widthT]);
+
+    svgT.selectAll("rect")
+        .attr("width", widthT / datosT.length - barPadding)
+        .attr("fill", function(d, i) {
+            return colorsT(i)
+        })
+        .attr("x", function(d) {
+            return xRangeT(d.anyo);
+        })
+        .attr("y", function(d) {
+            return yRangeT(d.dias);
+        })
+        .attr("height", function(d) {
+            return heightT - yRangeT(d.dias);
+        });
+
+    svgT.data(datosT)
+        .attr('width', widthT)
+        .select("g")
+        .attr("transform", "translate(0,0)");
+
+    xRangeT.domain([d3.min(datosT, function(d) {
+            return d.anyo;
+        }),
+        d3.max(datosT, function(d) {
+            return d.anyo;
+        })
+    ]);
+
+    svgT.selectAll(".xAxis .tick").remove();
+
+    var xAxisT =  d3.axisBottom()
+        .scale(xRangeT)
+        .tickFormat(d3.format("d"))
+        .ticks(5);
+
+    svgT.append("g")
+        .attr("class", "xAxis")
+        .attr("transform", "translate(0,400)")
+        .call(xAxisT);
+
+}
+
+d3.select(window).on('resize', function() {
+    resize();
+    resizeT();
 });

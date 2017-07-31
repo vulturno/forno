@@ -100,8 +100,6 @@ d3.csv('heladas.csv', function(err, data) {
         });
 });
 
-d3.select(window).on('resize', resize);
-
 function resize() {
 
     widthH = parseInt(d3.select('#heladas').style('width'));
@@ -160,10 +158,5 @@ function resize() {
         .attr("class", "xAxis")
         .attr("transform", "translate(0,400)")
         .call(xAxisH);
-
-    console.log(widthH)
-
-
-
 
 }
