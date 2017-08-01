@@ -1,0 +1,50 @@
+/*
+    RESPONSIVE TABS by Oliver Knoblich
+    https://codepen.io/oknoblich/pen/tfjFl
+*/
+
+.tabla-record {
+  display: none;
+  padding: 20px 0 0;
+  border-top: 1px solid var(--impureGrey);
+}
+
+.input-record {
+  display: none;
+}
+
+.label-record {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--impureGrey);
+  border: 1px solid transparent;
+  &:hover {
+      color: var(--impureBlack);
+      cursor: pointer;
+  }
+}
+
+.input-record:checked + .label-record {
+  color: var(--impureBlack);
+  border: 1px solid var(--impureGrey);
+  border-top: 5px solid var(--gradient2);
+  border-bottom: 1px solid #fff;
+}
+
+#tab1:checked ~ .contenido1,
+#tab2:checked ~ .contenido2,
+#tab3:checked ~ .contenido3,
+#tab4:checked ~ .contenido4,
+#tab5:checked ~ .contenido5,
+#tab6:checked ~ .contenido6,
+#tab7:checked ~ .contenido7,
+#tab8:checked ~ .contenido8,
+#tab9:checked ~ .contenido9,
+#tab10:checked ~ .contenido10,
+#tab11:checked ~ .contenido11,
+#tab12:checked ~ .contenido12 {
+  display: block;
+}

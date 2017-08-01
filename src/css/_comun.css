@@ -63,6 +63,7 @@
 }
 
 .tropicales-text {
+    text-align: left;
     &.wrapper-vw {
         margin-top: 0;
     }
