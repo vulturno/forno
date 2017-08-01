@@ -584,6 +584,28 @@ template {
         width: .6em;
     }
 
+.intro-tabs {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 30%);
+    grid-gap: 5%;
+    width: 75%;
+    margin: 0 auto;
+    grid-column: 1 / 5;
+    align-items: center;
+}
+
+.intro-tabs-element {
+    font-weight: bold;
+    font-size: 1.13rem;
+    font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: #60ebc1;
+    border-radius: 5px;
+    text-align: center;
+    padding: 1.25rem;
+    background-color: #2d113a;
+}
+
 .clima-intro {
     margin: 10vh auto;
     position: relative;

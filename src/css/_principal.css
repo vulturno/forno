@@ -29,3 +29,25 @@
         width: .6em;
     }
 }
+
+.intro-tabs {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 30%);
+    grid-gap: 5%;
+    width: 75%;
+    margin: 0 auto;
+    grid-column: 1 / 5;
+    align-items: center;
+}
+
+.intro-tabs-element {
+    font-weight: bold;
+    font-size: 18px;
+    font-family: var(--fontSystem);
+    text-transform: uppercase;
+    color: var(--mahogany);
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--midnight);
+}
