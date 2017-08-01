@@ -506,11 +506,17 @@ template {
 .heladas {
     position: relative;
     height: 100vh;
+    text-align: center;
 }
 
 .tropicales .wrapper-vw, .heladas .wrapper-vw {
         margin-bottom: 0;
     }
+
+.chart-tropicales,
+.chart-heladas {
+    max-width: 1200px;
+}
 
 .tropicales-text.wrapper-vw {
         margin-top: 0;
