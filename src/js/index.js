@@ -225,6 +225,7 @@ function update() {
             .attr("r", function(d) {
                 if (d.maxima === maxTemp) {
                     return 6 * Math.sqrt(d.maxima / Math.PI);
+                    console.log(d.maxima)
                 } else if (d.maxima === minTemp) {
                     return 6 * Math.sqrt(d.maxima / Math.PI);
                 } else {
@@ -268,8 +269,8 @@ function update() {
 }
 
 function updateMin() {
-    var valueDateDay = d3.select("#updateButtonDayMin").property("value");
-    var valueDateMonth = d3.select("#updateButtonMonthMin").property("value");
+    var valueDateDay = d3.select("#updateButtonDay").property("value");
+    var valueDateMonth = d3.select("#updateButtonMonth").property("value");
     var valueDate = valueDateDay + '-' + valueDateMonth;
     console.log(valueDate)
     var reValueDate = new RegExp("^.*" + valueDate + ".*", "gi");

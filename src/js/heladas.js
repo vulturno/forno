@@ -1,11 +1,10 @@
+//Heladas
 var barPadding = 2;
-var datosH = []
+var datosH = [];
 
 var margin = { top: 50, right: 50, bottom: 50, left: 110 },
     widthH = 1200 - margin.left - margin.right,
     heightH = 500 - margin.top - margin.bottom;
-
-//Heladas
 
 var svgH = d3.select('.heladas')
     .append('svg')
@@ -26,7 +25,7 @@ var yRangeH = d3.scaleLinear()
 var xAxisH =  d3.axisBottom()
     .scale(xRangeH)
     .tickFormat(d3.format("d"))
-    .ticks(20);
+    .ticks(5);
 
 var yAxisH = d3.axisLeft()
     .scale(yRangeH)
@@ -101,33 +100,27 @@ d3.csv('heladas.csv', function(err, data) {
         });
 });
 
-d3.select(window).on('resize', resize);
-
 function resize() {
 
-
-
     widthH = parseInt(d3.select('#heladas').style('width'));
-    widthH = widthH;
+    widthH = widthH - 25;
 
     var svgH = d3.select('.chart-heladas')
 
     barpadding = 1;
 
+    xRangeH = d3.scaleLinear()
+        .domain([d3.min(datosH, function(d) {
+                return d.anyo;
+            }),
+            d3.max(datosH, function(d) {
+                return d.anyo;
+            })
+        ])
+        .range([30, widthH]);
+
     svgH.selectAll("rect")
         .attr("width", widthH / datosH.length - barPadding)
-        .on("mouseover", function(d) {
-            div.transition()
-            div.style("opacity", 1)
-                .html('<p class="tooltipHeladas">' + d.anyo + '<p/>' + '<p class="tooltipHeladas">' + d.dia + '<p/>')
-                .style("left", (d3.event.pageX) - 50 + "px")
-                .style("top", (d3.event.pageY - 100) + "px");
-        })
-        .on("mouseout", function(d) {
-            div.transition()
-                .duration(200)
-                .style("opacity", 0);
-        })
         .attr("fill",function(d,i){
             return colorsH(i)
         })
@@ -141,35 +134,29 @@ function resize() {
             return heightH - yRangeH(d.dias);
         });
 
-    svgH
-    .data(datosH)
+    svgH.data(datosH)
     .attr('width', widthH)
     .select("g")
     .attr("transform", "translate(0,0)");
 
-    console.log(widthH)
+    xRangeH.domain([d3.min(datosH, function(d) {
+            return d.anyo;
+        }),
+        d3.max(datosH, function(d) {
+            return d.anyo;
+        })
+    ]);
 
+    svgH.selectAll(".xAxis .tick").remove();
 
-
-
-    // reset x range
-    xRangeH = d3.scaleLinear()
-        .domain([d3.min(datosH, function(d) {
-                return d.anyo;
-            }),
-            d3.max(datosH, function(d) {
-                return d.anyo;
-            })
-        ])
-        .range([30, widthH]);
     var xAxisH =  d3.axisBottom()
         .scale(xRangeH)
         .tickFormat(d3.format("d"))
         .ticks(5);
 
-    var yAxisH = d3.axisLeft()
-        .scale(yRangeH)
-        .tickSize(-widthH + 16)
-        .ticks(5);
+    svgH.append("g")
+        .attr("class", "xAxis")
+        .attr("transform", "translate(0,400)")
+        .call(xAxisH);
 
 }
