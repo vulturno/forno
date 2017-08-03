@@ -55,11 +55,14 @@ var yAxis = d3.axisLeft()
 
 d3.csv('temperaturas.csv', function(err, data) {
 
-    // console.log(data)
-
     dataFiltered = data.filter(function(d) {
-        return String(d.fecha).match(/01-06/);
+        return String(d.fecha).match(/07-02/);
     });
+
+    console.log(d3.max(dataFiltered));
+    console.log(d3.min(dataFiltered));
+
+
 
     dataFiltered.forEach(function(d) {
         d.fecha = d.fecha;
@@ -177,7 +180,6 @@ function update() {
             d.maxima = +d.maxima;
             d.minima = +d.minima;
             d.year = getYear(d.fecha);
-            // console.log(d.maxima)
         });
 
         maxTemp = d3.max(dataFiltered, function(d) {
