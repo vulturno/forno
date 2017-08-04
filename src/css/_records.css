@@ -4,34 +4,44 @@
 */
 
 .tabla-record {
-  display: none;
-  padding: 20px 0 0;
-  border-top: 1px solid var(--impureGrey);
+    display: none;
+    padding: 20px 0 0;
+    border-top: 1px solid var(--impureGrey);
+}
+
+.tabla-grid {
+    display: grid;
+    grid-template-columns: 150px repeat(2, 100px);
+    grid-gap: 15px;
+    max-width: 50vw;
+    border: 1px solid #000;
+    width: 400px;
+    padding: 0 10px;
 }
 
 .input-record {
-  display: none;
+    display: none;
 }
 
 .label-record {
-  display: inline-block;
-  margin: 0 0 -1px;
-  padding: 15px 25px;
-  font-weight: 600;
-  text-align: center;
-  color: var(--impureGrey);
-  border: 1px solid transparent;
-  &:hover {
-      color: var(--impureBlack);
-      cursor: pointer;
-  }
+    display: inline-block;
+    margin: 0 0 -1px;
+    padding: 15px 25px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--impureGrey);
+    border: 1px solid transparent;
+    &:hover {
+        color: var(--impureBlack);
+        cursor: pointer;
+    }
 }
 
 .input-record:checked + .label-record {
-  color: var(--impureBlack);
-  border: 1px solid var(--impureGrey);
-  border-top: 5px solid var(--gradient2);
-  border-bottom: 1px solid #fff;
+    color: var(--impureBlack);
+    border: 1px solid var(--impureGrey);
+    border-top: 5px solid var(--gradient2);
+    border-bottom: 1px solid #fff;
 }
 
 #tab1:checked ~ .contenido1,
@@ -46,16 +56,5 @@
 #tab10:checked ~ .contenido10,
 #tab11:checked ~ .contenido11,
 #tab12:checked ~ .contenido12 {
-  display: block;
+    display: block;
 }
-
-.grid {
-  display: grid;
-  grid-template-columns: 150px repeat(2, 100px);
-  grid-gap: 15px;
-  max-width: 50vw;
-  border: 1px solid #000;
-  width: 400px;
-  padding: 0 10px;
-}
-

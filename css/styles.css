@@ -855,35 +855,45 @@ path {
 */
 
 .tabla-record {
-  display: none;
-  padding: 1.25rem 0 0;
-  border-top: 1px solid #ccc;
+    display: none;
+    padding: 1.25rem 0 0;
+    border-top: 1px solid #ccc;
+}
+
+.tabla-grid {
+    display: grid;
+    grid-template-columns: 150px repeat(2, 100px);
+    grid-gap: 15px;
+    max-width: 50vw;
+    border: 1px solid #000;
+    width: 400px;
+    padding: 0 0.63rem;
 }
 
 .input-record {
-  display: none;
+    display: none;
 }
 
 .label-record {
-  display: inline-block;
-  margin: 0 0 -0.06rem;
-  padding: 0.94rem 1.56rem;
-  font-weight: 600;
-  text-align: center;
-  color: #ccc;
-  border: 1px solid transparent;
+    display: inline-block;
+    margin: 0 0 -0.06rem;
+    padding: 0.94rem 1.56rem;
+    font-weight: 600;
+    text-align: center;
+    color: #ccc;
+    border: 1px solid transparent;
 }
 
 .label-record:hover {
-      color: #111;
-      cursor: pointer;
-  }
+        color: #111;
+        cursor: pointer;
+    }
 
 .input-record:checked + .label-record {
-  color: #111;
-  border: 1px solid #ccc;
-  border-top: 5px solid #e34f6f;
-  border-bottom: 1px solid #fff;
+    color: #111;
+    border: 1px solid #ccc;
+    border-top: 5px solid #e34f6f;
+    border-bottom: 1px solid #fff;
 }
 
 #tab1:checked ~ .contenido1,
@@ -898,17 +908,7 @@ path {
 #tab10:checked ~ .contenido10,
 #tab11:checked ~ .contenido11,
 #tab12:checked ~ .contenido12 {
-  display: block;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 150px repeat(2, 100px);
-  grid-gap: 15px;
-  max-width: 50vw;
-  border: 1px solid #000;
-  width: 400px;
-  padding: 0 0.63rem;
+    display: block;
 }
 
 /*# sourceMappingURL=styles.css.map */
