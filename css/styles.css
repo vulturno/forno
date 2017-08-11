@@ -861,12 +861,12 @@ path {
 }
 
 .tabla-grid {
-    display: grid;
+    display: inline-grid;
     grid-template-columns: 150px repeat(2, 100px);
     grid-gap: 15px;
-    max-width: 50vw;
+    max-width: 40vw;
     border: 1px solid #000;
-    width: 400px;
+    width: 40%;
     padding: 0 0.63rem;
 }
 
@@ -909,6 +909,11 @@ path {
 #tab11:checked ~ .contenido11,
 #tab12:checked ~ .contenido12 {
     display: block;
+}
+
+.grid-text {
+    display: block;
+    text-align: right;
 }
 
 /*# sourceMappingURL=styles.css.map */
