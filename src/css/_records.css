@@ -7,16 +7,16 @@
     display: none;
     padding: 20px 0 0;
     border-top: 1px solid var(--impureGrey);
+    text-align: center;
 }
 
 .tabla-grid {
     display: inline-grid;
-    grid-template-columns: 150px repeat(2, 100px);
-    grid-gap: 15px;
-    max-width: 40vw;
+    grid-template-columns: repeat(3, 33.33%);
     border: 1px solid #000;
     width: 40%;
-    padding: 0 10px;
+    margin: 0 5% 5% 0;
+    background-color: #fff;
 }
 
 .input-record {
@@ -26,7 +26,7 @@
 .label-record {
     display: inline-block;
     margin: 0 0 -1px;
-    padding: 15px 25px;
+    padding: 15px;
     font-weight: 600;
     text-align: center;
     color: var(--impureGrey);
@@ -41,7 +41,8 @@
     color: var(--impureBlack);
     border: 1px solid var(--impureGrey);
     border-top: 5px solid var(--gradient2);
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid var(--impureWhite);
+    background-color: var(--impureWhite);
 }
 
 #tab1:checked ~ .contenido1,
@@ -57,9 +58,33 @@
 #tab11:checked ~ .contenido11,
 #tab12:checked ~ .contenido12 {
     display: block;
+    background-color: var(--impureWhite);
 }
 
 .grid-text {
     display: block;
-    text-align: right;
+    padding: 10px;
+    &:not(:last-child) {
+        border-bottom: 1px solid #ccc;
+    }
+}
+
+.grid-title {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    margin: 0;
+    background-color: crimson;
+}
+
+.tabla-record-header {
+    width: 90%;
+    display: inline-block;
+    font-size: 0;
+}
+
+.tabla-record-header-text {
+    width: 50%;
+    display: inline-block;
+    font-size: 18px;
+    text-align: left;
 }
