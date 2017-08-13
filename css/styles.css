@@ -477,6 +477,14 @@ template {
     font-family: 'SFMono-Regular', Consolas, Menlo, Courier, monospace;
 }
 
+.color-title-max {
+    color: #07043c;
+}
+
+.color-title-min {
+    color: #2fe94a;
+}
+
 .subtitle {
     font-family: 'Montserrat', sans-serif;
     color: #072a12;
