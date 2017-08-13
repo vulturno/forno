@@ -73,7 +73,14 @@
     border-bottom: 1px solid #ccc;
     padding: 10px;
     margin: 0;
-    background-color: crimson;
+}
+
+.grid-title-min {
+    background-color: var(--btnMinBgc);
+}
+
+.grid-title-max {
+    background-color: var(--gradient2);
 }
 
 .tabla-record-header {

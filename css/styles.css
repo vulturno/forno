@@ -926,7 +926,14 @@ path {
     border-bottom: 1px solid #ccc;
     padding: 0.63rem;
     margin: 0;
-    background-color: crimson;
+}
+
+.grid-title-min {
+    background-color: #053584;
+}
+
+.grid-title-max {
+    background-color: #e34f6f;
 }
 
 .tabla-record-header {
