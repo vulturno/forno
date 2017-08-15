@@ -32,6 +32,9 @@
     text-align: center;
     color: var(--impureGrey);
     border: 1px solid var(--greyC);
+    &:nth-of-type(1) {
+        margin-left: 5vw;
+    }
     &:hover {
         color: var(--impureBlack);
         cursor: pointer;
