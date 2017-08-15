@@ -96,6 +96,7 @@
 .tabla-record-header-text {
     width: 50%;
     display: inline-block;
-    font-size: 18px;
+    font-size: 30px;
     text-align: left;
+    margin-bottom: 10px;
 }

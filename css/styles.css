@@ -958,8 +958,9 @@ path {
 .tabla-record-header-text {
     width: 50%;
     display: inline-block;
-    font-size: 1.13rem;
+    font-size: 1.88rem;
     text-align: left;
+    margin-bottom: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map */
