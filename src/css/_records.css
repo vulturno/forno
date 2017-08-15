@@ -6,7 +6,7 @@
 .tabla-record {
     display: none;
     padding: 20px 0 0;
-    border-top: 1px solid var(--impureGrey);
+    border: 1px solid var(--impureGrey);
     text-align: center;
 }
 
@@ -28,9 +28,10 @@
     margin: 0 0 -1px;
     padding: 15px;
     font-weight: 600;
+    font-size: 14px;
     text-align: center;
     color: var(--impureGrey);
-    border: 1px solid transparent;
+    border: 1px solid var(--greyC);
     &:hover {
         color: var(--impureBlack);
         cursor: pointer;

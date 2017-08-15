@@ -865,7 +865,7 @@ path {
 .tabla-record {
     display: none;
     padding: 1.25rem 0 0;
-    border-top: 1px solid #ccc;
+    border: 1px solid #ccc;
     text-align: center;
 }
 
@@ -887,9 +887,10 @@ path {
     margin: 0 0 -0.06rem;
     padding: 0.94rem;
     font-weight: 600;
+    font-size: 0.88rem;
     text-align: center;
     color: #ccc;
-    border: 1px solid transparent;
+    border: 1px solid #ccc;
 }
 
 .label-record:hover {
