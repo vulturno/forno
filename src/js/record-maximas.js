@@ -1,79 +1,79 @@
 //Heladas
 var barPadding = 2;
-var datosH = [];
+var datosRM = [];
 
 var margin = { top: 50, right: 50, bottom: 50, left: 110 },
-    widthH = 1200 - margin.left - margin.right,
-    heightH = 500 - margin.top - margin.bottom;
+    widthRM = 1200 - margin.left - margin.right,
+    heightRM = 500 - margin.top - margin.bottom;
 
-var svgH = d3.select('.heladas')
+var svgRM = d3.select('.maximas-chart-container')
     .append('svg')
-    .attr('class', 'chart-heladas')
-    .attr("width", widthH + margin.left + margin.right)
-    .attr("height", heightH + margin.top + margin.bottom)
+    .attr('class', 'record-chart-maximas')
+    .attr("width", widthRM + margin.left + margin.right)
+    .attr("height", heightRM + margin.top + margin.bottom)
     .append("g")
     .attr("transform", "translate(" + (margin.left - margin.right) + "," + margin.top + ")");
 
-widthBar = widthH / 66;
+widthBar = widthRM / 66;
 
-var xRangeH = d3.scaleLinear()
-    .range([30, widthH]);
+var xRangeRM = d3.scaleLinear()
+    .range([30, widthRM]);
 
-var yRangeH = d3.scaleLinear()
-    .range([heightH, 0]);
+var yRangeRM = d3.scaleLinear()
+    .range([heightRM, 0]);
 
-var xAxisH =  d3.axisBottom()
-    .scale(xRangeH)
+var xAxisRM =  d3.axisBottom()
+    .scale(xRangeRM)
     .tickFormat(d3.format("d"))
     .ticks(5);
 
-var yAxisH = d3.axisLeft()
-    .scale(yRangeH)
-    .tickSize(-widthH + 16)
+var yAxisRM = d3.axisLeft()
+    .scale(yRangeRM)
+    .tickSize(-widthRM + 16)
     .ticks(5);
 
-var colorsH = d3.scaleLinear()
+var colorsRM = d3.scaleLinear()
     .domain([10, 35])
-    .range(["#68abb8","#4f90a6","#3b738f","#2a5674"]);
+    .range(["#ffc6c4", "#f4a3a8", "#e38191", "#cc607d", "#ad466c", "#8b3058", "#672044"]);
 
-d3.csv('heladas.csv', function(err, data) {
+d3.csv('record-maximas.csv', function(err, data) {
 
-    datosH = data;
+    datosRM = data;
 
-    datosH.forEach(function(d) {
+    datosRM.forEach(function(d) {
         d.anyo = d.fecha;
         d.dia = d.dias;
     });
 
-    xRangeH.domain([d3.min(datosH, function(d) {
+    xRangeRM.domain([d3.min(datosRM, function(d) {
             return d.anyo;
         }),
-        d3.max(datosH, function(d) {
+        d3.max(datosRM, function(d) {
             return d.anyo;
         })
     ]);
 
-    yRangeH.domain([0, d3.max(datosH, function(d) {
+    yRangeRM.domain([0, d3.max(datosRM, function(d) {
             return d.dia;
         })
     ]);
 
-    svgH.append("g")
+    svgRM.append("g")
         .attr("class", "xAxis")
         .attr("transform", "translate(0,400)")
-        .call(xAxisH);
+        .call(xAxisRM);
 
-    svgH.append("g")
+    svgRM.append("g")
         .attr("class", "yAxis")
         .attr("transform", "translate(30, 0)")
-        .call(yAxisH);
+        .call(yAxisRM);
 
-    svgH.selectAll("rect")
-        .data(datosH)
+    svgRM.selectAll("rect")
+        .data(datosRM)
         .enter()
         .append("rect")
         .attr("class", "barra")
-        .attr("width", widthH / datosH.length - barPadding)
+        .attr("width", widthRM / datosRM.length - barPadding)
         .on("mouseover", function(d) {
             div.transition()
             div.style("opacity", 1)
@@ -87,76 +87,75 @@ d3.csv('heladas.csv', function(err, data) {
                 .style("opacity", 0);
         })
         .attr("fill",function(d,i){
-            return colorsH(i)
+            return colorsRM(i)
         })
         .attr("x", function(d) {
-            return xRangeH(d.anyo);
+            return xRangeRM(d.anyo);
         })
         .attr("y", function(d) {
-            return yRangeH(d.dias);
+            return yRangeRM(d.dias);
         })
         .attr("height", function(d) {
-            return heightH - yRangeH(d.dias);
+            return heightRM - yRangeRM(d.dias);
         });
 });
 
-function resize() {
+function resizeRM() {
 
-    widthH = parseInt(d3.select('#heladas').style('width'));
-    widthH = widthH - 25;
+    widthRM = parseInt(d3.select('#rm-chart').style('width'));
+    widthRM = widthRM - 25;
 
-    var svgH = d3.select('.chart-heladas')
+    var svgRM = d3.select('.record-maximas-chart')
 
     barpadding = 1;
 
-    xRangeH = d3.scaleLinear()
-        .domain([d3.min(datosH, function(d) {
+    xRangeRM = d3.scaleLinear()
+        .domain([d3.min(datosRM, function(d) {
                 return d.anyo;
             }),
-            d3.max(datosH, function(d) {
+            d3.max(datosRM, function(d) {
                 return d.anyo;
             })
         ])
-        .range([30, widthH]);
+        .range([30, widthRM]);
 
-    svgH.selectAll("rect")
-        .attr("width", widthH / datosH.length - barPadding)
+    svgRM.selectAll("rect")
+        .attr("width", widthRM / datosRM.length - barPadding)
         .attr("fill",function(d,i){
-            return colorsH(i)
+            return colorsRM(i)
         })
         .attr("x", function(d) {
-            return xRangeH(d.anyo);
+            return xRangeRM(d.anyo);
         })
         .attr("y", function(d) {
-            return yRangeH(d.dias);
+            return yRangeRM(d.dias);
         })
         .attr("height", function(d) {
-            return heightH - yRangeH(d.dias);
+            return heightRM - yRangeRM(d.dias);
         });
 
-    svgH.data(datosH)
-    .attr('width', widthH)
+    svgRM.data(datosRM)
+    .attr('width', widthRM)
     .select("g")
     .attr("transform", "translate(0,0)");
 
-    xRangeH.domain([d3.min(datosH, function(d) {
+    xRangeRM.domain([d3.min(datosRM, function(d) {
             return d.anyo;
         }),
-        d3.max(datosH, function(d) {
+        d3.max(datosRM, function(d) {
             return d.anyo;
         })
     ]);
 
-    svgH.selectAll(".xAxis .tick").remove();
+    svgRM.selectAll(".xAxis .tick").remove();
 
-    var xAxisH =  d3.axisBottom()
-        .scale(xRangeH)
+    var xAxisRM =  d3.axisBottom()
+        .scale(xRangeRM)
         .tickFormat(d3.format("d"))
         .ticks(5);
 
-    svgH.append("g")
+    svgRM.append("g")
         .attr("class", "xAxis")
         .attr("transform", "translate(0,400)")
-        .call(xAxisH);
-
+        .call(xAxisRM);
 }

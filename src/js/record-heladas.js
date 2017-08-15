@@ -1,79 +1,79 @@
 //Heladas
 var barPadding = 2;
-var datosH = [];
+var datosRMIN = [];
 
 var margin = { top: 50, right: 50, bottom: 50, left: 110 },
-    widthH = 1200 - margin.left - margin.right,
-    heightH = 500 - margin.top - margin.bottom;
+    widthRMIN = 1200 - margin.left - margin.right,
+    heightRMIN = 500 - margin.top - margin.bottom;
 
-var svgH = d3.select('.heladas')
+var svgRMIN = d3.select('.minimas-chart-container')
     .append('svg')
-    .attr('class', 'chart-heladas')
-    .attr("width", widthH + margin.left + margin.right)
-    .attr("height", heightH + margin.top + margin.bottom)
+    .attr('class', 'record-chart-minimas')
+    .attr("width", widthRMIN + margin.left + margin.right)
+    .attr("height", heightRMIN + margin.top + margin.bottom)
     .append("g")
     .attr("transform", "translate(" + (margin.left - margin.right) + "," + margin.top + ")");
 
-widthBar = widthH / 66;
+widthBar = widthRMIN / 66;
 
-var xRangeH = d3.scaleLinear()
-    .range([30, widthH]);
+var xRangeRMIN = d3.scaleLinear()
+    .range([30, widthRMIN]);
 
-var yRangeH = d3.scaleLinear()
-    .range([heightH, 0]);
+var yRangeRMIN = d3.scaleLinear()
+    .range([heightRMIN, 0]);
 
-var xAxisH =  d3.axisBottom()
-    .scale(xRangeH)
+var xAxisRMIN =  d3.axisBottom()
+    .scale(xRangeRMIN)
     .tickFormat(d3.format("d"))
     .ticks(5);
 
-var yAxisH = d3.axisLeft()
-    .scale(yRangeH)
-    .tickSize(-widthH + 16)
+var yAxisRMIN = d3.axisLeft()
+    .scale(yRangeRMIN)
+    .tickSize(-widthRMIN + 16)
     .ticks(5);
 
-var colorsH = d3.scaleLinear()
+var colorsRMIN = d3.scaleLinear()
     .domain([10, 35])
     .range(["#68abb8","#4f90a6","#3b738f","#2a5674"]);
 
-d3.csv('heladas.csv', function(err, data) {
+d3.csv('record-minimas.csv', function(err, data) {
 
-    datosH = data;
+    datosRMIN = data;
 
-    datosH.forEach(function(d) {
+    datosRMIN.forEach(function(d) {
         d.anyo = d.fecha;
         d.dia = d.dias;
     });
 
-    xRangeH.domain([d3.min(datosH, function(d) {
+    xRangeRMIN.domain([d3.min(datosRMIN, function(d) {
             return d.anyo;
         }),
-        d3.max(datosH, function(d) {
+        d3.max(datosRMIN, function(d) {
             return d.anyo;
         })
     ]);
 
-    yRangeH.domain([0, d3.max(datosH, function(d) {
+    yRangeRMIN.domain([0, d3.max(datosRMIN, function(d) {
             return d.dia;
         })
     ]);
 
-    svgH.append("g")
+    svgRMIN.append("g")
         .attr("class", "xAxis")
         .attr("transform", "translate(0,400)")
-        .call(xAxisH);
+        .call(xAxisRMIN);
 
-    svgH.append("g")
+    svgRMIN.append("g")
         .attr("class", "yAxis")
         .attr("transform", "translate(30, 0)")
-        .call(yAxisH);
+        .call(yAxisRMIN);
 
-    svgH.selectAll("rect")
-        .data(datosH)
+    svgRMIN.selectAll("rect")
+        .data(datosRMIN)
         .enter()
         .append("rect")
         .attr("class", "barra")
-        .attr("width", widthH / datosH.length - barPadding)
+        .attr("width", widthRMIN / datosRMIN.length - barPadding)
         .on("mouseover", function(d) {
             div.transition()
             div.style("opacity", 1)
@@ -87,76 +87,82 @@ d3.csv('heladas.csv', function(err, data) {
                 .style("opacity", 0);
         })
         .attr("fill",function(d,i){
-            return colorsH(i)
+            return colorsRMIN(i)
         })
         .attr("x", function(d) {
-            return xRangeH(d.anyo);
+            return xRangeRMIN(d.anyo);
         })
         .attr("y", function(d) {
-            return yRangeH(d.dias);
+            return yRangeRMIN(d.dias);
         })
         .attr("height", function(d) {
-            return heightH - yRangeH(d.dias);
+            return heightRMIN - yRangeRMIN(d.dias);
         });
 });
 
-function resize() {
+function resizeRMIN() {
 
-    widthH = parseInt(d3.select('#heladas').style('width'));
-    widthH = widthH - 25;
+    widthRMIN = parseInt(d3.select('#rmin-chart').style('width'));
+    widthRMIN = widthRMIN - 25;
 
-    var svgH = d3.select('.chart-heladas')
+    var svgRMIN = d3.select('.record-minimas-chart');
 
     barpadding = 1;
 
-    xRangeH = d3.scaleLinear()
-        .domain([d3.min(datosH, function(d) {
+    xRangeRMIN = d3.scaleLinear()
+        .domain([d3.min(datosRMIN, function(d) {
                 return d.anyo;
             }),
-            d3.max(datosH, function(d) {
+            d3.max(datosRMIN, function(d) {
                 return d.anyo;
             })
         ])
-        .range([30, widthH]);
+        .range([30, widthRMIN]);
 
-    svgH.selectAll("rect")
-        .attr("width", widthH / datosH.length - barPadding)
+    svgRMIN.selectAll("rect")
+        .attr("width", widthRMIN / datosRMIN.length - barPadding)
         .attr("fill",function(d,i){
-            return colorsH(i)
+            return colorsRMIN(i)
         })
         .attr("x", function(d) {
-            return xRangeH(d.anyo);
+            return xRangeRMIN(d.anyo);
         })
         .attr("y", function(d) {
-            return yRangeH(d.dias);
+            return yRangeRMIN(d.dias);
         })
         .attr("height", function(d) {
-            return heightH - yRangeH(d.dias);
+            return heightRMIN - yRangeRMIN(d.dias);
         });
 
-    svgH.data(datosH)
-    .attr('width', widthH)
+    svgRMIN.data(datosRMIN)
+    .attr('width', widthRMIN)
     .select("g")
     .attr("transform", "translate(0,0)");
 
-    xRangeH.domain([d3.min(datosH, function(d) {
+    xRangeRMIN.domain([d3.min(datosRMIN, function(d) {
             return d.anyo;
         }),
-        d3.max(datosH, function(d) {
+        d3.max(datosRMIN, function(d) {
             return d.anyo;
         })
     ]);
 
-    svgH.selectAll(".xAxis .tick").remove();
+    svgRMIN.selectAll(".xAxis .tick").remove();
 
-    var xAxisH =  d3.axisBottom()
-        .scale(xRangeH)
+    var xAxisRMIN =  d3.axisBottom()
+        .scale(xRangeRMIN)
         .tickFormat(d3.format("d"))
         .ticks(5);
 
-    svgH.append("g")
+    svgRMIN.append("g")
         .attr("class", "xAxis")
         .attr("transform", "translate(0,400)")
-        .call(xAxisH);
-
+        .call(xAxisRMIN);
 }
+
+d3.select(window).on('resize', function() {
+    resize();
+    resizeT();
+    resizeRM();
+    resizeRMIN();
+});
