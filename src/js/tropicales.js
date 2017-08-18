@@ -161,7 +161,4 @@ function resizeT() {
 
 }
 
-d3.select(window).on('resize', function() {
-    resize();
-    resizeT();
-});
+

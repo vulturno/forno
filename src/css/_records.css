@@ -4,34 +4,49 @@
 */
 
 .tabla-record {
-  display: none;
-  padding: 20px 0 0;
-  border-top: 1px solid var(--impureGrey);
+    display: none;
+    padding: 20px 0 0;
+    border: 1px solid var(--impureGrey);
+    text-align: center;
+}
+
+.tabla-grid {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 33.33%);
+    border: 1px solid #000;
+    width: 40%;
+    margin: 0 5% 5% 0;
+    background-color: #fff;
 }
 
 .input-record {
-  display: none;
+    display: none;
 }
 
 .label-record {
-  display: inline-block;
-  margin: 0 0 -1px;
-  padding: 15px 25px;
-  font-weight: 600;
-  text-align: center;
-  color: var(--impureGrey);
-  border: 1px solid transparent;
-  &:hover {
-      color: var(--impureBlack);
-      cursor: pointer;
-  }
+    display: inline-block;
+    margin: 0 0 -1px;
+    padding: 15px;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    color: var(--impureGrey);
+    border: 1px solid var(--greyC);
+    &:nth-of-type(1) {
+        margin-left: 5vw;
+    }
+    &:hover {
+        color: var(--impureBlack);
+        cursor: pointer;
+    }
 }
 
 .input-record:checked + .label-record {
-  color: var(--impureBlack);
-  border: 1px solid var(--impureGrey);
-  border-top: 5px solid var(--gradient2);
-  border-bottom: 1px solid #fff;
+    color: var(--impureBlack);
+    border: 1px solid var(--impureGrey);
+    border-top: 5px solid var(--gradient2);
+    border-bottom: 1px solid var(--impureWhite);
+    background-color: var(--impureWhite);
 }
 
 #tab1:checked ~ .contenido1,
@@ -46,5 +61,42 @@
 #tab10:checked ~ .contenido10,
 #tab11:checked ~ .contenido11,
 #tab12:checked ~ .contenido12 {
-  display: block;
+    display: block;
+    background-color: var(--impureWhite);
+}
+
+.grid-text {
+    display: block;
+    padding: 10px;
+    &:not(:last-child) {
+        border-bottom: 1px solid #ccc;
+    }
+}
+
+.grid-title {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    margin: 0;
+}
+
+.grid-title-min {
+    background-color: var(--btnMinBgc);
+}
+
+.grid-title-max {
+    background-color: var(--gradient2);
+}
+
+.tabla-record-header {
+    width: 90%;
+    display: inline-block;
+    font-size: 0;
+}
+
+.tabla-record-header-text {
+    width: 50%;
+    display: inline-block;
+    font-size: 30px;
+    text-align: left;
+    margin-bottom: 10px;
 }

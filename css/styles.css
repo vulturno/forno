@@ -477,6 +477,14 @@ template {
     font-family: 'SFMono-Regular', Consolas, Menlo, Courier, monospace;
 }
 
+.color-title-max {
+    color: #07043c;
+}
+
+.color-title-min {
+    color: #2fe94a;
+}
+
 .subtitle {
     font-family: 'Montserrat', sans-serif;
     color: #072a12;
@@ -583,6 +591,28 @@ template {
         border-bottom: 1px solid #111;
         width: .6em;
     }
+
+.intro-tabs {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 30%);
+    grid-gap: 5%;
+    width: 75%;
+    margin: 0 auto;
+    grid-column: 1 / 5;
+    align-items: center;
+}
+
+.intro-tabs-element {
+    font-weight: bold;
+    font-size: 1.13rem;
+    font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: #60ebc1;
+    border-radius: 5px;
+    text-align: center;
+    padding: 1.25rem;
+    background-color: #2d113a;
+}
 
 .clima-intro {
     margin: 10vh auto;
@@ -833,35 +863,51 @@ path {
 */
 
 .tabla-record {
-  display: none;
-  padding: 1.25rem 0 0;
-  border-top: 1px solid #ccc;
+    display: none;
+    padding: 1.25rem 0 0;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.tabla-grid {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 33.33%);
+    border: 1px solid #000;
+    width: 40%;
+    margin: 0 5% 5% 0;
+    background-color: #fff;
 }
 
 .input-record {
-  display: none;
+    display: none;
 }
 
 .label-record {
-  display: inline-block;
-  margin: 0 0 -0.06rem;
-  padding: 0.94rem 1.56rem;
-  font-weight: 600;
-  text-align: center;
-  color: #ccc;
-  border: 1px solid transparent;
+    display: inline-block;
+    margin: 0 0 -0.06rem;
+    padding: 0.94rem;
+    font-weight: 600;
+    font-size: 0.88rem;
+    text-align: center;
+    color: #ccc;
+    border: 1px solid #ccc;
 }
 
+.label-record:nth-of-type(1) {
+        margin-left: 5vw;
+    }
+
 .label-record:hover {
-      color: #111;
-      cursor: pointer;
-  }
+        color: #111;
+        cursor: pointer;
+    }
 
 .input-record:checked + .label-record {
-  color: #111;
-  border: 1px solid #ccc;
-  border-top: 5px solid #e34f6f;
-  border-bottom: 1px solid #fff;
+    color: #111;
+    border: 1px solid #ccc;
+    border-top: 5px solid #e34f6f;
+    border-bottom: 1px solid #f1f1f1;
+    background-color: #f1f1f1;
 }
 
 #tab1:checked ~ .contenido1,
@@ -876,7 +922,45 @@ path {
 #tab10:checked ~ .contenido10,
 #tab11:checked ~ .contenido11,
 #tab12:checked ~ .contenido12 {
-  display: block;
+    display: block;
+    background-color: #f1f1f1;
+}
+
+.grid-text {
+    display: block;
+    padding: 0.63rem;
+}
+
+.grid-text:not(:last-child) {
+        border-bottom: 1px solid #ccc;
+    }
+
+.grid-title {
+    border-bottom: 1px solid #ccc;
+    padding: 0.63rem;
+    margin: 0;
+}
+
+.grid-title-min {
+    background-color: #053584;
+}
+
+.grid-title-max {
+    background-color: #e34f6f;
+}
+
+.tabla-record-header {
+    width: 90%;
+    display: inline-block;
+    font-size: 0;
+}
+
+.tabla-record-header-text {
+    width: 50%;
+    display: inline-block;
+    font-size: 1.88rem;
+    text-align: left;
+    margin-bottom: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map */
