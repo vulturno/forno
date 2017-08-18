@@ -485,12 +485,19 @@ template {
     color: #2fe94a;
 }
 
+.wrapper-vw {
+    width: 80vw;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .subtitle {
     font-family: 'Montserrat', sans-serif;
     color: #072a12;
     font-weight: bold;
     font-size: 2.5rem;
-    margin: 0.31rem 0;
+    margin: 1.56rem auto;
+    text-align: left;
 }
 
 .subtitle:before {
@@ -498,10 +505,6 @@ template {
         display: block;
         border-bottom: 5px solid #e34f6f;
         width: 1em;
-    }
-
-.subtitle.wrapper-vw {
-        margin-bottom: 2vh;
     }
 
 .texto {
@@ -521,8 +524,7 @@ template {
         margin-bottom: 0;
     }
 
-.chart-tropicales,
-.chart-heladas {
+.chart-container {
     max-width: 1200px;
 }
 
@@ -533,12 +535,6 @@ template {
 .tropicales-text.wrapper-vw {
         margin-top: 0;
     }
-
-.wrapper-vw {
-    width: 80vw;
-    max-width: 1200px;
-    margin: 10vh auto;
-}
 
 .header {
     width: 100%;
@@ -719,7 +715,6 @@ path {
 .container-buttons {
     text-align: center;
     padding: 1.25rem;
-    border-bottom: 1px solid #111;
 }
 
 .btn-update-max,

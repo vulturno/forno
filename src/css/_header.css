@@ -2,7 +2,7 @@
     width: 100%;
     padding: 15px 0;
     background-color: var(--white);
-    border-bottom: 1px solid var(--greyC);
+    border-bottom: 1px solid var(--impureGrey);
     box-shadow: -5px 7px 9px -8px rgba(0, 0, 0, .59);
     top: 0;
     z-index: 2;

@@ -31,7 +31,7 @@
     font-size: 14px;
     text-align: center;
     color: var(--impureGrey);
-    border: 1px solid var(--greyC);
+    border: 1px solid var(--impureGrey);
     &:nth-of-type(1) {
         margin-left: 5vw;
     }
