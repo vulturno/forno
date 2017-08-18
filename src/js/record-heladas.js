@@ -105,7 +105,7 @@ function resizeRMIN() {
     widthRMIN = parseInt(d3.select('#rmin-chart').style('width'));
     widthRMIN = widthRMIN - 25;
 
-    var svgRMIN = d3.select('.record-minimas-chart');
+    var svgRMIN = d3.select('.record-chart-minimas');
 
     barpadding = 1;
 

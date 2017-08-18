@@ -105,7 +105,7 @@ function resizeRM() {
     widthRM = parseInt(d3.select('#rm-chart').style('width'));
     widthRM = widthRM - 25;
 
-    var svgRM = d3.select('.record-maximas-chart')
+    var svgRM = d3.select('.record-chart-maximas')
 
     barpadding = 1;
 
