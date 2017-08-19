@@ -830,7 +830,6 @@ path {
     grid-template-columns: repeat(3, 33.33%);
     border: 1px solid #000;
     width: 90%;
-    margin: 0 5% 5% 0;
     background-color: #fff;
 }
 
@@ -911,17 +910,21 @@ path {
 }
 
 .tabla-record-header {
-    width: 90%;
+    width: 100%;
     display: inline-block;
     font-size: 0;
 }
 
 .tabla-record-header-text {
-    width: 50%;
     display: inline-block;
     font-size: 1.88rem;
-    text-align: left;
     margin-bottom: 10px;
+    width: 90%;
+    text-align: left;
+}
+
+.tabla-record-minimas-desktop {
+    display: none;
 }
 
 .footer {
@@ -968,6 +971,7 @@ path {
     .clima-subtitle {
         font-size: 3.13rem;
         grid-column: 1/3;
+        text-align: left;
     }
 
     .subtitle {
@@ -984,15 +988,16 @@ path {
         padding: 0.94rem;
         width: auto;
     }
-        .label-record:nth-of-type(1) {
-            margin-left: 5vw;
-        }
         .label-record:nth-of-type(4n+1) {
             margin-left: 0;
+        }
+        .label-record:nth-of-type(1) {
+            margin-left: 5vw;
         }
 
     .tabla-grid {
         width: 40%;
+        margin: 0 5% 5% 0;
     }
 
     .grid-text {
@@ -1010,6 +1015,15 @@ path {
 
     .tabla-record-minimas-desktop {
         display: inline-block;
+    }
+
+    .tabla-record-header {
+        width: 90%;
+    }
+
+    .tabla-record-header-text {
+        width: 50%;
+        text-align: left;
     }
 }
 
