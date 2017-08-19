@@ -486,8 +486,7 @@ template {
 }
 
 .wrapper-vw {
-    width: 80vw;
-    max-width: 1200px;
+    width: 90vw;
     margin: 0 auto;
 }
 
@@ -495,8 +494,8 @@ template {
     font-family: 'Montserrat', sans-serif;
     color: #072a12;
     font-weight: bold;
-    font-size: 2.5rem;
-    margin: 1.56rem auto;
+    font-size: 1.5rem;
+    margin: 0.31rem auto;
     text-align: left;
 }
 
@@ -516,7 +515,6 @@ template {
 .tropicales,
 .heladas {
     position: relative;
-    height: 100vh;
     text-align: center;
 }
 
@@ -526,6 +524,7 @@ template {
 
 .chart-container {
     max-width: 1200px;
+    margin: 0 auto;
 }
 
 .tropicales-text {
@@ -555,20 +554,13 @@ template {
 }
 
 .grid-intro {
-    height: 100vh;
-     background: linear-gradient(150deg, #fcde9c 15%, #e34f6f 70%, #7c1d6f 94%);
-    /* background: linear-gradient(to bottom, #86000b 0%, #b8000f 50%, #e16973 100%); */
-    display: grid;
-    grid-template-columns: 50% 40%;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    justify-items: center;
-    align-items: center;
+    background: linear-gradient(150deg, #fcde9c 15%, #e34f6f 70%, #7c1d6f 94%);
+    padding: 1.25rem;
 }
 
 .title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 6.25rem;
+    font-size: 4.38rem;
     font-weight: bold;
     color: #000;
     margin: 0.31rem 0;
@@ -591,10 +583,6 @@ template {
 .clima-intro {
     margin: 10vh auto;
     position: relative;
-    display: grid;
-    grid-gap: 50px;
-    grid-template-rows: repeat(2, auto);
-    grid-template-columns: repeat(2, 50%);
 }
 
 .zaragoza-img {
@@ -610,8 +598,8 @@ template {
 }
 
 .clima-subtitle {
-    font-size: 3.13rem;
-    grid-column: 1/3;
+    font-size: 1.5rem;
+    margin: 0.31rem 0;
 }
 
 .clima-pie {
@@ -708,12 +696,7 @@ path {
     text-align: center;
 }
 
-.container-texto {
-    padding-left: 20px;
-}
-
 .container-buttons {
-    text-align: center;
     padding: 1.25rem;
 }
 
@@ -846,7 +829,7 @@ path {
     display: inline-grid;
     grid-template-columns: repeat(3, 33.33%);
     border: 1px solid #000;
-    width: 40%;
+    width: 90%;
     margin: 0 5% 5% 0;
     background-color: #fff;
 }
@@ -858,22 +841,27 @@ path {
 .label-record {
     display: inline-block;
     margin: 0 0 -0.06rem;
-    padding: 0.94rem;
+    padding: 0.13rem;
     font-weight: 600;
     font-size: 0.88rem;
     text-align: center;
     color: #ccc;
     border: 1px solid #ccc;
+    width: 20%;
 }
-
-.label-record:nth-of-type(1) {
-        margin-left: 5vw;
-    }
 
 .label-record:hover {
         color: #111;
         cursor: pointer;
     }
+
+.label-record:nth-of-type(4n+1) {
+        margin-left: 10px;
+    }
+
+.label-responsive {
+    display: none;
+}
 
 .input-record:checked + .label-record {
     color: #111;
@@ -901,7 +889,7 @@ path {
 
 .grid-text {
     display: block;
-    padding: 0.63rem;
+    padding: 0.63rem 0;
 }
 
 .grid-text:not(:last-child) {
@@ -934,6 +922,95 @@ path {
     font-size: 1.88rem;
     text-align: left;
     margin-bottom: 10px;
+}
+
+.footer {
+    background-color: #111;
+    width: 100%;
+    padding: 1.25rem 0;
+}
+
+.footer-texto {
+    color: #f1f1f1;
+}
+
+@media only screen and (min-width: 48em) {
+
+    .grid-intro {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 50% 40%;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .title {
+        font-size: 6.25rem;
+    }
+
+    .container-texto {
+        padding-left: 20px;
+    }
+
+    .clima-intro {
+        display: grid;
+        grid-gap: 50px;
+        grid-template-rows: repeat(2, auto);
+        grid-template-columns: repeat(2, 50%);
+    }
+
+    .wrapper-vw {
+        max-width: 1200px;
+    }
+
+    .clima-subtitle {
+        font-size: 3.13rem;
+        grid-column: 1/3;
+    }
+
+    .subtitle {
+        font-size: 3.13rem;
+        margin: 1.56rem auto;
+    }
+
+    .container-buttons {
+        text-align: center;
+        padding: 0.31rem;
+    }
+
+    .label-record {
+        padding: 0.94rem;
+        width: auto;
+    }
+        .label-record:nth-of-type(1) {
+            margin-left: 5vw;
+        }
+        .label-record:nth-of-type(4n+1) {
+            margin-left: 0;
+        }
+
+    .tabla-grid {
+        width: 40%;
+    }
+
+    .grid-text {
+        padding: 0.63rem;
+    }
+
+    .tropicales,
+    .heladas {
+        height: 100vh;
+    }
+
+    .tabla-record-minimas-mobile {
+        display: none;
+    }
+
+    .tabla-record-minimas-desktop {
+        display: inline-block;
+    }
 }
 
 /*# sourceMappingURL=styles.css.map */

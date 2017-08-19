@@ -14,7 +14,7 @@
     display: inline-grid;
     grid-template-columns: repeat(3, 33.33%);
     border: 1px solid #000;
-    width: 40%;
+    width: 90%;
     margin: 0 5% 5% 0;
     background-color: #fff;
 }
@@ -26,19 +26,24 @@
 .label-record {
     display: inline-block;
     margin: 0 0 -1px;
-    padding: 15px;
+    padding: 2px;
     font-weight: 600;
     font-size: 14px;
     text-align: center;
     color: var(--impureGrey);
     border: 1px solid var(--impureGrey);
-    &:nth-of-type(1) {
-        margin-left: 5vw;
-    }
+    width: 20%;
     &:hover {
         color: var(--impureBlack);
         cursor: pointer;
     }
+    &:nth-of-type(4n+1) {
+        margin-left: 10px;
+    }
+}
+
+.label-responsive {
+    display: none;
 }
 
 .input-record:checked + .label-record {
@@ -67,7 +72,7 @@
 
 .grid-text {
     display: block;
-    padding: 10px;
+    padding: 10px 0;
     &:not(:last-child) {
         border-bottom: 1px solid #ccc;
     }

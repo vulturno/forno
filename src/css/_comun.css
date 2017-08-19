@@ -33,8 +33,7 @@
 }
 
 .wrapper-vw {
-    width: 80vw;
-    max-width: 1200px;
+    width: 90vw;
     margin: 0 auto;
 }
 
@@ -42,8 +41,8 @@
     font-family: var(--montserrat);
     color: #072a12;
     font-weight: bold;
-    font-size: 40px;
-    margin: 25px auto;
+    font-size: 24px;
+    margin: 5px auto;
     text-align: left;
     &:before {
         content: '';
@@ -62,7 +61,6 @@
 .tropicales,
 .heladas {
     position: relative;
-    height: 100vh;
     text-align: center;
     .wrapper-vw {
         margin-bottom: 0;
@@ -71,6 +69,7 @@
 
 .chart-container {
     max-width: 1200px;
+    margin: 0 auto;
 }
 
 .tropicales-text {
