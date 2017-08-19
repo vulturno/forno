@@ -77,34 +77,34 @@
             <p class="texto">A continuación vamos a ver cuando se marcaron las máximas y mínimas de cada dia, y a que año pertenecen.</p>
         </div>
         <input class="input-record" id="tab1" type="radio" name="tabs" checked>
-        <label class="label-record" for="tab1">Enero</label>
+        <label class="label-record" for="tab1">ENE<span class="label-responsive">Enero</span></label>
         <input class="input-record" id="tab2" type="radio" name="tabs">
-        <label class="label-record" for="tab2">Febrero</label>
+        <label class="label-record" for="tab2">FEB<span class="label-responsive">Febrero</span></label>
         <input class="input-record" id="tab3" type="radio" name="tabs">
-        <label class="label-record" for="tab3">Marzo</label>
+        <label class="label-record" for="tab3">MAR<span class="label-responsive">Marzo</span></label>
         <input class="input-record" id="tab4" type="radio" name="tabs">
-        <label class="label-record" for="tab4">Abril</label>
+        <label class="label-record" for="tab4">ABR<span class="label-responsive">Abril</span></label>
         <input class="input-record" id="tab5" type="radio" name="tabs">
-        <label class="label-record" for="tab5">Mayo</label>
+        <label class="label-record" for="tab5">MAY<span class="label-responsive">Mayo</span></label>
         <input class="input-record" id="tab6" type="radio" name="tabs">
-        <label class="label-record" for="tab6">Junio</label>
+        <label class="label-record" for="tab6">JUN<span class="label-responsive">Junio</span></label>
         <input class="input-record" id="tab7" type="radio" name="tabs">
-        <label class="label-record" for="tab7">Julio</label>
+        <label class="label-record" for="tab7">JUL<span class="label-responsive">Julio</span></label>
         <input class="input-record" id="tab8" type="radio" name="tabs">
-        <label class="label-record" for="tab8">Agosto</label>
+        <label class="label-record" for="tab8">AGO<span class="label-responsive">Agosto</span></label>
         <input class="input-record" id="tab9" type="radio" name="tabs">
-        <label class="label-record" for="tab9">Septiembre</label>
+        <label class="label-record" for="tab9">SEP<span class="label-responsive">Septiembre</span></label>
         <input class="input-record" id="tab10" type="radio" name="tabs">
-        <label class="label-record" for="tab10">Octubre</label>
+        <label class="label-record" for="tab10">OCT<span class="label-responsive">Octubre</span></label>
         <input class="input-record" id="tab11" type="radio" name="tabs">
-        <label class="label-record" for="tab11">Noviembre</label>
+        <label class="label-record" for="tab11">NOV<span class="label-responsive">Noviembre</span></label>
         <input class="input-record" id="tab12" type="radio" name="tabs">
-        <label class="label-record" for="tab12">Diciembre</label>
+        <label class="label-record" for="tab12">DIC<span class="label-responsive">Diciembre</span></label>
         <!-- ENERO -->
         <section class="tabla-record contenido1">
             <div class="tabla-record-header">
                 <h3 class="tabla-record-header-text montserrat">MÁXIMAS</h3>
-                <h3 class="tabla-record-header-text montserrat">MÍNIMAS</h3>
+                <h3 class="tabla-record-header-text montserrat tabla-record-minimas-desktop">MINIMAS</h3>
             </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
@@ -210,6 +210,9 @@
                     <span class="grid-text bold system-font">2013</span>
                 </div>
             </article>
+            <div class="tabla-record-header tabla-record-minimas-mobile">
+                <h3 class="tabla-record-header-text montserrat ">MINIMAS</h3>
+            </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
                     <h5 class="grid-title grid-title-min color-title-min">Día</h5>
@@ -2655,9 +2658,12 @@
         <p class="texto">En la gráfica podemos ver cuantas récords de máximas tiene cada año. <span class="bold">Desde 2010 solamente se han establecido 9 récords</span>.</p>
     </div>
     <div class="minimas-chart-container chart-container" id="rmin-chart"></div>
-    <footer class="wrapper-vw">
-        <p class="maw-60 padding-1-0 luckyPoint">© Hecho en Zaragoza con mucha maña por un <a href="http://jorgeatgu.com" target="_blank">maño</a> - MMXVII</p>
-        <p class="maw-60 padding-1-0 margin-t0">forno@jorgeatgu.com</p>
+    <footer class="footer">
+        <div class="wrapper-vw">
+            <p class="footer-texto">© Hecho en Zaragoza con mucha maña por un <a href="http://jorgeatgu.com" target="_blank">maño</a> - MMXVII</p>
+            <p class="footer-texto">forno@jorgeatgu.com</p>
+            <a href="http://github.com/jorgeatgu/forno">GitHub</a>
+        </div>
     </footer>
     <script src="js/d3.v4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-annotation/1.12.1/d3-annotation.min.js"></script>
