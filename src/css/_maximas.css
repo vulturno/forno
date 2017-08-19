@@ -78,14 +78,8 @@ path {
     text-align: center;
 }
 
-.container-texto {
-    padding-left: 20px;
-}
-
 .container-buttons {
-    text-align: center;
     padding: 20px;
-    border-bottom: 1px solid var(--impureBlack);
 }
 
 .btn-update-max,

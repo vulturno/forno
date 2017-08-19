@@ -32,20 +32,23 @@
     color: var(--screamGreen);
 }
 
+.wrapper-vw {
+    width: 90vw;
+    margin: 0 auto;
+}
+
 .subtitle {
     font-family: var(--montserrat);
     color: #072a12;
     font-weight: bold;
-    font-size: 40px;
-    margin: 5px 0;
+    font-size: 24px;
+    margin: 5px auto;
+    text-align: left;
     &:before {
         content: '';
         display: block;
         border-bottom: 5px solid var(--gradient2);
         width: 1em;
-    }
-    &.wrapper-vw {
-        margin-bottom: 2vh;
     }
 }
 
@@ -58,16 +61,15 @@
 .tropicales,
 .heladas {
     position: relative;
-    height: 100vh;
     text-align: center;
     .wrapper-vw {
         margin-bottom: 0;
     }
 }
 
-.chart-tropicales,
-.chart-heladas {
+.chart-container {
     max-width: 1200px;
+    margin: 0 auto;
 }
 
 .tropicales-text {
@@ -75,10 +77,4 @@
     &.wrapper-vw {
         margin-top: 0;
     }
-}
-
-.wrapper-vw {
-    width: 80vw;
-    max-width: 1200px;
-    margin: 10vh auto;
 }

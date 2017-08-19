@@ -1,0 +1,9 @@
+.footer {
+    background-color: var(--impureBlack);
+    width: 100%;
+    padding: 20px 0;
+}
+
+.footer-texto {
+    color: var(--impureWhite);
+}

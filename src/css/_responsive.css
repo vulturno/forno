@@ -1,0 +1,79 @@
+@media only screen and (min-width: 48em) {
+
+    .grid-intro {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 50% 40%;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .title {
+        font-size: 100px;
+    }
+
+    .container-texto {
+        padding-left: 20px;
+    }
+
+    .clima-intro {
+        display: grid;
+        grid-gap: 50px;
+        grid-template-rows: repeat(2, auto);
+        grid-template-columns: repeat(2, 50%);
+    }
+
+    .wrapper-vw {
+        max-width: 1200px;
+    }
+
+    .clima-subtitle {
+        font-size: 50px;
+        grid-column: 1/3;
+    }
+
+    .subtitle {
+        font-size: 50px;
+        margin: 25px auto;
+    }
+
+    .container-buttons {
+        text-align: center;
+        padding: 5px;
+    }
+
+    .label-record {
+        padding: 15px;
+        width: auto;
+        &:nth-of-type(1) {
+            margin-left: 5vw;
+        }
+        &:nth-of-type(4n+1) {
+            margin-left: 0;
+        }
+    }
+
+    .tabla-grid {
+        width: 40%;
+    }
+
+    .grid-text {
+        padding: 10px;
+    }
+
+    .tropicales,
+    .heladas {
+        height: 100vh;
+    }
+
+    .tabla-record-minimas-mobile {
+        display: none;
+    }
+
+    .tabla-record-minimas-desktop {
+        display: inline-block;
+    }
+}
+

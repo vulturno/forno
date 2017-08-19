@@ -105,7 +105,7 @@ function resizeRMIN() {
     widthRMIN = parseInt(d3.select('#rmin-chart').style('width'));
     widthRMIN = widthRMIN - 25;
 
-    var svgRMIN = d3.select('.record-minimas-chart');
+    var svgRMIN = d3.select('.record-chart-minimas');
 
     barpadding = 1;
 
@@ -160,9 +160,23 @@ function resizeRMIN() {
         .call(xAxisRMIN);
 }
 
-d3.select(window).on('resize', function() {
+
+
+var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+
+function responsiveChart() {
     resize();
     resizeT();
     resizeRM();
     resizeRMIN();
+}
+
+d3.select(window).on('resize', function() {
+    responsiveChart();
 });
+
+if (width <= 1024) {
+    responsiveChart();
+}
+
+
