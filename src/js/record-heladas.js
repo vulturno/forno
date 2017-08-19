@@ -160,9 +160,23 @@ function resizeRMIN() {
         .call(xAxisRMIN);
 }
 
-d3.select(window).on('resize', function() {
+
+
+var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+
+function responsiveChart() {
     resize();
     resizeT();
     resizeRM();
     resizeRMIN();
+}
+
+d3.select(window).on('resize', function() {
+    responsiveChart();
 });
+
+if (width <= 1024) {
+    responsiveChart();
+}
+
+
