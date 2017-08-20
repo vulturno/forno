@@ -168,8 +168,8 @@ d3.csv('temperaturas.csv', function(err, data) {
 function update() {
     var valueDateDay = d3.select("#updateButtonDay").property("value");
     var valueDateMonth = d3.select("#updateButtonMonth").property("value");
-    if (valueDateMonth < 10) valueDateMonth = '0' + valueDateMonth;
-    if (valueDateDay < 10) valueDateDay = '0' + valueDateDay;
+    if (valueDateMonth <= 9) valueDateMonth = '0' + valueDateMonth;
+    if (valueDateDay <= 9) valueDateDay = '0' + valueDateDay;
     var valueDate = valueDateDay + '-' + valueDateMonth;
     console.log(valueDateDay)
     console.log(valueDateMonth)
@@ -279,8 +279,8 @@ function update() {
 function updateMin() {
     var valueDateDay = d3.select("#updateButtonDay").property("value");
     var valueDateMonth = d3.select("#updateButtonMonth").property("value");
-    if (valueDateMonth < 10) valueDateMonth = '0' + valueDateMonth;
-    if (valueDateDay < 10) valueDateDay = '0' + valueDateDay;
+    if (valueDateMonth <= 9) valueDateMonth = '0' + valueDateMonth;
+    if (valueDateDay <= 9) valueDateDay = '0' + valueDateDay;
     var valueDate = valueDateDay + '-' + valueDateMonth;
     var reValueDate = new RegExp("^.*" + valueDate + ".*", "gi");
 
