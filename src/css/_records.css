@@ -5,7 +5,7 @@
 
 .tabla-record {
     display: none;
-    padding: 20px 0 0;
+    padding: 20px 0;
     border: 1px solid var(--impureGrey);
     text-align: center;
 }
@@ -15,7 +15,6 @@
     grid-template-columns: repeat(3, 33.33%);
     border: 1px solid #000;
     width: 90%;
-    margin: 0 5% 5% 0;
     background-color: #fff;
 }
 
@@ -93,15 +92,19 @@
 }
 
 .tabla-record-header {
-    width: 90%;
+    width: 100%;
     display: inline-block;
     font-size: 0;
 }
 
 .tabla-record-header-text {
-    width: 50%;
     display: inline-block;
     font-size: 30px;
-    text-align: left;
     margin-bottom: 10px;
+    width: 90%;
+    text-align: left;
+}
+
+.tabla-record-minimas-desktop {
+    display: none;
 }

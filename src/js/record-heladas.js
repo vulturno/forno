@@ -171,12 +171,12 @@ function responsiveChart() {
     resizeRMIN();
 }
 
-d3.select(window).on('resize', function() {
-    responsiveChart();
-});
 
 if (width <= 1024) {
     responsiveChart();
+    d3.select(window).on('resize', function() {
+        responsiveChart();
+    });
 }
 
 
