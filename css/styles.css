@@ -1015,8 +1015,14 @@ path {
     }
 
     .tropicales,
-    .heladas {
+    .heladas,
+    .temp-max-graph,
+    .temp-min-graph {
         height: 100vh;
+    }
+
+    .temp-max-graph {
+        margin-top: 100px;
     }
 
     .tabla-record-minimas-mobile {
