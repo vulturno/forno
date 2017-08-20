@@ -30,13 +30,13 @@
     }
 
     .clima-subtitle {
-        font-size: 50px;
+        font-size: 40px;
         grid-column: 1/3;
-        text-align: left;
+        width: 100%;
     }
 
     .subtitle {
-        font-size: 50px;
+        font-size: 40px;
         margin: 25px auto;
     }
 
@@ -63,6 +63,10 @@
 
     .grid-text {
         padding: 10px;
+    }
+
+    .texto {
+        max-width: 50vw;
     }
 
     .tropicales,

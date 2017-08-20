@@ -5,7 +5,7 @@
 
 .tabla-record {
     display: none;
-    padding: 20px 0 0;
+    padding: 20px 0;
     border: 1px solid var(--impureGrey);
     text-align: center;
 }
