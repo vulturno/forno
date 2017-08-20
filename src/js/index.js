@@ -6,6 +6,9 @@ var yAxis;
 var temp = "ºC";
 var barPadding = 2;
 
+var dedicatoria = 'Dedicado a Maria del Carmen Tobajas Urieta y Agustín Aznar Gracia. Gracias por todo.';
+console.log(dedicatoria);
+
 var margin = { top: 50, right: 50, bottom: 50, left: 110 },
     width = 1200 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
