@@ -6,6 +6,9 @@ var yAxis;
 var temp = "ºC";
 var barPadding = 2;
 
+var dedicatoria = 'Dedicado a Maria del Carmen Tobajas Urieta y Agustín Aznar Gracia. Gracias por todo.';
+console.log(dedicatoria);
+
 var margin = { top: 50, right: 50, bottom: 50, left: 110 },
     width = 1200 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
@@ -165,8 +168,11 @@ d3.csv('temperaturas.csv', function(err, data) {
 function update() {
     var valueDateDay = d3.select("#updateButtonDay").property("value");
     var valueDateMonth = d3.select("#updateButtonMonth").property("value");
+    if (valueDateMonth <= 9) valueDateMonth = '0' + valueDateMonth;
+    if (valueDateDay <= 9) valueDateDay = '0' + valueDateDay;
     var valueDate = valueDateDay + '-' + valueDateMonth;
-    console.log(valueDate)
+    console.log(valueDateDay)
+    console.log(valueDateMonth)
     var reValueDate = new RegExp("^.*" + valueDate + ".*", "gi");
 
     d3.csv('temperaturas.csv', function(err, data) {
@@ -273,8 +279,9 @@ function update() {
 function updateMin() {
     var valueDateDay = d3.select("#updateButtonDay").property("value");
     var valueDateMonth = d3.select("#updateButtonMonth").property("value");
+    if (valueDateMonth <= 9) valueDateMonth = '0' + valueDateMonth;
+    if (valueDateDay <= 9) valueDateDay = '0' + valueDateDay;
     var valueDate = valueDateDay + '-' + valueDateMonth;
-    console.log(valueDate)
     var reValueDate = new RegExp("^.*" + valueDate + ".*", "gi");
 
     // if (isNaN(valueDateDay) || valueDateDay < 1 || valueDateDay > 31 && isNaN(valueDateMonth) || valueDateMonth < 1 || valueDateMonth > 12) {

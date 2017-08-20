@@ -30,13 +30,13 @@
     }
 
     .clima-subtitle {
-        font-size: 40px;
+        font-size: 32px;
         grid-column: 1/3;
         width: 100%;
     }
 
     .subtitle {
-        font-size: 40px;
+        font-size: 32px;
         margin: 25px auto;
     }
 
@@ -70,8 +70,14 @@
     }
 
     .tropicales,
-    .heladas {
-        height: 100vh;
+    .heladas,
+    .temp-max-graph,
+    .temp-min-graph {
+        min-height: 100vh;
+    }
+
+    .temp-max-graph {
+        margin-top: 100px;
     }
 
     .tabla-record-minimas-mobile {
