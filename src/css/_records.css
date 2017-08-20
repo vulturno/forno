@@ -108,3 +108,15 @@
 .tabla-record-minimas-desktop {
     display: none;
 }
+
+.record-chart-maximas,
+.record-chart-minimas {
+    .xAxis {
+        path {
+            display: none;
+        }
+        .tick line {
+            display: none;
+        }
+    }
+}
