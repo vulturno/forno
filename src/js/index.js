@@ -171,8 +171,6 @@ function update() {
     if (valueDateDay < 10) valueDateDay = ('0' + valueDateDay).slice(-2);
     if (valueDateMonth < 10) valueDateMonth = ('0' + valueDateMonth).slice(-2);
     var valueDate = valueDateDay + '-' + valueDateMonth;
-    console.log(valueDateDay)
-    console.log(valueDateMonth)
     var reValueDate = new RegExp("^.*" + valueDate + ".*", "gi");
 
     d3.csv('temperaturas.csv', function(err, data) {
@@ -419,3 +417,4 @@ function updateMin() {
     });
 
 }
+

@@ -34,7 +34,7 @@ var yAxisRMIN = d3.axisLeft()
 
 var colorsRMIN = d3.scaleLinear()
     .domain([10, 35])
-    .range(["#68abb8","#4f90a6","#3b738f","#2a5674"]);
+    .range(["#6893ff","#2166d7","#003da5","#000049"]);
 
 d3.csv('record-minimas.csv', function(err, data) {
 

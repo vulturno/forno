@@ -34,7 +34,7 @@ var yAxisRM = d3.axisLeft()
 
 var colorsRM = d3.scaleLinear()
     .domain([10, 35])
-    .range(["#ffc6c4", "#f4a3a8", "#e38191", "#cc607d", "#ad466c", "#8b3058", "#672044"]);
+    .range(["#cd669d", "#9a366f", "#690044", "#230000"]);
 
 d3.csv('record-maximas.csv', function(err, data) {
 
