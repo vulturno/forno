@@ -19,7 +19,7 @@
             <p class="texto">A través de gráficas vamos a ver, y a consultar las <span class="bold">temperaturas máximas y mínimas, las noches tropicales y las heladas</span> que se han registrado en el <span class="bold">Aeropuerto de Zaragoza entre los años 1951 y 2017</span>.</p>
         </div>
     </div>
-    <div class="clima-intro wrapper-vw" id="clima">
+    <div class="clima-intro margin-section" id="clima">
         <h2 class="subtitle clima-subtitle">EL CLIMA EN ZARAGOZA</h2>
         <div class="clima-legend">
             <p class="legend-text">Zaragoza tiene un <span class="bold">clima semiárido frío,</span> que es el propio de la depresión del Ebro. Los inviernos son <span class="bold">ligeramente fríos</span>, siendo normales las <span class="bold">heladas nocturnas y las nieblas</span> que produce la inversión térmica en los meses de diciembre y enero. Los <span class="bold">veranos son cálidos, superando casi siempre los 35°C e incluso pasando los 40°C</span> muchos días. Las lluvias escasas se concentran en primavera. El promedio anual es de unos 315 mm.
@@ -39,14 +39,13 @@
             <span class="clima-pie">Atardecer desde la margen izquierda de Zaragoza con el Moncayo al fondo.</span>
         </picture>
     </div>
-    <article class="grafica-temp" id="maximas">
+    <article class="grafica-temp margin-section" id="maximas">
         <div class="wrapper-vw">
             <h2 class="subtitle">TEMPERATURAS MÁXIMAS Y MÍNIMAS</h2>
             <p class="texto">En esta gráfica puedes consultar todas las máximas y minimas registradas entre 1951 y 2017.</p>
         </div>
     </article>
     <article class="container-buttons">
-        <p class="text-button">Puedes actualizar la gráfica con la máxima o mínima de cualquier Día del año.</p>
         <div class="container-update-grafica">
             <div class="container-inputs">
                 <label class="inputs-label" for="updateButtonDay">Día</label>
@@ -56,23 +55,24 @@
                 <label class="inputs-label" for="updateButtonMonth">Mes</label>
                 <input maxlength="2" class="input-update-grafica" id="updateButtonMonth" type="text" value="01" />
             </div>
-            <button class="btn-update-grafica btn-update-max" id="update" onclick="update()">ACTUALIZAR MÁXIMAS</button>
-            <button class="btn-update-grafica btn-update-min" id="updateMin" onclick="updateMin()"> ACTUALIZAR MÍNIMAS</button>
+            <button class="btn-update-grafica btn-update-max" id="update" onclick="update()">MÁXIMAS</button>
+            <button class="btn-update-grafica btn-update-min" id="updateMin" onclick="updateMin()"> MÍNIMAS</button>
+            <p class="text-button">Actualiza la gráfica con la máxima o mínima de cualquier día del año.</p>
         </div>
     </article>
-    <article class="heladas grid-chart" id="heladas">
+    <article class="heladas grid-chart margin-section" id="heladas">
         <div class="heladas-text wrapper-vw">
             <h2 class="subtitle">HELADAS</h2>
             <p class="texto">Se considera helada cuando la temperatura del aire, registrada a 1,50 metros sobre el nivel del suelo, es de 0ºC. Esta forma de definir fue acordada por los meteorólogos y climatólogos, si bien muchas veces, la temperatura de la superficie del suelo puede llegar a ser de 3 a 4 grados menor que la registrada.</p>
         </div>
     </article>
-    <article class="tropicales grid-chart" id="tropicales">
+    <article class="tropicales grid-chart margin-section" id="tropicales">
         <div class="tropicales-text wrapper-vw">
             <h2 class="subtitle">NOCHES TROPICALES</h2>
             <p class="texto">Se podría definir como una noche en la que la <span class="bold">temperatura mínima es igual o superior a 20ºC</span>. Esta temperatura se suele alcanzar poco después del amanecer.</p>
         </div>
     </article>
-    <article class="tabs-maximas-minimas">
+    <article class="tabs-maximas-minimas margin-section">
         <div class="wrapper-vw">
             <h2 class="subtitle">RÉCORDS DE MÁXIMAS Y MÍNIMAS </h2>
             <p class="texto">A continuación vamos a ver cuando se marcaron las máximas y mínimas de cada dia, y a que año pertenecen.</p>
@@ -2682,23 +2682,23 @@
             </article>
         </section>
     </article>
-    <article class="temp-max-graph">
-    <div class="wrapper-vw">
-        <h2 class="subtitle">GRÁFICA DE TEMPERATURAS MÁXIMAS</h2>
-        <p class="texto">En la gráfica podemos ver cuantos récords de máximas tiene cada año.</p>
-        <p class="texto bold">Desde 2010 se han establecido 109 récords.</p>
-    </div>
-    <div class="maximas-chart-container chart-container" id="rm-chart"></div>
+    <article class="temp-max-graph margin-section">
+        <div class="wrapper-vw">
+            <h2 class="subtitle">GRÁFICA DE TEMPERATURAS MÁXIMAS</h2>
+            <p class="texto">En la gráfica podemos ver cuantos récords de máximas tiene cada año.</p>
+            <p class="texto bold">Desde 2010 se han establecido 109 récords.</p>
+        </div>
+        <div class="maximas-chart-container chart-container" id="rm-chart"></div>
     </article>
-    <article class="temp-min-graph">
-    <div class="wrapper-vw">
-        <h2 class="subtitle">GRÁFICA DE TEMPERATURAS MÍNIMAS</h2>
-        <p class="texto">En la gráfica podemos ver cuantos récords de mínimas tiene cada año.</p>
-        <p class="texto bold">Desde 2010 solamente se han establecido 9 récords.</p>
-    </div>
-    <div class="minimas-chart-container chart-container" id="rmin-chart"></div>
+    <article class="temp-min-graph margin-section">
+        <div class="wrapper-vw">
+            <h2 class="subtitle">GRÁFICA DE TEMPERATURAS MÍNIMAS</h2>
+            <p class="texto">En la gráfica podemos ver cuantos récords de mínimas tiene cada año.</p>
+            <p class="texto bold">Desde 2010 solamente se han establecido 9 récords.</p>
+        </div>
+        <div class="minimas-chart-container chart-container" id="rmin-chart"></div>
     </article>
-    <div class="wrapper-vw">
+    <div class="wrapper-vw margin-section">
         <h2 class="system-font">METODOLOGÍA</h2>
         <p class="texto">Las razones por las cuales he elegido el período transcurrido entre 1951 y 2017 son, el costo de <span class="bold">obtener mes a mes los datos de cada año</span>, y la legibilidad de los datos. <span class="bold">Incluir más años haría que los datos fueran menos legibles</span>.</p>
         <p class="texto">Para contabilizar las <span class="bold">noches tropicales</span>, se ha tomado como referencia, que la temperatura mínima, <span class="bold">fuera igual o superior a 20ºC</span>.</p>
