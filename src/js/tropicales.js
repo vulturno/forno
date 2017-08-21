@@ -37,7 +37,7 @@ var colorsT = d3.scaleLinear()
     .domain([0, 45])
     .range(["#ffc6c4", "#f4a3a8", "#e38191", "#cc607d", "#ad466c", "#8b3058", "#672044"]);
 
-d3.csv('tropicales.csv', function(err, data) {
+d3.csv('csv/tropicales.csv', function(err, data) {
 
     datosT = data;
 
