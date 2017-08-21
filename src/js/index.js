@@ -56,7 +56,7 @@ var yAxis = d3.axisLeft()
     .tickSize(-width + 30)
     .ticks(6);
 
-d3.csv('temperaturas.csv', function(err, data) {
+d3.csv('csv/temperaturas.csv', function(err, data) {
 
     dataFiltered = data.filter(function(d) {
         return String(d.fecha).match(/07-02/);
@@ -173,7 +173,7 @@ function update() {
     var valueDate = valueDateDay + '-' + valueDateMonth;
     var reValueDate = new RegExp("^.*" + valueDate + ".*", "gi");
 
-    d3.csv('temperaturas.csv', function(err, data) {
+    d3.csv('csv/temperaturas.csv', function(err, data) {
 
         dataFiltered = data.filter(function(d) {
             return String(d.fecha).match(reValueDate);
@@ -288,7 +288,7 @@ function updateMin() {
     //     alert("bien")
     // }
 
-    d3.csv('temperaturas.csv', function(err, data) {
+    d3.csv('csv/temperaturas.csv', function(err, data) {
 
         dataFiltered = data.filter(function(d) {
             return String(d.fecha).match(reValueDate);

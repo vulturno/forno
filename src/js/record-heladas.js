@@ -36,7 +36,7 @@ var colorsRMIN = d3.scaleLinear()
     .domain([10, 35])
     .range(["#6893ff","#2166d7","#003da5","#000049"]);
 
-d3.csv('record-minimas.csv', function(err, data) {
+d3.csv('csv/record-minimas.csv', function(err, data) {
 
     datosRMIN = data;
 

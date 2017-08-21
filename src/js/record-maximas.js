@@ -36,7 +36,7 @@ var colorsRM = d3.scaleLinear()
     .domain([10, 35])
     .range(["#cd669d", "#9a366f", "#690044", "#230000"]);
 
-d3.csv('record-maximas.csv', function(err, data) {
+d3.csv('csv/record-maximas.csv', function(err, data) {
 
     datosRM = data;
 

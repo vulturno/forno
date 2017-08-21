@@ -36,7 +36,7 @@ var colorsH = d3.scaleLinear()
     .domain([10, 35])
     .range(["#68abb8","#4f90a6","#3b738f","#2a5674"]);
 
-d3.csv('heladas.csv', function(err, data) {
+d3.csv('csv/heladas.csv', function(err, data) {
 
     datosH = data;
 
