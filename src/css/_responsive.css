@@ -19,10 +19,7 @@
     }
 
     .clima-intro {
-        display: grid;
-        grid-gap: 50px;
-        grid-template-rows: repeat(2, auto);
-        grid-template-columns: repeat(2, 50%);
+        max-width: 55vw;
     }
 
     .wrapper-vw {
@@ -62,18 +59,11 @@
     }
 
     .grid-text {
-        padding: 10px;
+        padding: 5px;
     }
 
     .texto {
         max-width: 50vw;
-    }
-
-    .tropicales,
-    .heladas,
-    .temp-max-graph,
-    .temp-min-graph {
-        min-height: 100vh;
     }
 
     .temp-max-graph {
