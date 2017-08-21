@@ -587,8 +587,8 @@ svg {
     }
 
 .clima-intro {
-    margin: 10vh auto;
     position: relative;
+    padding: 1.25rem;
 }
 
 .zaragoza-img {
@@ -976,6 +976,8 @@ path {
 
     .clima-intro {
         max-width: 55vw;
+        margin: 5vh auto;
+        margin-bottom: 0;
     }
 
     .wrapper-vw {
@@ -1041,6 +1043,10 @@ path {
     .tabla-record-header-text {
         width: 50%;
         text-align: left;
+    }
+
+    .margin-section {
+        margin-top: 5vh;
     }
 }
 
