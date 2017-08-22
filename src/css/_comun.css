@@ -38,7 +38,8 @@ svg {
     color: var(--screamGreen);
 }
 
-.wrapper-vw {
+.wrapper-vw,
+.wrapper-footer {
     width: 90vw;
     margin: 0 auto;
 }
