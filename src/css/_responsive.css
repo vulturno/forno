@@ -19,18 +19,17 @@
     }
 
     .clima-intro {
-        max-width: 55vw;
+        max-width: 40vw;
         margin: 5vh auto;
         margin-bottom: 0;
     }
 
     .wrapper-vw {
-        max-width: 1200px;
+        max-width: 40vw;
     }
 
     .clima-subtitle {
         font-size: 32px;
-        grid-column: 1/3;
         width: 100%;
     }
 
@@ -64,10 +63,6 @@
         padding: 5px;
     }
 
-    .texto {
-        max-width: 50vw;
-    }
-
     .temp-max-graph {
         margin-top: 100px;
     }
@@ -90,7 +85,14 @@
     }
 
     .margin-section {
-        margin-top: 5vh;
+        margin-top: 10vh;
+    }
+
+    .tabs-maximas-minimas {
+        text-align: center;
+        .texto {
+            text-align: left;
+        }
     }
 }
 
