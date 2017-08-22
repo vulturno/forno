@@ -491,7 +491,8 @@ svg {
     color: #2fe94a;
 }
 
-.wrapper-vw {
+.wrapper-vw,
+.wrapper-footer {
     width: 90vw;
     margin: 0 auto;
 }
@@ -805,6 +806,13 @@ path {
         background-color: #ccc;
     }
 
+.chart-tropicales .xAxis line,
+        .chart-tropicales .xAxis path,
+        .chart-heladas .xAxis line,
+        .chart-heladas .xAxis path {
+            display: none;
+        }
+
 .tooltipHeladas,
 .tooltipTropicales {
     font-weight: bold;
@@ -1071,6 +1079,10 @@ path {
         .tabs-maximas-minimas .texto {
             text-align: left;
         }
+
+    .wrapper-footer {
+        max-width: 70vw;
+    }
 }
 
 /*# sourceMappingURL=styles.css.map */

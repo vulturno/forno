@@ -1,6 +1,7 @@
 //Noches tropicales
 var datosT = [];
 var barPadding = 2;
+var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 
 var margin = { top: 50, right: 50, bottom: 50, left: 110 },
     widthT = 1200 - margin.left - margin.right,
@@ -99,60 +100,62 @@ d3.csv('csv/tropicales.csv', function(err, data) {
             return heightT - yRangeT(d.dias);
         });
 
-          var labels = [{
-            note: {
-                label: "En 1991 se superan por primera vez las 30 noches",
-                wrap: 380
+        if (width > 768) {
+            var labels = [{
+              note: {
+                  label: "En 1991 se superan por primera vez las 30 noches",
+                  wrap: 380
+                },
+              data: { anyo: "1991", dias: 33 },
+              dy: -15,
+              dx: -142
+            }, {
+              note: {
+                  label: "En 2003 se superan por primera vez las 40 noches",
+                  wrap: 380
               },
-            data: { anyo: "1991", dias: 33 },
-            dy: -15,
-            dx: -142
-          }, {
-            note: {
-                label: "En 2003 se superan por primera vez las 40 noches",
-                wrap: 380
-            },
-            data: { anyo: "2003", dias: 47 },
-            dy: -10,
-            dx: -252
-          }, {
-            note: {
-                label: "El 14 de junio de 2009 se registro la mínima más alta, 24.7ºC",
-                wrap: 450
-            },
-            data: { anyo: "2009", dias: 40 },
-            dy: -10,
-            dx: -252
-          }].map(function (l) {
-            l.note = Object.assign({}, l.note);
-            l.subject = { radius: 6 };
+              data: { anyo: "2003", dias: 47 },
+              dy: -10,
+              dx: -252
+            }, {
+              note: {
+                  label: "El 14 de junio de 2009 se registro la mínima más alta, 24.7ºC",
+                  wrap: 450
+              },
+              data: { anyo: "2009", dias: 40 },
+              dy: -10,
+              dx: -252
+            }].map(function (l) {
+              l.note = Object.assign({}, l.note);
+              l.subject = { radius: 6 };
 
-            return l;
-          });
+              return l;
+            });
 
 
-          window.makeAnnotations = d3.annotation().annotations(labels).type(d3.annotationCalloutCircle).accessors({ x: function x(d) {
-              return xRangeT(d.anyo);
-            },
-            y: function y(d) {
-              return yRangeT(d.dias);
-            }
-          }).accessorsInverse({
-            anyo: function anyo(d) {
-              return xRangeT.invert(d.x);
-            },
-            dias: function dias(d) {
-              return yRangeT.invert(d.y);
-            }
-          }).on('subjectover', function (annotation) {
-            annotation.type.a.selectAll("g.annotation-connector, g.annotation-note").classed("hidden", false);
-          }).on('subjectout', function (annotation) {
-            annotation.type.a.selectAll("g.annotation-connector, g.annotation-note").classed("hidden", true);
-          });
+            window.makeAnnotations = d3.annotation().annotations(labels).type(d3.annotationCalloutCircle).accessors({ x: function x(d) {
+                return xRangeT(d.anyo);
+              },
+              y: function y(d) {
+                return yRangeT(d.dias);
+              }
+            }).accessorsInverse({
+              anyo: function anyo(d) {
+                return xRangeT.invert(d.x);
+              },
+              dias: function dias(d) {
+                return yRangeT.invert(d.y);
+              }
+            }).on('subjectover', function (annotation) {
+              annotation.type.a.selectAll("g.annotation-connector, g.annotation-note").classed("hidden", false);
+            }).on('subjectout', function (annotation) {
+              annotation.type.a.selectAll("g.annotation-connector, g.annotation-note").classed("hidden", true);
+            });
 
-          svgT.append("g").attr("class", "annotation-test").call(makeAnnotations);
+            svgT.append("g").attr("class", "annotation-test").call(makeAnnotations);
 
-          svgT.selectAll("g.annotation-connector, g.annotation-note").classed("hidden", true);
+            svgT.selectAll("g.annotation-connector, g.annotation-note").classed("hidden", true);
+        }
 });
 
 function resizeT() {

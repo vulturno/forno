@@ -25,6 +25,12 @@
     .tooltip {
         background-color: var(--impureGrey);
     }
+    .xAxis {
+        line,
+        path {
+            display: none;
+        }
+    }
 }
 
 .tooltipHeladas,
