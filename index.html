@@ -55,15 +55,15 @@
                 <label class="inputs-label" for="updateButtonMonth">Mes</label>
                 <input maxlength="2" class="input-update-grafica" id="updateButtonMonth" type="text" value="01" />
             </div>
-            <button class="btn-update-grafica btn-update-max" id="update" onclick="update()">MÁXIMAS</button>
-            <button class="btn-update-grafica btn-update-min" id="updateMin" onclick="updateMin()"> MÍNIMAS</button>
+            <button class="btn-update-grafica font-system btn-update-max" id="update" onclick="update()">MÁXIMAS</button>
+            <button class="btn-update-grafica font-system btn-update-min" id="updateMin" onclick="updateMin()"> MÍNIMAS</button>
             <p class="text-button">Actualiza la gráfica con la máxima o mínima de cualquier día del año.</p>
         </div>
     </article>
     <article class="heladas grid-chart margin-section" id="heladas">
         <div class="heladas-text wrapper-vw">
             <h2 class="subtitle">HELADAS</h2>
-            <p class="texto">Se considera helada cuando la temperatura del aire, registrada a 1,50 metros sobre el nivel del suelo, es de 0ºC. Esta forma de definir fue acordada por los meteorólogos y climatólogos, si bien muchas veces, la temperatura de la superficie del suelo puede llegar a ser de 3 a 4 grados menor que la registrada.</p>
+            <p class="texto">Se considera helada cuando la temperatura del aire, <span class="bold">registrada a 1,50 metros sobre el nivel del suelo, es de 0ºC</span>. Esta forma de definir fue acordada por los meteorólogos y climatólogos, si bien muchas veces, la temperatura de la superficie del suelo <span class="bold">puede llegar a ser de 3 a 4 grados menor</span> que la registrada.</p>
         </div>
     </article>
     <article class="tropicales grid-chart margin-section" id="tropicales">
@@ -78,34 +78,34 @@
             <p class="texto">A continuación vamos a ver cuando se marcaron las máximas y mínimas de cada dia, y a que año pertenecen.</p>
         </div>
         <input class="input-record" id="tab1" type="radio" name="tabs" checked>
-        <label class="label-record" for="tab1">ENE<span class="label-responsive">Enero</span></label>
+        <label class="label-record" for="tab1">ENE</label>
         <input class="input-record" id="tab2" type="radio" name="tabs">
-        <label class="label-record" for="tab2">FEB<span class="label-responsive">Febrero</span></label>
+        <label class="label-record" for="tab2">FEB</label>
         <input class="input-record" id="tab3" type="radio" name="tabs">
-        <label class="label-record" for="tab3">MAR<span class="label-responsive">Marzo</span></label>
+        <label class="label-record" for="tab3">MAR</label>
         <input class="input-record" id="tab4" type="radio" name="tabs">
-        <label class="label-record" for="tab4">ABR<span class="label-responsive">Abril</span></label>
+        <label class="label-record" for="tab4">ABR</label>
         <input class="input-record" id="tab5" type="radio" name="tabs">
-        <label class="label-record" for="tab5">MAY<span class="label-responsive">Mayo</span></label>
+        <label class="label-record" for="tab5">MAY</label>
         <input class="input-record" id="tab6" type="radio" name="tabs">
-        <label class="label-record" for="tab6">JUN<span class="label-responsive">Junio</span></label>
+        <label class="label-record" for="tab6">JUN</label>
         <input class="input-record" id="tab7" type="radio" name="tabs">
-        <label class="label-record" for="tab7">JUL<span class="label-responsive">Julio</span></label>
+        <label class="label-record" for="tab7">JUL</label>
         <input class="input-record" id="tab8" type="radio" name="tabs">
-        <label class="label-record" for="tab8">AGO<span class="label-responsive">Agosto</span></label>
+        <label class="label-record" for="tab8">AGO</label>
         <input class="input-record" id="tab9" type="radio" name="tabs">
-        <label class="label-record" for="tab9">SEP<span class="label-responsive">Septiembre</span></label>
+        <label class="label-record" for="tab9">SEP</label>
         <input class="input-record" id="tab10" type="radio" name="tabs">
-        <label class="label-record" for="tab10">OCT<span class="label-responsive">Octubre</span></label>
+        <label class="label-record" for="tab10">OCT</label>
         <input class="input-record" id="tab11" type="radio" name="tabs">
-        <label class="label-record" for="tab11">NOV<span class="label-responsive">Noviembre</span></label>
+        <label class="label-record" for="tab11">NOV</label>
         <input class="input-record" id="tab12" type="radio" name="tabs">
-        <label class="label-record" for="tab12">DIC<span class="label-responsive">Diciembre</span></label>
+        <label class="label-record" for="tab12">DIC</label>
         <!-- ENERO -->
         <section class="tabla-record contenido1">
             <div class="tabla-record-header">
                 <h3 class="tabla-record-header-text montserrat">MÁXIMAS</h3>
-                <h3 class="tabla-record-header-text montserrat tabla-record-minimas-desktop">MINIMAS</h3>
+                <h3 class="tabla-record-header-text montserrat tabla-record-minimas-desktop">MÍNIMAS</h3>
             </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
@@ -212,7 +212,7 @@
                 </div>
             </article>
             <div class="tabla-record-header tabla-record-minimas-mobile">
-                <h3 class="tabla-record-header-text montserrat ">MINIMAS</h3>
+                <h3 class="tabla-record-header-text montserrat ">MÍNIMAS</h3>
             </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
@@ -323,7 +323,7 @@
         <section class="tabla-record contenido2">
             <div class="tabla-record-header">
                 <h3 class="tabla-record-header-text montserrat">MÁXIMAS</h3>
-                <h3 class="tabla-record-header-text montserrat tabla-record-minimas-desktop">MINIMAS</h3>
+                <h3 class="tabla-record-header-text montserrat tabla-record-minimas-desktop">MÍNIMAS</h3>
             </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
@@ -424,7 +424,7 @@
                 </div>
             </article>
             <div class="tabla-record-header tabla-record-minimas-mobile">
-                <h3 class="tabla-record-header-text montserrat ">MINIMAS</h3>
+                <h3 class="tabla-record-header-text montserrat ">MÍNIMAS</h3>
             </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
@@ -529,7 +529,7 @@
         <section class="tabla-record contenido3">
             <div class="tabla-record-header">
                 <h3 class="tabla-record-header-text montserrat">MÁXIMAS</h3>
-                <h3 class="tabla-record-header-text montserrat tabla-record-minimas-desktop">MINIMAS</h3>
+                <h3 class="tabla-record-header-text montserrat tabla-record-minimas-desktop">MÍNIMAS</h3>
             </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
@@ -636,7 +636,7 @@
                 </div>
             </article>
             <div class="tabla-record-header tabla-record-minimas-mobile">
-                <h3 class="tabla-record-header-text montserrat ">MINIMAS</h3>
+                <h3 class="tabla-record-header-text montserrat ">MÍNIMAS</h3>
             </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
@@ -747,7 +747,7 @@
         <section class="tabla-record contenido4">
             <div class="tabla-record-header">
                 <h3 class="tabla-record-header-text montserrat">MÁXIMAS</h3>
-                <h3 class="tabla-record-header-text montserrat tabla-record-minimas-desktop">MINIMAS</h3>
+                <h3 class="tabla-record-header-text montserrat tabla-record-minimas-desktop">MÍNIMAS</h3>
             </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
@@ -851,7 +851,7 @@
                 </div>
             </article>
             <div class="tabla-record-header tabla-record-minimas-mobile">
-                <h3 class="tabla-record-header-text montserrat ">MINIMAS</h3>
+                <h3 class="tabla-record-header-text montserrat ">MÍNIMAS</h3>
             </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
@@ -959,7 +959,7 @@
         <section class="tabla-record contenido5">
             <div class="tabla-record-header">
                 <h3 class="tabla-record-header-text montserrat">MÁXIMAS</h3>
-                <h3 class="tabla-record-header-text montserrat tabla-record-minimas-desktop">MINIMAS</h3>
+                <h3 class="tabla-record-header-text montserrat tabla-record-minimas-desktop">MÍNIMAS</h3>
             </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
@@ -1066,7 +1066,7 @@
                 </div>
             </article>
             <div class="tabla-record-header tabla-record-minimas-mobile">
-                <h3 class="tabla-record-header-text montserrat ">MINIMAS</h3>
+                <h3 class="tabla-record-header-text montserrat ">MÍNIMAS</h3>
             </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
@@ -1177,7 +1177,7 @@
         <section class="tabla-record contenido6">
             <div class="tabla-record-header">
                 <h3 class="tabla-record-header-text montserrat">MÁXIMAS</h3>
-                <h3 class="tabla-record-header-text montserrat tabla-record-minimas-desktop">MINIMAS</h3>
+                <h3 class="tabla-record-header-text montserrat tabla-record-minimas-desktop">MÍNIMAS</h3>
             </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
@@ -1281,7 +1281,7 @@
                 </div>
             </article>
             <div class="tabla-record-header tabla-record-minimas-mobile">
-                <h3 class="tabla-record-header-text montserrat ">MINIMAS</h3>
+                <h3 class="tabla-record-header-text montserrat ">MÍNIMAS</h3>
             </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
@@ -1389,7 +1389,7 @@
         <section class="tabla-record contenido7">
             <div class="tabla-record-header">
                 <h3 class="tabla-record-header-text montserrat">MÁXIMAS</h3>
-                <h3 class="tabla-record-header-text montserrat tabla-record-minimas-desktop">MINIMAS</h3>
+                <h3 class="tabla-record-header-text montserrat tabla-record-minimas-desktop">MÍNIMAS</h3>
             </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
@@ -1496,7 +1496,7 @@
                 </div>
             </article>
             <div class="tabla-record-header tabla-record-minimas-mobile">
-                <h3 class="tabla-record-header-text montserrat ">MINIMAS</h3>
+                <h3 class="tabla-record-header-text montserrat ">MÍNIMAS</h3>
             </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
@@ -1607,7 +1607,7 @@
         <section class="tabla-record contenido8">
             <div class="tabla-record-header">
                 <h3 class="tabla-record-header-text montserrat">MÁXIMAS</h3>
-                <h3 class="tabla-record-header-text montserrat tabla-record-minimas-desktop">MINIMAS</h3>
+                <h3 class="tabla-record-header-text montserrat tabla-record-minimas-desktop">MÍNIMAS</h3>
             </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
@@ -1714,7 +1714,7 @@
                 </div>
             </article>
             <div class="tabla-record-header tabla-record-minimas-mobile">
-                <h3 class="tabla-record-header-text montserrat ">MINIMAS</h3>
+                <h3 class="tabla-record-header-text montserrat ">MÍNIMAS</h3>
             </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
@@ -1825,7 +1825,7 @@
         <section class="tabla-record contenido9">
             <div class="tabla-record-header">
                 <h3 class="tabla-record-header-text montserrat">MÁXIMAS</h3>
-                <h3 class="tabla-record-header-text montserrat tabla-record-minimas-desktop">MINIMAS</h3>
+                <h3 class="tabla-record-header-text montserrat tabla-record-minimas-desktop">MÍNIMAS</h3>
             </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
@@ -1929,7 +1929,7 @@
                 </div>
             </article>
             <div class="tabla-record-header tabla-record-minimas-mobile">
-                <h3 class="tabla-record-header-text montserrat ">MINIMAS</h3>
+                <h3 class="tabla-record-header-text montserrat ">MÍNIMAS</h3>
             </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
@@ -2037,7 +2037,7 @@
         <section class="tabla-record contenido10">
             <div class="tabla-record-header">
                 <h3 class="tabla-record-header-text montserrat">MÁXIMAS</h3>
-                <h3 class="tabla-record-header-text montserrat tabla-record-minimas-desktop">MINIMAS</h3>
+                <h3 class="tabla-record-header-text montserrat tabla-record-minimas-desktop">MÍNIMAS</h3>
             </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
@@ -2144,7 +2144,7 @@
                 </div>
             </article>
             <div class="tabla-record-header tabla-record-minimas-mobile">
-                <h3 class="tabla-record-header-text montserrat ">MINIMAS</h3>
+                <h3 class="tabla-record-header-text montserrat ">MÍNIMAS</h3>
             </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
@@ -2255,7 +2255,7 @@
         <section class="tabla-record contenido11">
             <div class="tabla-record-header">
                 <h3 class="tabla-record-header-text montserrat">MÁXIMAS</h3>
-                <h3 class="tabla-record-header-text montserrat tabla-record-minimas-desktop">MINIMAS</h3>
+                <h3 class="tabla-record-header-text montserrat tabla-record-minimas-desktop">MÍNIMAS</h3>
             </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
@@ -2359,7 +2359,7 @@
                 </div>
             </article>
             <div class="tabla-record-header tabla-record-minimas-mobile">
-                <h3 class="tabla-record-header-text montserrat ">MINIMAS</h3>
+                <h3 class="tabla-record-header-text montserrat ">MÍNIMAS</h3>
             </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
@@ -2467,7 +2467,7 @@
         <section class="tabla-record contenido12">
             <div class="tabla-record-header">
                 <h3 class="tabla-record-header-text montserrat">MÁXIMAS</h3>
-                <h3 class="tabla-record-header-text montserrat tabla-record-minimas-desktop">MINIMAS</h3>
+                <h3 class="tabla-record-header-text montserrat tabla-record-minimas-desktop">MÍNIMAS</h3>
             </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
@@ -2574,7 +2574,7 @@
                 </div>
             </article>
             <div class="tabla-record-header tabla-record-minimas-mobile">
-                <h3 class="tabla-record-header-text montserrat ">MINIMAS</h3>
+                <h3 class="tabla-record-header-text montserrat ">MÍNIMAS</h3>
             </div>
             <article class="tabla-grid">
                 <div class="grid-dia">
@@ -2684,15 +2684,15 @@
     </article>
     <article class="temp-max-graph margin-section">
         <div class="wrapper-vw">
-            <h2 class="subtitle">GRÁFICA DE TEMPERATURAS MÁXIMAS</h2>
+            <h2 class="subtitle">TEMPERATURAS MÁXIMAS</h2>
             <p class="texto">En la gráfica podemos ver cuantos récords de máximas tiene cada año.</p>
-            <p class="texto bold">Desde 2010 se han establecido 109 récords.</p>
+            <p class="texto bold">Desde 2010 se han pulverizado 109 récords.</p>
         </div>
         <div class="maximas-chart-container chart-container" id="rm-chart"></div>
     </article>
     <article class="temp-min-graph margin-section">
         <div class="wrapper-vw">
-            <h2 class="subtitle">GRÁFICA DE TEMPERATURAS MÍNIMAS</h2>
+            <h2 class="subtitle">TEMPERATURAS MÍNIMAS</h2>
             <p class="texto">En la gráfica podemos ver cuantos récords de mínimas tiene cada año.</p>
             <p class="texto bold">Desde 2010 solamente se han establecido 9 récords.</p>
         </div>
@@ -2707,12 +2707,13 @@
     </div>
     <div class="wrapper-vw">
         <h2 class="system-font">DATOS</h2>
-        <p class="texto">Todos los datos de las temperaturas han sido obtenidos a través de <a href="https://opendata.aemet.es/centrodedescargas/inicio">AEMET OPEN DATA</a>. Que es el sistema para la difusión y reutilización de la información de AEMET.</p>
+        <p class="texto">Todos los datos de las temperaturas son de <a href="https://opendata.aemet.es/centrodedescargas/inicio">Información elaborada por la Agencia Estatal de Meteorología"</a>. Que es el sistema para la difusión y reutilización de la información de AEMET.</p>
+        <p class="texto">Las fechas están actualizadas hasta el 16 de agosto de 2017.</p>
     </div>
     <footer class="footer">
         <div class="wrapper-vw">
-            <p class="footer-texto">© Hecho en Zaragoza con mucha maña por un <a href="http://jorgeatgu.com" target="_blank">maño</a> - MMXVII</p>
-            <p class="footer-texto">forno@jorgeatgu.com</p>
+            <p class="footer-texto">Hecho en Zaragoza con mucha maña por un <a href="http://jorgeatgu.com" target="_blank">maño</a> - MMXVII</p>
+            <p class="footer-texto">Cualquier consulta escribid a: forno@jorgeatgu.com</p>
             <a href="http://github.com/jorgeatgu/forno">GitHub</a>
         </div>
     </footer>

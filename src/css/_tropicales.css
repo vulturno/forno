@@ -34,3 +34,26 @@
     margin: 0 0 5px;
     color: #fff;
 }
+
+.chart-tropicales {
+    .annotation-note-bg {
+        fill: #fff;
+    }
+    .annotation-note-label tspan {
+        fill: #E8336D;
+        font-weight: bold;
+    }
+    .annotation-subject path {
+        fill: #30155d;
+        stroke: #30155d;
+    }
+    .annotation-note path,
+    .connector {
+        stroke: #30155d;
+    }
+    .tick line {
+        fill: none;
+        stroke: #777;
+        stroke-dasharray: 3px 3px;
+    }
+}

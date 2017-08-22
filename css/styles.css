@@ -623,11 +623,6 @@ svg {
     margin-top: 10px;
 }
 
-.grafica-temp {
-    margin: 10vh auto;
-    margin-bottom: 0;
-}
-
 .text-button {
     font-size: 1rem;
     font-weight: bold;
@@ -818,6 +813,31 @@ path {
     color: #fff;
 }
 
+.chart-tropicales .annotation-note-bg {
+        fill: #fff;
+    }
+
+.chart-tropicales .annotation-note-label tspan {
+        fill: #E8336D;
+        font-weight: bold;
+    }
+
+.chart-tropicales .annotation-subject path {
+        fill: #30155d;
+        stroke: #30155d;
+    }
+
+.chart-tropicales .annotation-note path,
+    .chart-tropicales .connector {
+        stroke: #30155d;
+    }
+
+.chart-tropicales .tick line {
+        fill: none;
+        stroke: #777;
+        stroke-dasharray: 3px 3px;
+    }
+
 .heladas-text {
     text-align: left;
 }
@@ -948,6 +968,7 @@ path {
     background-color: #111;
     width: 100%;
     padding: 1.25rem 0;
+    margin-top: 10vh;
 }
 
 .footer-texto {
@@ -975,18 +996,17 @@ path {
     }
 
     .clima-intro {
-        max-width: 55vw;
+        max-width: 40vw;
         margin: 5vh auto;
         margin-bottom: 0;
     }
 
     .wrapper-vw {
-        max-width: 1200px;
+        max-width: 40vw;
     }
 
     .clima-subtitle {
         font-size: 2rem;
-        grid-column: 1/3;
         width: 100%;
     }
 
@@ -1020,10 +1040,6 @@ path {
         padding: 0.31rem;
     }
 
-    .texto {
-        max-width: 50vw;
-    }
-
     .temp-max-graph {
         margin-top: 100px;
     }
@@ -1046,8 +1062,15 @@ path {
     }
 
     .margin-section {
-        margin-top: 5vh;
+        margin-top: 10vh;
     }
+
+    .tabs-maximas-minimas {
+        text-align: center;
+    }
+        .tabs-maximas-minimas .texto {
+            text-align: left;
+        }
 }
 
 /*# sourceMappingURL=styles.css.map */
