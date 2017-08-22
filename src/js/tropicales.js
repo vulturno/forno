@@ -98,6 +98,55 @@ d3.csv('csv/tropicales.csv', function(err, data) {
         .attr("height", function(d) {
             return heightT - yRangeT(d.dias);
         });
+
+        //Add annotations
+          var labels = [{
+            note: {
+                label: "En 1991 se vuelven a superar las 30 noches",
+                wrap: 380
+              },
+            data: { anyo: "1991", dias: 33 },
+            dy: -15,
+            dx: -142
+          }, {
+            note: {
+                label: "En 2003, por primera vez se superan las 40 noches",
+                wrap: 380
+            },
+            data: { anyo: "2003", dias: 47 },
+            dy: -10,
+            dx: -252
+          }].map(function (l) {
+            l.color = "#E8336D";
+            l.note = Object.assign({}, l.note);
+            l.subject = { radius: 4 };
+
+            return l;
+          });
+
+
+          window.makeAnnotations = d3.annotation().annotations(labels).type(d3.annotationCalloutCircle).accessors({ x: function x(d) {
+              return xRangeT(d.anyo);
+            },
+            y: function y(d) {
+              return yRangeT(d.dias);
+            }
+          }).accessorsInverse({
+            anyo: function anyo(d) {
+              return xRangeT.invert(d.x);
+            },
+            dias: function dias(d) {
+              return yRangeT.invert(d.y);
+            }
+          }).on('subjectover', function (annotation) {
+            annotation.type.a.selectAll("g.annotation-connector, g.annotation-note").classed("hidden", false);
+          }).on('subjectout', function (annotation) {
+            annotation.type.a.selectAll("g.annotation-connector, g.annotation-note").classed("hidden", true);
+          });
+
+          svgT.append("g").attr("class", "annotation-test").call(makeAnnotations);
+
+          svgT.selectAll("g.annotation-connector, g.annotation-note").classed("hidden", true);
 });
 
 function resizeT() {
