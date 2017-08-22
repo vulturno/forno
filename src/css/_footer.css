@@ -8,3 +8,8 @@
 .footer-texto {
     color: var(--impureWhite);
 }
+
+.footer-links {
+    color: var(--colorlinks);
+    font-weight: bold;
+}

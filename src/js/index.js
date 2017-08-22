@@ -411,4 +411,3 @@ function updateMin() {
     });
 
 }
-
