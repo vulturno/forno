@@ -62,18 +62,12 @@ d3.csv('csv/temperaturas.csv', function(err, data) {
         return String(d.fecha).match(/07-02/);
     });
 
-    console.log(d3.max(dataFiltered));
-    console.log(d3.min(dataFiltered));
-
-
-
     dataFiltered.forEach(function(d) {
         d.fecha = d.fecha;
         d.maxima = +d.maxima;
         d.minima = +d.minima;
         d.year = getYear(d.fecha);
     });
-
 
     maxTemp = d3.max(dataFiltered, function(d) {
         return d.maxima;
