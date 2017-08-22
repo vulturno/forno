@@ -99,10 +99,9 @@ d3.csv('csv/tropicales.csv', function(err, data) {
             return heightT - yRangeT(d.dias);
         });
 
-        //Add annotations
           var labels = [{
             note: {
-                label: "En 1991 se vuelven a superar las 30 noches",
+                label: "En 1991 se superan por primera vez las 30 noches",
                 wrap: 380
               },
             data: { anyo: "1991", dias: 33 },
@@ -110,16 +109,23 @@ d3.csv('csv/tropicales.csv', function(err, data) {
             dx: -142
           }, {
             note: {
-                label: "En 2003, por primera vez se superan las 40 noches",
+                label: "En 2003 se superan por primera vez las 40 noches",
                 wrap: 380
             },
             data: { anyo: "2003", dias: 47 },
             dy: -10,
             dx: -252
+          }, {
+            note: {
+                label: "El 14 de junio de 2009 se registro la mínima más alta, 24.7ºC",
+                wrap: 450
+            },
+            data: { anyo: "2009", dias: 40 },
+            dy: -10,
+            dx: -252
           }].map(function (l) {
-            l.color = "#E8336D";
             l.note = Object.assign({}, l.note);
-            l.subject = { radius: 4 };
+            l.subject = { radius: 6 };
 
             return l;
           });
