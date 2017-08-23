@@ -1026,6 +1026,7 @@ path {
     .subtitle {
         font-size: 2rem;
         margin: 1.56rem auto;
+        white-space: nowrap;
     }
 
     .container-buttons {

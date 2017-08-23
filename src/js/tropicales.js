@@ -104,7 +104,7 @@ d3.csv('csv/tropicales.csv', function(err, data) {
             var labels = [{
               note: {
                   label: "En 1991 se superan por primera vez las 30 noches",
-                  wrap: 380
+                  wrap: 430
                 },
               data: { anyo: "1991", dias: 33 },
               dy: -15,
@@ -112,15 +112,15 @@ d3.csv('csv/tropicales.csv', function(err, data) {
             }, {
               note: {
                   label: "En 2003 se superan por primera vez las 40 noches",
-                  wrap: 380
+                  wrap: 430
               },
               data: { anyo: "2003", dias: 47 },
               dy: -10,
               dx: -252
             }, {
               note: {
-                  label: "El 14 de junio de 2009 se registro la mínima más alta, 24.7ºC",
-                  wrap: 450
+                  label: "El 14 de junio de 2009 se registra la mínima más alta, 24.7ºC",
+                  wrap: 500
               },
               data: { anyo: "2009", dias: 40 },
               dy: -10,
