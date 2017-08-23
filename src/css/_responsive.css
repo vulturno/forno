@@ -36,6 +36,7 @@
     .subtitle {
         font-size: 32px;
         margin: 25px auto;
+        white-space: nowrap;
     }
 
     .container-buttons {
