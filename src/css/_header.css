@@ -1,17 +1,26 @@
-.header {
+.navegacion {
     width: 100%;
-    padding: 15px 0;
-    background-color: var(--white);
-    border-bottom: 1px solid var(--impureGrey);
-    box-shadow: -5px 7px 9px -8px rgba(0, 0, 0, .59);
-    top: 0;
-    z-index: 2;
     position: fixed;
     /* stylelint-disable */
     position: sticky;
+    position: -webkit-sticky;
     /* stylelint-enable */
+    top: 0;
+    color: var(--impureBlack);
+    font-weight: bold;
+    padding: 5px;
+    z-index: 10;
+    text-align: center;
+    background: var(--gradient1);
+    box-shadow: -6px 8px 8px -8px rgba(0, 0, 0, .75);
 }
 
-.header-nav {
-    margin: 0 auto;
+.navegacion-btn {
+    text-decoration: none;
+    color: var(--impureBlack);
+    font-weight: bold;
+    font-size: 12px;
+    &:not(:last-child) {
+        padding-right: 1px;
+    }
 }
