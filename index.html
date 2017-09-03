@@ -19,6 +19,14 @@
             <p class="texto">A través de gráficas vamos a ver, y a consultar las <span class="bold">temperaturas máximas y mínimas, las noches tropicales y las heladas</span> que se han registrado en el <span class="bold">Aeropuerto de Zaragoza entre los años 1951 y 2017</span>.</p>
         </div>
     </div>
+    <nav class="navegacion">
+        <a href="#maximas" class="navegacion-btn">GRAFICA</a>
+        <a href="#heladas" class="navegacion-btn">HELADAS</a>
+        <a href="#tropicales" class="navegacion-btn">TROPICALES</a>
+        <a href="#tabla-records" class="navegacion-btn">RECORDS</a>
+        <a href="#record-maximas" class="navegacion-btn">MAXIMAS</a>
+        <a href="#record-minimas" class="navegacion-btn">MINIMAS</a>
+    </nav>
     <div class="clima-intro margin-section" id="clima">
         <h2 class="subtitle clima-subtitle">EL CLIMA EN ZARAGOZA</h2>
         <div class="clima-legend">
@@ -45,7 +53,7 @@
             <p class="texto">En esta gráfica puedes consultar todas las máximas y minimas registradas entre 1951 y 2017.</p>
         </div>
     </article>
-    <article class="container-buttons">
+    <article class="container-buttons" id="grafica-maximas">
         <div class="container-update-grafica">
             <div class="container-inputs">
                 <label class="inputs-label" for="updateButtonDay">Día</label>
@@ -72,7 +80,7 @@
             <p class="texto">Se podría definir como una noche en la que la <span class="bold">temperatura mínima es igual o superior a 20ºC</span>. Esta temperatura se suele alcanzar poco después del amanecer.</p>
         </div>
     </article>
-    <article class="tabs-maximas-minimas margin-section">
+    <article class="tabs-maximas-minimas margin-section" id="tabla-records">
         <div class="wrapper-vw">
             <h2 class="subtitle">RÉCORDS DE MÁXIMAS Y MÍNIMAS </h2>
             <p class="texto">A continuación vamos a ver cuando se marcaron las máximas y mínimas de cada dia, y a que año pertenecen.</p>
@@ -2682,7 +2690,7 @@
             </article>
         </section>
     </article>
-    <article class="temp-max-graph margin-section">
+    <article class="temp-max-graph margin-section" id="record-maximas">
         <div class="wrapper-vw">
             <h2 class="subtitle">TEMPERATURAS MÁXIMAS</h2>
             <p class="texto">En la gráfica podemos ver cuantos récords de máximas tiene cada año.</p>
@@ -2690,7 +2698,7 @@
         </div>
         <div class="maximas-chart-container chart-container" id="rm-chart"></div>
     </article>
-    <article class="temp-min-graph margin-section">
+    <article class="temp-min-graph margin-section" id="record-minimas">
         <div class="wrapper-vw">
             <h2 class="subtitle">TEMPERATURAS MÍNIMAS</h2>
             <p class="texto">En la gráfica podemos ver cuantos récords de mínimas tiene cada año.</p>

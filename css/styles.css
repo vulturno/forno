@@ -542,23 +542,33 @@ svg {
         margin-top: 0;
     }
 
-.header {
+.navegacion {
     width: 100%;
-    padding: 0.94rem 0;
-    background-color: #fff;
-    border-bottom: 1px solid #ccc;
-    box-shadow: -5px 7px 9px -8px rgba(0, 0, 0, .59);
-    top: 0;
-    z-index: 2;
     position: fixed;
     /* stylelint-disable */
     position: sticky;
+    position: -webkit-sticky;
     /* stylelint-enable */
+    top: 0;
+    color: #111;
+    font-weight: bold;
+    padding: 0.31rem;
+    z-index: 10;
+    text-align: center;
+    background: #fcde9c;
+    box-shadow: -6px 8px 8px -8px rgba(0, 0, 0, .75);
 }
 
-.header-nav {
-    margin: 0 auto;
+.navegacion-btn {
+    text-decoration: none;
+    color: #111;
+    font-weight: bold;
+    font-size: 0.75rem;
 }
+
+.navegacion-btn:not(:last-child) {
+        padding-right: 1px;
+    }
 
 .grid-intro {
     background: linear-gradient(150deg, #fcde9c 15%, #e34f6f 70%, #7c1d6f 94%);
@@ -1089,6 +1099,17 @@ path {
     .wrapper-footer {
         max-width: 70vw;
     }
+
+    .navegacion {
+        padding: 0.94rem;
+    }
+
+    .navegacion-btn {
+        font-size: 1rem;
+    }
+        .navegacion-btn:not(:last-child) {
+            padding-right: 5px;
+        }
 }
 
 /*# sourceMappingURL=styles.css.map */
