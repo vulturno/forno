@@ -13,6 +13,7 @@
     text-align: center;
     background: var(--gradient1);
     box-shadow: -6px 8px 8px -8px rgba(0, 0, 0, .75);
+    box-sizing: border-box;
 }
 
 .navegacion-btn {
