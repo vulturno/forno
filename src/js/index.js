@@ -225,7 +225,6 @@ function update() {
             .attr("r", function(d) {
                 if (d.maxima === maxTemp) {
                     return 6 * Math.sqrt(d.maxima / Math.PI);
-                    console.log(d.maxima)
                 } else if (d.maxima === minTemp) {
                     return 6 * Math.sqrt(d.maxima / Math.PI);
                 } else {
@@ -342,11 +341,7 @@ function updateMin() {
         circles.transition()
             .duration(1000)
             .attr("r", function(d) {
-                if (d.minima === maxTemp) {
-                    return 10 * Math.sqrt(d.minima / Math.PI);
-                } else if (d.minima === minTemp) {
-                    return 10 * Math.sqrt(d.minima / Math.PI);
-                } else if (d.minima >= 20) {
+                if (d.minima >= 20) {
                     return 11;
                 } else if (d.minima >= 18) {
                     return 10;
@@ -358,9 +353,8 @@ function updateMin() {
                     return 7;
                 } else if (d.minima >= 0) {
                     return 6;
-                } else if (d.minima <= 0) {
+                } else if (d.minima < 0) {
                     return 4;
-                console.log(d.minima)
                 };
             })
             .attr("cx", function(d) {
@@ -371,7 +365,7 @@ function updateMin() {
             });
 
         circles.style("fill", function(d) {
-            if (d.minima === maxTemp) {
+            if (d.minima === minTemp) {
                 return "#70284a";
             } else if (d.minima === minTemp) {
                 return "#045275";
