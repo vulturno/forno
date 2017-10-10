@@ -21,8 +21,12 @@
 }
 
 .clima-pie {
-    font-size: 10px;
+    font-size: 16px;
+    font-family: var(--georgia);
+    margin-top: 16px;
     color: var(--impureBlack);
+    display: block;
+    text-align: center;
 }
 
 .clima-legend {
