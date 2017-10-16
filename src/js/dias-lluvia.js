@@ -1,4 +1,4 @@
-//Heladas
+//Dias de lluvia
 var barPadding = 2;
 var datosLLUMIN = [];
 

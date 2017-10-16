@@ -1114,7 +1114,7 @@ function resizeRMIN() {
         .call(xAxisRMIN);
 }
 
-//Heladas
+//Días de lluvia
 var barPadding = 2;
 var datosLLUMIN = [];
 
@@ -1149,7 +1149,7 @@ var yAxisLLUMIN = d3.axisLeft()
     .ticks(5);
 
 var colorsLLUMIN = d3.scaleLinear()
-    .domain([10, 35])
+    .domain([0, 15])
     .range(["#4f90a6", "#3b738f", "#2a5674"]);
 
 d3.csv('csv/dias-de-lluvia.csv', function(err, data) {
