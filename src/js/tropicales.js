@@ -218,5 +218,3 @@ function resizeT() {
         .call(xAxisT);
 
 }
-
-
