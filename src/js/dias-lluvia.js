@@ -34,7 +34,7 @@ var yAxisLLUMIN = d3.axisLeft()
 
 var colorsLLUMIN = d3.scaleLinear()
     .domain([10, 35])
-    .range(["#6893ff","#2166d7","#003da5","#000049"]);
+    .range(["#4f90a6", "#3b738f", "#2a5674"]);
 
 d3.csv('csv/dias-de-lluvia.csv', function(err, data) {
 
@@ -102,7 +102,7 @@ d3.csv('csv/dias-de-lluvia.csv', function(err, data) {
 
 function resizeLLUMIN() {
 
-    widthLLUMIN = parseInt(d3.select('#LLUMIN-chart').style('width'));
+    widthLLUMIN = parseInt(d3.select('#dias-lluvia').style('width'));
     widthLLUMIN = widthLLUMIN - 25;
 
     var svgLLUMIN = d3.select('.chart-lluvias');
@@ -157,7 +157,7 @@ function resizeLLUMIN() {
     svgLLUMIN.append("g")
         .attr("class", "xAxis")
         .attr("transform", "translate(0,400)")
-        .call(xAxisRMIN);
+        .call(xAxisLLUMIN);
 }
 
 
