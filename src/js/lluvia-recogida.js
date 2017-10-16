@@ -14,14 +14,20 @@ var svgRLLUMIN = d3.select('.recogida-lluvias-chart-container')
     .append("g")
     .attr("transform", "translate(" + (margin.left - margin.right) + "," + margin.top + ")");
 
-var x = d3.scaleTime().range([0, widthRLLUMIN]);
-var y = d3.scaleLinear().range([heightRLLUMIN, 0]);
+var x = d3.scaleTime()
+    .domain([1941,2017])
+    .range([0, widthRLLUMIN]);
+var y = d3.scaleLinear()
+    .domain([0,700])
+    .range([heightRLLUMIN, 0]);
 
-// // define the area
-// var area = d3.area()
-//     .x(function(d) { return x(d.date); })
-//     .y0(height)
-//     .y1(function(d) { return y(d.close); });
+var xAxisRLLUMIN = d3.axisBottom(x)
+    .tickFormat(d3.format("d"))
+    .ticks(10);
+
+var yAxisRLLUMIN = d3.axisLeft(y)
+    .tickSize(-widthLLUMIN + 16)
+    .ticks(5);
 
 var valueline = d3.line()
     .x(function(d) {
@@ -33,36 +39,23 @@ var valueline = d3.line()
 
 d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
 
-    datosLLUMIN = data;
+    datosRLLUMIN = data;
 
-    datosLLUMIN .forEach(function(d) {
+    datosRLLUMIN.forEach(function(d) {
         d.anual = d.fecha;
         d.dia = d.precipitacion_anual;
     });
 
-    x.domain([d3.min(datosLLUMIN, function(d) {
-            return d.fecha;
-        }),
-        d3.max(datosLLUMIN, function(d) {
-            return d.fecha;
-        })
-    ]);
-
-    y.domain([0, d3.max(datosLLUMIN, function(d) {
-            return d.precipitacion_anual;
-        })
-    ]);
-
     svgRLLUMIN.append("path")
-        .data([datosLLUMIN])
+        .data([datosRLLUMIN])
         .attr("class", "line")
         .attr("d", valueline);
 
     svgRLLUMIN.append("g")
-        .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x));
+        .attr("transform", "translate(0," + heightRLLUMIN + ")")
+        .call(xAxisRLLUMIN);
 
     svgRLLUMIN.append("g")
-        .call(d3.axisLeft(y));
+        .call(yAxisRLLUMIN);
 
 });
