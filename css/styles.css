@@ -542,6 +542,11 @@ svg {
         margin-top: 0;
     }
 
+.chart-lluvias-recogida .line {
+        stroke: blue;
+        stroke-width: 2px;
+    }
+
 .navegacion {
     width: 100%;
     position: fixed;
@@ -569,6 +574,10 @@ svg {
 
 .navegacion-btn:not(:last-child) {
         padding-right: 1px;
+    }
+
+.navegacion-btn:hover {
+        color: #e34f6f;
     }
 
 .grid-intro {
@@ -656,14 +665,9 @@ svg {
     font-weight: bold;
 }
 
-.textoBarras,
-.xAxis,
-.yAxis {
-    font-size: 0.75rem;
-}
-
 .textoBarras text, .xAxis text, .yAxis text {
         font-size: 0.75rem;
+        font-weight: bold;
     }
 
 .yAxis path {
@@ -860,6 +864,20 @@ path {
         stroke: #777;
         stroke-dasharray: 3px 3px;
     }
+
+.chart-lluvias-recogida path {
+        fill: none;
+        stroke: none;
+    }
+
+.chart-lluvias-recogida .area {
+        fill: blue;
+    }
+
+.chart-lluvias-recogida .tick text {
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
 
 .heladas-text {
     text-align: left;
@@ -1091,7 +1109,7 @@ path {
     }
 
     .margin-section {
-        margin-top: 64px;
+        margin: 4rem auto;
     }
 
     .tabs-maximas-minimas {
@@ -1113,7 +1131,7 @@ path {
         font-size: 1rem;
     }
         .navegacion-btn:not(:last-child) {
-            padding-right: 5px;
+            padding-right: 16px;
         }
 }
 

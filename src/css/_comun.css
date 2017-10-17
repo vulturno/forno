@@ -85,3 +85,10 @@ svg {
         margin-top: 0;
     }
 }
+
+.chart-lluvias-recogida {
+    .line {
+        stroke: blue;
+        stroke-width: 2px;
+    }
+}

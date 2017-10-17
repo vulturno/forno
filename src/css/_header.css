@@ -24,4 +24,7 @@
     &:not(:last-child) {
         padding-right: 1px;
     }
+    &:hover {
+        color: var(--gradient2);
+    }
 }

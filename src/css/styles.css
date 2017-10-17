@@ -12,6 +12,7 @@
 @import '_clima';
 @import '_maximas';
 @import '_tropicales';
+@import '_lluvias';
 @import '_heladas';
 @import '_records';
 @import '_footer';
