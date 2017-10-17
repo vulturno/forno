@@ -665,14 +665,8 @@ svg {
     font-weight: bold;
 }
 
-.textoBarras,
-.xAxis,
-.yAxis {
-    font-size: 0.75rem;
-}
-
 .textoBarras text, .xAxis text, .yAxis text {
-        font-size: 0.88rem;
+        font-size: 0.75rem;
         font-weight: bold;
     }
 
@@ -870,6 +864,20 @@ path {
         stroke: #777;
         stroke-dasharray: 3px 3px;
     }
+
+.chart-lluvias-recogida path {
+        fill: none;
+        stroke: none;
+    }
+
+.chart-lluvias-recogida .area {
+        fill: blue;
+    }
+
+.chart-lluvias-recogida .tick text {
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
 
 .heladas-text {
     text-align: left;

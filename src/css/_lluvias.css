@@ -1,0 +1,15 @@
+.chart-lluvias-recogida {
+    path {
+        fill: none;
+        stroke: none;
+    }
+    .area {
+        fill: blue;
+    }
+    .tick {
+        text {
+            font-size: 12px;
+            font-weight: bold;
+        }
+    }
+}

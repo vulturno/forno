@@ -18,9 +18,8 @@
 .textoBarras,
 .xAxis,
 .yAxis {
-    font-size: 12px;
     text {
-        font-size: 14px;
+        font-size: 12px;
         font-weight: bold;
     }
 }
