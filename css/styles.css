@@ -672,7 +672,8 @@ svg {
 }
 
 .textoBarras text, .xAxis text, .yAxis text {
-        font-size: 0.75rem;
+        font-size: 0.88rem;
+        font-weight: bold;
     }
 
 .yAxis path {
@@ -1100,7 +1101,7 @@ path {
     }
 
     .margin-section {
-        margin-top: 64px;
+        margin: 4rem auto;
     }
 
     .tabs-maximas-minimas {
