@@ -1276,8 +1276,6 @@ function resizeLLUMIN() {
         .call(xAxisLLUMIN);
 }
 
-
-
 var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 
 function responsiveChart() {
