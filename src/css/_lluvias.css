@@ -4,7 +4,18 @@
         stroke: none;
     }
     .area {
-        fill: blue;
+        fill: #34009c;
+    }
+    circle.y {
+        fill: #eda937;
+        stroke: #eda937;
+        r: 10;
+    }
+    .x,
+    .y {
+        stroke: #eda937;
+        stroke-width: 2;
+        opacity: 1;
     }
     .tick {
         text {

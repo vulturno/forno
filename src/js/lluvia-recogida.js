@@ -14,10 +14,14 @@ var svgRLLUMIN = d3.select('.recogida-lluvias-chart-container')
     .append("g")
     .attr("transform", "translate(" + (margin.left - margin.right) + "," + margin.top + ")");
 
+var layerDates = svgRLLUMIN.append('g');
+
+var focus = svgRLLUMIN.append("g")
+    .style("display", "none");
+
 var bisectDate = d3.bisector(function(d) {
-        return d.fecha;
-    })
-    .left;
+    return d.fecha;
+}).left;
 
 var x = d3.scaleTime()
     .domain([1941, 2017])
@@ -46,8 +50,6 @@ var area = d3.area()
     })
     .curve(d3.curveCardinal.tension(0.6));
 
-var focus = svgRLLUMIN.append("g")
-    .style("display", "none");
 
 d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
 
@@ -65,7 +67,7 @@ d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
     svgRLLUMIN.append("g")
         .call(yAxisRLLUMIN);
 
-    svgRLLUMIN.append("path")
+    var areaDates = layerDates.append("path")
         .data([datosRLLUMIN])
         .attr("class", "area")
         .attr("d", area);
@@ -73,36 +75,16 @@ d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
     // append the x line
     focus.append("line")
         .attr("class", "x")
-        .style("stroke", "blue")
-        .style("stroke-dasharray", "3.3")
-        .style("opacity", 0.5)
         .attr("y1", 0)
         .attr("y2", heightRLLUMIN);
 
-    // append the y line
-    focus.append("line")
-        .attr("class", "y")
-        .style("stroke", "blue")
-        .style("stroke-dasharray", "3.3")
-        .style("opacity", 0.5)
-        .attr("x1", widthRLLUMIN)
-        .attr("x2", widthRLLUMIN);
-
-    // append the circle at the intersection
-    focus.append("circle")
-        .attr("class", "y")
-        .style("fill", "none")
-        .style("stroke", "blue")
-        .attr("r", 4);
+    // // append the y line
+    // focus.append("line")
+    //     .attr("class", "y")
+    //     .attr("x1", widthRLLUMIN)
+    //     .attr("x2", widthRLLUMIN);
 
     // place the value at the intersection
-    focus.append("text")
-        .attr("class", "y1")
-        .style("stroke", "white")
-        .style("stroke-width", "3.5px")
-        .style("opacity", 0.8)
-        .attr("dx", 8)
-        .attr("dy", "-.3em");
 
     focus.append("text")
         .attr("class", "y2")
@@ -110,13 +92,6 @@ d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
         .attr("dy", "-.3em");
 
     // place the date at the intersection
-    focus.append("text")
-        .attr("class", "y3")
-        .style("stroke", "white")
-        .style("stroke-width", "3.5px")
-        .style("opacity", 0.8)
-        .attr("dx", 8)
-        .attr("dy", "1em");
     focus.append("text")
         .attr("class", "y4")
         .attr("dx", 8)
@@ -139,28 +114,11 @@ d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
             d1 = datosRLLUMIN[i],
             d = x0 - d0.fecha > d1.fecha - x0 ? d1 : d0;
 
-        focus.select("circle.y")
-            .attr("transform",
-                "translate(" + x(d.fecha) + "," +
-                y(d.precipitacion_anual) + ")");
-
-        focus.select("text.y1")
-            .attr("transform",
-                "translate(" + x(d.fecha) + "," +
-                y(d.precipitacion_anual) + ")")
-            .text(d.precipitacion_anual);
-
         focus.select("text.y2")
             .attr("transform",
                 "translate(" + x(d.fecha) + "," +
                 y(d.precipitacion_anual) + ")")
             .text(d.precipitacion_anual);
-
-        focus.select("text.y3")
-            .attr("transform",
-                "translate(" + x(d.fecha) + "," +
-                y(d.precipitacion_anual) + ")")
-            .text(d.fecha);
 
         focus.select("text.y4")
             .attr("transform",
@@ -173,15 +131,11 @@ d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
                 "translate(" + x(d.fecha) + "," +
                 0 + ")");
 
-        focus.select(".y")
-            .attr("transform",
-                "translate(" + widthRLLUMIN * -1 + "," +
-                y(d.precipitacion_anual) + ")")
-            .attr("x2", widthRLLUMIN + widthRLLUMIN);
+        // focus.select(".y")
+        //     .attr("transform",
+        //         "translate(" + widthRLLUMIN * -1 + "," +
+        //         y(d.precipitacion_anual) + ")")
+        //     .attr("x2", widthRLLUMIN + widthRLLUMIN);
     }
 
 });
-
-
-
-
