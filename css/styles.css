@@ -614,6 +614,7 @@ svg {
 
 .zaragoza-img {
     max-width: 100%;
+    width: 100%;
     object-fit: cover;
 }
 
@@ -865,6 +866,10 @@ path {
         stroke-dasharray: 3px 3px;
     }
 
+.recogida-lluvias-chart-container {
+    position: relative;
+}
+
 .chart-lluvias-recogida path {
         fill: none;
         stroke: none;
@@ -890,6 +895,34 @@ path {
 .chart-lluvias-recogida .tick text {
             font-size: 0.75rem;
             font-weight: bold;
+        }
+
+.tooltip-lluvias {
+    background-color: #82ceea;
+    height: auto;
+    width: auto;
+    border-color: #82ceea;
+}
+
+.tooltip-lluvias p:empty {
+            display: none;
+        }
+
+.tooltip-lluvias .tooltipYear {
+        color: #111;
+        font-size: 1.1rem;
+        font-weight: normal;
+        max-width: 300px;
+    }
+
+.tooltip-lluvias .tooltipYear .textYear {
+            display: block;
+            font-size: 1.3rem;
+        }
+
+.tooltip-lluvias .tooltipYear span {
+            font-weight: bold;
+            font-family: 'SFMono-Regular', Consolas, Menlo, Courier, monospace;
         }
 
 .heladas-text {
