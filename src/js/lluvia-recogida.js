@@ -107,8 +107,8 @@ d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
             d0 = datosRLLUMIN[i - 1],
             d1 = datosRLLUMIN[i],
             d = x0 - d0.fecha > d1.fecha - x0 ? d1 : d0;
-            positionX = x(d.fecha) + 150;
-            positionY = y(d.precipitacion_anual) + 50;
+            positionX = x(d.fecha);
+            positionY = y(d.precipitacion_anual) + 80;
 
         tooltipDates.style("opacity", 1)
             .html('<p class="tooltipYear"><span class="textYear">' + d.fecha + '</span>En <span>' + d.dias + '</span> días de lluvia se recogieron <span>' + d.precipitacion_anual + '</span> milímetros de agua.<p/>')
