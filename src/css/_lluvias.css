@@ -1,15 +1,56 @@
+.recogida-lluvias-chart-container {
+    position: relative;
+}
+
 .chart-lluvias-recogida {
     path {
         fill: none;
         stroke: none;
     }
     .area {
-        fill: blue;
+        fill: #34009c;
+    }
+    circle.y {
+        fill: #eda937;
+        stroke: #eda937;
+        r: 10;
+    }
+    .x,
+    .y {
+        stroke: #eda937;
+        stroke-width: 2;
+        opacity: 1;
     }
     .tick {
         text {
             font-size: 12px;
             font-weight: bold;
+        }
+    }
+}
+
+.tooltip-lluvias {
+    background-color: #82ceea;
+    height: auto;
+    width: auto;
+    border-color: #82ceea;
+    p {
+        &:empty {
+            display: none;
+        }
+    }
+    .tooltipYear {
+        color: var(--impureBlack);
+        font-size: 1.1rem;
+        font-weight: normal;
+        max-width: 300px;
+        .textYear {
+            display: block;
+            font-size: 1.3rem;
+        }
+        span {
+            font-weight: bold;
+            font-family: var(--monospace);
         }
     }
 }
