@@ -50,6 +50,10 @@ var area = d3.area()
     })
     .curve(d3.curveCardinal.tension(0.6));
 
+var tooltipDates = d3.select('.recogida-lluvias-chart-container')
+    .append("div")
+    .attr("class", "tooltip tooltip-lluvias")
+    .style("opacity", 0);
 
 d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
 
@@ -58,6 +62,7 @@ d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
     datosRLLUMIN.forEach(function(d) {
         d.anual = d.fecha;
         d.dia = d.precipitacion_anual;
+        d.dias = d.dias_lluvia;
     });
 
     svgRLLUMIN.append("g")
@@ -72,39 +77,28 @@ d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
         .attr("class", "area")
         .attr("d", area);
 
-    // append the x line
     focus.append("line")
         .attr("class", "x")
         .attr("y1", 0)
         .attr("y2", heightRLLUMIN);
-
-    // // append the y line
-    // focus.append("line")
-    //     .attr("class", "y")
-    //     .attr("x1", widthRLLUMIN)
-    //     .attr("x2", widthRLLUMIN);
-
-    // place the value at the intersection
 
     focus.append("text")
         .attr("class", "y2")
         .attr("dx", 8)
         .attr("dy", "-.3em");
 
-    // place the date at the intersection
     focus.append("text")
         .attr("class", "y4")
         .attr("dx", 8)
         .attr("dy", "1em");
 
-    // append the rectangle to capture mouse
     svgRLLUMIN.append("rect")
         .attr("width", widthRLLUMIN)
         .attr("height", heightRLLUMIN)
         .style("fill", "none")
         .style("pointer-events", "all")
         .on("mouseover", function() { focus.style("display", null); })
-        // .on("mouseout", function() { focus.style("display", "none"); })
+        .on("mouseout", function() { focus.style("display", "none"); })
         .on("mousemove", mousemove);
 
     function mousemove() {
@@ -113,29 +107,19 @@ d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
             d0 = datosRLLUMIN[i - 1],
             d1 = datosRLLUMIN[i],
             d = x0 - d0.fecha > d1.fecha - x0 ? d1 : d0;
+            positionX = x(d.fecha) + 150;
+            positionY = y(d.precipitacion_anual) + 50;
 
-        focus.select("text.y2")
-            .attr("transform",
-                "translate(" + x(d.fecha) + "," +
-                y(d.precipitacion_anual) + ")")
-            .text(d.precipitacion_anual);
+        tooltipDates.style("opacity", 1)
+            .html('<p class="tooltipYear"><span class="textYear">' + d.fecha + '</span>En <span>' + d.dias + '</span> días de lluvia se recogieron <span>' + d.precipitacion_anual + '</span> milímetros de agua.<p/>')
+            .style("left", positionX + "px")
+            .style("top", positionY + "px");
 
-        focus.select("text.y4")
-            .attr("transform",
-                "translate(" + x(d.fecha) + "," +
-                y(d.precipitacion_anual) + ")")
-            .text(d.fecha);
+
 
         focus.select(".x")
             .attr("transform",
                 "translate(" + x(d.fecha) + "," +
                 0 + ")");
-
-        // focus.select(".y")
-        //     .attr("transform",
-        //         "translate(" + widthRLLUMIN * -1 + "," +
-        //         y(d.precipitacion_anual) + ")")
-        //     .attr("x2", widthRLLUMIN + widthRLLUMIN);
     }
-
 });
