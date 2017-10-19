@@ -6,6 +6,10 @@ var margin = { top: 50, right: 50, bottom: 50, left: 110 },
     widthRLLUMIN = 1200 - margin.left - margin.right,
     heightRLLUMIN = 500 - margin.top - margin.bottom;
 
+//Calculando el ancho de la pantalla. Restamos el ancho a al tamaño de la pantalla
+var widthDocument = document.getElementById('dias-lluvia-recogida').clientWidth;
+var tooltipDistance = (widthDocument - widthRLLUMIN) - (margin.left + margin.right);
+
 var svgRLLUMIN = d3.select('.recogida-lluvias-chart-container')
     .append('svg')
     .attr('class', 'chart-lluvias-recogida')
@@ -55,6 +59,7 @@ var tooltipDates = d3.select('.recogida-lluvias-chart-container')
     .attr("class", "tooltip tooltip-lluvias")
     .style("opacity", 0);
 
+
 d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
 
     datosRLLUMIN = data;
@@ -98,7 +103,7 @@ d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
         .style("fill", "none")
         .style("pointer-events", "all")
         .on("mouseover", function() { focus.style("display", null); })
-        .on("mouseout", function() { focus.style("display", "none"); })
+        // .on("mouseout", function() { focus.style("display", "none"); })
         .on("mousemove", mousemove);
 
     function mousemove() {
@@ -107,7 +112,7 @@ d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
             d0 = datosRLLUMIN[i - 1],
             d1 = datosRLLUMIN[i],
             d = x0 - d0.fecha > d1.fecha - x0 ? d1 : d0;
-            positionX = x(d.fecha);
+            positionX = x(d.fecha) + tooltipDistance;
             positionY = y(d.precipitacion_anual) + 80;
 
         tooltipDates.style("opacity", 1)

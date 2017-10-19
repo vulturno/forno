@@ -34,6 +34,7 @@
     height: auto;
     width: auto;
     border-color: #82ceea;
+    margin-left: 0;
     p {
         &:empty {
             display: none;
