@@ -7,7 +7,7 @@ var margin = { top: 50, right: 50, bottom: 50, left: 110 },
     heightRLLUMIN = 500 - margin.top - margin.bottom;
 
 //Calculando el ancho de la pantalla. Restamos el ancho a al tamaño de la pantalla
-var widthDocument = document.getElementById('dias-lluvia-recogida').clientWidth;
+var widthDocument = document.body.clientWidth;
 var tooltipDistance = (widthDocument - widthRLLUMIN) - (margin.left + margin.right);
 
 var svgRLLUMIN = d3.select('.recogida-lluvias-chart-container')
@@ -103,8 +103,9 @@ d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
         .style("fill", "none")
         .style("pointer-events", "all")
         .on("mouseover", function() { focus.style("display", null); })
-        // .on("mouseout", function() { focus.style("display", "none"); })
+        .on("mouseout", function() { focus.style("display", "none"); })
         .on("mousemove", mousemove);
+
 
     function mousemove() {
         var x0 = x.invert(d3.mouse(this)[0]),
@@ -114,13 +115,14 @@ d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
             d = x0 - d0.fecha > d1.fecha - x0 ? d1 : d0;
             positionX = x(d.fecha) + tooltipDistance;
             positionY = y(d.precipitacion_anual) + 80;
+            postionXTooltip = positionX + 300;
+            positionRightTooltip = widthDocument - positionX;
 
         tooltipDates.style("opacity", 1)
             .html('<p class="tooltipYear"><span class="textYear">' + d.fecha + '</span>En <span>' + d.dias + '</span> días de lluvia se recogieron <span>' + d.precipitacion_anual + '</span> milímetros de agua.<p/>')
-            .style("left", positionX + "px")
-            .style("top", positionY + "px");
-
-
+            .style("left", postionXTooltip > widthDocument ? 'auto' : positionX + 'px')
+            .style("top", positionY + "px")
+            .style("right", postionXTooltip > widthDocument ? positionRightTooltip + 'px' : 'auto' );
 
         focus.select(".x")
             .attr("transform",
