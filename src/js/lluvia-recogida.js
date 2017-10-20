@@ -7,10 +7,11 @@ var margin = { top: 50, right: 50, bottom: 50, left: 110 },
     heightRLLUMIN = 500 - margin.top - margin.bottom;
 
 //Calculando el ancho de la pantalla. Restamos el ancho a al tamaño de la pantalla
-var widthDocument = document.body.clientWidth;
-var tooltipDistance = (widthDocument - widthRLLUMIN) - (margin.left + margin.right);
+var element = document.getElementById('forno');
+var positionInfo = element.getBoundingClientRect();
+var widthDocument = positionInfo.width;
 
-var svgRLLUMIN = d3.select('.recogida-lluvias-chart-container')
+var svgRLLUMIN = d3.select('.precipitaciones-chart-container')
     .append('svg')
     .attr('class', 'chart-lluvias-recogida')
     .attr("width", widthRLLUMIN + margin.left + margin.right)
@@ -54,7 +55,7 @@ var area = d3.area()
     })
     .curve(d3.curveCardinal.tension(0.6));
 
-var tooltipDates = d3.select('.recogida-lluvias-chart-container')
+var tooltipDates = d3.select('.precipitaciones-chart-container')
     .append("div")
     .attr("class", "tooltip tooltip-lluvias")
     .style("opacity", 0);
@@ -113,16 +114,17 @@ d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
             d0 = datosRLLUMIN[i - 1],
             d1 = datosRLLUMIN[i],
             d = x0 - d0.fecha > d1.fecha - x0 ? d1 : d0;
-            positionX = x(d.fecha) + tooltipDistance;
-            positionY = y(d.precipitacion_anual) + 80;
-            postionXTooltip = positionX + 300;
-            positionRightTooltip = widthDocument - positionX;
+            positionX = x(d.fecha);
+            positionX = x(d.fecha) + 60;
+            positionY = y(d.precipitacion_anual);
+            postionWidthTooltip = positionX + 300;
+            positionRightTooltip = 1200 - positionX;
 
         tooltipDates.style("opacity", 1)
             .html('<p class="tooltipYear"><span class="textYear">' + d.fecha + '</span>En <span>' + d.dias + '</span> días de lluvia se recogieron <span>' + d.precipitacion_anual + '</span> milímetros de agua.<p/>')
-            .style("left", postionXTooltip > widthDocument ? 'auto' : positionX + 'px')
+            .style("left", postionWidthTooltip > 1200 ? 'auto' : positionX + 'px')
             .style("top", positionY + "px")
-            .style("right", postionXTooltip > widthDocument ? positionRightTooltip + 'px' : 'auto' );
+            .style("right", postionWidthTooltip > 1200 ? positionRightTooltip + 'px' : 'auto' );
 
         focus.select(".x")
             .attr("transform",
