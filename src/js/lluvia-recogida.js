@@ -103,8 +103,13 @@ d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
         .attr("height", heightRLLUMIN)
         .style("fill", "none")
         .style("pointer-events", "all")
-        .on("mouseover", function() { focus.style("display", null); })
-        .on("mouseout", function() { focus.style("display", "none"); })
+        .on("mouseover", function() {
+            focus.style("display", null);
+        })
+        .on("mouseout", function() {
+            focus.style("display", "none")
+            tooltipDates.style("opacity", 0)
+        })
         .on("mousemove", mousemove);
 
 
@@ -114,17 +119,17 @@ d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
             d0 = datosRLLUMIN[i - 1],
             d1 = datosRLLUMIN[i],
             d = x0 - d0.fecha > d1.fecha - x0 ? d1 : d0;
-            positionX = x(d.fecha);
-            positionX = x(d.fecha) + 60;
-            positionY = y(d.precipitacion_anual);
-            postionWidthTooltip = positionX + 300;
-            positionRightTooltip = 1200 - positionX;
+        positionX = x(d.fecha);
+        positionX = x(d.fecha) + 60;
+        positionY = y(d.precipitacion_anual);
+        postionWidthTooltip = positionX + 300;
+        positionRightTooltip = 1200 - positionX;
 
         tooltipDates.style("opacity", 1)
             .html('<p class="tooltipYear"><span class="textYear">' + d.fecha + '</span>En <span>' + d.dias + '</span> días de lluvia se recogieron <span>' + d.precipitacion_anual + '</span> milímetros de agua.<p/>')
             .style("left", postionWidthTooltip > 1200 ? 'auto' : positionX + 'px')
             .style("top", positionY + "px")
-            .style("right", postionWidthTooltip > 1200 ? positionRightTooltip + 'px' : 'auto' );
+            .style("right", postionWidthTooltip > 1200 ? positionRightTooltip + 'px' : 'auto');
 
         focus.select(".x")
             .attr("transform",
