@@ -283,36 +283,36 @@ function updateMin() {
 
     d3.csv('csv/temperaturas.csv', function(err, data) {
 
-        dataFiltered = data.filter(function(d) {
+        dataFilterMin = data.filter(function(d) {
             return String(d.fecha).match(reValueDate);
         });
 
-        dataFiltered.forEach(function(d) {
+        dataFilterMin.forEach(function(d) {
             d.fecha = d.fecha;
             d.maxima = +d.maxima;
             d.minima = +d.minima;
             d.year = getYear(d.fecha);
         });
 
-        maxTemp = d3.max(dataFiltered, function(d) {
+        maxTemp = d3.max(dataFilterMin, function(d) {
             return d.minima;
         });
-        minTemp = d3.min(dataFiltered, function(d) {
+        minTemp = d3.min(dataFilterMin, function(d) {
             return d.minima;
         });
 
-        xRange.domain([d3.min(dataFiltered, function(d) {
+        xRange.domain([d3.min(dataFilterMin, function(d) {
                 return d.year;
             }),
-            d3.max(dataFiltered, function(d) {
+            d3.max(dataFilterMin, function(d) {
                 return d.year;
             })
         ]);
 
-        yRange.domain([d3.min(dataFiltered, function(d) {
+        yRange.domain([d3.min(dataFilterMin, function(d) {
                 return d.minima;
             }),
-            d3.max(dataFiltered, function(d) {
+            d3.max(dataFilterMin, function(d) {
                 return d.minima;
             })
         ]);
@@ -336,7 +336,7 @@ function updateMin() {
             .text("Temperaturas mínimas");
 
         var circles = svg.selectAll("circle")
-            .data(dataFiltered);
+            .data(dataFilterMin);
 
         circles.transition()
             .duration(1000)
