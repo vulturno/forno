@@ -1,1 +1,1184 @@
-/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 2.5rem}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}[hidden],template{display:none}*{font-family:BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,sans-serif;line-height:1.5}svg{max-width:1200px;display:block;margin:0 auto}.bold{font-family:Georgia,serif;font-weight:700}.montserrat{font-family:Montserrat,sans-serif}.georgia{font-family:Georgia,serif}.system-font{font-family:BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,sans-serif}.monospace{font-family:SFMono-Regular,Consolas,Menlo,Courier,monospace}.color-title-max{color:#07043c}.color-title-min{color:#2fe94a}.wrapper-footer,.wrapper-vw{width:90vw;margin:0 auto}.subtitle{font-family:Montserrat,sans-serif;color:#072a12;font-weight:700;font-size:1.5rem;margin:.31rem auto;text-align:left}.subtitle:before{content:"";display:block;border-bottom:5px solid #e34f6f;width:1em}.texto{font-size:1.13rem;color:#111;font-family:Georgia,serif}.heladas,.tropicales{position:relative;text-align:center}.heladas .wrapper-vw,.tropicales .wrapper-vw{margin-bottom:0}.chart-container{max-width:1200px;margin:0 auto}.tropicales-text{text-align:left}.tropicales-text.wrapper-vw{margin-top:0}.chart-lluvias-recogida .line{stroke:blue;stroke-width:2px}.navegacion{width:100%;position:fixed;position:sticky;position:-webkit-sticky;top:0;color:#111;font-weight:700;padding:.31rem;z-index:10;text-align:center;background:#f1f1f1;box-shadow:-6px 8px 8px -8px rgba(0,0,0,.75);box-sizing:border-box}.navegacion-btn{text-decoration:none;color:#111;font-weight:700;font-size:.75rem}.navegacion-btn:not(:last-child){padding-right:1px}.navegacion-btn:hover{color:#e34f6f}.grid-intro{background:linear-gradient(150deg,#fcde9c 15%,#e34f6f 70%,#7c1d6f 94%);padding:1.25rem}.title{font-family:Montserrat,sans-serif;font-size:4.38rem;font-weight:700;color:#000;margin:.31rem 0}.title:after,.title:before{content:"";display:block;border-bottom:1px solid #111;width:.6em}.clima-intro{position:relative;padding:1.25rem}.zaragoza-img{max-width:100%;width:100%;object-fit:cover}.legend-text{font-size:1.13rem;font-family:Georgia,serif;color:#111;margin-top:0}.clima-subtitle{font-size:1.5rem;margin:.31rem 0}.clima-pie{font-size:1rem;margin-top:16px;color:#111;display:block;text-align:center}.clima-legend,.clima-pie{font-family:Georgia,serif}.clima-legend{font-size:1.13rem}.clima-link{display:block;margin-top:10px}.text-button{font-size:1rem;font-weight:700;margin-top:0}.container-inputs{display:inline-block}.inputs-label{display:block;margin-bottom:5px;text-align:left;font-weight:700}.textoBarras text,.xAxis text,.yAxis text{font-size:.75rem;font-weight:700}.yAxis path{stroke:none}path{fill:none;stroke:#000}.tooltip{position:absolute;z-index:2;width:70px;margin-left:20px;height:60px;padding:.63rem;background:#172f6e;border:1px solid #ccc;border-radius:3px}.tooltipTemp,.tooltipYear{font-weight:700;font-size:.88rem;margin:0 0 .31rem;color:#f5d391}.tick line{fill:none;stroke:#888;stroke-dasharray:3px 3px}.input-update-grafica{border:1px solid #111;height:50px;max-width:30px;padding:0 1.25rem}.container-update-grafica{display:inline-block;text-align:center}.container-buttons{padding:1.25rem}.btn-update-max,.btn-update-min{transition:border-color .4s,color .4s}.btn-update-max:before,.btn-update-min:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:#eafd8e;z-index:-1;opacity:0;-webkit-transform:scaleX(.7);transform:scaleX(.7);transition:transform 1s,opacity 1s;transition-timing-function:cubic-bezier(.2,1,.3,1)}.btn-update-min:before{background:#67efb6}.btn-update-max,.btn-update-max:before,.btn-update-min,.btn-update-min:before{transition-timing-function:cubic-bezier(.2,1,.3,1)}.btn-update-max:hover:before,.btn-update-min:hover:before{opacity:1;-webkit-transform:translateZ(0);transform:translateZ(0)}.btn-update-grafica{background-color:#ca2a4e;display:inline-block;cursor:pointer;min-width:150px;max-width:250px;margin:1em;margin-left:0;padding:1em 2em;border:1px solid #eafd8e;color:#eafd8e;position:relative;font-weight:700;letter-spacing:.06rem;z-index:1;-webkit-backface-visibility:hidden;-moz-osx-font-smoothing:grayscale}.btn-update-grafica.btn-update-min{background-color:#3b5795;border:1px solid #67efb6;color:#67efb6}.btn-update-max:hover{color:#ca2a4e;border:1px solid #ca2a4e}.btn-update-min:hover{color:#3b5795;border:1px solid #3b5795}.chart-heladas .tick line,.chart-tropicales .tick line{stroke-dasharray:0;stroke:#111}.chart-heladas .tooltip,.chart-tropicales .tooltip{background-color:#ccc}.chart-heladas .xAxis line,.chart-heladas .xAxis path,.chart-tropicales .xAxis line,.chart-tropicales .xAxis path{display:none}.tooltipHeladas,.tooltipTropicales{font-weight:700;font-size:.88rem;margin:0 0 .31rem;color:#fff}.chart-tropicales .annotation-note-bg{fill:#fff}.chart-tropicales .annotation-note-label tspan{fill:#e8336d;font-weight:700}.chart-tropicales .annotation-subject path{fill:#30155d;stroke:#30155d}.chart-tropicales .annotation-note path,.chart-tropicales .connector{stroke:#30155d}.chart-tropicales .tick line{fill:none;stroke:#777;stroke-dasharray:3px 3px}.recogida-lluvias-chart-container{position:relative}.chart-lluvias-recogida path{fill:none;stroke:none}.chart-lluvias-recogida .area{fill:#34009c}.chart-lluvias-recogida circle.y{fill:#eda937;stroke:#eda937;r:10}.chart-lluvias-recogida .x,.chart-lluvias-recogida .y{stroke:#eda937;stroke-width:2;opacity:1}.chart-lluvias-recogida .tick text{font-size:.75rem;font-weight:700}.tooltip-lluvias{background-color:#82ceea;height:auto;width:auto;border-color:#82ceea}.tooltip-lluvias p:empty{display:none}.tooltip-lluvias .tooltipYear{color:#111;font-size:1.1rem;font-weight:400;max-width:300px}.tooltip-lluvias .tooltipYear .textYear{display:block;font-size:1.3rem}.tooltip-lluvias .tooltipYear span{font-weight:700;font-family:SFMono-Regular,Consolas,Menlo,Courier,monospace}.heladas-text{text-align:left}.tabla-record{display:none;padding:1.25rem 0;border:1px solid #ccc;text-align:center}.tabla-grid{display:inline-grid;grid-template-columns:repeat(3,33.33%);border:1px solid #000;width:90%;background-color:#fff}.input-record{display:none}.label-record{display:inline-block;margin:0 0 -.06rem;padding:.13rem;font-weight:600;font-size:.88rem;text-align:center;color:#ccc;border:1px solid #ccc;width:20%}.label-record:hover{color:#111;cursor:pointer}.label-record:nth-of-type(4n+1){margin-left:10px}.label-responsive{display:none}.input-record:checked+.label-record{color:#111;border:1px solid #ccc;border-top:5px solid #e34f6f;border-bottom:1px solid #f1f1f1;background-color:#f1f1f1}#tab1:checked~.contenido1,#tab2:checked~.contenido2,#tab3:checked~.contenido3,#tab4:checked~.contenido4,#tab5:checked~.contenido5,#tab6:checked~.contenido6,#tab7:checked~.contenido7,#tab8:checked~.contenido8,#tab9:checked~.contenido9,#tab10:checked~.contenido10,#tab11:checked~.contenido11,#tab12:checked~.contenido12{display:block;background-color:#f1f1f1}.grid-text{display:block;padding:.63rem 0}.grid-text:not(:last-child),.grid-title{border-bottom:1px solid #ccc}.grid-title{padding:.63rem;margin:0}.grid-title-min{background-color:#053584}.grid-title-max{background-color:#e34f6f}.tabla-record-header{width:100%;display:inline-block;font-size:0}.tabla-record-header-text{display:inline-block;font-size:1.88rem;margin-bottom:10px;width:90%;text-align:left}.record-chart-maximas .xAxis .tick line,.record-chart-maximas .xAxis path,.record-chart-minimas .xAxis .tick line,.record-chart-minimas .xAxis path,.tabla-record-minimas-desktop{display:none}.footer{background-color:#111;width:100%;padding:1.25rem 0;margin-top:10vh}.footer-texto{color:#f1f1f1}.footer-links{color:#7085ee;font-weight:700}@media only screen and (min-width:48em){.grid-intro{height:100vh;display:grid;grid-template-columns:50% 40%;grid-column-gap:20px;grid-row-gap:20px;justify-items:center;align-items:center}.title{font-size:6.25rem}.container-texto{padding-left:20px}.clima-intro{margin:5vh auto;margin-bottom:0}.clima-intro,.wrapper-vw{max-width:40vw}.clima-subtitle{font-size:2rem;width:100%}.subtitle{font-size:2rem;margin:1.56rem auto;white-space:nowrap}.container-buttons{text-align:center;padding:.31rem}.label-record{padding:.94rem;width:auto}.label-record:nth-of-type(4n+1){margin-left:0}.label-record:first-of-type{margin-left:5vw}.tabla-grid{width:40%;margin:0 5% 5% 0}.grid-text{padding:.31rem}.temp-max-graph{margin-top:100px}.tabla-record-minimas-mobile{display:none}.tabla-record-minimas-desktop{display:inline-block}.tabla-record-header{width:90%}.tabla-record-header-text{width:50%;text-align:left}.margin-section{margin:4rem auto}.tabs-maximas-minimas{text-align:center}.tabs-maximas-minimas .texto{text-align:left}.wrapper-footer{max-width:70vw}.navegacion{padding:.94rem}.navegacion-btn{font-size:1rem}.navegacion-btn:not(:last-child){padding-right:16px}}
+/*
+  Base CSS por Jorge Aznar
+  http://jorgeatgu.com
+  Estructura básica para iniciar cualquier proyecto con postCSS
+*/
+
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+
+html {
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+
+figcaption,
+figure,
+main { /* 1 */
+  display: block;
+}
+
+/**
+ * Add the correct margin in IE 8.
+ */
+
+figure {
+  margin: 1em 2.5rem;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+
+a {
+  background-color: transparent; /* 1 */
+  -webkit-text-decoration-skip: objects; /* 2 */
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+
+img {
+  border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+html [type="button"], /* 1 */
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+
+details, /* 1 */
+menu {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Scripting
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+canvas {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in IE.
+ */
+
+template {
+  display: none;
+}
+
+/* Hidden
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10-.
+ */
+
+[hidden] {
+  display: none;
+}
+
+* {
+    font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+svg {
+    max-width: 1200px;
+    display: block;
+    margin: 0 auto;
+}
+
+.bold {
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+}
+
+.montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.georgia {
+    font-family: 'Georgia', serif;
+}
+
+.system-font {
+    font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.monospace {
+    font-family: 'SFMono-Regular', Consolas, Menlo, Courier, monospace;
+}
+
+.color-title-max {
+    color: #07043c;
+}
+
+.color-title-min {
+    color: #2fe94a;
+}
+
+.wrapper-vw,
+.wrapper-footer {
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.subtitle {
+    font-family: 'Montserrat', sans-serif;
+    color: #072a12;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 0.31rem auto;
+    text-align: left;
+}
+
+.subtitle:before {
+        content: '';
+        display: block;
+        border-bottom: 5px solid #e34f6f;
+        width: 1em;
+    }
+
+.texto {
+    font-size: 1.13rem;
+    color: #111;
+    font-family: 'Georgia', serif;
+}
+
+.tropicales,
+.heladas {
+    position: relative;
+    text-align: center;
+}
+
+.tropicales .wrapper-vw, .heladas .wrapper-vw {
+        margin-bottom: 0;
+    }
+
+.chart-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tropicales-text {
+    text-align: left;
+}
+
+.tropicales-text.wrapper-vw {
+        margin-top: 0;
+    }
+
+.chart-lluvias-recogida .line {
+        stroke: blue;
+        stroke-width: 2px;
+    }
+
+.navegacion {
+    width: 100%;
+    position: fixed;
+    /* stylelint-disable */
+    position: sticky;
+    position: -webkit-sticky;
+    /* stylelint-enable */
+    top: 0;
+    color: #111;
+    font-weight: bold;
+    padding: 0.31rem;
+    z-index: 10;
+    text-align: center;
+    background: #f1f1f1;
+    box-shadow: -6px 8px 8px -8px rgba(0, 0, 0, .75);
+    box-sizing: border-box;
+}
+
+.navegacion-btn {
+    text-decoration: none;
+    color: #111;
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+
+.navegacion-btn:not(:last-child) {
+        padding-right: 1px;
+    }
+
+.navegacion-btn:hover {
+        color: #e34f6f;
+    }
+
+.grid-intro {
+    background: linear-gradient(150deg, #fcde9c 15%, #e34f6f 70%, #7c1d6f 94%);
+    padding: 1.25rem;
+}
+
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4.38rem;
+    font-weight: bold;
+    color: #000;
+    margin: 0.31rem 0;
+}
+
+.title:after {
+        content: '';
+        display: block;
+        border-bottom: 1px solid #111;
+        width: .6em;
+    }
+
+.title:before {
+        content: '';
+        display: block;
+        border-bottom: 1px solid #111;
+        width: .6em;
+    }
+
+.clima-intro {
+    position: relative;
+    padding: 1.25rem;
+}
+
+.zaragoza-img {
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.legend-text {
+    font-size: 1.13rem;
+    font-family: 'Georgia', serif;
+    color: #111;
+    margin-top: 0;
+}
+
+.clima-subtitle {
+    font-size: 1.5rem;
+    margin: 0.31rem 0;
+}
+
+.clima-pie {
+    font-size: 1rem;
+    font-family: 'Georgia', serif;
+    margin-top: 16px;
+    color: #111;
+    display: block;
+    text-align: center;
+}
+
+.clima-legend {
+    font-family: 'Georgia', serif;
+    font-size: 1.13rem;
+}
+
+.clima-link {
+    display: block;
+    margin-top: 10px;
+}
+
+.text-button {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.container-inputs {
+    display: inline-block;
+}
+
+.inputs-label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.textoBarras text, .xAxis text, .yAxis text {
+        font-size: 0.75rem;
+        font-weight: bold;
+    }
+
+.yAxis path {
+        stroke: none;
+    }
+
+path {
+    fill: none;
+    stroke: black;
+}
+
+.tooltip {
+    position: absolute;
+    z-index: 2;
+    width: 70px;
+    margin-left: 20px;
+    height: 60px;
+    padding: 0.63rem;
+    background: #172f6e;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.tooltipYear,
+.tooltipTemp {
+    font-weight: bold;
+    font-size: 0.88rem;
+    margin: 0 0 0.31rem;
+    color: #f5d391;
+}
+
+.tick line {
+    fill: none;
+    stroke: #888;
+    stroke-dasharray: 3px 3px;
+}
+
+.input-update-grafica {
+    border: 1px solid #111;
+    height: 50px;
+    max-width: 30px;
+    padding: 0 1.25rem;
+}
+
+.container-update-grafica {
+    display: inline-block;
+    text-align: center;
+}
+
+.container-buttons {
+    padding: 1.25rem;
+}
+
+.btn-update-max,
+.btn-update-min {
+    -webkit-transition: border-color .4s, color .4s;
+    transition: border-color .4s, color .4s;
+}
+
+.btn-update-max:before,
+.btn-update-min:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #eafd8e;
+    z-index: -1;
+    opacity: 0;
+    -webkit-transform: scale3d(.7, 1, 1);
+    transform: scale3d(.7, 1, 1);
+    -webkit-transition: -webkit-transform 1s, opacity 1s;
+    transition: transform 1s, opacity 1s;
+    -webkit-transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+    transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+}
+
+.btn-update-min:before {
+    background: #67efb6;
+}
+
+.btn-update-max,
+.btn-update-max:before,
+.btn-update-min,
+.btn-update-min:before {
+    -webkit-transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+    transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+}
+
+.btn-update-max:hover:before,
+.btn-update-min:hover:before {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.btn-update-grafica {
+    background-color: #CA2A4E;
+    display: inline-block;
+    cursor: pointer;
+    min-width: 150px;
+    max-width: 250px;
+    margin: 1em;
+    margin-left: 0;
+    padding: 1em 2em;
+    border: 1px solid #eafd8e;
+    color: #eafd8e;
+    position: relative;
+    font-weight: bold;
+    letter-spacing: 0.06rem;
+    z-index: 1;
+    -webkit-backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.btn-update-grafica.btn-update-min {
+        background-color: #3B5795;
+        border: 1px solid #67efb6;
+        color: #67efb6;
+    }
+
+.btn-update-max:hover {
+    color: #CA2A4E;
+    border: 1px solid #CA2A4E;
+}
+
+.btn-update-min:hover {
+    color: #3B5795;
+    border: 1px solid #3B5795;
+}
+
+/* .tropicales:after {
+    content: "";
+    display: block;
+    width: 32rem;
+    height: 32rem;
+    background: var(--gradient2);
+    position: absolute;
+    top: 1rem;
+    left: -60rem;
+    right: 0;
+    margin: auto;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+*/
+
+.chart-tropicales .tick line, .chart-heladas .tick line {
+                stroke-dasharray: 0;
+                stroke: #111;
+            }
+
+.chart-tropicales .tooltip, .chart-heladas .tooltip {
+        background-color: #ccc;
+    }
+
+.chart-tropicales .xAxis line,
+        .chart-tropicales .xAxis path,
+        .chart-heladas .xAxis line,
+        .chart-heladas .xAxis path {
+            display: none;
+        }
+
+.tooltipHeladas,
+.tooltipTropicales {
+    font-weight: bold;
+    font-size: 0.88rem;
+    margin: 0 0 0.31rem;
+    color: #fff;
+}
+
+.chart-tropicales .annotation-note-bg {
+        fill: #fff;
+    }
+
+.chart-tropicales .annotation-note-label tspan {
+        fill: #E8336D;
+        font-weight: bold;
+    }
+
+.chart-tropicales .annotation-subject path {
+        fill: #30155d;
+        stroke: #30155d;
+    }
+
+.chart-tropicales .annotation-note path,
+    .chart-tropicales .connector {
+        stroke: #30155d;
+    }
+
+.chart-tropicales .tick line {
+        fill: none;
+        stroke: #777;
+        stroke-dasharray: 3px 3px;
+    }
+
+.recogida-lluvias-chart-container {
+    position: relative;
+}
+
+.chart-lluvias-recogida path {
+        fill: none;
+        stroke: none;
+    }
+
+.chart-lluvias-recogida .area {
+        fill: #34009c;
+    }
+
+.chart-lluvias-recogida circle.y {
+        fill: #eda937;
+        stroke: #eda937;
+        r: 10;
+    }
+
+.chart-lluvias-recogida .x,
+    .chart-lluvias-recogida .y {
+        stroke: #eda937;
+        stroke-width: 2;
+        opacity: 1;
+    }
+
+.chart-lluvias-recogida .tick text {
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+.tooltip-lluvias {
+    background-color: #82ceea;
+    height: auto;
+    width: auto;
+    border-color: #82ceea;
+}
+
+.tooltip-lluvias p:empty {
+            display: none;
+        }
+
+.tooltip-lluvias .tooltipYear {
+        color: #111;
+        font-size: 1.1rem;
+        font-weight: normal;
+        max-width: 300px;
+    }
+
+.tooltip-lluvias .tooltipYear .textYear {
+            display: block;
+            font-size: 1.3rem;
+        }
+
+.tooltip-lluvias .tooltipYear span {
+            font-weight: bold;
+            font-family: 'SFMono-Regular', Consolas, Menlo, Courier, monospace;
+        }
+
+.heladas-text {
+    text-align: left;
+}
+
+/*
+    RESPONSIVE TABS by Oliver Knoblich
+    https://codepen.io/oknoblich/pen/tfjFl
+*/
+
+.tabla-record {
+    display: none;
+    padding: 1.25rem 0;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.tabla-grid {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 33.33%);
+    border: 1px solid #000;
+    width: 90%;
+    background-color: #fff;
+}
+
+.input-record {
+    display: none;
+}
+
+.label-record {
+    display: inline-block;
+    margin: 0 0 -0.06rem;
+    padding: 0.13rem;
+    font-weight: 600;
+    font-size: 0.88rem;
+    text-align: center;
+    color: #ccc;
+    border: 1px solid #ccc;
+    width: 20%;
+}
+
+.label-record:hover {
+        color: #111;
+        cursor: pointer;
+    }
+
+.label-record:nth-of-type(4n+1) {
+        margin-left: 10px;
+    }
+
+.label-responsive {
+    display: none;
+}
+
+.input-record:checked + .label-record {
+    color: #111;
+    border: 1px solid #ccc;
+    border-top: 5px solid #e34f6f;
+    border-bottom: 1px solid #f1f1f1;
+    background-color: #f1f1f1;
+}
+
+#tab1:checked ~ .contenido1,
+#tab2:checked ~ .contenido2,
+#tab3:checked ~ .contenido3,
+#tab4:checked ~ .contenido4,
+#tab5:checked ~ .contenido5,
+#tab6:checked ~ .contenido6,
+#tab7:checked ~ .contenido7,
+#tab8:checked ~ .contenido8,
+#tab9:checked ~ .contenido9,
+#tab10:checked ~ .contenido10,
+#tab11:checked ~ .contenido11,
+#tab12:checked ~ .contenido12 {
+    display: block;
+    background-color: #f1f1f1;
+}
+
+.grid-text {
+    display: block;
+    padding: 0.63rem 0;
+}
+
+.grid-text:not(:last-child) {
+        border-bottom: 1px solid #ccc;
+    }
+
+.grid-title {
+    border-bottom: 1px solid #ccc;
+    padding: 0.63rem;
+    margin: 0;
+}
+
+.grid-title-min {
+    background-color: #053584;
+}
+
+.grid-title-max {
+    background-color: #e34f6f;
+}
+
+.tabla-record-header {
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+}
+
+.tabla-record-header-text {
+    display: inline-block;
+    font-size: 1.88rem;
+    margin-bottom: 10px;
+    width: 90%;
+    text-align: left;
+}
+
+.tabla-record-minimas-desktop {
+    display: none;
+}
+
+.record-chart-maximas .xAxis path, .record-chart-minimas .xAxis path {
+            display: none;
+        }
+
+.record-chart-maximas .xAxis .tick line, .record-chart-minimas .xAxis .tick line {
+            display: none;
+        }
+
+.footer {
+    background-color: #111;
+    width: 100%;
+    padding: 1.25rem 0;
+    margin-top: 10vh;
+}
+
+.footer-texto {
+    color: #f1f1f1;
+}
+
+.footer-links {
+    color: #7085ee;
+    font-weight: bold;
+}
+
+@media only screen and (min-width: 48em) {
+
+    .grid-intro {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 50% 40%;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .title {
+        font-size: 6.25rem;
+    }
+
+    .container-texto {
+        padding-left: 20px;
+    }
+
+    .clima-intro {
+        max-width: 40vw;
+        margin: 5vh auto;
+        margin-bottom: 0;
+    }
+
+    .wrapper-vw {
+        max-width: 40vw;
+    }
+
+    .clima-subtitle {
+        font-size: 2rem;
+        width: 100%;
+    }
+
+    .subtitle {
+        font-size: 2rem;
+        margin: 1.56rem auto;
+        white-space: nowrap;
+    }
+
+    .container-buttons {
+        text-align: center;
+        padding: 0.31rem;
+    }
+
+    .label-record {
+        padding: 0.94rem;
+        width: auto;
+    }
+        .label-record:nth-of-type(4n+1) {
+            margin-left: 0;
+        }
+        .label-record:nth-of-type(1) {
+            margin-left: 5vw;
+        }
+
+    .tabla-grid {
+        width: 40%;
+        margin: 0 5% 5% 0;
+    }
+
+    .grid-text {
+        padding: 0.31rem;
+    }
+
+    .temp-max-graph {
+        margin-top: 100px;
+    }
+
+    .tabla-record-minimas-mobile {
+        display: none;
+    }
+
+    .tabla-record-minimas-desktop {
+        display: inline-block;
+    }
+
+    .tabla-record-header {
+        width: 90%;
+    }
+
+    .tabla-record-header-text {
+        width: 50%;
+        text-align: left;
+    }
+
+    .margin-section {
+        margin: 4rem auto;
+    }
+
+    .tabs-maximas-minimas {
+        text-align: center;
+    }
+        .tabs-maximas-minimas .texto {
+            text-align: left;
+        }
+
+    .wrapper-footer {
+        max-width: 70vw;
+    }
+
+    .navegacion {
+        padding: 0.94rem;
+    }
+
+    .navegacion-btn {
+        font-size: 1rem;
+    }
+        .navegacion-btn:not(:last-child) {
+            padding-right: 16px;
+        }
+}
+
+/*# sourceMappingURL=styles.css.map */
