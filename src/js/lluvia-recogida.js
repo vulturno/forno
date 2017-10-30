@@ -137,3 +137,22 @@ d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
                 0 + ")");
     }
 });
+
+
+
+var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+
+function responsiveChart() {
+    resize();
+    resizeT();
+    resizeRM();
+    resizeRMIN();
+}
+
+d3.select(window).on('resize', function() {
+    responsiveChart();
+});
+
+if (width <= 1024) {
+    responsiveChart();
+}
