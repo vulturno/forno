@@ -6,7 +6,12 @@ var margin = { top: 50, right: 50, bottom: 50, left: 110 },
     widthRLLUMIN = 1200 - margin.left - margin.right,
     heightRLLUMIN = 500 - margin.top - margin.bottom;
 
-var svgRLLUMIN = d3.select('.recogida-lluvias-chart-container')
+//Calculando el ancho de la pantalla. Restamos el ancho a al tamaño de la pantalla
+var element = document.getElementById('forno');
+var positionInfo = element.getBoundingClientRect();
+var widthDocument = positionInfo.width;
+
+var svgRLLUMIN = d3.select('.precipitaciones-chart-container')
     .append('svg')
     .attr('class', 'chart-lluvias-recogida')
     .attr("width", widthRLLUMIN + margin.left + margin.right)
@@ -50,10 +55,11 @@ var area = d3.area()
     })
     .curve(d3.curveCardinal.tension(0.6));
 
-var tooltipDates = d3.select('.recogida-lluvias-chart-container')
+var tooltipDates = d3.select('.precipitaciones-chart-container')
     .append("div")
     .attr("class", "tooltip tooltip-lluvias")
     .style("opacity", 0);
+
 
 d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
 
@@ -97,9 +103,15 @@ d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
         .attr("height", heightRLLUMIN)
         .style("fill", "none")
         .style("pointer-events", "all")
-        .on("mouseover", function() { focus.style("display", null); })
-        .on("mouseout", function() { focus.style("display", "none"); })
+        .on("mouseover", function() {
+            focus.style("display", null);
+        })
+        .on("mouseout", function() {
+            focus.style("display", "none")
+            tooltipDates.style("opacity", 0)
+        })
         .on("mousemove", mousemove);
+
 
     function mousemove() {
         var x0 = x.invert(d3.mouse(this)[0]),
@@ -107,15 +119,17 @@ d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
             d0 = datosRLLUMIN[i - 1],
             d1 = datosRLLUMIN[i],
             d = x0 - d0.fecha > d1.fecha - x0 ? d1 : d0;
-            positionX = x(d.fecha) + 150;
-            positionY = y(d.precipitacion_anual) + 50;
+        positionX = x(d.fecha);
+        positionX = x(d.fecha) + 60;
+        positionY = y(d.precipitacion_anual);
+        postionWidthTooltip = positionX + 300;
+        positionRightTooltip = 1200 - positionX;
 
         tooltipDates.style("opacity", 1)
             .html('<p class="tooltipYear"><span class="textYear">' + d.fecha + '</span>En <span>' + d.dias + '</span> días de lluvia se recogieron <span>' + d.precipitacion_anual + '</span> milímetros de agua.<p/>')
-            .style("left", positionX + "px")
-            .style("top", positionY + "px");
-
-
+            .style("left", postionWidthTooltip > 1200 ? 'auto' : positionX + 'px')
+            .style("top", positionY + "px")
+            .style("right", postionWidthTooltip > 1200 ? positionRightTooltip + 'px' : 'auto');
 
         focus.select(".x")
             .attr("transform",
@@ -123,3 +137,22 @@ d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
                 0 + ")");
     }
 });
+
+
+
+var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+
+function responsiveChart() {
+    resize();
+    resizeT();
+    resizeRM();
+    resizeRMIN();
+}
+
+d3.select(window).on('resize', function() {
+    responsiveChart();
+});
+
+if (width <= 1024) {
+    responsiveChart();
+}

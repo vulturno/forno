@@ -1,4 +1,4 @@
-.recogida-lluvias-chart-container {
+.precipitaciones-chart-container {
     position: relative;
 }
 
@@ -32,8 +32,9 @@
 .tooltip-lluvias {
     background-color: #82ceea;
     height: auto;
-    width: auto;
+    width: 300px;
     border-color: #82ceea;
+    margin-left: 0;
     p {
         &:empty {
             display: none;
