@@ -1,0 +1,27 @@
+.resumen-card {
+    /* max-height: 100vh; */
+    width: 100%;
+    position: relative;
+    padding: 2rem;
+}
+
+.resumen-card-image {
+    object-fit: cover;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100vh;
+}
+
+.resumen-card-container {
+    position: absolute;
+    left: 10vw;
+    top: 20vh;
+}
+
+.resumen-card-title {
+    font-size: 48px;
+}
+
+.resumen-card-date {
+    font-size: 16px;
+}

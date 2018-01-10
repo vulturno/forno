@@ -1,6 +1,7 @@
 * {
     font-family: var(--fontSystem);
     line-height: 1.5;
+    box-sizing: border-box;
 }
 
 svg {

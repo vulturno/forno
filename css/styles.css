@@ -454,6 +454,7 @@ template {
 * {
     font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
     line-height: 1.5;
+    box-sizing: border-box;
 }
 
 svg {
@@ -1066,6 +1067,34 @@ path {
 .footer-links {
     color: #7085ee;
     font-weight: bold;
+}
+
+.resumen-card {
+    /* max-height: 100vh; */
+    width: 100%;
+    position: relative;
+    padding: 2rem;
+}
+
+.resumen-card-image {
+    object-fit: cover;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100vh;
+}
+
+.resumen-card-container {
+    position: absolute;
+    left: 10vw;
+    top: 20vh;
+}
+
+.resumen-card-title {
+    font-size: 3rem;
+}
+
+.resumen-card-date {
+    font-size: 1rem;
 }
 
 @media only screen and (min-width: 48em) {
