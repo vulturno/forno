@@ -11,13 +11,22 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
 </head>
 
-<body id="forno" class="montserrat">
+<body class="resumen-forno">
+    <article id="relativeOffset">
+        <div class="circle green"></div>
+        <div class="circle blue"></div>
+        <div class="circle red"></div>
+      </article>
+    <div class="resumen-card-lines"></div>
+    <div class="resumen-card-lines"></div>
+    <div class="resumen-card-lines"></div>
+    <div class="resumen-card-lines"></div>
+    <div class="resumen-card-lines"></div>
     <div class="resumen-intro">
         <h1 class="title">FORNO 2017</h1>
         <!-- <p>2017</p> -->
     </div>
     <div class="resumen-card">
-        <div class="resumen-rgba"></div>
         <img src="img/resumen/heladas.jpg" alt="" class="resumen-card-image">
         <div class="resumen-card-container">
             <span class="resumen-card-title">DÍAS CON HELADAS</span>
@@ -25,7 +34,6 @@
         </div>
     </div>
     <div class="resumen-card">
-        <div class="resumen-rgba"></div>
         <img src="img/resumen/temperaturas.jpg" alt="" class="resumen-card-image">
         <div class="resumen-card-container">
             <span class="resumen-card-title">DÍAS CON TEMPERATURA SUPERIOR A 30ºC</span>
@@ -34,7 +42,6 @@
         <span class="atribucion">© Serguei</span>
     </div>
     <div class="resumen-card">
-        <div class="resumen-rgba"></div>
         <img src="img/resumen/lluvia-recogida.jpg" alt="" class="resumen-card-image">
         <div class="resumen-card-container">
             <span class="resumen-card-title">PRECIPITACIONES ACUMULADAS</span>
@@ -42,7 +49,6 @@
         </div>
     </div>
     <div class="resumen-card">
-        <div class="resumen-rgba"></div>
         <img src="img/resumen/caloret.jpg" alt="" class="resumen-card-image">
         <div class="resumen-card-container">
             <span class="resumen-card-title">TEMPERATURA MÁXIMA</span>
@@ -50,7 +56,6 @@
         </div>
     </div>
     <div class="resumen-card">
-        <div class="resumen-rgba"></div>
         <img src="img/resumen/frio.jpg" alt="" class="resumen-card-image">
         <div class="resumen-card-container">
             <span class="resumen-card-title">TEMPERATURA MÍNIMA</span>
@@ -59,7 +64,6 @@
         <span class="atribucion">© Juanedc.com</span>
     </div>
     <div class="resumen-card">
-        <div class="resumen-rgba"></div>
         <img src="img/resumen/noches-tropicales.jpg" alt="" class="resumen-card-image">
         <div class="resumen-card-container">
             <span class="resumen-card-title">NOCHES TROPICALES</span>
@@ -67,7 +71,6 @@
         </div>
     </div>
     <div class="resumen-card">
-        <div class="resumen-rgba"></div>
         <img src="img/resumen/granizo.jpg" alt="" class="resumen-card-image">
         <div class="resumen-card-container">
             <span class="resumen-card-title">DÍAS CON GRANIZO</span>
@@ -76,7 +79,6 @@
         <span class="atribucion">© Javier Candeira</span>
     </div>
     <div class="resumen-card">
-        <div class="resumen-rgba"></div>
         <img src="img/resumen/tormentas.jpg" alt="" class="resumen-card-image">
         <div class="resumen-card-container">
             <span class="resumen-card-title">DÍAS CON TORMENTA</span>
@@ -85,7 +87,6 @@
         <span class="atribucion">© Jorge Aznar</span>
     </div>
     <div class="resumen-card">
-        <div class="resumen-rgba"></div>
         <img src="img/resumen/nieblas.jpg" alt="" class="resumen-card-image">
         <div class="resumen-card-container">
             <span class="resumen-card-title">DÍAS CON NIEBLA</span>
@@ -94,7 +95,6 @@
         <span class="atribucion">© Juanedc.com</span>
     </div>
     <div class="resumen-card">
-        <div class="resumen-rgba"></div>
         <img src="img/resumen/cierzo.jpg" alt="" class="resumen-card-image">
         <div class="resumen-card-container">
             <span class="resumen-card-title">DÍAS CON CIERZO</span>
@@ -102,7 +102,6 @@
         </div>
     </div>
     <div class="resumen-card">
-        <div class="resumen-rgba"></div>
         <img src="img/resumen/nubes.jpg" alt="" class="resumen-card-image">
         <div class="resumen-card-container">
             <span class="resumen-card-title">DÍAS NUBOSOS</span>
@@ -124,14 +123,8 @@
             <a class="footer-links" href="http://github.com/jorgeatgu/forno">GitHub</a>
         </div>
     </footer>
-    <script src="js/d3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-annotation/1.12.1/d3-annotation.min.js"></script>
-    <script src="js/index.js"></script>
-    <script src="js/record-heladas.js"></script>
-    <script src="js/record-maximas.js"></script>
-    <script src="js/tropicales.js"></script>
-    <script src="js/heladas.js"></script>
-    <script src="js/lluvia-recogida.js"></script>
+    <script src="js/anime.min.js"></script>
+    <script src="js/resumen.js"></script>
     <script>
     (function(i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;

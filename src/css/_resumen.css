@@ -1,20 +1,71 @@
+.resumen-forno {
+    position: relative;
+}
+
+.circle {
+  width: 2.5em;
+  height: 2.5em;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 50%;
+  &.green {
+    background-color: green;
+  }
+  &.blue {
+    background-color: blue;
+  }
+  &.red {
+    background-color: red;
+  }
+}
+
 .resumen-card {
     width: 100%;
     position: relative;
+    height: 100vh;
+    background-color: #F8F8F8;
+}
+
+.resumen-card-lines {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 1px;
+    height: 100%;
+    background-color: #ccc;
+    z-index: 1;
+    &:nth-of-type(2) {
+        left: 30%;
+    }
+    &:nth-of-type(3) {
+        left: 50%;
+    }
+    &:nth-of-type(4) {
+        left: 70%;
+    }
+    &:nth-of-type(5) {
+        left: 90%;
+    }
 }
 
 .resumen-card-image {
     object-fit: cover;
-    width: 100%;
-    max-width: 100%;
-    max-height: 100vh;
+    width: 60%;
+    max-width: 60%;
+    height: 70vh;
+    margin: 15vh 0;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    z-index: 2;
 }
 
 .resumen-card-container {
+    left: 45%;
     position: absolute;
-    left: 10vw;
-    top: 20vh;
+    top: 35vh;
     font-size: 0;
+    z-index: 3;
 }
 
 .resumen-card-title,
@@ -22,7 +73,8 @@
     font-family: var(--montserrat);
     font-size: 32px;
     font-weight: bold;
-    background-color: #fff;
+    background-color: #000;
+    color: #fff;
     padding: 2rem;
     display: inline-block;
     vertical-align: middle;
