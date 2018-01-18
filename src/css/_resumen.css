@@ -2,28 +2,11 @@
     position: relative;
 }
 
-.circle {
-  width: 2.5em;
-  height: 2.5em;
-  margin-top: auto;
-  margin-bottom: auto;
-  border-radius: 50%;
-  &.green {
-    background-color: green;
-  }
-  &.blue {
-    background-color: blue;
-  }
-  &.red {
-    background-color: red;
-  }
-}
-
 .resumen-card {
-    width: 100%;
+    width: 100vw;
     position: relative;
     height: 100vh;
-    background-color: #F8F8F8;
+    background-color: #fafafa;
 }
 
 .resumen-card-lines {
@@ -32,7 +15,7 @@
     left: 10%;
     width: 1px;
     height: 100%;
-    background-color: #ccc;
+    background-color: #f1f1f1;
     z-index: 1;
     &:nth-of-type(2) {
         left: 30%;
@@ -50,10 +33,9 @@
 
 .resumen-card-image {
     object-fit: cover;
-    width: 60%;
-    max-width: 60%;
-    height: 70vh;
-    margin: 15vh 0;
+    max-width: 55vw;
+    height: 80vh;
+    margin: 10vh 0;
     display: inline-block;
     vertical-align: middle;
     position: relative;
@@ -61,9 +43,9 @@
 }
 
 .resumen-card-container {
-    left: 45%;
+    left: 35vw;
     position: absolute;
-    top: 35vh;
+    top: 10vh;
     font-size: 0;
     z-index: 3;
 }
@@ -106,15 +88,74 @@
 }
 
 .resumen-intro {
-    background-color: var(--gradient2);
+    background: linear-gradient(150deg, var(--gradient1) 15%, var(--gradient2) 70%, var(--gradient3) 94%);
     padding: 20px;
-    height: 70vh;
-    .title {
-        font-size: 4rem;
-        text-align: center;
-        &:after,
-        &:before {
-            margin: 0 auto;
-        }
+    height: 100vh;
+    opacity: .5;
+}
+
+.resumen-intro-title {
+    font-family: var(--montserrat);
+    font-size: 70px;
+    font-weight: bold;
+    color: #000;
+    margin: 5px 0;
+    position: absolute;
+    left: calc(50vw - 17.5vw);
+    top: calc(50vh - 5vw);
+    z-index: 11;
+    &:after,
+    &:before {
+        content: '';
+        display: block;
+        border-bottom: 1px solid var(--impureBlack);
+        width: .6em;
+        margin: 0 auto;
     }
+    &:before {
+        border-bottom: 1px solid var(--impureBlack);
+    }
+}
+
+.resumen-card-rectangle {
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50px;
+    position: absolute;
+    left: calc(50vw - 20vw);
+    top: calc(50vh - 20vw);
+    background-color: #ecda9a;
+    transform: rotate(20deg);
+    opacity: .6;
+    z-index: 10;
+}
+
+.first {
+    background-color: #efc47e;
+    transform: rotate(40deg);
+}
+
+.second {
+    background-color: #f3ad6a;
+    transform: rotate(60deg);
+}
+
+.third {
+    background-color: #f7945d;
+    transform: rotate(80deg);
+}
+
+.four {
+    background-color: #f97b57;
+    transform: rotate(100deg);
+}
+
+.five {
+    background-color: #f66356;
+    transform: rotate(120deg);
+}
+
+.six {
+    background-color: #ee4d5a;
+    transform: rotate(140deg);
 }
