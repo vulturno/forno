@@ -1174,11 +1174,11 @@ path {
     font-size: 4.38rem;
     font-weight: bold;
     color: #000;
-    margin: 0.31rem 0;
     position: absolute;
-    left: calc(50vw - 17.5vw);
-    top: calc(50vh - 5vw);
+    left: 50vw;
+    top: 50vh;
     z-index: 11;
+    margin: -3.13rem 0 0 -14.06rem;
 }
 
 .resumen-intro-title:after,
@@ -1195,12 +1195,12 @@ path {
     }
 
 .resumen-card-rectangle {
-    width: 40vw;
-    height: 40vw;
+    width: 30vw;
+    height: 30vw;
     border-radius: 50px;
     position: absolute;
-    left: calc(50vw - 20vw);
-    top: calc(50vh - 20vw);
+    left: calc(50vw - 15vw);
+    top: calc(50vh - 15vw);
     background-color: #ecda9a;
     transform: rotate(20deg);
     opacity: .6;
