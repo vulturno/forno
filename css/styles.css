@@ -1077,40 +1077,37 @@ path {
     width: 100vw;
     position: relative;
     height: 100vh;
-    background-color: #fafafa;
+    background-color: #fff;
 }
 
 .resumen-card-lines {
     position: absolute;
     top: 0;
-    left: 10%;
+    left: 50%;
     width: 1px;
     height: 100%;
-    background-color: #f1f1f1;
+    background-color: #ccc;
     z-index: 1;
-}
-
-.resumen-card-lines:nth-of-type(2) {
+   /* &:nth-of-type(2) {
         left: 30%;
     }
-
-.resumen-card-lines:nth-of-type(3) {
+    &:nth-of-type(3) {
         left: 50%;
     }
-
-.resumen-card-lines:nth-of-type(4) {
+    &:nth-of-type(4) {
         left: 70%;
     }
-
-.resumen-card-lines:nth-of-type(5) {
+    &:nth-of-type(5) {
         left: 90%;
-    }
+    } */
+}
 
 .resumen-card-image {
     object-fit: cover;
-    max-width: 55vw;
+    max-width: 50%;
     height: 80vh;
     margin: 10vh 0;
+    padding-left: 0;
     display: inline-block;
     vertical-align: middle;
     position: relative;
@@ -1118,7 +1115,7 @@ path {
 }
 
 .resumen-card-container {
-    left: 35vw;
+    left: 2rem;
     position: absolute;
     top: 10vh;
     font-size: 0;
@@ -1128,11 +1125,11 @@ path {
 .resumen-card-title,
 .resumen-card-date {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     background-color: #000;
     color: #fff;
-    padding: 2rem;
+    padding: 1rem 2rem;
     display: inline-block;
     vertical-align: middle;
     box-shadow: -6px 8px 8px -8px rgba(0, 0, 0, .75);
@@ -1141,15 +1138,15 @@ path {
 .resumen-card-date {
     background-color: yellow;
     color: #000;
-    font-size: 3rem;
 }
 
 .atribucion {
     font-size: 0.88rem;
     display: inline-block;
     position: absolute;
-    bottom: 50px;
-    right: 50px;
+    bottom: 100px;
+    left: 50px;
+    z-index: 11;
     color: #fff;
 }
 
@@ -1164,7 +1161,7 @@ path {
 
 .resumen-intro {
     background: linear-gradient(150deg, #fcde9c 15%, #e34f6f 70%, #7c1d6f 94%);
-    padding: 1.25rem;
+    padding: 2rem;
     height: 100vh;
     opacity: .5;
 }
@@ -1173,6 +1170,7 @@ path {
     font-family: 'Montserrat', sans-serif;
     font-size: 4.38rem;
     font-weight: bold;
+    opacity: 0;
     color: #000;
     position: absolute;
     left: 50vw;
