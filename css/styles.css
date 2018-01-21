@@ -1088,18 +1088,6 @@ path {
     height: 100%;
     background-color: #ccc;
     z-index: 1;
-   /* &:nth-of-type(2) {
-        left: 30%;
-    }
-    &:nth-of-type(3) {
-        left: 50%;
-    }
-    &:nth-of-type(4) {
-        left: 70%;
-    }
-    &:nth-of-type(5) {
-        left: 90%;
-    } */
 }
 
 .resumen-card-image {
@@ -1115,9 +1103,9 @@ path {
 }
 
 .resumen-card-container {
-    left: 2rem;
+    left: 50%;
     position: absolute;
-    top: 10vh;
+    top: 40vh;
     font-size: 0;
     z-index: 3;
 }
@@ -1130,7 +1118,7 @@ path {
     background-color: #000;
     color: #fff;
     padding: 1rem 2rem;
-    display: inline-block;
+    display: block;
     vertical-align: middle;
     box-shadow: -6px 8px 8px -8px rgba(0, 0, 0, .75);
 }
@@ -1138,6 +1126,7 @@ path {
 .resumen-card-date {
     background-color: yellow;
     color: #000;
+    display: inline-block;
 }
 
 .atribucion {
