@@ -1150,10 +1150,10 @@ path {
 }
 
 .resumen-intro {
-    /*background: linear-gradient(150deg, var(--gradient1) 15%, var(--gradient2) 70%, var(--gradient3) 94%);*/
+    background: linear-gradient(150deg, #fcde9c 15%, #e34f6f 70%, #7c1d6f 94%);
     padding: 2rem;
     height: 100vh;
-    opacity: .5;
+    opacity: .3;
 }
 
 .resumen-intro-title {
