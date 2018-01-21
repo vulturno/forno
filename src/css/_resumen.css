@@ -54,6 +54,7 @@
 
 .resumen-card-date {
     background-color: yellow;
+    font-size: 3rem;
     color: #000;
     display: inline-block;
 }
@@ -78,7 +79,7 @@
 }
 
 .resumen-intro {
-    background: linear-gradient(150deg, var(--gradient1) 15%, var(--gradient2) 70%, var(--gradient3) 94%);
+    /*background: linear-gradient(150deg, var(--gradient1) 15%, var(--gradient2) 70%, var(--gradient3) 94%);*/
     padding: 2rem;
     height: 100vh;
     opacity: .5;
@@ -109,15 +110,15 @@
 }
 
 .resumen-card-rectangle {
-    width: 30vw;
-    height: 30vw;
-    border-radius: 50px;
+    width: 40vw;
+    height: 40vw;
+    border-radius: 100%;
     position: absolute;
-    left: calc(50vw - 15vw);
-    top: calc(50vh - 15vw);
+    left: calc(50vw - 20vw);
+    top: calc(50vh - 20vw);
     background-color: #ecda9a;
     transform: rotate(20deg);
-    opacity: .6;
+    opacity: .4;
     z-index: 10;
 }
 
