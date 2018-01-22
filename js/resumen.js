@@ -6,16 +6,13 @@ setTimeout(function() {
     basicTimeline
         .add({
             targets: '.resumen-card-rectangle',
-            borderRadius: ['100%', '50px'],
-            // width: ['0', '40vw'],
-            // height: ['0', '40vw'],
+            borderRadius: ['100%', '20%', '50px'],
             duration: 1050,
             rotate: function(el) {
                 return el.getAttribute('data-rotate') * 5;
             },
             delay: function(target, index) {
-                // 100ms delay multiplied by every div index, in ascending order
-                return index * 100;
+                return index * 70;
             },
             elasticity: function(el, i, l) {
                 return (200 + i * 200);
