@@ -1,0 +1,218 @@
+.resumen-forno {
+    position: relative;
+    .footer,
+    .wrapper-vw {
+        position: relative;
+        z-index: 10;
+    }
+    .wrapper-vw {
+        background-color: #fff;
+    }
+}
+
+.resumen-card {
+    width: 100vw;
+    position: relative;
+    height: 100vh;
+    background-color: #fff;
+}
+
+.resumen-card-lines {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    background-color: #ccc;
+    z-index: 1;
+}
+
+.resumen-card-image {
+    object-fit: cover;
+    max-width: 100%;
+    height: 80vh;
+    margin: 10vh 0;
+    padding-left: 0;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    z-index: 2;
+}
+
+.resumen-card-container {
+    left: 0;
+    position: absolute;
+    top: 10vh;
+    font-size: 0;
+    z-index: 3;
+}
+
+.resumen-card-title,
+.resumen-card-date {
+    font-family: var(--montserrat);
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #000;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: block;
+    vertical-align: middle;
+    box-shadow: -6px 8px 8px -8px rgba(0, 0, 0, .75);
+    width: 100%;
+}
+
+.resumen-card-date {
+    background-color: yellow;
+    width: auto;
+    color: #000;
+    display: inline-block;
+}
+
+.atribucion {
+    font-size: 14px;
+    display: inline-block;
+    position: absolute;
+    bottom: 100px;
+    left: 50px;
+    z-index: 11;
+    color: #fff;
+}
+
+.resumen-rgba {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.resumen-intro {
+    background: linear-gradient(150deg, var(--gradient1) 15%, var(--gradient2) 70%, var(--gradient3) 94%);
+    padding: 2rem;
+    height: 100vh;
+    opacity: .3;
+}
+
+.resumen-intro-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    opacity: 0;
+    color: #000;
+    position: absolute;
+    left: 65vw;
+    top: 50vh;
+    z-index: 11;
+    margin: -3.13rem 0 0 -14.06rem;
+    &:after,
+    &:before {
+        content: '';
+        display: block;
+        border-bottom: 1px solid var(--impureBlack);
+        width: .6em;
+        margin: 0 auto;
+    }
+    &:before {
+        border-bottom: 1px solid var(--impureBlack);
+    }
+}
+
+.resumen-card-rectangle {
+    width: 80vw;
+    height: 80vw;
+    border-radius: 100%;
+    position: absolute;
+    left: calc(50vw - 40vw);
+    top: calc(50vh - 40vw);
+    background-color: #ecda9a;
+    transform: rotate(20deg);
+    opacity: .4;
+    z-index: 10;
+}
+
+.first {
+    background-color: #efc47e;
+    transform: rotate(40deg);
+}
+
+.second {
+    background-color: #f3ad6a;
+    transform: rotate(60deg);
+}
+
+.third {
+    background-color: #f7945d;
+    transform: rotate(80deg);
+}
+
+.four {
+    background-color: #f97b57;
+    transform: rotate(100deg);
+}
+
+.five {
+    background-color: #f66356;
+    transform: rotate(120deg);
+}
+
+.six {
+    background-color: #ee4d5a;
+    transform: rotate(140deg);
+}
+
+@media only screen and (min-width: 30em) {
+
+    .resumen-card-title,
+    .resumen-card-date {
+        width: auto;
+        font-size: 1.5rem;
+    }
+
+    .resumen-card-date {
+        font-size: 3rem;
+    }
+
+}
+
+@media only screen and (min-width: 64em) {
+
+    .resumen-card-container {
+        left: 50%;
+        position: absolute;
+        top: 10vh;
+        font-size: 0;
+        z-index: 3;
+        &.resumen-card-container-right {
+            right: 50%;
+            left: initial;
+        }
+    }
+
+    .resumen-card-container-right {
+        .resumen-card-date {
+            float: right;
+        }
+    }
+
+    .resumen-card-image {
+        max-width: 50%;
+        &.resumen-card-right {
+            margin-left: 50%;
+        }
+    }
+
+    .resumen-card-rectangle {
+        width: 40vw;
+        height: 40vw;
+        position: absolute;
+        left: calc(50vw - 20vw);
+        top: calc(50vh - 20vw);
+    }
+
+    .resumen-intro-title {
+        font-size: 70px;
+        left: 50vw;
+    }
+
+}
