@@ -1004,14 +1004,20 @@ path {
     background-color: #f1f1f1;
 }
 
-.grid-text {
+.grid-text,
+.grid-text-bold {
     display: block;
     padding: 0.63rem 0;
 }
 
-.grid-text:not(:last-child) {
+.grid-text:not(:last-child), .grid-text-bold:not(:last-child) {
         border-bottom: 1px solid #ccc;
     }
+
+.grid-text-bold {
+    font-weight: bold;
+    font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
+}
 
 .grid-title {
     border-bottom: 1px solid #ccc;
