@@ -9,50 +9,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+    <script src="js/aos.js"></script>
 </head>
 <body class="resumen-forno">
-    <div class="resumen-card-lines"></div>
-    <div data-rotate="20" class="resumen-card-rectangle"></div>
-    <div data-rotate="40" class="resumen-card-rectangle first"></div>
-    <div data-rotate="60" class="resumen-card-rectangle second"></div>
-    <div data-rotate="80" class="resumen-card-rectangle third"></div>
-    <div data-rotate="100" class="resumen-card-rectangle four"></div>
-    <div data-rotate="120" class="resumen-card-rectangle five"></div>
-    <div data-rotate="140" class="resumen-card-rectangle six"></div>
-    <div data-rotate="160" class="resumen-card-rectangle seven"></div>
-    <div data-rotate="180" class="resumen-card-rectangle"></div>
-    <div data-rotate="200" class="resumen-card-rectangle first"></div>
-    <div data-rotate="220" class="resumen-card-rectangle second"></div>
-    <div data-rotate="240" class="resumen-card-rectangle third"></div>
-    <div data-rotate="260" class="resumen-card-rectangle four"></div>
-    <div data-rotate="280" class="resumen-card-rectangle five"></div>
-    <div data-rotate="300" class="resumen-card-rectangle six"></div>
-    <div data-rotate="320" class="resumen-card-rectangle seven"></div>
-    <h1 class="resumen-intro-title">FORNO 2017</h1>
-    <div class="resumen-intro">
-        <!-- <p>2017</p> -->
+    <div class="resumen-forno-header">
+        <div class="resumen-card-lines"></div>
+        <div data-rotate="20" class="resumen-card-rectangle"></div>
+        <div data-rotate="40" class="resumen-card-rectangle first"></div>
+        <div data-rotate="60" class="resumen-card-rectangle second"></div>
+        <div data-rotate="80" class="resumen-card-rectangle third"></div>
+        <div data-rotate="100" class="resumen-card-rectangle four"></div>
+        <div data-rotate="120" class="resumen-card-rectangle five"></div>
+        <div data-rotate="140" class="resumen-card-rectangle six"></div>
+        <div data-rotate="160" class="resumen-card-rectangle seven"></div>
+        <div data-rotate="180" class="resumen-card-rectangle"></div>
+        <div data-rotate="200" class="resumen-card-rectangle first"></div>
+        <div data-rotate="220" class="resumen-card-rectangle second"></div>
+        <div data-rotate="240" class="resumen-card-rectangle third"></div>
+        <div data-rotate="260" class="resumen-card-rectangle four"></div>
+        <div data-rotate="280" class="resumen-card-rectangle five"></div>
+        <div data-rotate="300" class="resumen-card-rectangle six"></div>
+        <div data-rotate="320" class="resumen-card-rectangle seven"></div>
+        <h1 class="ml7 resumen-intro-title">
+          <span class="text-wrapper">
+            <span class="letters">FORNO 2017</span>
+          </span>
+        </h1>
     </div>
     <div class="resumen-card">
-        <img src="img/resumen/heladas.jpg" alt="" class="resumen-card-image">
-        <div class="resumen-card-container">
+        <img data-aos="fade-right" data-aos-anchor=".anchor-one" src="img/resumen/heladas.jpg" alt="" class="resumen-card-image">
+        <div class="resumen-card-container" data-aos="fade-left"
+     data-aos-anchor=".anchor-one"
+     data-aos-offset="100">
             <span class="resumen-card-title">DÍAS CON HELADAS</span>
             <span class="resumen-card-date">21</span>
+            <div class="anchor-one"></div>
         </div>
         <span class="atribucion">© Krivec Ales</span>
     </div>
-    <div class="resumen-card ">
-        <img src="img/resumen/temperaturas.jpg" alt="" class="resumen-card-image resumen-card-right">
-        <div class="resumen-card-container resumen-card-container-right">
+    <div class="resumen-card">
+        <img data-aos="fade-left" data-aos-anchor=".anchor-two" src="img/resumen/temperaturas.jpg" alt="" class="resumen-card-image resumen-card-right">
+        <div class="resumen-card-container resumen-card-container-right" data-aos="fade-right"
+     data-aos-anchor=".anchor-two"
+     data-aos-offset="100">
             <span class="resumen-card-title">DÍAS CON TEMPERATURA SUPERIOR A 30ºC</span>
             <span class="resumen-card-date">87</span>
+            <div class="anchor-two"></div>
         </div>
         <span class="atribucion">© Serguei</span>
     </div>
     <div class="resumen-card">
-        <img src="img/resumen/lluvia-recogida.jpg" alt="" class="resumen-card-image">
-        <div class="resumen-card-container">
+        <img data-aos="slide-up" data-aos-anchor=".anchor-three" src="img/resumen/lluvia-recogida.jpg" alt="" class="resumen-card-image">
+        <div class="resumen-card-container" data-aos="fade-up"
+     data-aos-anchor=".anchor-three"
+     data-aos-offset="100">
             <span class="resumen-card-title">PRECIPITACIONES ACUMULADAS</span>
             <span class="resumen-card-date">272.7</span>
+            <div class="anchor-three"></div>
         </div>
     </div>
     <div class="resumen-card">
@@ -61,6 +74,7 @@
             <span class="resumen-card-title">TEMPERATURA MÁXIMA</span>
             <span class="resumen-card-date">40.1ºC el 22 de junio</span>
         </div>
+        <div class="anchor-four"></div>
     </div>
     <div class="resumen-card">
         <img src="img/resumen/frio.jpg" alt="" class="resumen-card-image">
@@ -69,6 +83,7 @@
             <span class="resumen-card-date">-4.1ºC el 19 de enero</span>
         </div>
         <span class="atribucion">© Juanedc.com</span>
+        <div class="anchor-five"></div>
     </div>
     <div class="resumen-card">
         <img src="img/resumen/noches-tropicales.jpg" alt="" class="resumen-card-image resumen-card-right">
@@ -76,6 +91,7 @@
             <span class="resumen-card-title">NOCHES TROPICALES</span>
             <span class="resumen-card-date">38</span>
         </div>
+        <div class="anchor-six"></div>
     </div>
     <div class="resumen-card">
         <img src="img/resumen/granizo.jpg" alt="" class="resumen-card-image">
@@ -84,6 +100,7 @@
             <span class="resumen-card-date">2</span>
         </div>
         <span class="atribucion">© Javier Candeira</span>
+        <div class="anchor-seven"></div>
     </div>
     <div class="resumen-card">
         <img src="img/resumen/tormentas.jpg" alt="" class="resumen-card-image resumen-card-right">
@@ -91,6 +108,7 @@
             <span class="resumen-card-title">DÍAS CON TORMENTA</span>
             <span class="resumen-card-date">33</span>
         </div>
+        <div class="anchor-eight"></div>
     </div>
     <div class="resumen-card">
         <img src="img/resumen/nieblas.jpg" alt="" class="resumen-card-image">
@@ -99,6 +117,7 @@
             <span class="resumen-card-date">12</span>
         </div>
         <span class="atribucion">© Juanedc.com</span>
+        <div class="anchor-nine"></div>
     </div>
     <div class="resumen-card">
         <img src="img/resumen/cierzo.jpg" alt="" class="resumen-card-image resumen-card-right">
@@ -106,13 +125,15 @@
             <span class="resumen-card-title">DÍAS CON CIERZO</span>
             <span class="resumen-card-date">106</span>
         </div>
+        <div class="anchor-ten"></div>
     </div>
     <div class="resumen-card">
         <img src="img/resumen/nubes.jpg" alt="" class="resumen-card-image">
-        <div class="resumen-card-container">
+        <div class="resumen-card-container ">
             <span class="resumen-card-title">DÍAS NUBOSOS</span>
             <span class="resumen-card-date">243</span>
         </div>
+        <div class="anchor-eleven"></div>
     </div>
 
     <div class="wrapper-vw">
@@ -129,6 +150,7 @@
         </div>
     </footer>
     <script src="js/anime.min.js"></script>
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
     <script src="js/resumen.js"></script>
     <script>
     (function(i, s, o, g, r, a, m) {
