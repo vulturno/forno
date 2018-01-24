@@ -69,12 +69,18 @@
     background-color: var(--impureWhite);
 }
 
-.grid-text {
+.grid-text,
+.grid-text-bold {
     display: block;
     padding: 10px 0;
     &:not(:last-child) {
         border-bottom: 1px solid #ccc;
     }
+}
+
+.grid-text-bold {
+    font-weight: bold;
+    font-family: var(--fontSystem);
 }
 
 .grid-title {
@@ -119,4 +125,22 @@
             display: none;
         }
     }
+}
+
+.container-recomendaciones {
+    font-size: 0;
+}
+
+.imagen-recomendaciones,
+.container-recomendaciones-lista {
+    width: 50%;
+    display: inline-block;
+}
+
+.imagen-recomendaciones {
+    vertical-align: top;
+}
+
+.container-recomendaciones-elemento {
+    font-size: 14px;
 }

@@ -1,15 +1,15 @@
 .footer {
-    background-color: var(--impureBlack);
+    background-color: #E25772;
     width: 100%;
-    padding: 20px 0;
+    padding: 10vh 0;
     margin-top: 10vh;
 }
 
 .footer-texto {
-    color: var(--impureWhite);
+    color: var(--impureBlack);
+    font-weight: bold;
 }
 
 .footer-links {
-    color: var(--colorlinks);
     font-weight: bold;
 }
