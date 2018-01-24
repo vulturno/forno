@@ -39,8 +39,8 @@ setTimeout(function() {
 
 $(document).ready(function() {
     AOS.init({
-        duration: 1000,
-        easing: 'ease-in-out-back',
+        duration: 600,
+        easing: 'ease-in',
         disable: function() {
             var maxWidth = 1024;
             return window.innerWidth < maxWidth;

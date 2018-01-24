@@ -1059,24 +1059,43 @@ path {
             display: none;
         }
 
+.container-recomendaciones {
+    font-size: 0;
+}
+
+.imagen-recomendaciones,
+.container-recomendaciones-lista {
+    width: 50%;
+    display: inline-block;
+}
+
+.imagen-recomendaciones {
+    vertical-align: top;
+}
+
+.container-recomendaciones-elemento {
+    font-size: 0.88rem;
+}
+
 .footer {
-    background-color: #111;
+    background-color: #E25772;
     width: 100%;
-    padding: 1.25rem 0;
+    padding: 10vh 0;
     margin-top: 10vh;
 }
 
 .footer-texto {
-    color: #f1f1f1;
+    color: #111;
+    font-weight: bold;
 }
 
 .footer-links {
-    color: #7085ee;
     font-weight: bold;
 }
 
 .resumen-forno-header {
     height: 100vh;
+    background-color: #F8F8F8;
 }
 
 .resumen-forno {
@@ -1085,8 +1104,8 @@ path {
 
 .resumen-forno .footer,
     .resumen-forno .wrapper-vw {
+        z-index: 20;
         position: relative;
-        z-index: 10;
     }
 
 .resumen-forno .wrapper-vw {
@@ -1097,7 +1116,6 @@ path {
     width: 100vw;
     position: relative;
     height: 100vh;
-    background-color: #fff;
 }
 
 .resumen-card-lines {
@@ -1127,6 +1145,8 @@ path {
     position: absolute;
     top: 10vh;
     font-size: 0;
+    background-color: #F8F8F8;
+    width: 100%;
     z-index: 3;
 }
 
@@ -1146,7 +1166,6 @@ path {
 
 .resumen-card-date {
     background-color: yellow;
-    width: auto;
     color: #000;
     display: inline-block;
 }
@@ -1276,12 +1295,15 @@ path {
         left: 50%;
         position: absolute;
         top: 10vh;
+        height: 80vh;
+        width: 50%;
         font-size: 0;
         z-index: 3;
     }
         .resumen-card-container.resumen-card-container-right {
             right: 50%;
             left: initial;
+            text-align: right;
         }
         .resumen-card-container-right .resumen-card-date {
             float: right;
@@ -1309,6 +1331,7 @@ path {
     .letter {
         font-size: 4.38rem;
     }
+
 }
 
 /* stylelint-disable */
@@ -1851,8 +1874,9 @@ path {
         margin: 0 5% 5% 0;
     }
 
-    .grid-text {
-        padding: 0.31rem;
+    .grid-text,
+    .grid-text-bold {
+        padding: 0.5rem;
     }
 
     .temp-max-graph {

@@ -1,13 +1,14 @@
 .resumen-forno-header {
     height: 100vh;
+    background-color: #F8F8F8;
 }
 
 .resumen-forno {
     position: relative;
     .footer,
     .wrapper-vw {
+        z-index: 20;
         position: relative;
-        z-index: 10;
     }
     .wrapper-vw {
         background-color: #fff;
@@ -18,7 +19,6 @@
     width: 100vw;
     position: relative;
     height: 100vh;
-    background-color: #fff;
 }
 
 .resumen-card-lines {
@@ -48,6 +48,8 @@
     position: absolute;
     top: 10vh;
     font-size: 0;
+    background-color: #F8F8F8;
+    width: 100%;
     z-index: 3;
 }
 
@@ -67,7 +69,6 @@
 
 .resumen-card-date {
     background-color: yellow;
-    width: auto;
     color: #000;
     display: inline-block;
 }
@@ -194,11 +195,14 @@
         left: 50%;
         position: absolute;
         top: 10vh;
+        height: 80vh;
+        width: 50%;
         font-size: 0;
         z-index: 3;
         &.resumen-card-container-right {
             right: 50%;
             left: initial;
+            text-align: right;
         }
     }
 
@@ -230,6 +234,7 @@
     .letter {
         font-size: 70px;
     }
+
 }
 
 /* stylelint-disable */

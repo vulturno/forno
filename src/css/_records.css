@@ -126,3 +126,21 @@
         }
     }
 }
+
+.container-recomendaciones {
+    font-size: 0;
+}
+
+.imagen-recomendaciones,
+.container-recomendaciones-lista {
+    width: 50%;
+    display: inline-block;
+}
+
+.imagen-recomendaciones {
+    vertical-align: top;
+}
+
+.container-recomendaciones-elemento {
+    font-size: 14px;
+}
