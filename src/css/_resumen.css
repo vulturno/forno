@@ -49,8 +49,8 @@
     font-family: var(--montserrat);
     font-size: 1rem;
     font-weight: bold;
-    background-color: #fff;
-    color: #000;
+    background-color: var(--white);
+    color: var(--impureBlack);
     padding: 2rem;
     display: block;
     vertical-align: middle;
@@ -59,14 +59,13 @@
 }
 
 .resumen-card-title-heladas {
-    background-color: #420d0a;
-    color: #fff;
+    background-color: #6AABB7;
+    color: var(--impureBlack);
 }
 
-.resumen-card-date {
-    background-color: yellow;
-    color: #000;
-    display: inline-block;
+.resumen-card-date-heladas {
+    background-color: var(--impureBlack);
+    color: var(--white);
 }
 
 .atribucion {
@@ -76,7 +75,7 @@
     bottom: 100px;
     left: 50px;
     z-index: 11;
-    color: #fff;
+    color: var(--white);
 }
 
 .resumen-rgba {
@@ -124,7 +123,7 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 3rem;
     font-weight: bold;
-    color: #000;
+    color: var(--impureBlack);
     transform-origin: 0 100%;
     display: inline-block;
     opacity: 0;
@@ -182,16 +181,13 @@
         display: inline-block;
     }
 
-    .resumen-card-date {
-        font-size: 3rem;
-    }
-
     .resumen-card-image-container {
         width: 80vw;
         margin: 0 auto;
         display: block;
         max-height: 60vh;
         overflow: hidden;
+        font-size: 0;
     }
 }
 

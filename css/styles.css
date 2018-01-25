@@ -1197,7 +1197,7 @@ path {
     font-size: 1rem;
     font-weight: bold;
     background-color: #fff;
-    color: #000;
+    color: #111;
     padding: 2rem;
     display: block;
     vertical-align: middle;
@@ -1206,14 +1206,13 @@ path {
 }
 
 .resumen-card-title-heladas {
-    background-color: #420d0a;
-    color: #fff;
+    background-color: #6AABB7;
+    color: #111;
 }
 
-.resumen-card-date {
-    background-color: yellow;
-    color: #000;
-    display: inline-block;
+.resumen-card-date-heladas {
+    background-color: #111;
+    color: #fff;
 }
 
 .atribucion {
@@ -1273,7 +1272,7 @@ path {
     font-family: 'Montserrat', sans-serif;
     font-size: 3rem;
     font-weight: bold;
-    color: #000;
+    color: #111;
     transform-origin: 0 100%;
     display: inline-block;
     opacity: 0;
@@ -1331,16 +1330,13 @@ path {
         display: inline-block;
     }
 
-    .resumen-card-date {
-        font-size: 3rem;
-    }
-
     .resumen-card-image-container {
         width: 80vw;
         margin: 0 auto;
         display: block;
         max-height: 60vh;
         overflow: hidden;
+        font-size: 0;
     }
 }
 
