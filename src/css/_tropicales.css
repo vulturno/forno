@@ -39,6 +39,9 @@
     font-size: 14px;
     margin: 0 0 5px;
     color: #fff;
+    + p {
+        display: none;
+    }
 }
 
 .chart-tropicales {

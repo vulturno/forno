@@ -22,16 +22,6 @@
     height: 100vh;
 }
 
-.resumen-card-lines {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 1px;
-    height: 100%;
-    background-color: #ccc;
-    z-index: 1;
-}
-
 .resumen-card-image {
     object-fit: cover;
     max-width: 100%;
@@ -49,23 +39,11 @@
     font-family: var(--montserrat);
     font-size: 1rem;
     font-weight: bold;
-    background-color: var(--white);
     color: var(--impureBlack);
     padding: 2rem;
     display: block;
     vertical-align: middle;
-    box-shadow: 7px -6px 8px -8px rgba(0, 0, 0, .75);
     width: 100%;
-}
-
-.resumen-card-title-heladas {
-    background-color: #6AABB7;
-    color: var(--impureBlack);
-}
-
-.resumen-card-date-heladas {
-    background-color: var(--impureBlack);
-    color: var(--white);
 }
 
 .atribucion {
@@ -85,13 +63,6 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, .4);
-}
-
-.resumen-intro {
-    background: #f1f1f1;
-    padding: 2rem;
-    height: 100vh;
-    opacity: .3;
 }
 
 .resumen-intro-title {
@@ -172,19 +143,73 @@
     transform: rotate(140deg);
 }
 
+/* HELADAS */
+
+.resumen-card-heladas {
+    display: grid;
+    grid-template-columns: 50rem 1fr;
+    grid-column-gap: 20px;
+}
+
+.resumen-card-heladas-text {
+    align-self: center;
+    margin-right: 2rem;
+
+}
+
+.resumen-card-image-container-heladas {
+    margin-left: 2rem;
+    overflow: hidden;
+}
+
+.resumen-card-title-heladas {
+    display: inline-block;
+    width: initial;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    color: #091f3c;
+    &:before {
+        content: '';
+        width: 1vw;
+        height: 3px;
+        margin-right: .5rem;
+        display: inline-block;
+        vertical-align: middle;
+        background-color: #BD804A;
+    }
+}
+
+.resumen-card-date-heladas {
+    font-size: 3rem;
+    background-color: #091f3c;
+    color: #BD804A;
+    display: inline-block;
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: inline-block;
+        background-color: #BD804A;
+        height: 100%;
+        width: 1vw;
+    }
+}
+
+.resumen-card-line-heladas {
+    width: 50%;
+    display: inline-block;
+    background-color: #091f3c;
+    height: .5rem;
+    &:first-child {
+        background-color: #BD804A;
+    }
+}
+
 @media only screen and (min-width: 30em) {
 
-    .resumen-card-title,
-    .resumen-card-date {
-        width: auto;
-        font-size: 1.5rem;
-        display: inline-block;
-    }
-
     .resumen-card-image-container {
-        width: 80vw;
-        margin: 0 auto;
-        display: block;
         max-height: 80vh;
         overflow: hidden;
         font-size: 0;
