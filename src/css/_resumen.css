@@ -253,28 +253,43 @@
 
 .resumen-card-lluvias {
     display: grid;
-    grid-template-columns: 30rem 1fr;
+    grid-template-columns: 30rem 1fr 1fr;
     grid-column-gap: 20px;
     max-width: 80rem;
     margin: 0 auto;
+    padding-left: 2rem;
 }
 
 .resumen-card-image-container-lluvias {
-    padding-left: 2rem;
-    grid-column: 1;
-    grid-row: 1 / 3;
+    grid-column: 1 / span 2;
+    &.resumen-card-image-container-lluvias {
+        max-height: 50vh;
+    }
 }
 
 .resumen-card-image-container-lluvias-dos {
-    grid-column: 2;
-    grid-row: 1;
-    max-height: 50vh;
+    grid-column: 3;
+    grid-row: 1 / span 2;
 }
 
-.resumen-card-lluvias-text {
+.resumen-card-title-lluvias {
+    grid-column: 1;
+    grid-row: 2;
+    background-color: #baedc9;
+    font-size: 1.5rem;
+    align-self: end;
+    text-align: right;
+}
+
+.resumen-card-date-lluvias {
     grid-column: 2;
     grid-row: 2;
-
+    background-color: #2F6571;
+    color: #fff;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    text-align: center;
+    align-self: end;
 }
 
 @media only screen and (min-width: 30em) {
