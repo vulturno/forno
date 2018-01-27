@@ -1303,12 +1303,13 @@ path {
     display: grid;
     grid-template-columns: 50rem 1fr;
     grid-column-gap: 20px;
+    max-width: 80rem;
+    margin: 0 auto;
 }
 
 .resumen-card-heladas-text {
     align-self: center;
     margin-right: 2rem;
-
 }
 
 .resumen-card-image-container-heladas {
@@ -1364,6 +1365,76 @@ path {
         background-color: #BD804A;
     }
 
+/* RESUMEN TEMPERATURAS */
+
+.resumen-card-temperatura {
+    display: grid;
+    grid-template-columns: 30rem 1fr;
+    grid-column-gap: 20px;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.resumen-card-image-container-temperaturas {
+    width: 40rem;
+    height: 40rem;
+    border-radius: 100%;
+    align-self: center;
+    justify-self: center;
+}
+
+.resumen-card-image-container-temperaturas img {
+        max-width: initial;
+    }
+
+.resumen-card-title-temperaturas {
+    color: #171a37;
+    font-size: 3rem;
+    line-height: 1;
+    padding-left: 0;
+}
+
+.resumen-card-temperaturas-text {
+    align-self: center;
+    padding-left: 2rem;
+}
+
+.resumen-card-date-temperaturas {
+    color: #FC9D62;
+    font-size: 3rem;
+    background-color: #4c1531;
+    display: inline-block;
+    width: initial;
+}
+
+/* LLUVIAS */
+
+.resumen-card-lluvias {
+    display: grid;
+    grid-template-columns: 30rem 1fr;
+    grid-column-gap: 20px;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.resumen-card-image-container-lluvias {
+    padding-left: 2rem;
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+
+.resumen-card-image-container-lluvias-dos {
+    grid-column: 2;
+    grid-row: 1;
+    max-height: 50vh;
+}
+
+.resumen-card-lluvias-text {
+    grid-column: 2;
+    grid-row: 2;
+
+}
+
 @media only screen and (min-width: 30em) {
 
     .resumen-card-image-container {
@@ -1387,7 +1458,6 @@ path {
     .resumen-card-image {
         transition: transform .8s cubic-bezier(.6, -.28, .74, .05),
         -webkit-transform .8s cubic-bezier(.25, .46, .45, .94);
-        height: initial;
         margin: 0;
         transform: scale(1);
     }
