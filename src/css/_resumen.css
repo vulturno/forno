@@ -105,11 +105,11 @@
     height: 80vw;
     border-radius: 100%;
     position: absolute;
-    left: calc(50vw - 40vw);
+    left: 0;
     top: calc(50vh - 40vw);
     background-color: #ecda9a;
     transform: rotate(20deg);
-    opacity: .4;
+    opacity: .2;
     z-index: 10;
 }
 
@@ -141,6 +141,11 @@
 .six {
     background-color: #ee4d5a;
     transform: rotate(140deg);
+}
+
+.seven {
+    background-color: #ee4d5a;
+    transform: rotate(160deg);
 }
 
 /* HELADAS */
@@ -294,21 +299,47 @@
 
 /*  MAXIMA */
 
+/* stylelint-disable */
 .resumen-card-maxima {
     display: grid;
-    grid-template-columns: 15% 15% 15% 1fr 1fr;
+    grid-template-columns: 15% 15% 15% 1fr;
     grid-template-rows: 2fr;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
     max-width: 80rem;
     margin: 0 auto;
+    &:hover {
+        .resumen-card-maxima-column {
+            &:first-child {
+                transition: transform .8s cubic-bezier(.6, -.28, .74, .05),
+                -webkit-transform .8s cubic-bezier(.25, .46, .45, .94);
+                transform: translateX(20px) scale(1.025);
+            }
+            &:nth-of-type(3n) {
+                transition: transform .8s cubic-bezier(.6, -.28, .74, .05),
+                -webkit-transform .8s cubic-bezier(.25, .46, .45, .94);
+                transform: translateX(-20px) scale(1.025);
+            }
+            &:nth-of-type(2n) {
+                transition: transform .8s cubic-bezier(.6, -.28, .74, .05),
+                -webkit-transform .8s cubic-bezier(.25, .46, .45, .94);
+                transform: scale(1.025);
+            }
+        }
+    }
 }
+
+/* stylelint-enable */
 
 .resumen-card-maxima-column {
     background-image: url('../img/resumen/caloret.jpg');
     background-size: cover;
     position: relative;
     z-index: 1;
+    transition: transform .8s cubic-bezier(.6, -.28, .74, .05),
+    -webkit-transform .8s cubic-bezier(.25, .46, .45, .94);
+    margin: 0;
+    transform: translateX(0) scale(1);
     &:first-child,
     &:nth-of-type(2n) {
         &:after {
@@ -334,6 +365,18 @@
     }
 }
 
+.resumen-card-title-maxima {
+    font-size: 4rem;
+    padding-top: 0;
+    line-height: 1;
+}
+
+.resumen-card-maxima-text {
+    background: #BD9057;
+    color: #0e2040;
+    padding: 20px;
+}
+
 @media only screen and (min-width: 30em) {
 
     .resumen-card-image-container {
@@ -341,6 +384,14 @@
         overflow: hidden;
         font-size: 0;
     }
+}
+
+@media only screen and (max-width: 48em) {
+
+    .resumen-card-rectangle {
+        left: calc(50vw - 40vw);
+    }
+
 }
 
 @media only screen and (min-width: 64em) {
@@ -367,18 +418,18 @@
     }
 
     .resumen-card-rectangle {
-        width: 30vw;
-        height: 30vw;
+        width: 5vw;
+        height: 5vw;
         position: absolute;
-        left: calc(50vw - 15vw);
-        top: calc(50vh - 15vw);
+        top: calc(50vh - 2.5vw);
     }
 
     .resumen-intro-title {
         left: 50vw;
+        margin: -3.13rem 0 0 -10.06rem;
     }
 
     .letter {
-        font-size: 70px;
+        font-size: 48px;
     }
 }
