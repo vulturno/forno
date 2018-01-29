@@ -1526,42 +1526,45 @@ path {
     padding-left: 2rem;
 }
 
-.resumen-card-title-minima,
-.resumen-card-date-minima {
-    color: #111;
-    font-size: 2rem;
-    padding: 3rem;
-}
-
 .resumen-card-minima-grid {
     display: grid;
-    grid-template-columns: repeat(6, 5rem);
+    grid-template-columns: 2vw 4vw 6vw 8vw 10vw 12vw 1fr;
     grid-column-gap: 1rem;
     margin: 0 auto;
 }
 
+.resumen-card-minima-grid .resumen-card-minima-grid-element {
+        align-self: center;
+    }
+
 .resumen-card-minima-grid span:nth-of-type(1) {
         background-color: #d1eeea;
+        height: 2vw;
     }
 
 .resumen-card-minima-grid span:nth-of-type(2) {
         background-color: #a8dbd9;
+        height: 4vw;
     }
 
 .resumen-card-minima-grid span:nth-of-type(3) {
         background-color: #85c4c9;
+        height: 6vw;
     }
 
 .resumen-card-minima-grid span:nth-of-type(4) {
         background-color: #68abb8;
+        height: 8vw;
     }
 
 .resumen-card-minima-grid span:nth-of-type(5) {
         background-color: #4f90a6;
+        height: 10vw;
     }
 
 .resumen-card-minima-grid span:nth-of-type(6) {
         background-color: #3b738f;
+        height: 12vw;
     }
 
 .resumen-card-minima-text {
@@ -1569,20 +1572,58 @@ path {
     height: 40rem;
     width: 40rem;
     border-radius: 100%;
-    display: flex;
+    display: grid;
+}
+
+.resumen-card-title-minima,
+.resumen-card-date-minima {
+    margin: 0;
+    text-align: center;
+    padding: 0;
+    display: block;
+    color: #90f8c1;
+    font-size: 2rem;
 }
 
 .resumen-card-title-minima {
-    margin: auto;
-    text-align: center;
-
+    align-self: end;
 }
 
 .resumen-card-minima-grid-element {
     border-radius: 100%;
-    background-color: blue;
-    height: 5rem;
     display: inline-block;
+}
+
+/* NOCHES TROPICALES */
+
+.resumen-card-noches {
+    display: grid;
+    grid-template-columns: 1fr 20rem;
+    grid-template-rows: 80vh;
+    grid-column-gap: 2rem;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.resumen-card-noches-text {
+    display: grid;
+}
+
+.resumen-card-title-noches {
+    font-size: 3rem;
+    width: 100%;
+    color: #111;
+    align-self: end;
+}
+
+.resumen-card-date-noches {
+    font-size: 8rem;
+}
+
+.resumen-card-title-noches,
+.resumen-card-date-noches {
+    padding: 0;
+    line-height: 1;
 }
 
 @media only screen and (min-width: 30em) {
