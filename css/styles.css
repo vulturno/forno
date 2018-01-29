@@ -1158,41 +1158,48 @@ path {
     background-color: #F8F8F8;
 }
 
-.resumen-forno .footer,
-    .resumen-forno .wrapper-vw {
-        z-index: 20;
-        position: relative;
-    }
-
 .resumen-forno .wrapper-vw {
         background-color: #F8F8F8;
     }
 
 .resumen-card {
-    width: 100vw;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
     position: relative;
-    height: 100vh;
+    height: initial;
+    margin-bottom: 3rem;
+}
+
+.resumen-card-image-container-lluvias-dos {
+    display: none;
+}
+
+video {
+    width: 100%;
 }
 
 .resumen-card-image {
     object-fit: cover;
     max-width: 100%;
-    height: 80vh;
-    margin: 10vh 0;
+    height: initial;
+    margin: 0;
     padding-left: 0;
     display: inline-block;
     vertical-align: middle;
     position: relative;
     z-index: 2;
+    width: 100%;
 }
 
 .resumen-card-title,
 .resumen-card-date {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: #111;
-    padding: 2rem;
+    padding: 0 2rem;
+    line-height: 1;
     display: block;
     vertical-align: middle;
     width: 100%;
@@ -1289,343 +1296,6 @@ path {
     transform: rotate(160deg);
 }
 
-/* HELADAS */
-
-.resumen-card-heladas {
-    display: grid;
-    grid-template-columns: 50rem 1fr;
-    grid-column-gap: 20px;
-    max-width: 80rem;
-    margin: 0 auto;
-}
-
-.resumen-card-heladas-text {
-    align-self: center;
-    margin-right: 2rem;
-}
-
-.resumen-card-image-container-heladas {
-    margin-left: 2rem;
-    overflow: hidden;
-}
-
-.resumen-card-title-heladas {
-    display: inline-block;
-    width: initial;
-    padding: 1rem 0;
-    font-size: 1.5rem;
-    color: #091f3c;
-}
-
-.resumen-card-title-heladas:before {
-        content: '';
-        width: 1vw;
-        height: 3px;
-        margin-right: .5rem;
-        display: inline-block;
-        vertical-align: middle;
-        background-color: #BD804A;
-    }
-
-.resumen-card-date-heladas {
-    font-size: 3rem;
-    background-color: #091f3c;
-    color: #BD804A;
-    display: inline-block;
-    position: relative;
-}
-
-.resumen-card-date-heladas:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        display: inline-block;
-        background-color: #BD804A;
-        height: 100%;
-        width: 1vw;
-    }
-
-.resumen-card-line-heladas {
-    width: 50%;
-    display: inline-block;
-    background-color: #091f3c;
-    height: .5rem;
-}
-
-.resumen-card-line-heladas:first-child {
-        background-color: #BD804A;
-    }
-
-/* RESUMEN TEMPERATURAS */
-
-.resumen-card-temperatura {
-    display: grid;
-    grid-template-columns: 30rem 1fr;
-    grid-column-gap: 20px;
-    max-width: 80rem;
-    margin: 0 auto;
-}
-
-.resumen-card-image-container-temperaturas {
-    width: 40rem;
-    height: 40rem;
-    border-radius: 100%;
-    align-self: center;
-    justify-self: center;
-}
-
-.resumen-card-image-container-temperaturas img {
-        max-width: initial;
-    }
-
-.resumen-card-title-temperaturas {
-    color: #171a37;
-    font-size: 3rem;
-    line-height: 1;
-    padding-left: 0;
-}
-
-.resumen-card-temperaturas-text {
-    align-self: center;
-    padding-left: 2rem;
-}
-
-.resumen-card-date-temperaturas {
-    color: #FC9D62;
-    font-size: 3rem;
-    background-color: #4c1531;
-    display: inline-block;
-    width: initial;
-}
-
-/* LLUVIAS */
-
-.resumen-card-lluvias {
-    display: grid;
-    grid-template-columns: 30rem 1fr 1fr;
-    grid-column-gap: 20px;
-    max-width: 80rem;
-    margin: 0 auto;
-    padding-left: 2rem;
-}
-
-.resumen-card-image-container-lluvias {
-    grid-column: 1 / span 2;
-}
-
-.resumen-card-image-container-lluvias.resumen-card-image-container-lluvias {
-        max-height: 50vh;
-    }
-
-.resumen-card-image-container-lluvias-dos {
-    grid-column: 3;
-    grid-row: 1 / span 2;
-}
-
-.resumen-card-title-lluvias {
-    grid-column: 1;
-    grid-row: 2;
-    background-color: #baedc9;
-    font-size: 1.5rem;
-    align-self: end;
-    text-align: right;
-}
-
-.resumen-card-date-lluvias {
-    grid-column: 2;
-    grid-row: 2;
-    background-color: #2F6571;
-    color: #fff;
-    font-size: 3rem;
-    letter-spacing: 0.13rem;
-    text-align: center;
-    align-self: end;
-}
-
-/*  MAXIMA */
-
-/* stylelint-disable */
-
-.resumen-card-maxima {
-    display: grid;
-    grid-template-columns: 15% 15% 15% 1fr;
-    grid-template-rows: 2fr;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    max-width: 80rem;
-    margin: 0 auto;
-}
-
-.resumen-card-maxima:hover .resumen-card-maxima-column:first-child {
-                transition: transform .8s cubic-bezier(.6, -.28, .74, .05),
-                -webkit-transform .8s cubic-bezier(.25, .46, .45, .94);
-                transform: translateX(20px);
-            }
-
-.resumen-card-maxima:hover .resumen-card-maxima-column:nth-of-type(3n) {
-                transition: transform .8s cubic-bezier(.6, -.28, .74, .05),
-                -webkit-transform .8s cubic-bezier(.25, .46, .45, .94);
-                transform: translateX(-20px);
-            }
-
-/* stylelint-enable */
-
-.resumen-card-maxima-column {
-    background-image: url('../img/resumen/caloret.jpg');
-    background-size: cover;
-    position: relative;
-    z-index: 1;
-    transition: transform .8s cubic-bezier(.6, -.28, .74, .05),
-    -webkit-transform .8s cubic-bezier(.25, .46, .45, .94);
-    margin: 0;
-    transform: translateX(0);
-}
-
-.resumen-card-maxima-column:first-child:after, .resumen-card-maxima-column:nth-of-type(2n):after {
-            content: '';
-            width: 100%;
-            height: 40%;
-            position: absolute;
-            left: 0;
-            top: 0;
-            display: inline-block;
-            z-index: 2;
-            background-color: #F8F8F8;
-        }
-
-.resumen-card-maxima-column:nth-of-type(2n) {
-        background-position: 48%;
-    }
-
-.resumen-card-maxima-column:nth-of-type(2n):after {
-            height: 20%;
-        }
-
-.resumen-card-maxima-column:nth-of-type(3n) {
-        background-position: 100%;
-    }
-
-.resumen-card-title-maxima {
-    font-size: 4rem;
-    padding-top: 0;
-    line-height: 1;
-}
-
-.resumen-card-maxima-text {
-    background: #BD9057;
-    color: #0e2040;
-    padding: 1.25rem;
-}
-
-/* MINIMAS */
-
-.resumen-card-minima {
-    max-width: 80rem;
-    margin: 0 auto;
-    padding-left: 2rem;
-}
-
-.resumen-card-minima-grid {
-    display: grid;
-    grid-template-columns: 2vw 4vw 6vw 8vw 10vw 12vw 1fr;
-    grid-column-gap: 1rem;
-    margin: 0 auto;
-}
-
-.resumen-card-minima-grid .resumen-card-minima-grid-element {
-        align-self: center;
-    }
-
-.resumen-card-minima-grid span:nth-of-type(1) {
-        background-color: #d1eeea;
-        height: 2vw;
-    }
-
-.resumen-card-minima-grid span:nth-of-type(2) {
-        background-color: #a8dbd9;
-        height: 4vw;
-    }
-
-.resumen-card-minima-grid span:nth-of-type(3) {
-        background-color: #85c4c9;
-        height: 6vw;
-    }
-
-.resumen-card-minima-grid span:nth-of-type(4) {
-        background-color: #68abb8;
-        height: 8vw;
-    }
-
-.resumen-card-minima-grid span:nth-of-type(5) {
-        background-color: #4f90a6;
-        height: 10vw;
-    }
-
-.resumen-card-minima-grid span:nth-of-type(6) {
-        background-color: #3b738f;
-        height: 12vw;
-    }
-
-.resumen-card-minima-text {
-    background-color: #2a5674;
-    height: 40rem;
-    width: 40rem;
-    border-radius: 100%;
-    display: grid;
-}
-
-.resumen-card-title-minima,
-.resumen-card-date-minima {
-    margin: 0;
-    text-align: center;
-    padding: 0;
-    display: block;
-    color: #90f8c1;
-    font-size: 2rem;
-}
-
-.resumen-card-title-minima {
-    align-self: end;
-}
-
-.resumen-card-minima-grid-element {
-    border-radius: 100%;
-    display: inline-block;
-}
-
-/* NOCHES TROPICALES */
-
-.resumen-card-noches {
-    display: grid;
-    grid-template-columns: 20rem 1fr;
-    grid-template-rows: 80vh;
-    grid-column-gap: 2rem;
-    max-width: 80rem;
-    margin: 0 auto;
-}
-
-.resumen-card-noches-text {
-    display: grid;
-}
-
-.resumen-card-title-noches {
-    font-size: 3rem;
-    width: 100%;
-    color: #111;
-    align-self: end;
-}
-
-.resumen-card-date-noches {
-    font-size: 8rem;
-}
-
-.resumen-card-title-noches,
-.resumen-card-date-noches {
-    padding: 0;
-    line-height: 1;
-}
-
 @media only screen and (min-width: 30em) {
 
     .resumen-card-image-container {
@@ -1646,6 +1316,7 @@ path {
 
     .resumen-card {
         padding: 20vh 0;
+        height: 100vh;
     }
             .resumen-card-image-container:hover .resumen-card-image {
                 transition: transform .8s cubic-bezier(.6, -.28, .74, .05),
@@ -1656,8 +1327,9 @@ path {
     .resumen-card-image {
         transition: transform .8s cubic-bezier(.6, -.28, .74, .05),
         -webkit-transform .8s cubic-bezier(.25, .46, .45, .94);
-        margin: 0;
         transform: scale(1) translateX(0);
+        height: 80vh;
+        margin: 10vh 0;
     }
 
     .resumen-card-rectangle {
@@ -1675,6 +1347,411 @@ path {
     .letter {
         font-size: 3rem;
     }
+
+    /* HELADAS */
+
+    .resumen-card-heladas {
+        display: grid;
+        grid-template-columns: 50rem 1fr;
+        grid-column-gap: 20px;
+        max-width: 80rem;
+        margin: 0 auto;
+    }
+
+    .resumen-card-heladas-text {
+        align-self: center;
+        margin-right: 2rem;
+    }
+
+    .resumen-card-image-container-heladas {
+        margin-left: 2rem;
+        overflow: hidden;
+    }
+
+    .resumen-card-title-heladas {
+        display: inline-block;
+        width: initial;
+        padding: 1rem 0;
+        font-size: 1.5rem;
+        color: #091f3c;
+    }
+        .resumen-card-title-heladas:before {
+            content: '';
+            width: 1vw;
+            height: 3px;
+            margin-right: .5rem;
+            display: inline-block;
+            vertical-align: middle;
+            background-color: #BD804A;
+        }
+
+    .resumen-card-date-heladas {
+        font-size: 3rem;
+        background-color: #091f3c;
+        color: #BD804A;
+        display: inline-block;
+        position: relative;
+    }
+        .resumen-card-date-heladas:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: inline-block;
+            background-color: #BD804A;
+            height: 100%;
+            width: 1vw;
+        }
+
+    .resumen-card-line-heladas {
+        width: 50%;
+        display: inline-block;
+        background-color: #091f3c;
+        height: .5rem;
+    }
+        .resumen-card-line-heladas:first-child {
+            background-color: #BD804A;
+        }
+
+    /* RESUMEN TEMPERATURAS */
+
+    .resumen-card-temperatura {
+        display: grid;
+        grid-template-columns: 30rem 1fr;
+        grid-column-gap: 20px;
+        max-width: 80rem;
+        margin: 0 auto;
+    }
+
+    .resumen-card-image-container-temperaturas {
+        width: 40rem;
+        height: 40rem;
+        border-radius: 100%;
+        align-self: center;
+        justify-self: center;
+    }
+        .resumen-card-image-container-temperaturas img {
+            max-width: initial;
+        }
+
+    .resumen-card-title-temperaturas {
+        color: #171a37;
+        font-size: 3rem;
+        line-height: 1;
+        padding-left: 0;
+    }
+
+    .resumen-card-temperaturas-text {
+        align-self: center;
+        padding-left: 2rem;
+    }
+
+    .resumen-card-date-temperaturas {
+        color: #FC9D62;
+        font-size: 3rem;
+        background-color: #4c1531;
+        display: inline-block;
+        width: initial;
+    }
+
+    /* LLUVIAS */
+
+    .resumen-card-lluvias {
+        display: grid;
+        grid-template-columns: 30rem 1fr 1fr;
+        grid-column-gap: 20px;
+        max-width: 80rem;
+        margin: 0 auto;
+        padding-left: 2rem;
+    }
+
+    .resumen-card-image-container-lluvias {
+        grid-column: 1 / span 2;
+    }
+        .resumen-card-image-container-lluvias.resumen-card-image-container-lluvias {
+            max-height: 50vh;
+        }
+
+    .resumen-card-image-container-lluvias-dos {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+        display: inline-block;
+    }
+
+    .resumen-card-title-lluvias {
+        grid-column: 1;
+        grid-row: 2;
+        background-color: #baedc9;
+        font-size: 1.5rem;
+        align-self: end;
+        text-align: right;
+    }
+
+    .resumen-card-date-lluvias {
+        grid-column: 2;
+        grid-row: 2;
+        background-color: #2F6571;
+        color: #fff;
+        font-size: 3rem;
+        letter-spacing: 0.13rem;
+        text-align: center;
+        align-self: end;
+    }
+
+    /*  MAXIMA */
+    /* stylelint-disable */
+
+    .resumen-card-maxima {
+        display: grid;
+        grid-template-columns: 15% 15% 15% 1fr;
+        grid-template-rows: 2fr;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        max-width: 80rem;
+        margin: 0 auto;
+    }
+                .resumen-card-maxima:hover .resumen-card-maxima-column:first-child {
+                    transition: transform .8s cubic-bezier(.6, -.28, .74, .05),
+                    -webkit-transform .8s cubic-bezier(.25, .46, .45, .94);
+                    transform: translateX(20px);
+                }
+                .resumen-card-maxima:hover .resumen-card-maxima-column:nth-of-type(3n) {
+                    transition: transform .8s cubic-bezier(.6, -.28, .74, .05),
+                    -webkit-transform .8s cubic-bezier(.25, .46, .45, .94);
+                    transform: translateX(-20px);
+                }
+
+
+    /* stylelint-enable */
+
+    .resumen-card-maxima-column {
+        background-image: url('../img/resumen/caloret.jpg');
+        background-size: cover;
+        position: relative;
+        z-index: 1;
+        transition: transform .8s cubic-bezier(.6, -.28, .74, .05),
+        -webkit-transform .8s cubic-bezier(.25, .46, .45, .94);
+        margin: 0;
+        transform: translateX(0);
+    }
+            .resumen-card-maxima-column:first-child:after, .resumen-card-maxima-column:nth-of-type(2n):after {
+                content: '';
+                width: 100%;
+                height: 40%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: inline-block;
+                z-index: 2;
+                background-color: #F8F8F8;
+            }
+        .resumen-card-maxima-column:nth-of-type(2n) {
+            background-position: 48%;
+        }
+            .resumen-card-maxima-column:nth-of-type(2n):after {
+                height: 20%;
+            }
+        .resumen-card-maxima-column:nth-of-type(3n) {
+            background-position: 100%;
+        }
+
+    .resumen-card-title-maxima {
+        font-size: 2rem;
+        padding-top: 0;
+        line-height: 1;
+    }
+
+    .resumen-card-date-maxima {
+        font-size: 3rem;
+        padding-top: 0;
+        line-height: 1;
+    }
+
+    .resumen-card-maxima-text {
+        background: #fbff84;
+        color: #0e2040;
+        padding: 1.25rem;
+    }
+
+    /* MINIMAS */
+
+    .resumen-card-minima {
+        max-width: 80rem;
+        margin: 0 auto;
+        padding-left: 2rem;
+    }
+
+    .resumen-card-minima-grid {
+        display: grid;
+        grid-template-columns: 2vw 4vw 6vw 8vw 10vw 12vw 1fr;
+        grid-column-gap: 1rem;
+        margin: 0 auto;
+    }
+        .resumen-card-minima-grid .resumen-card-minima-grid-element {
+            align-self: center;
+        }
+        .resumen-card-minima-grid span:nth-of-type(1) {
+            background-color: #d1eeea;
+            height: 2vw;
+        }
+        .resumen-card-minima-grid span:nth-of-type(2) {
+            background-color: #a8dbd9;
+            height: 4vw;
+        }
+        .resumen-card-minima-grid span:nth-of-type(3) {
+            background-color: #85c4c9;
+            height: 6vw;
+        }
+        .resumen-card-minima-grid span:nth-of-type(4) {
+            background-color: #68abb8;
+            height: 8vw;
+        }
+        .resumen-card-minima-grid span:nth-of-type(5) {
+            background-color: #4f90a6;
+            height: 10vw;
+        }
+        .resumen-card-minima-grid span:nth-of-type(6) {
+            background-color: #3b738f;
+            height: 12vw;
+        }
+
+    .resumen-card-minima-text {
+        background-color: #2a5674;
+        height: 40rem;
+        width: 40rem;
+        border-radius: 100%;
+        display: grid;
+    }
+
+    .resumen-card-title-minima,
+    .resumen-card-date-minima {
+        margin: 0;
+        text-align: center;
+        padding: 0;
+        display: block;
+        color: #90f8c1;
+        font-size: 2rem;
+    }
+
+    .resumen-card-title-minima {
+        align-self: end;
+    }
+
+    .resumen-card-minima-grid-element {
+        border-radius: 100%;
+        display: inline-block;
+    }
+
+    /* NOCHES TROPICALES */
+
+    .resumen-card-noches {
+        display: grid;
+        grid-template-columns: 20rem 1fr;
+        grid-template-rows: 80vh;
+        grid-column-gap: 2rem;
+        max-width: 80rem;
+        margin: 0 auto;
+    }
+
+    .resumen-card-noches-text {
+        display: grid;
+    }
+
+    .resumen-card-title-noches {
+        font-size: 3rem;
+        width: 100%;
+        color: #111;
+        align-self: end;
+    }
+
+    .resumen-card-date-noches {
+        font-size: 8rem;
+    }
+
+    .resumen-card-title-noches,
+    .resumen-card-date-noches {
+        padding: 0;
+        line-height: 1;
+    }
+
+    /* TORMENTAS */
+
+    .resumen-card-tormentas {
+        display: grid;
+        grid-template-columns: 53vw 1fr;
+        grid-column-gap: 2rem;
+        max-width: 80rem;
+        margin: 0 auto;
+    }
+
+    .resumen-card-tomentas-text {
+        background-color: #000;
+    }
+
+    .resumen-card-title-tormentas,
+    .resumen-card-date-tormentas {
+        color: #fff;
+        line-height: 1;
+        padding: 0 0 0 5rem;
+    }
+
+    .resumen-card-title-tormentas {
+        padding-top: 5rem;
+    }
+
+    .resumen-card-date-tormentas {
+        font-size: 10rem;
+    }
+
+    /* NIEBLAS */
+
+    .resumen-card-niebla {
+        max-width: 50rem;
+        margin: 5vw auto;
+    }
+
+    .resumen-card-image-container-niebla {
+        position: relative;
+        z-index: 1;
+    }
+
+    .resumen-card-title-niebla {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        font-size: 3rem;
+        background-color: rgba(255, 255, 255, .6);
+    }
+
+    /* CIERZO */
+
+    .resumen-card-cierzo {
+        position: relative;
+        z-index: 1;
+    }
+
+    .resumen-card-cierzo-text {
+        position: absolute;
+        left: 40vw;
+        top: 50vh;
+        background-color: #fff;
+        transform: skewX(-15deg);
+        padding: 1rem;
+    }
+
+    .resumen-card-title-cierzo,
+    .resumen-card-date-cierzo {
+        padding: 0;
+        font-size: 3rem;
+        display: inline-block;
+        width: auto;
+    }
+
+    .resumen-card-date-cierzo {
+        padding-right: .5rem;
+    }
+
 }
 
 @media only screen and (min-width: 48em) {
