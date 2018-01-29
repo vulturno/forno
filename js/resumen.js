@@ -27,7 +27,7 @@ if (width > 767) {
         .add({
             targets: '.resumen-card-rectangle',
             left: ['35vw'],
-            top: ['47.5vh','25vh'],
+            top: ['47.5vh','20vh'],
             width: ['5vw', '30vw'],
             height: ['5vw', '30vw'],
             duration: 1050,
