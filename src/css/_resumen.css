@@ -435,7 +435,7 @@
 
 .resumen-card-noches {
     display: grid;
-    grid-template-columns: 1fr 20rem;
+    grid-template-columns: 20rem 1fr;
     grid-template-rows: 80vh;
     grid-column-gap: 2rem;
     max-width: 80rem;
