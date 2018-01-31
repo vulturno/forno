@@ -40,7 +40,6 @@ path {
     z-index: 2;
     width: 70px;
     margin-left: 20px;
-    height: 60px;
     padding: 10px;
     background: var(--bgcTooltip);
     border: 1px solid var(--impureGrey);
@@ -64,8 +63,10 @@ path {
 .input-update-grafica {
     border: 1px solid var(--impureBlack);
     height: 50px;
-    max-width: 30px;
-    padding: 0 20px;
+    max-width: 50px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    display: inline-block;
 }
 
 .container-update-grafica {
