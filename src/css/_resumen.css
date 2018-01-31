@@ -8,6 +8,7 @@
     background-color: #F8F8F8;
     .wrapper-vw {
         background-color: #F8F8F8;
+        margin: 10rem auto;
     }
 }
 
@@ -166,6 +167,7 @@ video {
     .resumen-card {
         padding: 20vh 0;
         height: 100vh;
+        width: initial;
     }
 
     .resumen-card-image-container {
@@ -183,7 +185,16 @@ video {
         -webkit-transform .8s cubic-bezier(.25, .46, .45, .94);
         transform: scale(1) translateX(0);
         height: 80vh;
-        margin: 10vh 0;
+        width: initial;
+    }
+
+    video {
+        width: auto;
+    }
+
+    .resumen-card-title,
+    .resumen-card-date {
+        padding: 2rem;
     }
 
     .resumen-card-rectangle {
@@ -478,8 +489,8 @@ video {
 
     .resumen-card-minima-text {
         background-color: #2a5674;
-        height: 40rem;
-        width: 40rem;
+        height: 35rem;
+        width: 35rem;
         border-radius: 100%;
         display: grid;
     }
