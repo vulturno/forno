@@ -1656,23 +1656,36 @@ video {
     /* NOCHES TROPICALES */
 
     .resumen-card-noches {
-        display: grid;
-        grid-template-columns: 20rem 1fr;
-        grid-template-rows: 80vh;
-        grid-column-gap: 2rem;
-        max-width: 80rem;
-        margin: 0 auto;
+        width: 100%;
+        font-size: 0;
+        display: block;
+        position: relative;
+    }
+
+    .resumen-card-image-container-noche {
+        height: 45vw;
+        width: 45vw;
+        border-radius: 20%;
+        transform: rotate(40deg);
+        background-image: url("../img/resumen/noches-tropicales.jpg");
+        -webkit-background-size: contain;
+        background-size: cover;
+        display: inline-block;
     }
 
     .resumen-card-noches-text {
-        display: grid;
+        display: inline-block;
+        position: absolute;
+        top: 25vw;
+        left: 40vw;
     }
 
     .resumen-card-title-noches {
         font-size: 3rem;
+        padding: 2rem;
         width: 100%;
+        background-color: yellow;
         color: #111;
-        align-self: end;
     }
 
     .resumen-card-date-noches {
@@ -1681,7 +1694,6 @@ video {
 
     .resumen-card-title-noches,
     .resumen-card-date-noches {
-        padding: 0;
         line-height: 1;
     }
 
