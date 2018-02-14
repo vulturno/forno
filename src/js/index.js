@@ -42,15 +42,13 @@ var xRange = d3.scaleLinear()
 var yRange = d3.scaleLinear()
     .range([height, -20]);
 
-var xAxis = d3.axisBottom()
-    .scale(xRange)
+var xAxis = d3.axisBottom(xRange)
     .tickPadding(15)
     .tickFormat(d3.format("d"))
     .tickSize(-height)
     .ticks(20);
 
-var yAxis = d3.axisLeft()
-    .scale(yRange)
+var yAxis = d3.axisLeft(yRange)
     .tickPadding(10)
     .tickFormat(function(d) { return d + temp; })
     .tickSize(-width + 30)
@@ -59,7 +57,7 @@ var yAxis = d3.axisLeft()
 d3.csv('csv/temperaturas.csv', function(err, data) {
 
     dataFiltered = data.filter(function(d) {
-        return String(d.fecha).match(/07-02/);
+        return String(d.fecha).match(/02-01/);
     });
 
     dataFiltered.forEach(function(d) {
@@ -141,11 +139,19 @@ d3.csv('csv/temperaturas.csv', function(err, data) {
         })
         .attr("r", function(d) {
             if (d.maxima === maxTemp) {
-                return 6 * Math.sqrt(d.maxima / Math.PI);
+                return 12;
             } else if (d.maxima === minTemp) {
-                return 6 * Math.sqrt(d.maxima / Math.PI);
-            } else {
-                return 4 * Math.sqrt(d.maxima / Math.PI);
+                return 5;
+            } else if (d.maxima >= 35) {
+                return 10;
+            } else if (d.maxima >= 30) {
+                return 9;
+            } else if (d.maxima >= 25) {
+                return 8;
+            } else if (d.maxima >= 20) {
+                return 7;
+            } else if (d.maxima <= 15) {
+                return 6;
             };
         })
         .style("fill", function(d) {
@@ -224,11 +230,19 @@ function update() {
             .duration(1000)
             .attr("r", function(d) {
                 if (d.maxima === maxTemp) {
-                    return 6 * Math.sqrt(d.maxima / Math.PI);
+                    return 12;
                 } else if (d.maxima === minTemp) {
-                    return 6 * Math.sqrt(d.maxima / Math.PI);
-                } else {
-                    return 4 * Math.sqrt(d.maxima / Math.PI);
+                    return 5;
+                } else if (d.maxima >= 35) {
+                    return 10;
+                } else if (d.maxima >= 30) {
+                    return 9;
+                } else if (d.maxima >= 25) {
+                    return 8;
+                } else if (d.maxima >= 20) {
+                    return 7;
+                } else if (d.maxima <= 15) {
+                    return 6;
                 };
             })
             .attr("cx", function(d) {
