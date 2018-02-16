@@ -141,7 +141,7 @@ d3.csv('csv/temperaturas.csv', function(err, data) {
             if (d.maxima === maxTemp) {
                 return 12;
             } else if (d.maxima === minTemp) {
-                return 5;
+                return 4;
             } else if (d.maxima >= 35) {
                 return 10;
             } else if (d.maxima >= 30) {
@@ -232,17 +232,17 @@ function update() {
                 if (d.maxima === maxTemp) {
                     return 12;
                 } else if (d.maxima === minTemp) {
-                    return 5;
-                } else if (d.maxima >= 35) {
-                    return 10;
-                } else if (d.maxima >= 30) {
-                    return 9;
-                } else if (d.maxima >= 25) {
-                    return 8;
-                } else if (d.maxima >= 20) {
-                    return 7;
-                } else if (d.maxima <= 15) {
                     return 6;
+                } else if (d.maxima >= 35) {
+                    return 11;
+                } else if (d.maxima >= 30) {
+                    return 10;
+                } else if (d.maxima >= 25) {
+                    return 9;
+                } else if (d.maxima >= 20) {
+                    return 8;
+                } else if (d.maxima <= 15) {
+                    return 7;
                 };
             })
             .attr("cx", function(d) {
@@ -255,12 +255,21 @@ function update() {
         circles.style("fill", function(d) {
             if (d.maxima === maxTemp) {
                 return "#70284a"
-            } else if (d.maxima === minTemp) {
+            } else if (d.maxima >= 35) {
+                    return "#9c3f5d";
+                } else if (d.maxima >= 30) {
+                    return "#c8586c";
+                } else if (d.maxima >= 25) {
+                    return "#dc7176";
+                } else if (d.maxima >= 20) {
+                    return "#ee8a82";
+                } else if (d.maxima <= 15) {
+                    return "#f5ba98;"
+                } else if (d.maxima === minTemp) {
                 return "#045275"
-            } else {
-                return color(d.maxima)
             };
         });
+
 
         circles.on("mouseover", function(d) {
                 div.transition()
@@ -357,9 +366,9 @@ function updateMin() {
             .attr("r", function(d) {
                 if (d.minima >= 20) {
                     return 11;
-                } else if (d.minima >= 18) {
+                } else if (d.minima >= 20) {
                     return 10;
-                } else if (d.minima >= 14) {
+                } else if (d.minima >= 15) {
                     return 9;
                 } else if (d.minima >= 10) {
                     return 8;
