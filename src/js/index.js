@@ -141,26 +141,46 @@ d3.csv('csv/temperaturas.csv', function(err, data) {
             if (d.maxima === maxTemp) {
                 return 12;
             } else if (d.maxima === minTemp) {
-                return 4;
+                return 6;
             } else if (d.maxima >= 35) {
-                return 10;
+                return 11;
             } else if (d.maxima >= 30) {
-                return 9;
+                return 10;
             } else if (d.maxima >= 25) {
-                return 8;
+                return 9;
             } else if (d.maxima >= 20) {
+                return 8;
+            } else if (d.maxima >= 15) {
                 return 7;
-            } else if (d.maxima <= 15) {
+            } else {
                 return 6;
             };
         })
         .style("fill", function(d) {
             if (d.maxima === maxTemp) {
-                return "#70284a"
+                return "#70284a";
             } else if (d.maxima === minTemp) {
-                return "#045275"
+                return "#045275";
+            } else if (d.maxima >= 35) {
+                return "#9c3f5d";
+            } else if (d.maxima >= 30) {
+                return "#c8586c";
+            } else if (d.maxima >= 25) {
+                return "#dc7176";
+            } else if (d.maxima >= 20) {
+                return "#ee8a82";
+            } else if (d.maxima >= 15) {
+                return "#ee8a82";
+            } else if (d.maxima >= 10) {
+                return "#4cc8a3";
+            } else if (d.maxima >= 7) {
+                return "#38b2a3";
+            } else if (d.maxima >= 3) {
+                return "#2c98a0";
+            } else if (d.maxima >= 0) {
+                return "#257d98";
             } else {
-                return color(d.maxima)
+                return "#257d98";
             };
         });
 });
@@ -232,7 +252,7 @@ function update() {
                 if (d.maxima === maxTemp) {
                     return 12;
                 } else if (d.maxima === minTemp) {
-                    return 6;
+                    return 12;
                 } else if (d.maxima >= 35) {
                     return 11;
                 } else if (d.maxima >= 30) {
@@ -241,8 +261,10 @@ function update() {
                     return 9;
                 } else if (d.maxima >= 20) {
                     return 8;
-                } else if (d.maxima <= 15) {
+                } else if (d.maxima >= 15) {
                     return 7;
+                } else {
+                    return 6;
                 };
             })
             .attr("cx", function(d) {
@@ -251,22 +273,31 @@ function update() {
             .attr("cy", function(d) {
                 return yRange(d.maxima);
             });
-
         circles.style("fill", function(d) {
             if (d.maxima === maxTemp) {
-                return "#70284a"
+                return "#70284a";
+            } else if (d.maxima === minTemp) {
+                return "#045275";
             } else if (d.maxima >= 35) {
-                    return "#9c3f5d";
-                } else if (d.maxima >= 30) {
-                    return "#c8586c";
-                } else if (d.maxima >= 25) {
-                    return "#dc7176";
-                } else if (d.maxima >= 20) {
-                    return "#ee8a82";
-                } else if (d.maxima <= 15) {
-                    return "#f5ba98;"
-                } else if (d.maxima === minTemp) {
-                return "#045275"
+                return "#9c3f5d";
+            } else if (d.maxima >= 30) {
+                return "#c8586c";
+            } else if (d.maxima >= 25) {
+                return "#dc7176";
+            } else if (d.maxima >= 20) {
+                return "#ee8a82";
+            } else if (d.maxima >= 15) {
+                return "#ee8a82";
+            } else if (d.maxima >= 10) {
+                return "#4cc8a3";
+            } else if (d.maxima >= 7) {
+                return "#38b2a3";
+            } else if (d.maxima >= 3) {
+                return "#2c98a0";
+            } else if (d.maxima >= 0) {
+                return "#257d98";
+            } else {
+                return "#257d98";
             };
         });
 
@@ -364,7 +395,9 @@ function updateMin() {
         circles.transition()
             .duration(1000)
             .attr("r", function(d) {
-                if (d.minima >= 20) {
+                if (d.minima === maxTemp) {
+                    return 16;
+                } else if (d.minima >= 20) {
                     return 11;
                 } else if (d.minima >= 20) {
                     return 10;
@@ -388,7 +421,7 @@ function updateMin() {
             });
 
         circles.style("fill", function(d) {
-            if (d.minima === minTemp) {
+            if (d.minima === maxTemp) {
                 return "#70284a";
             } else if (d.minima === minTemp) {
                 return "#045275";
@@ -404,7 +437,7 @@ function updateMin() {
                 return "#38b2a3";
             } else if (d.minima >= 0) {
                 return "#2c98a0";
-            } else if (d.minima <= 0) {
+            } else if (d.minima < 0) {
                 return "#257d98";
             };
         });
