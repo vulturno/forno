@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,14 +20,36 @@
         </div>
     </div>
     <nav class="navegacion">
-        <a href="#maximas" class="navegacion-btn">GRAFICA</a>
-        <a href="#heladas" class="navegacion-btn">HELADAS</a>
-        <a href="#tropicales" class="navegacion-btn">TROPICALES</a>
-        <a href="#dias-lluvia-recogida" class="navegacion-btn">PRECIPITACIONES</a>
-        <a href="#record-maximas" class="navegacion-btn">MAXIMAS</a>
-        <a href="#record-minimas" class="navegacion-btn">MINIMAS</a>
-        <a href="#tabla-records" class="navegacion-btn">RECORDS</a>
     </nav>
+    <div class="burger">
+        <span></span>
+    </div>
+    <nav class="navegacion">
+        <ul class="main">
+            <li>
+                <a href="#maximas" class="navegacion-btn">GRAFICA</a>
+            </li>
+            <li>
+                <a href="#heladas" class="navegacion-btn">HELADAS</a>
+            </li>
+            <li>
+                <a href="#tropicales" class="navegacion-btn">TROPICALES</a>
+            </li>
+            <li>
+                <a href="#dias-lluvia-recogida" class="navegacion-btn">PRECIPITACIONES</a>
+            </li>
+            <li>
+                <a href="#record-maximas" class="navegacion-btn">MAXIMAS</a>
+            </li>
+            <li>
+                <a href="#record-minimas" class="navegacion-btn">MINIMAS</a>
+            </li>
+            <li>
+                <a href="#tabla-records" class="navegacion-btn">RECORDS</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="overlay"></div>
     <div class="clima-intro margin-section" id="clima">
         <h2 class="subtitle clima-subtitle">EL CLIMA EN ZARAGOZA</h2>
         <div class="clima-legend">
@@ -107,9 +130,9 @@
     </article>
     <article class="recogida-lluvias-chart-container margin-section" id="dias-lluvia-recogida">
         <div class="wrapper-vw">
-            <h2 class="subtitle">TEMPERATURA MEDIA</h2>
-            <p class="texto">En esta gráfica podemos ver cuantos milímetros de agua se recogieron anualmente desde 1941.</p>
-            <p class="texto">La equivalencia de <strong>1 milímetro (mm)</strong> de agua caída, es <strong>1 litro de lluvia</strong> caída por metro cuadrado.</p>
+            <h2 class="subtitle">TEMPERATURA ANUAL</h2>
+            <p class="texto">En esta gráfica podemos ver como ha ido variando la temperatura anual.</p>
+            <p class="texto">En 1951 la temperatura anual fue de 14.1ºC, en 2017 fue de 16.7ºC. Lo cual supone un <strong>aumento de 2.6ºC</strong>.</p>
         </div>
         <div class="temperatura-media-chart-container chart-container" id="tmedia-chart"></div>
     </article>

@@ -1,3 +1,21 @@
+var overlay = document.querySelector('.overlay');
+var navigation = document.querySelector('.navegacion');
+var body = document.querySelector('body');
+
+function classToggle() {
+    this.classList.toggle('clicked');
+    overlay.classList.toggle('show');
+    navigation.classList.toggle('show');
+    body.classList.toggle('overflow');
+}
+
+document.querySelector('.burger').addEventListener('click', classToggle);
+document.querySelector('.overlay').addEventListener('click', classToggle);
+
+
+
+
+
 var dataFiltered;
 var xRange;
 var yRange;
