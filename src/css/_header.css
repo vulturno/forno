@@ -69,13 +69,13 @@
 /*  .navegacion
 ========================================== */
 .navegacion {
-  background-color: #2a2a2a;
+  background-color: var(--gradient2);
   position: fixed;
   z-index: 9;
   top: 0;
   right: 0;
   height: 100%;
-  max-width: 515px;
+  max-width: 25rem;
   width: 100%;
   padding: 2rem;
   overflow-y: auto;
@@ -122,17 +122,17 @@
 }
 
 .navegacion .navegacion-btn {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   -webkit-transform: translateX(40px);
   transform: translateX(40px);
   opacity: 0;
-  color: var(--white);
+  color: var(--impureBlack);
   font-family: var(--montserrat);
   text-decoration: none;
   text-transform: uppercase;
   font-size: 1.5rem;
   display: block;
-  letter-spacing: 5px;
+  letter-spacing: 1px;
   font-weight: 600;
   padding: 10px 0;
   -webkit-transition: all .3s ease;
@@ -161,4 +161,48 @@
 .overlay.show {
   opacity: .8;
   visibility: visible;
+}
+
+.menu--inola {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu--inola .menu__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.menu--inola .menu__item:last-child {
+    margin-bottom: 0;
+}
+
+.menu--inola .menu__item-name {
+    padding: 0 .25rem;
+    color: #fff;
+}
+
+.menu--inola .menu__item-name:before {
+    content: '';
+    position: absolute;
+    top: calc(50% - 2px);
+    left: 0;
+    width: 100%;
+    height: 4px;
+    pointer-events: none;
+    background: var(--impureBlack);
+    transform: scale3d(0, 1, 1);
+    transform-origin: 100% 50%;
+    transition: transform .5s;
+    transition-timing-function: cubic-bezier(.8, 0, .2, 1);
+}
+
+.menu--inola .menu__item:hover .menu__item-name:before,
+.menu--inola .menu__item:focus .menu__item-name:before {
+    transform: scale3d(1, 1, 1);
+    transform-origin: 0% 50%;
 }
