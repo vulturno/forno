@@ -1,6 +1,6 @@
 .temperatura-media-chart-graph {
     .line {
-        stroke: red;
+        stroke: var(--gradient2);
         stroke-width: 2px;
     }
     .x-axis,
@@ -14,5 +14,17 @@
             font-weight: bold;
             font-size: 12px;
         }
+    }
+    .overlay {
+      fill: none;
+      pointer-events: all;
+    }
+    .circle-focus {
+        fill: #30155d;
+        stroke: #30155d;
+    }
+    .text-focus {
+        font-size: 14px;
+        font-weight: bold;
     }
 }

@@ -1149,7 +1149,7 @@ path {
 }
 
 .temperatura-media-chart-graph .line {
-        stroke: red;
+        stroke: #e34f6f;
         stroke-width: 2px;
     }
 
@@ -1161,6 +1161,21 @@ path {
             font-weight: bold;
             font-size: 0.75rem;
         }
+
+.temperatura-media-chart-graph .overlay {
+      fill: none;
+      pointer-events: all;
+    }
+
+.temperatura-media-chart-graph .circle-focus {
+        fill: #30155d;
+        stroke: #30155d;
+    }
+
+.temperatura-media-chart-graph .text-focus {
+        font-size: 0.88rem;
+        font-weight: bold;
+    }
 
 .resumen-forno-header {
     height: 100vh;
