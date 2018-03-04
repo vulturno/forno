@@ -1,0 +1,18 @@
+.temperatura-media-chart-graph {
+    .line {
+        stroke: red;
+        stroke-width: 2px;
+    }
+    .x-axis,
+    .y-axis {
+        .domain {
+            stroke: none;
+        }
+    }
+    .tick {
+        text {
+            font-weight: bold;
+            font-size: 12px;
+        }
+    }
+}

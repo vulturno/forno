@@ -489,7 +489,7 @@ svg {
 }
 
 .color-title-min {
-    color: #2fe94a;
+    color: #f1f1f1;
 }
 
 .wrapper-vw,
@@ -1147,6 +1147,20 @@ path {
 .footer-links {
     font-weight: bold;
 }
+
+.temperatura-media-chart-graph .line {
+        stroke: red;
+        stroke-width: 2px;
+    }
+
+.temperatura-media-chart-graph .x-axis .domain, .temperatura-media-chart-graph .y-axis .domain {
+            stroke: none;
+        }
+
+.temperatura-media-chart-graph .tick text {
+            font-weight: bold;
+            font-size: 0.75rem;
+        }
 
 .resumen-forno-header {
     height: 100vh;
