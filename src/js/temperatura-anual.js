@@ -21,9 +21,13 @@ function temperaturaMedia() {
     var x = d3.scaleTime().range([0, width]);
     var y = d3.scaleLinear().range([height, 10]);
 
-    var valueline = d3.line()
+    var valueline = d3.area()
         .x(function(d) { return x(d.fecha); })
-        .y(function(d) { return y(d.temperatura); })
+        .y0(height)
+        .y1(function(d) {
+            return y(d.temperatura);
+        })
+        .curve(d3.curveCardinal.tension(0.6));
 
     var yAxis = d3.axisLeft(y)
         .tickSize(-width)
@@ -51,16 +55,6 @@ function temperaturaMedia() {
             .attr("d", valueline)
             .attr("stroke-width", "1.5")
             .attr("fill", "none");
-
-        var totalLength = path.node().getTotalLength();
-
-        path
-            .attr("stroke-dasharray", totalLength + " " + totalLength)
-            .attr("stroke-dashoffset", totalLength)
-            .transition()
-            .duration(2500)
-            .ease(d3.easeLinear)
-            .attr("stroke-dashoffset", 0);
 
         svg.append("g")
             .attr("class", "x-axis")

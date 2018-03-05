@@ -1343,8 +1343,8 @@ path {
 }
 
 .temperatura-media-chart-graph .line {
-        stroke: #e34f6f;
-        stroke-width: 2px;
+        fill: #e34f6f;
+        stroke: none;
     }
 
 .temperatura-media-chart-graph .x-axis .domain, .temperatura-media-chart-graph .y-axis .domain {
@@ -1354,6 +1354,10 @@ path {
 .temperatura-media-chart-graph .tick text {
             font-weight: bold;
             font-size: 0.75rem;
+        }
+
+.temperatura-media-chart-graph .tick line {
+            stroke: #111;
         }
 
 .temperatura-media-chart-graph .overlay {
