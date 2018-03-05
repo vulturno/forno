@@ -6,7 +6,7 @@ function menu() {
     var burger = document.querySelector('.burger');
 
     function classToggle() {
-        this.classList.toggle('clicked');
+        burger.classList.toggle('clicked');
         overlay.classList.toggle('show');
         navigation.classList.toggle('show');
         body.classList.toggle('overflow');
