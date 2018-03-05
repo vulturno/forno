@@ -73,7 +73,6 @@ d3.csv('csv/record-maximas.csv', function(err, data) {
         .enter()
         .append("rect")
         .attr("class", "barra")
-        .attr("width", widthRM / datosRM.length - barPadding)
         .on("mouseover", function(d) {
             div.transition()
             div.style("opacity", 1)
@@ -92,6 +91,7 @@ d3.csv('csv/record-maximas.csv', function(err, data) {
         .attr("x", function(d) {
             return xRangeRM(d.anyo);
         })
+        .attr("width", widthH / datosRM.length - barPadding)
         .attr("y", function(d) {
             return yRangeRM(d.dias);
         })

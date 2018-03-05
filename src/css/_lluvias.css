@@ -8,7 +8,7 @@
         stroke: none;
     }
     .area {
-        fill: #34009c;
+        fill: #82ceea;
     }
     circle.y {
         fill: #eda937;
@@ -30,10 +30,10 @@
 }
 
 .tooltip-lluvias {
-    background-color: #82ceea;
+    background-color: #34009c;
     height: auto;
     width: 300px;
-    border-color: #82ceea;
+    border-color: #34009c;
     margin-left: 0;
     p {
         &:empty {
@@ -41,7 +41,7 @@
         }
     }
     .tooltipYear {
-        color: var(--impureBlack);
+        color: var(--white);
         font-size: 1.1rem;
         font-weight: normal;
         max-width: 300px;

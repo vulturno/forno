@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,15 +19,20 @@
             <p class="texto">A través de gráficas vamos a ver, y a consultar las <span class="bold">temperaturas máximas y mínimas, las noches tropicales y las heladas</span> que se han registrado en el <span class="bold">Aeropuerto de Zaragoza entre los años 1951 y 2017</span>.</p>
         </div>
     </div>
-    <nav class="navegacion">
-        <a href="#maximas" class="navegacion-btn">GRAFICA</a>
-        <a href="#heladas" class="navegacion-btn">HELADAS</a>
-        <a href="#tropicales" class="navegacion-btn">TROPICALES</a>
-        <a href="#dias-lluvia-recogida" class="navegacion-btn">PRECIPITACIONES</a>
-        <a href="#record-maximas" class="navegacion-btn">MAXIMAS</a>
-        <a href="#record-minimas" class="navegacion-btn">MINIMAS</a>
-        <a href="#tabla-records" class="navegacion-btn">RECORDS</a>
+    <div class="burger">
+        <span></span>
+    </div>
+    <nav class="navegacion menu--inola">
+        <a href="#maximas" class="navegacion-btn menu__item"><span class="menu__item-name">GRÁFICAS</span></a>
+        <a href="#heladas" class="navegacion-btn menu__item"><span class="menu__item-name">HELADAS</span></a>
+        <a href="#tropicales" class="navegacion-btn menu__item"><span class="menu__item-name">N. TROPICALES</span></a>
+        <a href="#dias-lluvia-recogida" class="navegacion-btn menu__item"><span class="menu__item-name">LLUVIAS</span></a>
+        <a href="#dias-lluvia-recogida" class="navegacion-btn menu__item"><span class="menu__item-name">TEMP. ANUAL</span></a>
+        <a href="#record-maximas" class="navegacion-btn menu__item"><span class="menu__item-name">MÁXIMAS</span></a>
+        <a href="#record-minimas" class="navegacion-btn menu__item"><span class="menu__item-name">MÍNIMAS</span></a>
+        <a href="#tabla-records" class="navegacion-btn menu__item"><span class="menu__item-name">RECORDS</span></a>
     </nav>
+    <div class="overlay"></div>
     <div class="clima-intro margin-section" id="clima">
         <h2 class="subtitle clima-subtitle">EL CLIMA EN ZARAGOZA</h2>
         <div class="clima-legend">
@@ -104,6 +110,14 @@
             <p class="texto">La equivalencia de <strong>1 milímetro (mm)</strong> de agua caída, es <strong>1 litro de lluvia</strong> caída por metro cuadrado.</p>
         </div>
         <div class="precipitaciones-chart-container chart-container" id="rmin-chart"></div>
+    </article>
+    <article class="recogida-lluvias-chart-container margin-section" id="dias-lluvia-recogida">
+        <div class="wrapper-vw">
+            <h2 class="subtitle">TEMPERATURA ANUAL</h2>
+            <p class="texto">En esta gráfica podemos ver como ha ido variando la temperatura anual desde 1951 hasta 2017.</p>
+            <p class="texto">En 1951 la temperatura anual fue de 14.1ºC, en 2017 fue de 16.7ºC. Lo cual supone un <strong>aumento de 2.6ºC</strong>.</p>
+        </div>
+        <div class="temperatura-media-chart-container chart-container" id="tmedia-chart"></div>
     </article>
     <article class="tabs-maximas-minimas margin-section" id="tabla-records">
         <div class="wrapper-vw">
@@ -214,8 +228,8 @@
                     <span class="grid-text-bold">2012</span>
                     <span class="grid-text-bold">2003</span>
                     <span class="grid-text-bold">1998</span>
-                    <span class="grid-text-bold">1960</span>
-                    <span class="grid-text-bold">2005</span>
+                    <span class="grid-text-bold">2018</span>
+                    <span class="grid-text-bold">2018</span>
                     <span class="grid-text-bold">1958 · 2008</span>
                     <span class="grid-text-bold">2016</span>
                     <span class="grid-text-bold">2016</span>
@@ -517,10 +531,10 @@
                     <span class="grid-text-bold">-5</span>
                     <span class="grid-text-bold">-7</span>
                     <span class="grid-text-bold">-5.4</span>
-                    <span class="grid-text-bold">-2.5</span>
+                    <span class="grid-text-bold">-2.9</span>
                     <span class="grid-text-bold">-3.5</span>
                     <span class="grid-text-bold">-4</span>
-                    <span class="grid-text-bold">-1.6</span>
+                    <span class="grid-text-bold">-1.7   </span>
                     <span class="grid-text-bold">-3.5</span>
                     <span class="grid-text-bold">-1.8</span>
                 </div>
@@ -549,10 +563,10 @@
                     <span class="grid-text-bold">1952</span>
                     <span class="grid-text-bold">1956</span>
                     <span class="grid-text-bold">2005</span>
-                    <span class="grid-text-bold">1992</span>
+                    <span class="grid-text-bold">2018</span>
                     <span class="grid-text-bold">2005</span>
                     <span class="grid-text-bold">1963</span>
-                    <span class="grid-text-bold">1984</span>
+                    <span class="grid-text-bold">2018</span>
                     <span class="grid-text-bold">2005</span>
                     <span class="grid-text-bold">1952-1968</span>
                 </div>
@@ -2773,7 +2787,7 @@
     <div class="wrapper-vw">
         <h2 class="system-font">DATOS</h2>
         <p class="texto">Todos los datos de las temperaturas son <a href="https://opendata.aemet.es/centrodedescargas/inicio">Información elaborada por la Agencia Estatal de Meteorología"</a>. Que es el sistema para la difusión y reutilización de la información de AEMET.</p>
-        <p class="texto">Las fechas están actualizadas hasta el 31 de diciembre de 2017.</p>
+        <p class="texto">Las fechas están actualizadas hasta el 28 de febrero de 2018.</p>
     </div>
     <footer class="footer">
         <div class="wrapper-footer">
@@ -2790,6 +2804,7 @@
     <script src="js/tropicales.js"></script>
     <script src="js/heladas.js"></script>
     <script src="js/lluvia-recogida.js"></script>
+    <script src="js/temperatura-anual.js"></script>
     <script>
     (function(i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;

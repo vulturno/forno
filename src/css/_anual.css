@@ -1,0 +1,33 @@
+.temperatura-media-chart-graph {
+    .line {
+        fill: var(--gradient2);
+        stroke: none;
+    }
+    .x-axis,
+    .y-axis {
+        .domain {
+            stroke: none;
+        }
+    }
+    .tick {
+        text {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        line {
+            stroke: var(--impureBlack);
+        }
+    }
+    .overlay {
+      fill: none;
+      pointer-events: all;
+    }
+    .circle-focus {
+        fill: #30155d;
+        stroke: #30155d;
+    }
+    .text-focus {
+        font-size: 14px;
+        font-weight: bold;
+    }
+}
