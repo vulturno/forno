@@ -29,7 +29,7 @@ var bisectDate = d3.bisector(function(d) {
 }).left;
 
 var x = d3.scaleTime()
-    .domain([1941, 2017])
+    .domain([1941, 2018])
     .range([0, widthRLLUMIN]);
 
 var y = d3.scaleLinear()
