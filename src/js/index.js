@@ -22,7 +22,6 @@ function menu() {
     }
 
     function removeClass() {
-        console.log('remove')
         overlay.classList.remove("show");
         navigation.classList.remove("show");
         burger.classList.remove("clicked");
