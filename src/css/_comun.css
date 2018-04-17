@@ -93,3 +93,9 @@ svg {
         stroke-width: 2px;
     }
 }
+
+.lluvias-mes-media-chart-graph {
+    .bar {
+        fill: #70a5ef;
+    }
+}

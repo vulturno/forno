@@ -548,6 +548,10 @@ svg {
         stroke-width: 2px;
     }
 
+.lluvias-mes-media-chart-graph .bar {
+        fill: #70a5ef;
+    }
+
 /* Menu inspired: https://codepen.io/BeanBaag/pen/XZRewP remove jQuery for JavaScript */
 
 .burger {
