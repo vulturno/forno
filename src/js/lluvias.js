@@ -72,7 +72,7 @@ function lluviaMes() {
 
 
         x.domain(data.map(function(d) { return d.fecha; }));
-        y.domain([0, d3.max(data, function(d) { return d.cantidad + (d.cantidad / 4) })]);
+        y.domain([0, 200]);
 
         var xAxis = d3.axisBottom(x)
         .tickValues(x.domain().filter(function(d,i){ return !(i%4)}));
@@ -88,9 +88,11 @@ function lluviaMes() {
 
         svg.append("g")
             .attr("transform", "translate(0," + height + ")")
+            .attr("class", "xAxis")
             .call(xAxis)
 
         svg.append("g")
+        .attr("class", "yAxis")
             .call(yAxis)
 
 
@@ -110,7 +112,7 @@ function lluviaMes() {
             });
 
             x.domain(data.map(function(d) { return d.fecha; }));
-            y.domain([0, d3.max(data, function(d) { return d.cantidad + (d.cantidad / 4) })]);
+            y.domain([0, 200]);
 
 
             d3.select('.yAxis')
@@ -131,9 +133,9 @@ function lluviaMes() {
             bars.transition()
                 .duration(1000)
                 .attr("x", function(d) { return x(d.fecha); })
-                            .attr("width", widthBar)
-                            .attr("y", function(d) { return y(d.cantidad); })
-                            .attr("height", function(d) { return height - y(d.cantidad); });
+                .attr("width", widthBar)
+                .attr("y", function(d) { return y(d.cantidad); })
+                .attr("height", function(d) { return height - y(d.cantidad); });
 
             bars.exit()
                 .remove()
