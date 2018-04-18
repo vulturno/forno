@@ -31,11 +31,6 @@ function menu() {
 
 menu();
 
-
-
-
-
-
 var dataFiltered;
 var xRange;
 var yRange;
