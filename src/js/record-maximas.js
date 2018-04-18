@@ -22,7 +22,7 @@ var xRangeRM = d3.scaleLinear()
 var yRangeRM = d3.scaleLinear()
     .range([heightRM, 0]);
 
-var xAxisRM =  d3.axisBottom()
+var xAxisRM = d3.axisBottom()
     .scale(xRangeRM)
     .tickFormat(d3.format("d"))
     .ticks(5);

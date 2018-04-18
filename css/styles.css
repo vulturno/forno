@@ -548,6 +548,58 @@ svg {
         stroke-width: 2px;
     }
 
+.lluvias-mes-media-chart-graph .bar {
+        fill: #82ceea;
+    }
+
+.lluvias-por-mes-select {
+    border-radius: 5px;
+    padding: 0.63rem;
+    border: 1px solid #ddd;
+    max-width: 10rem;
+    background-color: #f1f1f1;
+    margin: 1.56rem 0;
+}
+
+.lluvias-por-mes-select select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+        box-shadow: none;
+        border: 0 !important;
+        width: 100%;
+        background-color: transparent;
+        height: 100%;
+        background-image: url(../img/select-arrow.svg);
+        background-repeat: no-repeat;
+        -webkit-background-size: 100%;
+        background-size: 20px;
+        background-position: 95% center;
+    }
+
+.lluvias-por-mes-chart-container {
+    position: relative;
+}
+
+.tooltip-lluvia-mes-container {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    border-radius: 5px;
+    padding: 0.31rem 0.63rem;
+    background-color: #34009c;
+}
+
+.tooltip-lluvia-mes {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.tooltip-lluvia-mes-total {
+    font-weight: bold;
+}
+
 /* Menu inspired: https://codepen.io/BeanBaag/pen/XZRewP remove jQuery for JavaScript */
 
 .burger {
