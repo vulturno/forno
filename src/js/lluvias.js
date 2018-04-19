@@ -7,7 +7,7 @@ function lluviaMes() {
         width = 1200 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
-    widthBar = width / 100;
+    widthBar = width / 90;
 
     var x = d3.scaleBand()
         .range([0, width]);
@@ -16,6 +16,7 @@ function lluviaMes() {
 
     var yAxis = d3.axisLeft(y)
         .tickPadding(5)
+        .ticks(22)
         .tickSize(-width);
 
     var svg = d3.select('.lluvias-por-mes-chart-container')
@@ -65,8 +66,6 @@ function lluviaMes() {
 
             update(mes)
 
-            console.log(mes)
-
         });
 
         data = data.filter(function(d) {
@@ -95,7 +94,7 @@ function lluviaMes() {
             .on("mouseover", function(d) {
                 tooltip.transition().duration(300).style("opacity", 1);
                 tooltip
-                    .html('<div class="tooltip-lluvia-mes-container"><p class="tooltip-lluvia-mes">Lluvia recogida en ' + d.mes + '<span class="tooltip-lluvia-mes-total">: ' + d.cantidad + 'mm</span><p/><p class="tooltip-lluvia-mes">Lluvia recogida en ' + d.fecha + '<span class="tooltip-lluvia-mes-total">: ' + d.totalanyo + 'mm</span><p/></div>')
+                    .html('<div class="tooltip-lluvia-mes-container"><p class="tooltip-lluvia-mes">Lluvia acumulada en ' + d.mes + '<span class="tooltip-lluvia-mes-total">: ' + d.cantidad + 'mm</span><p/><p class="tooltip-lluvia-mes">Lluvia acumulada en ' + d.fecha + '<span class="tooltip-lluvia-mes-total">: ' + d.totalanyo + 'mm</span><p/></div>')
             });
 
         svg.append("g")
@@ -124,18 +123,16 @@ function lluviaMes() {
             });
 
             x.domain(data.map(function(d) { return d.fecha; }));
-            y.domain([0, 200]);
+            y.domain([0, 185]);
 
             d3.select('.yAxis')
                 .transition()
                 .duration(600)
-                .ease(d3.easeLinear)
                 .call(yAxis);
 
             d3.select('.xAxis')
                 .transition()
                 .duration(600)
-                .ease(d3.easeLinear)
                 .call(xAxis);
 
             var bars = svg.selectAll("rect")
@@ -144,15 +141,8 @@ function lluviaMes() {
             bars.transition()
                 .duration(600)
                 .ease(d3.easeLinear)
-                .attr("x", function(d) { return x(d.fecha); })
-                .attr("width", widthBar)
                 .attr("y", function(d) { return y(d.cantidad); })
                 .attr("height", function(d) { return height - y(d.cantidad); })
-                .on("mouseover", function(d) {
-                    tooltip.transition().duration(300).style("opacity", 1);
-                    tooltip
-                        .html('<div class="tooltip-lluvia-mes-container"><p class="tooltip-lluvia-mes">Lluvia recogida en ' + d.mes + '<span class="tooltip-lluvia-mes-total">: ' + d.cantidad + 'mm</span><p/><p class="tooltip-lluvia-mes">Lluvia recogida en ' + d.fecha + '<span class="tooltip-lluvia-mes-total">: ' + d.totalanyo + 'mm</span><p/></div>')
-                });
 
             bars.exit()
                 .remove()

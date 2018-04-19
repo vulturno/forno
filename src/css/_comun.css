@@ -131,19 +131,22 @@ svg {
 
 .tooltip-lluvia-mes-container {
     position: absolute;
-    top: 10%;
-    left: 15%;
-    border-radius: 5px;
-    padding: 5px 10px;
-    background-color: #34009c;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 5px 15px;
+    border-left: 5px solid #34009c;
+    background-color: #F3F3F3;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, .2);
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .tooltip-lluvia-mes {
     font-size: 16px;
-    color: #fff;
+    color: #34009c;
 }
 
 .tooltip-lluvia-mes-total {
     font-weight: bold;
 }
-
