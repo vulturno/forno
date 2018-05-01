@@ -24,7 +24,7 @@ gulp.task("browserSync", function() {
     browserSync({
         server: {
             baseDir: "./",
-            reloadDelay: 2000
+            reloadDelay: 200
         }
     })
 });
