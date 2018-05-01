@@ -159,7 +159,7 @@ svg {
 }
 
 .data-viz-container {
-    max-width: 70vw;
+    max-width: 90vw;
     margin: 0 auto;
     text-align: center;
 }
@@ -172,13 +172,10 @@ svg {
 }
 
 .data-viz-element {
-    width: 16rem;
+    width: 90%;
     display: inline-block;
     text-decoration: none;
     vertical-align: top;
-    &:not(:last-child) {
-        margin-right: 2rem;
-    }
 }
 
 .data-viz-subtitle {
@@ -203,4 +200,19 @@ svg {
     text-align: left;
     margin-top: .25rem;
     color: #111;
+}
+
+@media only screen and (min-width: 48em) {
+
+    .data-viz-container {
+        max-width: 70vw;
+    }
+
+    .data-viz-element {
+        width: 16rem;
+        &:not(:last-child) {
+            margin-right: 2rem;
+        }
+    }
+
 }
