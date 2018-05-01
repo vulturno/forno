@@ -150,3 +150,57 @@ svg {
 .tooltip-lluvia-mes-total {
     font-weight: bold;
 }
+
+.data-viz {
+    width: 100%;
+    padding: 2.5rem 0;
+    font-size: 0;
+    background-color: #f4f4f4;
+}
+
+.data-viz-container {
+    max-width: 70vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.data-viz-title {
+    font-size: 1.5rem;
+    font-family: var(--montserrat);
+    font-weight: bold;
+    text-align: center;
+}
+
+.data-viz-element {
+    width: 16rem;
+    display: inline-block;
+    text-decoration: none;
+    vertical-align: top;
+    &:not(:last-child) {
+        margin-right: 2rem;
+    }
+}
+
+.data-viz-subtitle {
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: var(--montserrat);
+    color: #111;
+    margin: .25rem 0;
+    text-align: left;
+}
+
+.data-viz-element-img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.data-viz-element-txt {
+    font-size: 1rem;
+    font-family: var(--georgia);
+    line-height: 1.3;
+    text-align: left;
+    margin-top: .25rem;
+    color: #111;
+}
