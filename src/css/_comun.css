@@ -131,19 +131,76 @@ svg {
 
 .tooltip-lluvia-mes-container {
     position: absolute;
-    top: 10%;
-    left: 15%;
-    border-radius: 5px;
-    padding: 5px 10px;
-    background-color: #34009c;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 5px 15px;
+    border-left: 5px solid #34009c;
+    background-color: #F3F3F3;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, .2);
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .tooltip-lluvia-mes {
     font-size: 16px;
-    color: #fff;
+    color: #34009c;
 }
 
 .tooltip-lluvia-mes-total {
     font-weight: bold;
 }
 
+.data-viz {
+    width: 100%;
+    padding: 2.5rem 0;
+    font-size: 0;
+    background-color: #f4f4f4;
+}
+
+.data-viz-container {
+    max-width: 70vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.data-viz-title {
+    font-size: 1.5rem;
+    font-family: var(--montserrat);
+    font-weight: bold;
+    text-align: center;
+}
+
+.data-viz-element {
+    width: 16rem;
+    display: inline-block;
+    text-decoration: none;
+    vertical-align: top;
+    &:not(:last-child) {
+        margin-right: 2rem;
+    }
+}
+
+.data-viz-subtitle {
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: var(--montserrat);
+    color: #111;
+    margin: .25rem 0;
+    text-align: left;
+}
+
+.data-viz-element-img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.data-viz-element-txt {
+    font-size: 1rem;
+    font-family: var(--georgia);
+    line-height: 1.3;
+    text-align: left;
+    margin-top: .25rem;
+    color: #111;
+}
