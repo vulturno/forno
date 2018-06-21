@@ -1,17 +1,38 @@
 var fs = require("fs");
 var _ = require("lodash");
 
-require('./mociones/mociones.json');
+var temp = require('./temperaturas.json');
 
-//Obtenemos las mociones y votaciones que ha presentado cada partido
-ppMociones = _.filter(mociones, function(res) { if (res.presentada == pp) return res.fecha });
+var tempNoche = 20;
 
-//Obtenemos los votos que ha emitido cada partido: a favor, en contra y abstención
-ppTotal = _.filter(mociones, function(res) { if (/PP/.test(res.a_favor) || /PP/.test(res.en_contra) || /PP/.test(res.abstencion)) return res.fecha });
+tropicales = _.filter(temp, function(res) { if (res.min >= tempNoche) return res.fecha });
 
-$resultado = _.countBy(mociones, function(res) { return (res.resultado) })
+tropicalesNumero = _.countBy(tropicales, function(res) { return (res.fecha) })
 
-fs.writeFile('pp/pp-mociones.json', JSON.stringify(ppMociones, null, 2), function(err) {
+tropicalTotal = _.values(_.reduce(tropicales,function(result,obj){
+  var name = obj.fecha.split('-');
+  name = name[1]+', '+name[2];
+  result[name] = {
+    fecha:name,
+    min: obj.min
+  };
+  return result;
+},{}));
+
+
+fs.writeFile('tropicales.json', JSON.stringify(tropicales, null, 2), function(err) {
+    if (err) {
+        throw err;
+    }
+});
+
+fs.writeFile('tropicales-numero.json', JSON.stringify(tropicalesNumero, null, 2), function(err) {
+    if (err) {
+        throw err;
+    }
+});
+
+fs.writeFile('tropicales-total.json', JSON.stringify(tropicalTotal, null, 2), function(err) {
     if (err) {
         throw err;
     }

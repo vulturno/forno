@@ -1,4 +1,4 @@
-var temperaturas = [
+[
 {
 "fecha": "02-01-1951",
 "max": 9.2,
@@ -121728,4 +121728,4 @@ var temperaturas = [
 "fecha": "31-08-2017",
 "max": 27.8,
 "min":16.6
-}]]
+}]
