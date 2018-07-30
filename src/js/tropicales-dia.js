@@ -115,7 +115,7 @@ d3.csv('csv/tropicales-por-dia.csv', function(err, data) {
         .on("mouseout", function(d) {
             div.transition()
                 .duration(200)
-                .style("opacity", 1);
+                .style("opacity", 0);
         })
         .transition()
         .duration(1000)

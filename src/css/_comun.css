@@ -217,7 +217,7 @@ svg {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .31), 0 2px 4px 0 rgba(50, 50, 58, .2);
     .tooltipTropical {
         margin: 0;
-        color: #50f8f1;
+        color: #fff;
         font-family: var(--roboto);
         display: inline-block;
 
