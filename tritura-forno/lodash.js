@@ -2,6 +2,7 @@ var fs = require("fs");
 var _ = require("lodash");
 
 var temp = require('./temperaturas.json');
+var tropicalYear = require('./tropicales-numero.json');
 
 var tempNoche = 20;
 var caloret = 40
@@ -14,23 +15,21 @@ tropicalesFuego = _.filter(temp, function(res) { if (res.min >= 22 ) return res.
 
 forno = _.filter(temp, function(res) { if (res.max >= caloret) return res.fecha });
 
-// fs.writeFile('tropicales.json', JSON.stringify(tropicales, null, 2), function(err) {
-//     if (err) {
-//         throw err;
-//     }
-// });
+contando = _.map(_.countBy(tropicalYear, "fecha"), (val, key) => ({ fecha: key, min: val }))
+console.log(contando)
 
-// fs.writeFile('forno.json', JSON.stringify(tropicales, null, 2), function(err) {
-//     if (err) {
-//         throw err;
-//     }
-// });
 
-fs.writeFile('tropicales-numero.json', JSON.stringify(tropicalesNumero, null, 2), function(err) {
+fs.writeFile('tropicales.json', JSON.stringify(tropicales, null, 2), function(err) {
     if (err) {
         throw err;
     }
 });
+
+// fs.writeFile('tropicales-numero.json', JSON.stringify(tropicalesNumero, null, 2), function(err) {
+//     if (err) {
+//         throw err;
+//     }
+// });
 
 fs.writeFile('tropicales-fuego-22.json', JSON.stringify(tropicalesFuego, null, 2), function(err) {
     if (err) {

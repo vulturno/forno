@@ -210,7 +210,7 @@ svg {
 .tooltip-tropical-container {
     width: 10rem;
     border-radius: 2px;
-    background-color: rgba(53, 10, 79,.8);
+    background-color: rgba(53, 10, 79, .8);
     position: absolute;
     z-index: 2;
     padding: .5rem;
