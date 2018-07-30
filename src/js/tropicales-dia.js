@@ -16,7 +16,7 @@ var color = d3.scaleLinear()
     .range(["#d39c83", "#e34f6f", "#7c1d6f"]);
 
 //Creando los div que contendrán los tooltips con la información del año y de la temperatura
-var div = d3.select(".tropicales-dia")
+var divTD = d3.select(".tropicales-dia")
     .append("div")
     .attr("class", "tooltip-tropical-container")
     .style("opacity", 0);
@@ -106,15 +106,15 @@ d3.csv('csv/tropicales-por-dia.csv', function(err, data) {
         .append("circle")
         .attr("class", "circles")
         .on("mouseover", function(d) {
-            div.transition()
-            div.style("opacity", 1)
+            divTD.transition()
+            divTD.style("opacity", 1)
                 .html('<p class="tooltipTropical">El ' + d.fecha + ' se registro una mínima de ' + d.minima + 'º<p/>')
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
         })
         .on("mouseout", function(d) {
-            div.transition()
-                .duration(200)
+            divTD.transition()
+                .duration(4000)
                 .style("opacity", 0);
         })
         .transition()
