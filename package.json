@@ -47,5 +47,9 @@
     "postcss-sorting": "^3.0.1",
     "pre-commit": "^1.2.2",
     "stylelint": "^8.0.0"
+  },
+  "dependencies": {
+    "d3": "^4.13.0",
+    "lodash": "^4.17.4"
   }
 }
