@@ -17,13 +17,20 @@ a un resumen anual, contiene las medias de todo el año.
 Para saber que significa cada dato ir a /json/lluvias/descripcion-datos.json
 Los datos están actualizados hasta el 2017
 */
+
 var totalYear = require('/Users/jorgeatgu/github/forno/tritura-forno/anyos-enteros-aemet/merged.json');
 
 /*
 Ahora vamos a limpiar todos los datos mensuales por valor.
 En este caso solo queremos la fecha y la temperatura media mensual de cada mes
 */
+
 var temperaturaMedia = _.map(totalYear, _.partialRight(_.pick, ['fecha', 'tm_mes']));
+var result = _.findKey(temperaturaMedia, function(o) { _.includes(o, '-1') });
+
+console.log(result)
+
+
 
 //Obtenemos las mímimas que han sido iguales o superiores a 20º
 tropicales = _.filter(temp, function(res) { if (res.min >= tempNoche) return res.fecha });

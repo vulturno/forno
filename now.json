@@ -1,0 +1,12 @@
+{
+    "name": "Forno",
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "alias": [
+      "forno.es"
+    ],
+    "static": {
+        "public": "/"
+    }
+}
