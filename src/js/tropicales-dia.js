@@ -68,8 +68,6 @@ d3.csv('csv/tropicales-por-dia.csv', function(err, data) {
         d.year = getYear(d.fecha);
     });
 
-    console.log(dataTD)
-
     xRangeTD.domain([d3.min(dataTD, function(d) {
             return d.year;
         }),
@@ -108,7 +106,7 @@ d3.csv('csv/tropicales-por-dia.csv', function(err, data) {
         .on("mouseover", function(d) {
             divTD.transition()
             divTD.style("opacity", 1)
-                .html('<p class="tooltipTropical">El ' + d.fecha + ' se registro una mínima de ' + d.minima + 'º<p/>')
+                .html('<p class="tooltipTropical">El ' + d.fecha + ' se registró una mínima de ' + d.minima + 'º<p/>')
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
         })
