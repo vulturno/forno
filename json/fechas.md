@@ -5,3 +5,10 @@ https://opendata.aemet.es/opendata/api/valores/climatologicos/mensualesanuales/d
 https://opendata.aemet.es/opendata/api/valores/climatologicos/diarios/datos/fe
 chaini/2017-01-01T00%3A00%3A00UTC/fechafin/2017-01-30T00%3A00%
 3A00UTC/todasestaciones/?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb3JnZWF0Z3VAZ21haWwuY29tIiwianRpIjoiMjIxNTMxZDUtYmUwNi00YmRmLWI5OWEtNzBmMTdhYjAwMWYyIiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE1MDc1NTY1ODQsInVzZXJJZCI6IjIyMTUzMWQ1LWJlMDYtNGJkZi1iOTlhLTcwZjE3YWIwMDFmMiIsInJvbGUiOiIifQ.269Ryp8vMpy0hCSWjWdbwKHGomqFHaOJndOSPbjIz2I
+
+
+Mergeando todos los JSON de temperaturas en una carpeta
+
+```
+find . -name "*.json" -exec dotsunited-merge-json > ./total.json {} \;
+```
