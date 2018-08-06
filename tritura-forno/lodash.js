@@ -4,6 +4,8 @@ var _ = require("lodash");
 //Variable que representa el valor de una noche tropical
 var tempNoche = 20;
 
+var fredor = 0;
+
 //Variable que representa el PUTO INFIERNO
 var caloret = 40;
 
@@ -24,29 +26,49 @@ var totalYear = require('/Users/jorgeatgu/github/forno/tritura-forno/anyos-enter
 Ahora vamos a limpiar todos los datos mensuales por valor.
 En este caso solo queremos la fecha y la temperatura media mensual de cada mes
 */
-
 var temperaturaMedia = _.map(totalYear, _.partialRight(_.pick, ['fecha', 'tm_mes']));
-var result = _.findKey(temperaturaMedia, function(o) { _.includes(o, '-1') });
-
-console.log(result)
-
-
 
 //Obtenemos las mímimas que han sido iguales o superiores a 20º
-tropicales = _.filter(temp, function(res) { if (res.min >= tempNoche) return res.fecha });
+tropicales = _.filter(temp, function(res) { if (res.minima >= tempNoche) return res.fecha });
+
+// console.log(tropicales)
 
 //Contamos el número de noches tropicales
 tropicalesNumero = _.countBy(tropicales, function(res) { return (res.fecha) })
 
+//Obtenemos las mímimas que han sido iguales o superiores a 0º
+cheladas = _.filter(temp, function(res) { if (res.minima <= fredor) return res.fecha });
+
+// console.log(cheladas)
+
+//Contamos el número de heladas
+cheladasNumero = _.countBy(cheladas, function(res) { return (res.fecha) })
+
+
 //Obtenemos las mímimas que han sido iguales o superiores a 22º
-tropicalesFuego = _.filter(temp, function(res) { if (res.min >= 22 ) return res.fecha });
+tropicalesFuego = _.filter(temp, function(res) { if (res.minima >= 22 ) return res.fecha });
+// console.log(tropicalesFuego)
 
 //Obtenemos las máximas que han sido iguales o superiores a 40º
-forno = _.filter(temp, function(res) { if (res.max >= caloret) return res.fecha });
+forno = _.filter(temp, function(res) { if (res.maxima >= caloret) return res.fecha });
 
 
 //Generamos un archivo con todas las noches tropicales
 fs.writeFile('tropicales.json', JSON.stringify(tropicales, null, 2), function(err) {
+    if (err) {
+        throw err;
+    }
+});
+
+//Generamos un archivo con todas las noches tropicales
+fs.writeFile('tropicales-numero.json', JSON.stringify(tropicalesNumero, null, 2), function(err) {
+    if (err) {
+        throw err;
+    }
+});
+
+//Generamos un archivo con todas las heladas
+fs.writeFile('heladas.json', JSON.stringify(cheladasNumero, null, 2), function(err) {
     if (err) {
         throw err;
     }
