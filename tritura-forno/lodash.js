@@ -20,7 +20,7 @@ Para saber que significa cada dato ir a /json/lluvias/descripcion-datos.json
 Los datos están actualizados hasta el 2017
 */
 
-var totalYear = require('/Users/jorgeatgu/github/forno/tritura-forno/anyos-enteros-aemet/merged.json');
+var totalYear = require('/Users/jorgeatgu/github/forno/tritura-forno/anyos-enteros-aemet/total.json');
 
 /*
 Ahora vamos a limpiar todos los datos mensuales por valor.
