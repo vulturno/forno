@@ -99,7 +99,7 @@ d3.csv("csv/dias-de-lluvia.csv", function(error, data) {
         .attr("dy", "1em");
 
     svgRLLUMIN.append("rect")
-        .attr("width", widthRLLUMIN)
+        .attr("width", widthRLLUMIN + margin.left + margin.right)
         .attr("height", heightRLLUMIN)
         .style("fill", "none")
         .style("pointer-events", "all")

@@ -109,7 +109,7 @@ function temperaturaMedia() {
                 .attr("transform", "translate(" + x(d.fecha) + "," + y(d.temperatura) + ")")
                 .attr("y2", height - y(d.temperatura));
             focus.select(".y-hover-line")
-                .attr("transform", "translate(" + width * -1 + "," + y(d.temperatura) + ")")
+                .attr("transform", "translate(" + width * - 1 + "," + y(d.temperatura) + ")")
                 .attr("x2", width + width);
         }
 

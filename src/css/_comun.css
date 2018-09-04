@@ -4,6 +4,22 @@
     box-sizing: border-box;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background: var(--background);
+}
+
 svg {
     max-width: 1200px;
     display: block;
