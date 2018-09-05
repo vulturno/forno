@@ -73,6 +73,7 @@
 .grid-text-bold {
     display: block;
     padding: 10px 0;
+    font-family: var(--roboto);
     &:not(:last-child) {
         border-bottom: 1px solid #ccc;
     }
@@ -80,7 +81,6 @@
 
 .grid-text-bold {
     font-weight: bold;
-    font-family: var(--fontSystem);
 }
 
 .grid-title {
