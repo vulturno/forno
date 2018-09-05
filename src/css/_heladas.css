@@ -1,3 +1,13 @@
 .heladas-text {
     text-align: left;
 }
+
+.chart-heladas {
+    .yAxis {
+        .tick line {
+            fill: none;
+            stroke: #777;
+            stroke-dasharray: 3px 3px;
+        }
+    }
+}

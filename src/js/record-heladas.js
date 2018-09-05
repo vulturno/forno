@@ -32,10 +32,6 @@ var yAxisRMIN = d3.axisLeft()
     .tickSize(-widthRMIN + 16)
     .ticks(5);
 
-var colorsRMIN = d3.scaleLinear()
-    .domain([10, 35])
-    .range(["#6893ff","#2166d7","#003da5","#000049"]);
-
 d3.csv('csv/record-minimas.csv', function(err, data) {
 
     datosRMIN = data;
@@ -86,9 +82,7 @@ d3.csv('csv/record-minimas.csv', function(err, data) {
                 .duration(200)
                 .style("opacity", 0);
         })
-        .attr("fill",function(d,i){
-            return colorsRMIN(i)
-        })
+        .attr("fill", "#257d98")
         .attr("x", function(d) {
             return xRangeRMIN(d.anyo);
         })
@@ -121,9 +115,7 @@ function resizeRMIN() {
 
     svgRMIN.selectAll("rect")
         .attr("width", widthRMIN / datosRMIN.length - barPadding)
-        .attr("fill",function(d,i){
-            return colorsRMIN(i)
-        })
+        .attr("fill", "#257d98")
         .attr("x", function(d) {
             return xRangeRMIN(d.anyo);
         })

@@ -40,16 +40,11 @@ var temp = "ºC";
 var barPadding = 2;
 
 var dedicatoria = 'Dedicado a Maria del Carmen Tobajas Urieta y Agustín Aznar Gracia. Gracias por todo.';
-console.log(dedicatoria);
+    console.log(dedicatoria);
 
 var margin = { top: 50, right: 50, bottom: 50, left: 110 },
     width = 1200 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
-
-//Creando una escala de color
-var color = d3.scaleLinear()
-    .domain([10, 35])
-    .range(["#d39c83", "#e34f6f", "#7c1d6f"]);
 
 //Creando los div que contendrán los tooltips con la información del año y de la temperatura
 var div = d3.select(".grafica-temp")
@@ -170,52 +165,8 @@ d3.csv('csv/temperaturas.csv', function(err, data) {
         .attr("cy", function(d) {
             return yRange(d.maxima);
         })
-        .attr("r", function(d) {
-            if (d.maxima === maxTemp) {
-                return 12;
-            } else if (d.maxima === minTemp) {
-                return 6;
-            } else if (d.maxima >= 35) {
-                return 11;
-            } else if (d.maxima >= 30) {
-                return 10;
-            } else if (d.maxima >= 25) {
-                return 9;
-            } else if (d.maxima >= 20) {
-                return 8;
-            } else if (d.maxima >= 15) {
-                return 7;
-            } else {
-                return 6;
-            };
-        })
-        .style("fill", function(d) {
-            if (d.maxima === maxTemp) {
-                return "#70284a";
-            } else if (d.maxima === minTemp) {
-                return "#045275";
-            } else if (d.maxima >= 35) {
-                return "#9c3f5d";
-            } else if (d.maxima >= 30) {
-                return "#c8586c";
-            } else if (d.maxima >= 25) {
-                return "#dc7176";
-            } else if (d.maxima >= 20) {
-                return "#ee8a82";
-            } else if (d.maxima >= 15) {
-                return "#ee8a82";
-            } else if (d.maxima >= 10) {
-                return "#4cc8a3";
-            } else if (d.maxima >= 7) {
-                return "#38b2a3";
-            } else if (d.maxima >= 3) {
-                return "#2c98a0";
-            } else if (d.maxima >= 0) {
-                return "#257d98";
-            } else {
-                return "#257d98";
-            };
-        });
+        .attr("r", 6)
+        .style("fill", "#dc7176");
 });
 
 function update() {
@@ -262,7 +213,6 @@ function update() {
             })
         ]);
 
-
         d3.select('.yAxis')
             .transition()
             .duration(1000)
@@ -281,59 +231,14 @@ function update() {
 
         circles.transition()
             .duration(1000)
-            .attr("r", function(d) {
-                if (d.maxima === maxTemp) {
-                    return 12;
-                } else if (d.maxima === minTemp) {
-                    return 12;
-                } else if (d.maxima >= 35) {
-                    return 11;
-                } else if (d.maxima >= 30) {
-                    return 10;
-                } else if (d.maxima >= 25) {
-                    return 9;
-                } else if (d.maxima >= 20) {
-                    return 8;
-                } else if (d.maxima >= 15) {
-                    return 7;
-                } else {
-                    return 6;
-                };
-            })
+            .attr("r", 6)
+            .style("fill", "#dc7176")
             .attr("cx", function(d) {
                 return xRange(d.year);
             })
             .attr("cy", function(d) {
                 return yRange(d.maxima);
             });
-        circles.style("fill", function(d) {
-            if (d.maxima === maxTemp) {
-                return "#70284a";
-            } else if (d.maxima === minTemp) {
-                return "#045275";
-            } else if (d.maxima >= 35) {
-                return "#9c3f5d";
-            } else if (d.maxima >= 30) {
-                return "#c8586c";
-            } else if (d.maxima >= 25) {
-                return "#dc7176";
-            } else if (d.maxima >= 20) {
-                return "#ee8a82";
-            } else if (d.maxima >= 15) {
-                return "#ee8a82";
-            } else if (d.maxima >= 10) {
-                return "#4cc8a3";
-            } else if (d.maxima >= 7) {
-                return "#38b2a3";
-            } else if (d.maxima >= 3) {
-                return "#2c98a0";
-            } else if (d.maxima >= 0) {
-                return "#257d98";
-            } else {
-                return "#257d98";
-            };
-        });
-
 
         circles.on("mouseover", function(d) {
                 div.transition()
@@ -361,12 +266,6 @@ function updateMin() {
     if (valueDateMonth < 10) valueDateMonth = ('0' + valueDateMonth).slice(-2);
     var valueDate = valueDateDay + '-' + valueDateMonth;
     var reValueDate = new RegExp("^.*" + valueDate + ".*", "gi");
-
-    // if (isNaN(valueDateDay) || valueDateDay < 1 || valueDateDay > 31 && isNaN(valueDateMonth) || valueDateMonth < 1 || valueDateMonth > 12) {
-    //     alert("fail")
-    // } else {
-    //     alert("bien")
-    // }
 
     d3.csv('csv/temperaturas.csv', function(err, data) {
 
@@ -404,10 +303,6 @@ function updateMin() {
             })
         ]);
 
-        var color = d3.scaleLinear()
-            .domain([0, 25])
-            .range(["#b0f2bc", "#89e8ac", "#67dba5", "#4cc8a3", "#38b2a3", "#2c98a0", "#257d98"]);
-
         d3.select('.yAxis')
             .transition()
             .duration(1000)
@@ -427,53 +322,14 @@ function updateMin() {
 
         circles.transition()
             .duration(1000)
-            .attr("r", function(d) {
-                if (d.minima === maxTemp) {
-                    return 16;
-                } else if (d.minima >= 20) {
-                    return 11;
-                } else if (d.minima >= 20) {
-                    return 10;
-                } else if (d.minima >= 15) {
-                    return 9;
-                } else if (d.minima >= 10) {
-                    return 8;
-                } else if (d.minima >= 5) {
-                    return 7;
-                } else if (d.minima >= 0) {
-                    return 6;
-                } else if (d.minima < 0) {
-                    return 4;
-                };
-            })
+            .attr("r", 6)
+            .style("fill", "#257d98")
             .attr("cx", function(d) {
                 return xRange(d.year);
             })
             .attr("cy", function(d) {
                 return yRange(d.minima);
             });
-
-        circles.style("fill", function(d) {
-            if (d.minima === maxTemp) {
-                return "#70284a";
-            } else if (d.minima === minTemp) {
-                return "#045275";
-            } else if (d.minima >= 20) {
-                return "#b0f2bc";
-            } else if (d.minima >= 18) {
-                return "#89e8ac";
-            } else if (d.minima >= 14) {
-                return "#67dba5";
-            } else if (d.minima >= 10) {
-                return "#4cc8a3";
-            } else if (d.minima >= 5) {
-                return "#38b2a3";
-            } else if (d.minima >= 0) {
-                return "#2c98a0";
-            } else if (d.minima < 0) {
-                return "#257d98";
-            };
-        });
 
         circles.on("mouseover", function(d) {
                 div.transition()

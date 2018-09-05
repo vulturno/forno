@@ -1,9 +1,9 @@
 {
-  "unidad_generadora": "Servicio del Banco de Datos Nacional de ClimatologÌa",
-  "periodicidad": "1 vez al dÌa, con un retardo de 4 dÌas",
-  "descripcion": "ClimatologÌas diarÌas",
+  "unidad_generadora": "Servicio del Banco de Datos Nacional de Climatolog√≠a",
+  "periodicidad": "1 vez al d√≠a, con un retardo de 4 d√≠as",
+  "descripcion": "Climatolog√≠as diar√≠as",
   "formato": "application/json",
-  "copyright": "© AEMET. Autorizado el uso de la informaciÛn y su reproducciÛn citando a AEMET como autora de la misma.",
+  "copyright": "¬© AEMET. Autorizado el uso de la informaci√≥n y su reproducci√≥n citando a AEMET como autora de la misma.",
   "notaLegal": "http://www.aemet.es/es/nota_legal",
   "campos": [
     {"id":"fecha",
@@ -12,23 +12,23 @@
         "requerido": true
     },
     {"id":"indicativo",
-    "descripcion": "indicativo climatolÛgico",
+    "descripcion": "indicativo climatol√≥gico",
     "tipo_datos": "string",
         "requerido": true
 
     },
     {"id": "nombre",
-    "descripcion": "nombre (ubicaciÛn) de la estaciÛn",
+    "descripcion": "nombre (ubicaci√≥n) de la estaci√≥n",
     "tipo_datos": "string",
         "requerido": true
     },
     {"id": "provincia",
-    "descripcion": "provincia de la estaciÛn",
+    "descripcion": "provincia de la estaci√≥n",
     "tipo_datos": "string",
         "requerido": true
     },
     {"id": "altitud",
-    "descripcion": "altitud de la estaciÛn en m sobre el nivel del mar",
+    "descripcion": "altitud de la estaci√≥n en m sobre el nivel del mar",
     "tipo_datos": "float",
     "unidad": "m",
         "requerido": true
@@ -40,37 +40,37 @@
         "requerido": false
     },
     {"id":"prec",
-        "descripcion": "PrecipitaciÛn diaria de 07 a 07",
+        "descripcion": "Precipitaci√≥n diaria de 07 a 07",
         "tipo_datos": "float",
         "unidad": "mm",
         "requerido": false
     },
         {"id":"tmin",
-        "descripcion": "Temperatura MÌnima del dÌa",
+        "descripcion": "Temperatura M√≠nima del d√≠a",
         "tipo_datos": "float",
-        "unidad": "∫C",
+        "unidad": "¬∫C",
         "requerido": false
     },
         {"id":"horatmin",
-        "descripcion": "Hora y minuto de la temperatura mÌnima",
+        "descripcion": "Hora y minuto de la temperatura m√≠nima",
         "tipo_datos": "string",
     "unidad": "UTC",
         "requerido": false
     },
         {"id":"tmax",
-        "descripcion": "Temperatura M·xima del dÌa",
+        "descripcion": "Temperatura M√°xima del d√≠a",
         "tipo_datos": "float",
-        "unidad": "∫C",
+        "unidad": "¬∫C",
         "requerido": false
     },
         {"id":"horatmax",
-        "descripcion": "Hora y minuto de la temperatura m·xima",
+        "descripcion": "Hora y minuto de la temperatura m√°xima",
         "tipo_datos": "string",
     "unidad": "UTC",
         "requerido": false
     },
         {"id":"dir",
-        "descripcion": "DirecciÛn de la racha m·xima",
+        "descripcion": "Direcci√≥n de la racha m√°xima",
         "tipo_datos": "float",
         "unidad": "decenas de grado",
         "requerido": false
@@ -82,43 +82,43 @@
         "requerido": false
     },
         {"id":"racha",
-        "descripcion": "Racha m·xima del viento",
+        "descripcion": "Racha m√°xima del viento",
         "tipo_datos": "float",
         "unidad": "m/s",
         "requerido": false
     },
         {"id":"horaracha",
-        "descripcion": "Hora y minuto de la racha m·xima",
+        "descripcion": "Hora y minuto de la racha m√°xima",
         "tipo_datos": "float",
     "unidad": "UTC",
         "requerido": false
     },
         {"id":"sol",
-        "descripcion": "InsolaciÛn",
+        "descripcion": "Insolaci√≥n",
         "tipo_datos": "float",
     "unidad": "horas",
         "requerido": false
     },
         {"id":"presmax",
-        "descripcion": "PresiÛn m·xima al nivel de referencia de la estaciÛn",
+        "descripcion": "Presi√≥n m√°xima al nivel de referencia de la estaci√≥n",
         "tipo_datos": "float",
     "unidad": "hPa",
         "requerido": false
     },
         {"id":"horapresmax",
-        "descripcion": "Hora de la presiÛn m·xima (redondeada a la hora entera m·s prÛxima)",
+        "descripcion": "Hora de la presi√≥n m√°xima (redondeada a la hora entera m√°s pr√≥xima)",
         "tipo_datos": "float",
     "unidad": "hora entera",
         "requerido": false
     },
         {"id":"presmin",
-        "descripcion": "PresiÛn mÌnima al nivel de referencia de la estaciÛn",
+        "descripcion": "Presi√≥n m√≠nima al nivel de referencia de la estaci√≥n",
         "tipo_datos": "float",
     "unidad": "hPa",
         "requerido": false
     },
         {"id":"horapresmin",
-        "descripcion": "Hora de la presiÛn mÌnima (redondeada a la hora entera m·s prÛxima)",
+        "descripcion": "Hora de la presi√≥n m√≠nima (redondeada a la hora entera m√°s pr√≥xima)",
         "tipo_datos": "float",
     "unidad": "hora entera",
         "requerido": false
