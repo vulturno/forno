@@ -28,6 +28,10 @@ En este caso solo queremos la fecha y la temperatura media mensual de cada mes
 */
 var temperaturaMedia = _.map(totalYear, _.partialRight(_.pick, ['fecha', 'tm_mes']));
 
+
+//intentar sacar las máximas registradas
+var cierzera = _.map(totalYear, _.partialRight(_.pick, ['fecha', 'w_racha']));
+
 //Obtenemos las mímimas que han sido iguales o superiores a 20º
 tropicales = _.filter(temp, function(res) { if (res.minima >= tempNoche) return res.fecha });
 
@@ -90,6 +94,13 @@ fs.writeFile('tropicales-fuego-22.json', JSON.stringify(tropicalesFuego, null, 2
 
 //Generamos un archivo con las temperaturas superiores a 40º
 fs.writeFile('max-cuarenta.json', JSON.stringify(forno, null, 2), function(err) {
+    if (err) {
+        throw err;
+    }
+});
+
+//Generamos un archivo con las rachas máximas
+fs.writeFile('cierzo.json', JSON.stringify(cierzera, null, 2), function(err) {
     if (err) {
         throw err;
     }

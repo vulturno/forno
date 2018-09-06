@@ -34,10 +34,6 @@ var yAxisT = d3.axisLeft()
     .tickSize(-widthT + 16)
     .ticks(5);
 
-var colorsT = d3.scaleLinear()
-    .domain([0, 45])
-    .range(["#ffc6c4", "#f4a3a8", "#e38191", "#cc607d", "#ad466c", "#8b3058", "#672044"]);
-
 d3.csv('csv/tropicales.csv', function(err, data) {
 
     datosT = data;
@@ -87,9 +83,7 @@ d3.csv('csv/tropicales.csv', function(err, data) {
                 .duration(200)
                 .style("opacity", 0);
         })
-        .attr("fill", function(d, i) {
-            return colorsT(i)
-        })
+        .attr("fill", "#dc7176")
         .attr("x", function(d) {
             return xRangeT(d.anyo);
         })
@@ -179,9 +173,7 @@ function resizeT() {
 
     svgT.selectAll("rect")
         .attr("width", widthT / datosT.length - barPadding)
-        .attr("fill", function(d, i) {
-            return colorsT(i)
-        })
+        .attr("fill", "#dc7176")
         .attr("x", function(d) {
             return xRangeT(d.anyo);
         })

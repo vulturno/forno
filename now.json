@@ -6,7 +6,5 @@
     "alias": [
       "forno.es"
     ],
-    "static": {
-        "public": "/"
-    }
+    "type": "static"
 }

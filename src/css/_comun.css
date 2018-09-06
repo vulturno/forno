@@ -1,7 +1,23 @@
 * {
     font-family: var(--fontSystem);
-    line-height: 1.5;
+    line-height: 1.3;
     box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background: var(--background);
 }
 
 svg {
@@ -11,7 +27,7 @@ svg {
 }
 
 .bold {
-    font-family: var(--georgia);
+    font-family: var(--roboto);
     font-weight: bold;
 }
 
@@ -19,8 +35,8 @@ svg {
     font-family: var(--montserrat);
 }
 
-.georgia {
-    font-family: var(--georgia);
+.roboto {
+    font-family: var(--roboto);
 }
 
 .system-font {
@@ -63,7 +79,7 @@ svg {
 .texto {
     font-size: 18px;
     color: var(--impureBlack);
-    font-family: var(--georgia);
+    font-family: var(--roboto);
 }
 
 .tropicales,
@@ -195,7 +211,7 @@ svg {
 
 .data-viz-element-txt {
     font-size: 1rem;
-    font-family: var(--georgia);
+    font-family: var(--roboto);
     line-height: 1.3;
     text-align: left;
     margin-top: .25rem;

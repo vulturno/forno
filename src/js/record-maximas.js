@@ -32,10 +32,6 @@ var yAxisRM = d3.axisLeft()
     .tickSize(-widthRM + 16)
     .ticks(5);
 
-var colorsRM = d3.scaleLinear()
-    .domain([10, 35])
-    .range(["#cd669d", "#9a366f", "#690044", "#230000"]);
-
 d3.csv('csv/record-maximas.csv', function(err, data) {
 
     datosRM = data;
@@ -85,9 +81,7 @@ d3.csv('csv/record-maximas.csv', function(err, data) {
                 .duration(200)
                 .style("opacity", 0);
         })
-        .attr("fill",function(d,i){
-            return colorsRM(i)
-        })
+        .attr("fill", "#DD435C")
         .attr("x", function(d) {
             return xRangeRM(d.anyo);
         })
@@ -121,9 +115,7 @@ function resizeRM() {
 
     svgRM.selectAll("rect")
         .attr("width", widthRM / datosRM.length - barPadding)
-        .attr("fill",function(d,i){
-            return colorsRM(i)
-        })
+        .attr("fill", "#DD435C")
         .attr("x", function(d) {
             return xRangeRM(d.anyo);
         })

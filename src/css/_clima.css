@@ -3,19 +3,6 @@
     padding: 20px;
 }
 
-.zaragoza-img {
-    max-width: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
-.legend-text {
-    font-size: 18px;
-    font-family: var(--georgia);
-    color: var(--impureBlack);
-    margin-top: 0;
-}
-
 .clima-subtitle {
     font-size: 24px;
     margin: 5px 0;
@@ -23,7 +10,7 @@
 
 .clima-pie {
     font-size: 16px;
-    font-family: var(--georgia);
+    font-family: var(--roboto);
     margin-top: 16px;
     color: var(--impureBlack);
     display: block;
@@ -31,11 +18,21 @@
 }
 
 .clima-legend {
-    font-family: var(--georgia);
+    font-family: var(--roboto);
     font-size: 18px;
 }
 
 .clima-link {
     display: block;
     margin-top: 10px;
+}
+
+.chart-temp {
+    .xAxis {
+        .domain {
+            fill: none;
+            stroke: #111;
+            stroke-dasharray: 3px 3px;
+        }
+    }
 }

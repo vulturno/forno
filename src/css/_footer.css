@@ -4,9 +4,11 @@
     padding: 10vh 0;
 }
 
-.footer-texto {
-    color: var(--impureBlack);
-    font-weight: bold;
+.footer-texto,
+.footer-links {
+    color: var(--black);
+    font-family: var(--roboto);
+    font-size: 1rem;
 }
 
 .footer-links {

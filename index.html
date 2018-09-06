@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Roboto+Condensed:400,700" rel="stylesheet">
 </head>
 
 <body id="forno">
@@ -40,20 +40,6 @@
                 <a class="clima-link" href="https://es.wikipedia.org/wiki/Zaragoza#Clima">Fuente</a></p>
         </div>
     </div>
-    <picture class="clima-img">
-        <!-- <source sizes="(max-width: 1380px) 100vw, 1380px" type="image/webp" srcset="
-                img/zaragoza_320.webp 320w,
-                img/zaragoza_739.webp 739w,
-                img/zaragoza_1110.webp 1110w,
-                img/zaragoza_1366.webp 1366w" />
-        <img sizes="(max-width: 1366px) 100vw, 1366px" class="zaragoza-img" srcset="
-        img/zaragoza_320.jpg 320w,
-        img/zaragoza_739.jpg 739w,
-        img/zaragoza_1110.jpg 1110w,
-        img/zaragoza_1366.jpg 1366w" src="zaragoza_moncayo_ohf3fq_c_scale,w_1366.jpg" alt="Atardecer desde la margen izquierda de Zaragoza con el Moncayo al fondo"> -->
-        <img src="img/zaragoza-atardecer.jpg" class="zaragoza-img retro" alt="Atardecer desde la margen izquierda de Zaragoza">
-        <span class="clima-pie">Atardecer desde la margen izquierda de Zaragoza.</span>
-    </picture>
     <article class="grafica-temp margin-section" id="maximas">
         <div class="wrapper-vw">
             <h2 class="subtitle">TEMPERATURAS MÁXIMAS Y MÍNIMAS</h2>
@@ -70,8 +56,8 @@
                 <label class="inputs-label" for="updateButtonMonth">Mes</label>
                 <input maxlength="2" class="input-update-grafica" id="updateButtonMonth" type="text" value="1" />
             </div>
-            <button class="btn-update-grafica font-system btn-update-max" id="update" onclick="update()">MÁXIMAS</button>
-            <button class="btn-update-grafica font-system btn-update-min" id="updateMin" onclick="updateMin()"> MÍNIMAS</button>
+            <button class="btn-update-grafica roboto btn-update-max" id="update" onclick="update()">MÁXIMAS</button>
+            <button class="btn-update-grafica roboto btn-update-min" id="updateMin" onclick="updateMin()"> MÍNIMAS</button>
             <p class="text-button">Puedes actualizar la gráfica con la máxima o mínima de cualquier día del año.</p>
         </div>
     </article>
@@ -2747,16 +2733,16 @@
         </section>
     </article>
     <div class="wrapper-vw margin-section">
-        <h2 class="system-font">METODOLOGÍA</h2>
+        <h2 class="roboto">METODOLOGÍA</h2>
         <p class="texto">Las razones por las cuales he elegido el período transcurrido entre 1951 y 2017 son, el costo de <span class="bold">obtener mes a mes los datos de cada año</span>, y la legibilidad de los datos. <span class="bold">Incluir más años haría que los datos fueran menos legibles</span>.</p>
         <p class="texto">Para contabilizar las <span class="bold">noches tropicales</span>, se ha tomado como referencia, que la temperatura mínima, <span class="bold">fuera igual o superior a 20ºC</span>.</p>
         <p class="texto">Para contabilizar las <span class="bold">heladas</span>, se ha tomado como referencia, que la temperatura mínima, <span class="bold">fuera igual o inferior a 0ºC</span>.</p>
         <p class="texto">Para los récords, solamente se tienen en cuenta el último. Es decir, si el 3 de agosto de 2010 se alcanzo la máxima y en 2017 se volvió a batir ese récord, solamente se contabiliza el de 2017.</p>
     </div>
     <div class="wrapper-vw">
-        <h2 class="system-font">DATOS</h2>
+        <h2 class="roboto">DATOS</h2>
         <p class="texto">Todos los datos de las temperaturas son <a href="https://opendata.aemet.es/centrodedescargas/inicio">Información elaborada por la Agencia Estatal de Meteorología"</a>. Que es el sistema para la difusión y reutilización de la información de AEMET.</p>
-        <p class="texto">Las fechas están actualizadas hasta el 30 de junio de 2018.</p>
+        <p class="texto">Las fechas están actualizadas hasta el 31 de agosto de 2018.</p>
     </div>
     <section class="data-viz">
         <article class="data-viz-container">

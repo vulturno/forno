@@ -1,14 +1,21 @@
-https://opendata.aemet.es/opendata/api/valores/climatologicos/mensualesanuales/datos/anioini/1980/aniofin/1980/estacion/9434/?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb3JnZWF0Z3VAZ21haWwuY29tIiwianRpIjoiMjIxNTMxZDUtYmUwNi00YmRmLWI5OWEtNzBmMTdhYjAwMWYyIiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE1MDc1NTY1ODQsInVzZXJJZCI6IjIyMTUzMWQ1LWJlMDYtNGJkZi1iOTlhLTcwZjE3YWIwMDFmMiIsInJvbGUiOiIifQ.269Ryp8vMpy0hCSWjWdbwKHGomqFHaOJndOSPbjIz2I
-
-https://opendata.aemet.es/opendata/api/valores/climatologicos/mensualesanuales/datos/anioini/1951/aniofin/1951/estacion/9434/?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb3JnZWF0Z3VAZ21haWwuY29tIiwianRpIjoiMjIxNTMxZDUtYmUwNi00YmRmLWI5OWEtNzBmMTdhYjAwMWYyIiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE1MDc1NTY1ODQsInVzZXJJZCI6IjIyMTUzMWQ1LWJlMDYtNGJkZi1iOTlhLTcwZjE3YWIwMDFmMiIsInJvbGUiOiIifQ.269Ryp8vMpy0hCSWjWdbwKHGomqFHaOJndOSPbjIz2I
-
-https://opendata.aemet.es/opendata/api/valores/climatologicos/diarios/datos/fe
-chaini/2017-01-01T00%3A00%3A00UTC/fechafin/2017-01-30T00%3A00%
-3A00UTC/todasestaciones/?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb3JnZWF0Z3VAZ21haWwuY29tIiwianRpIjoiMjIxNTMxZDUtYmUwNi00YmRmLWI5OWEtNzBmMTdhYjAwMWYyIiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE1MDc1NTY1ODQsInVzZXJJZCI6IjIyMTUzMWQ1LWJlMDYtNGJkZi1iOTlhLTcwZjE3YWIwMDFmMiIsInJvbGUiOiIifQ.269Ryp8vMpy0hCSWjWdbwKHGomqFHaOJndOSPbjIz2I
+https://opendata.aemet.es/opendata/api/valores/climatologicos/mensualesanuales/datos/anioini/1980/aniofin/1980/estacion/9434/?api_key=
 
 
-Mergeando todos los JSON de temperaturas en una carpeta
+Seleccionando solamente el mes de agosto con jq
+```
+jq -c 'map(select(.fecha | contains("-08-")))'
+```
+
+Quedandonos con unos o  dato del array
 
 ```
-find . -name "*.json" -exec dotsunited-merge-json > ./total.json {} \;
+jq '.[].fecha | .tm_mes' total.json > temperatura-media.json
+jq '.[] | .fecha, .tm_mes' total.json > temperatura-media.json
+```
+
+
+Creamos un objeto con [] y con los valores que nosotros seleccionamos, en este caso fecha y tm_mes
+
+```
+jq ['.[] | {"fecha": .fecha, "tm_mes": .tm_mes}'] total.json > temperatura-media.json
 ```

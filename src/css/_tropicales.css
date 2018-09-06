@@ -46,11 +46,12 @@
 
 .chart-tropicales {
     .annotation-note-bg {
-        fill: #fff;
+        fill: transparent;
     }
     .annotation-note-label tspan {
         fill: #E8336D;
         font-weight: bold;
+        font-family: var(--roboto);
     }
     .annotation-subject path {
         fill: #30155d;
