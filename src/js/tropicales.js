@@ -73,8 +73,9 @@ d3.csv('csv/tropicales.csv', function(err, data) {
         .attr("width", widthT / datosT.length - barPadding)
         .on("mouseover", function(d) {
             div.transition()
+            div.attr("class", "tooltip tooltipTropicales")
             div.style("opacity", 1)
-                .html('<p class="tooltipTropicales">' + d.anyo + '<p/>' + '<p class="tooltipTropicales">' + d.dia + '<p/>')
+                .html('<p class="tooltipTropicales">En ' + d.anyo + ' se registraron ' + d.dia + ' noches tropicales.<p/>')
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
         })

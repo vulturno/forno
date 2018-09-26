@@ -76,10 +76,15 @@ svg {
     }
 }
 
-.texto {
+.texto,
+.legend-text {
     font-size: 18px;
     color: var(--impureBlack);
     font-family: var(--roboto);
+}
+
+.legend-text {
+    font-size: 1rem;
 }
 
 .tropicales,
@@ -249,6 +254,10 @@ svg {
         fill: none;
         stroke: none;
     }
+}
+
+.legend-top {
+    font-family: var(--roboto);
 }
 
 @media only screen and (min-width: 48em) {
