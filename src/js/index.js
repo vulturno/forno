@@ -226,7 +226,7 @@ function update() {
             .call(xAxis);
 
         d3.select('.legend-top')
-            .text("Temperaturas máximas");
+            .text("🔥 Temperaturas máximas");
 
         var circles = svg.selectAll("circle")
             .data(dataFiltered);
