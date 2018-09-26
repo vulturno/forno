@@ -7,9 +7,5 @@
     "alias": [
         "forno.es"
     ],
-    "type": "static",
-    "scripts":
-    {
-        "build": "gulp build"
-    }
+    "type": "static"
 }
