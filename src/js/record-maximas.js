@@ -72,7 +72,7 @@ d3.csv('csv/record-maximas.csv', function(err, data) {
         .on("mouseover", function(d) {
             div.transition()
             div.style("opacity", 1)
-                .html('<p class="tooltipHeladas">' + d.anyo + '<p/>' + '<p class="tooltipHeladas">' + d.dia + '<p/>')
+                .html('<p class="tooltipTropicales">En ' + d.anyo + ' se batieron ' + d.dia + ' récords.<p/>')
                 .style("left", (d3.event.pageX) - 50 + "px")
                 .style("top", (d3.event.pageY - 100) + "px");
         })

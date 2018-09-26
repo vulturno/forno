@@ -138,7 +138,7 @@ d3.csv('csv/temperaturas.csv', function(err, data) {
         .attr("y", -20)
         .attr("x", 190)
         .style("text-anchor", "end")
-        .text("Temperaturas máximas");
+        .text("🔥Temperaturas máximas");
 
     svg.selectAll("dot")
         .data(dataFiltered)
@@ -147,8 +147,9 @@ d3.csv('csv/temperaturas.csv', function(err, data) {
         .attr("class", "circles")
         .on("mouseover", function(d) {
             div.transition()
+            div.attr("class","tooltip tooltipMax")
             div.style("opacity", 1)
-                .html('<p class="tooltipYear">' + d.year + '<p/>' + '<p class="tooltipTemp">' + d.maxima + 'º<p/>')
+                .html('<p class="tooltipRect">La temperatura máxima en ' + d.year + ' fue de ' + d.maxima + 'ºC<p/>')
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
         })
@@ -157,14 +158,15 @@ d3.csv('csv/temperaturas.csv', function(err, data) {
                 .duration(200)
                 .style("opacity", 0);
         })
-        .transition()
-        .duration(1000)
+        .attr("r", 0)
         .attr("cx", function(d) {
             return xRange(d.year);
         })
         .attr("cy", function(d) {
             return yRange(d.maxima);
         })
+        .transition()
+        .duration(1000)
         .attr("r", 6)
         .style("fill", "#dc7176");
 });
@@ -242,8 +244,9 @@ function update() {
 
         circles.on("mouseover", function(d) {
                 div.transition()
+                div.attr("class","tooltip tooltipMax")
                 div.style("opacity", 1)
-                    .html('<p class="tooltipYear">' + d.year + '<p/>' + '<p class="tooltipTemp">' + d.maxima + 'º<p/>')
+                    .html('<p class="tooltipRect">La temperatura máxima en ' + d.year + ' fue de ' + d.maxima + 'ºC<p/>')
                     .style("left", (d3.event.pageX) + "px")
                     .style("top", (d3.event.pageY - 28) + "px");
             })
@@ -315,7 +318,7 @@ function updateMin() {
 
 
         d3.select('.legend-top')
-            .text("Temperaturas mínimas");
+            .text("❄️ Temperaturas mínimas");
 
         var circles = svg.selectAll("circle")
             .data(dataFilterMin);
@@ -335,7 +338,8 @@ function updateMin() {
                 div.transition()
                 // .duration(200)
                 div.style("opacity", 1)
-                    .html('<p class="tooltipYear">' + d.year + '<p/>' + '<p class="tooltipTemp">' + d.minima + 'º<p/>')
+                div.attr("class","tooltip tooltipMin")
+                    .html('<p class="tooltipRect">La temperatura mínima en ' + d.year + ' fue de ' + d.minima + 'ºC<p/>')
                     .style("left", (d3.event.pageX) + "px")
                     .style("top", (d3.event.pageY - 28) + "px");
             })

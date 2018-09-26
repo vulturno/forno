@@ -38,20 +38,38 @@ path {
 .tooltip {
     position: absolute;
     z-index: 2;
-    width: 70px;
-    margin-left: 20px;
-    padding: 10px;
+    width: 10rem;
+    margin-left: 10px;
+    padding: .5rem .75rem;
     background: var(--bgcTooltip);
-    border: 1px solid var(--impureGrey);
-    border-radius: 3px;
+    border-radius: 4px;
+    box-shadow: 0 2px 9px 0 rgba(0, 0, 0, .2);
+    &.tooltipMax {
+        background-color: #13042e;
+        .tooltipRect,
+        .tooltipTemp {
+            color: #D15B60;
+        }
+    }
+    &.tooltipMin {
+        background-color: #adffc6;
+        color: #000;
+        .tooltipRect,
+        .tooltipTemp {
+            color: #1E6782;
+        }
+    }
 }
 
-.tooltipYear,
+.tooltipRect,
 .tooltipTemp {
     font-weight: bold;
     font-size: 14px;
     margin: 0 0 5px;
-    color: var(--textTooltip);
+    + p {
+        display: none;
+    }
+
 }
 
 .tick line {

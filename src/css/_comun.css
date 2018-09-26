@@ -256,6 +256,10 @@ svg {
     }
 }
 
+.legend-top {
+    font-family: var(--roboto);
+}
+
 @media only screen and (min-width: 48em) {
 
     .data-viz-container {
