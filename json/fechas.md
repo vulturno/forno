@@ -19,3 +19,21 @@ Creamos un objeto con [] y con los valores que nosotros seleccionamos, en este c
 ```
 jq ['.[] | {"fecha": .fecha, "tm_mes": .tm_mes}'] total.json > temperatura-media.json
 ```
+
+
+Creamos un objeto solo con las fechas, temperaturas medias maximas y minimas de cada mes
+```
+jq --raw-output ['.[] | {"fecha": .fecha, "max": .tm_max, "minima": .tm_min}'] total.json > total-media-limpio.json
+```
+
+Como hay meses que no tienen estos datos los eliminamos, usamos sponge para actuar sobre el propio JSON, ya que jq no podemos editar en el mismo archivo https://github.com/stedolan/jq/issues/105
+```
+jq --raw-output ['.[] | select(.max!=null) '] total-media-limpio.json | sponge total-media-limpio.json
+```
+
+
+Como el API de AEMET nos devuelve un resumen anual de cada año bajo el número 13 y no nos interesa lo quitamos.
+```
+jq --raw-output ['.[]  | select(.fecha | contains("-13") | not) ']  total-media-limpio.json | sponge total-media-limpio.json
+```
+
