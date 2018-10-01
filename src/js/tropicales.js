@@ -41,7 +41,12 @@ d3.csv('csv/tropicales.csv', function(err, data) {
     datosT.forEach(function(d) {
         d.anyo = d.fecha;
         d.dia = d.dias;
+        d.diaTooltip = getDay(d.dia);
     });
+
+    function getDay(stringDate) {
+        return stringDate.replace(/^0+/, '');
+    }
 
     xRangeT.domain([d3.min(datosT, function(d) {
             return d.anyo;
@@ -75,7 +80,7 @@ d3.csv('csv/tropicales.csv', function(err, data) {
             div.transition()
             div.attr("class", "tooltip tooltipTropicales")
             div.style("opacity", 1)
-                .html('<p class="tooltipTropicales">En ' + d.anyo + ' se registraron ' + d.dia + ' noches tropicales.<p/>')
+                .html('<p class="tooltipTropicales">En ' + d.anyo + ' se registraron ' + d.diaTooltip + ' noches tropicales.<p/>')
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
         })

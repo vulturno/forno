@@ -32,10 +32,6 @@ var yAxisH = d3.axisLeft()
     .tickSize(-widthH + 16)
     .ticks(5);
 
-var colorsH = d3.scaleLinear()
-    .domain([10, 35])
-    .range(["#68abb8","#4f90a6","#3b738f","#2a5674"]);
-
 d3.csv('csv/heladas.csv', function(err, data) {
 
     datosH = data;
@@ -86,9 +82,7 @@ d3.csv('csv/heladas.csv', function(err, data) {
                 .duration(200)
                 .style("opacity", 0);
         })
-        .attr("fill",function(d,i){
-            return colorsH(i)
-        })
+        .attr("fill", "#257d98")
         .attr("x", function(d) {
             return xRangeH(d.anyo);
         })
@@ -121,9 +115,7 @@ function resize() {
 
     svgH.selectAll("rect")
         .attr("width", widthH / datosH.length - barPadding)
-        .attr("fill",function(d,i){
-            return colorsH(i)
-        })
+        .attr("fill", "#257d98")
         .attr("x", function(d) {
             return xRangeH(d.anyo);
         })

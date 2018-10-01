@@ -39,7 +39,12 @@ d3.csv('csv/record-maximas.csv', function(err, data) {
     datosRM.forEach(function(d) {
         d.anyo = d.fecha;
         d.dia = d.dias;
+        d.diaTooltip = getDay(d.dia);
     });
+
+    function getDay(stringDate) {
+        return stringDate.replace(/^0+/, '');
+    }
 
     xRangeRM.domain([d3.min(datosRM, function(d) {
             return d.anyo;
@@ -72,7 +77,7 @@ d3.csv('csv/record-maximas.csv', function(err, data) {
         .on("mouseover", function(d) {
             div.transition()
             div.style("opacity", 1)
-                .html('<p class="tooltipTropicales">En ' + d.anyo + ' se batieron ' + d.dia + ' récords.<p/>')
+                .html('<p class="tooltipTropicales">En ' + d.anyo + ' se batieron ' + d.diaTooltip + ' récords.<p/>')
                 .style("left", (d3.event.pageX) - 50 + "px")
                 .style("top", (d3.event.pageY - 100) + "px");
         })
