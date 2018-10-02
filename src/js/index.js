@@ -318,7 +318,7 @@ function updateMin() {
 
 
         d3.select('.legend-top')
-            .text("❄️ Temperaturas mínimas");
+            .text("☃️ Temperaturas mínimas");
 
         var circles = svg.selectAll("circle")
             .data(dataFilterMin);

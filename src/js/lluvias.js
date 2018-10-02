@@ -1,6 +1,5 @@
 mesMenu = []
 
-
 function lluviaMes() {
 
     var margin = { top: 50, right: 50, bottom: 50, left: 110 },
@@ -14,9 +13,9 @@ function lluviaMes() {
     var y = d3.scaleLinear()
         .range([height, 0]);
 
-    var yAxis = d3.axisLeft(y)
+    var yAxisLluvia = d3.axisLeft(y)
         .tickPadding(5)
-        .ticks(22)
+        .ticks(10)
         .tickSize(-width);
 
     var svg = d3.select('.lluvias-por-mes-chart-container')
@@ -79,7 +78,7 @@ function lluviaMes() {
         });
 
         x.domain(data.map(function(d) { return d.fecha; }));
-        y.domain([0, 185]);
+        y.domain([0, d3.max(data, function(d) { return d.cantidad; })]);
 
         var xAxis = d3.axisBottom(x)
         .tickValues(x.domain().filter(function(d,i){ return !(i%4)}));
@@ -104,8 +103,8 @@ function lluviaMes() {
             .call(xAxis)
 
         svg.append("g")
-            .attr("class", "yAxis")
-            .call(yAxis)
+            .attr("class", "yAxisLluvia")
+            .call(yAxisLluvia)
 
         svg.append('line')
             .data(data)
@@ -134,12 +133,12 @@ function lluviaMes() {
             });
 
             x.domain(data.map(function(d) { return d.fecha; }));
-            y.domain([0, 185]);
+            y.domain([0, d3.max(data, function(d) { return d.cantidad + 10 })]);
 
-            d3.select('.yAxis')
+            d3.select('.yAxisLluvia')
                 .transition()
                 .duration(600)
-                .call(yAxis);
+                .call(yAxisLluvia);
 
             d3.select('.xAxis')
                 .transition()
