@@ -37,3 +37,8 @@ Como el API de AEMET nos devuelve un resumen anual de cada año bajo el número 
 jq --raw-output ['.[]  | select(.fecha | contains("-13") | not) ']  total-media-limpio.json | sponge total-media-limpio.json
 ```
 
+Obteniendo el record de máximas y minimas de todos los días el script esta en scripts/max-min.sh
+
+```
+jq ['.[] | {"fecha": .fecha, "maxima": .tmax, "minima": .tmin, "año": .fecha}'] 9434-total-diario.json > max-min.json
+``
