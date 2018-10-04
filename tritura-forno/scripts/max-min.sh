@@ -17,7 +17,7 @@ for (( i=0; i<${#dias[@]}; ++i )); do
     jq "max_by(.minima)" $nombre.json > $minima.json
 done &&
 
-# Concatenamos las máximas y mínimas en el mismo archivo
+# Concatenamos las máximas y mínimas en el mismo archivo, al final he usado un paquete de NPM ya que no he conseguido hacerlo limpiamente con cat :(
 find . -name '*maxima-temporal*.json' -exec dotsunited-merge-json > maximas.json {} \; &&
 find . -name '*minima-temporal*.json' -exec dotsunited-merge-json > minimas.json {} \; &&
 
