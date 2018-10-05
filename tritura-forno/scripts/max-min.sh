@@ -21,15 +21,15 @@ done &&
 find . -name '*maxima-temporal*.json' -exec dotsunited-merge-json > maximas.json {} \; &&
 find . -name '*minima-temporal*.json' -exec dotsunited-merge-json > minimas.json {} \; &&
 
+# Eliminamos el resto de archivos
+find . -name '*-temporal*' -delete &&
 # Al concatenar de malas trazas, el JSON no es válido, vamos a hacer que el objeto sea valido
 # Primero sustituimos a excepción del último las } por },
 sed -i '$ ! s/}/},/' maximas.json minimas.json &&
 # Ahora añadimos un corchete al principio y al final
 sed -i '1 s/{/[{/' maximas.json minimas.json &&
 sed -i '$ s/}/}]/' maximas.json minimas.json &&
-
-# Eliminamos el resto de archivos
-find . -name '*-temporal*' -delete &&
-# Volvemos a generar un JSON prescindiendo de la fecha tratada
-jq --raw-output ['.[] | {"date": .year, "max": .maxima, "min": .minima}'] maximas.json | sponge maximas.json &&
-jq --raw-output ['.[] | {"date": .year, "max": .maxima, "min": .minima}'] minimas.json | sponge minimas.json
+jq --raw-output ['.[] | {"date": .year, "max": .maxima, "min": .minima, "orden": .order} '] maximas.json | sponge maximas.json &&
+jq --raw-output ['.[] | {"date": .year, "max": .maxima, "min": .minima, "orden": .order} '] minimas.json | sponge minimas.json &&
+jq -c 'sort_by(.orden)' maximas.json | sponge maximas.json &&
+jq -c 'sort_by(.orden)' minimas.json | sponge minimas.json
