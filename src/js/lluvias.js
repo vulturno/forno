@@ -94,7 +94,7 @@ function lluviaMes() {
             .on("mouseover", function(d) {
                 tooltip.transition().duration(300).style("opacity", 1);
                 tooltip
-                    .html('<div class="tooltip-lluvia-mes-container"><p class="tooltip-lluvia-mes">Lluvia acumulada en ' + d.mes + '<span class="tooltip-lluvia-mes-total">: ' + d.cantidad + 'mm</span><p/><p class="tooltip-lluvia-mes">Lluvia acumulada en ' + d.fecha + '<span class="tooltip-lluvia-mes-total">: ' + d.totalanyo + 'mm</span><p/><p class="tooltip-lluvia-mes">La media en ' + d.mes + ' es de<span class="tooltip-lluvia-mes-total">: ' + d.media + 'mm</span><p/></div>')
+                    .html('<div class="tooltip-lluvia-mes-container"><p class="tooltip-lluvia-mes">Lluvia recogida en ' + d.mes + '<span class="tooltip-lluvia-mes-total">: ' + d.cantidad + 'mm</span><p/><p class="tooltip-lluvia-mes">Lluvia acumulada en ' + d.fecha + '<span class="tooltip-lluvia-mes-total">: ' + d.totalanyo + 'mm</span><p/><p class="tooltip-lluvia-mes">La media en ' + d.mes + ' es de<span class="tooltip-lluvia-mes-total">: ' + d.media + 'mm</span><p/></div>')
             });
 
         svg.append("g")
