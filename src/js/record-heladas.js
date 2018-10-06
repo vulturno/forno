@@ -78,7 +78,7 @@ d3.csv('csv/record-minimas.csv', function(err, data) {
         .on("mouseover", function(d) {
             div.transition()
             div.style("opacity", 1)
-                .html('<p class="tooltipTropicales">En ' + d.anyo + ' se batieron ' + d.diaTooltip + ' récords.<p/>')
+                .html('<p class="tooltipTropicales">El año ' + d.anyo + ' tiene ' + d.diaTooltip + ' récords.<p/>')
                 .style("left", (d3.event.pageX) - 50 + "px")
                 .style("top", (d3.event.pageY - 100) + "px");
         })
