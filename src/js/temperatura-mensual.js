@@ -99,7 +99,7 @@ function temperaturaMensual() {
             .data([data])
             .attr("class", "line-temperatura-mensual")
             .attr("d", line)
-            .style("stroke", "#111")
+            .style("stroke", "#140320")
             .style("opacity", "0.5");
 
         svg.append("g")
