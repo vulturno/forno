@@ -573,7 +573,9 @@ svg {
         fill: #82ceea;
     }
 
-.lluvias-por-mes-select {
+.lluvias-por-mes-select,
+.temperatura-mensual-select,
+.temperatura-mensual-minima-select {
     border-radius: 5px;
     padding: 0.63rem;
     border: 1px solid #ddd;
@@ -582,7 +584,7 @@ svg {
     margin: 1.56rem 0;
 }
 
-.lluvias-por-mes-select select {
+.lluvias-por-mes-select select, .temperatura-mensual-select select, .temperatura-mensual-minima-select select {
         -webkit-appearance: none;
         -moz-appearance: none;
         -ms-appearance: none;
@@ -712,7 +714,42 @@ svg {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+.area-temperatura-mensual {
+    fill: #dd435c;
+    stroke: none !important;
+}
+
+.area-temperatura-mensual-minima {
+    fill: #257d98;
+    stroke: none !important;
+}
+
+.line-temperatura-mensual {
+    stroke: black;
+    fill: none;
+}
+
+.yAxisTemperaturaMM .tick line {
+        stroke: #525252;
+    }
+
+.yAxisTemperaturaMM .domain {
+        stroke: none;
+    }
+
+.xAxisTemperaturaMM .domain, .yAxisTemperaturaMMinima .domain {
+        stroke: none;
+    }
+
+#iib-awards-badge-link {
+    display: none !important;
+}
+
 @media only screen and (min-width: 48em) {
+
+    #iib-awards-badge-link {
+        display: block !important;
+    }
 
     .data-viz-container {
         max-width: 70vw;
@@ -1035,12 +1072,12 @@ svg {
     font-weight: bold;
 }
 
-.textoBarras text, .xAxis text, .yAxis text {
+.textoBarras text, .xAxis text, .yAxis text, .yAxisLluvia text {
         font-size: 0.75rem;
         font-weight: bold;
     }
 
-.yAxis path {
+.yAxis path, .yAxisLluvia path {
         stroke: none;
     }
 
@@ -1684,7 +1721,7 @@ path {
     }
 
     .navegacion {
-        padding: 5rem;
+        padding: 5rem 4rem;
     }
 
     .navegacion-btn {

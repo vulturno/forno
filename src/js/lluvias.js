@@ -1,6 +1,5 @@
 mesMenu = []
 
-
 function lluviaMes() {
 
     var margin = { top: 50, right: 50, bottom: 50, left: 110 },
@@ -14,9 +13,9 @@ function lluviaMes() {
     var y = d3.scaleLinear()
         .range([height, 0]);
 
-    var yAxis = d3.axisLeft(y)
+    var yAxisLluvia = d3.axisLeft(y)
         .tickPadding(5)
-        .ticks(22)
+        .ticks(10)
         .tickSize(-width);
 
     var svg = d3.select('.lluvias-por-mes-chart-container')
@@ -75,10 +74,11 @@ function lluviaMes() {
         data.forEach(function(d) {
             d.cantidad = +d.cantidad;
             d.totalanyo = +d.totalanyo;
+            d.media = +d.media;
         });
 
         x.domain(data.map(function(d) { return d.fecha; }));
-        y.domain([0, 185]);
+        y.domain([0, d3.max(data, function(d) { return d.cantidad; })]);
 
         var xAxis = d3.axisBottom(x)
         .tickValues(x.domain().filter(function(d,i){ return !(i%4)}));
@@ -94,7 +94,7 @@ function lluviaMes() {
             .on("mouseover", function(d) {
                 tooltip.transition().duration(300).style("opacity", 1);
                 tooltip
-                    .html('<div class="tooltip-lluvia-mes-container"><p class="tooltip-lluvia-mes">Lluvia acumulada en ' + d.mes + '<span class="tooltip-lluvia-mes-total">: ' + d.cantidad + 'mm</span><p/><p class="tooltip-lluvia-mes">Lluvia acumulada en ' + d.fecha + '<span class="tooltip-lluvia-mes-total">: ' + d.totalanyo + 'mm</span><p/></div>')
+                    .html('<div class="tooltip-lluvia-mes-container"><p class="tooltip-lluvia-mes">Lluvia recogida en ' + d.mes + '<span class="tooltip-lluvia-mes-total">: ' + d.cantidad + 'mm</span><p/><p class="tooltip-lluvia-mes">Lluvia acumulada en ' + d.fecha + '<span class="tooltip-lluvia-mes-total">: ' + d.totalanyo + 'mm</span><p/><p class="tooltip-lluvia-mes">La media en ' + d.mes + ' es de<span class="tooltip-lluvia-mes-total">: ' + d.media + 'mm</span><p/></div>')
             });
 
         svg.append("g")
@@ -103,8 +103,18 @@ function lluviaMes() {
             .call(xAxis)
 
         svg.append("g")
-            .attr("class", "yAxis")
-            .call(yAxis)
+            .attr("class", "yAxisLluvia")
+            .call(yAxisLluvia)
+
+        svg.append('line')
+            .data(data)
+            .attr("class", "promedio")
+            .attr('x1', 0)
+            .attr('y1', function(d) { return y(d.media); })
+            .attr('x2', width)
+            .attr('y2', function(d) { return y(d.media); })
+            .attr('stroke', '#044c71')
+            .attr('stroke-width', 2)
 
     });
 
@@ -123,12 +133,12 @@ function lluviaMes() {
             });
 
             x.domain(data.map(function(d) { return d.fecha; }));
-            y.domain([0, 185]);
+            y.domain([0, d3.max(data, function(d) { return d.cantidad + 10 })]);
 
-            d3.select('.yAxis')
+            d3.select('.yAxisLluvia')
                 .transition()
                 .duration(600)
-                .call(yAxis);
+                .call(yAxisLluvia);
 
             d3.select('.xAxis')
                 .transition()
@@ -145,6 +155,27 @@ function lluviaMes() {
                 .attr("height", function(d) { return height - y(d.cantidad); })
 
             bars.exit()
+                .remove()
+
+            var lines = svg.select(".promedio")
+                .data(data);
+
+            lines.transition()
+                .duration(600)
+                .ease(d3.easeLinear)
+                .attr('y1', function(d) { return y(d.media); })
+                .attr('x2', width)
+                .attr('y2', function(d) { return y(d.media); })
+
+            lines.exit()
+                .remove()
+
+            var textPromedio = svg.select("textoPromedio")
+            .data(data)
+
+                textPromedio.attr("y", function(d) { return y(d.media) - 5; })
+
+                textPromedio.exit()
                 .remove()
         });
 

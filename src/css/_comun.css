@@ -121,7 +121,9 @@ svg {
     }
 }
 
-.lluvias-por-mes-select {
+.lluvias-por-mes-select,
+.temperatura-mensual-select,
+.temperatura-mensual-minima-select {
     border-radius: 5px;
     padding: 10px;
     border: 1px solid #ddd;
@@ -260,7 +262,47 @@ svg {
     font-family: var(--roboto);
 }
 
+.area-temperatura-mensual {
+    fill: #dd435c;
+    stroke: none !important;
+}
+
+.area-temperatura-mensual-minima {
+    fill: #257d98;
+    stroke: none !important;
+}
+
+.line-temperatura-mensual {
+    stroke: black;
+    fill: none;
+}
+
+.yAxisTemperaturaMM {
+    .tick line {
+        stroke: #525252;
+    }
+    .domain {
+        stroke: none;
+    }
+}
+
+
+.xAxisTemperaturaMM,
+.yAxisTemperaturaMMinima {
+    .domain {
+        stroke: none;
+    }
+}
+
+#iib-awards-badge-link {
+    display: none !important;
+}
+
 @media only screen and (min-width: 48em) {
+
+    #iib-awards-badge-link {
+        display: block !important;
+    }
 
     .data-viz-container {
         max-width: 70vw;

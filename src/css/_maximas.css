@@ -17,14 +17,16 @@
 
 .textoBarras,
 .xAxis,
-.yAxis {
+.yAxis,
+.yAxisLluvia {
     text {
         font-size: 12px;
         font-weight: bold;
     }
 }
 
-.yAxis {
+.yAxis,
+.yAxisLluvia {
     path {
         stroke: none;
     }

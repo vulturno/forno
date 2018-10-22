@@ -9,8 +9,9 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Roboto+Condensed:400,700" rel="stylesheet">
 </head>
-
 <body id="forno">
+    <script src="https://infobawards.s3.amazonaws.com/2018/badges/iiba-ll-s.js" id="iib-awards-badge"></script>
+
     <div class="grid-intro" id="inicio">
         <h1 class="title">FORNO</h1>
         <div class="container-texto">
@@ -61,6 +62,34 @@
             <p class="text-button">Puedes actualizar la gráfica con la máxima o mínima de cualquier día del año.</p>
         </div>
     </article>
+    <article class="recogida-lluvias-chart-container margin-section" id="temp-media-anual">
+        <div class="wrapper-vw">
+            <h2 class="subtitle">TEMPERATURA MEDIA ANUAL</h2>
+            <p class="texto">En esta gráfica podemos ver como ha ido variando la temperatura anual desde 1951 hasta 2018.</p>
+            <p class="texto">En 1951 la temperatura anual fue de 14.1ºC, en 2017 fue de 16.7ºC. Lo cual supone un <strong>aumento de 2.6ºC</strong>.</p>
+        </div>
+        <div class="temperatura-media-chart-container chart-container" id="tmedia-chart"></div>
+    </article>
+    <article class="lluvias-por-mes" id="lluvias-por-mes">
+        <div class="wrapper-vw">
+            <h2 class="subtitle">TEMPERATURA MEDIA MENSUAL</h2>
+            <p class="texto">En estas gráficas podemos ver como ha ido variando la temperatura mensual máxima y mínima desde 1951 hasta 2018.</p>
+            <h2 class="subtitle">MÁXIMAS</h2>
+        </div>
+        <div class="temperatura-mensual-chart-container">
+            <div class="wrapper-vw">
+                <div class="temperatura-mensual-select" id="mes-mensual"></div>
+            </div>
+        </div>
+        <div class="wrapper-vw">
+            <h2 class="subtitle">MÍNIMAS</h2>
+        </div>
+        <div class="temperatura-mensual-minima-chart-container">
+            <div class="wrapper-vw">
+                <div class="temperatura-mensual-minima-select" id="mes-mensual-minima"></div>
+            </div>
+        </div>
+    </article>
     <article class="tropicales grid-chart margin-section" id="tropicales">
         <div class="tropicales-text wrapper-vw">
             <h2 class="subtitle">NOCHES TROPICALES</h2>
@@ -102,26 +131,19 @@
         </div>
         <div class="precipitaciones-chart-container chart-container" id="rmin-chart"></div>
     </article>
-    <article class="recogida-lluvias-chart-container margin-section" id="temp-media-anual">
-        <div class="wrapper-vw">
-            <h2 class="subtitle">TEMPERATURA MEDIA ANUAL</h2>
-            <p class="texto">En esta gráfica podemos ver como ha ido variando la temperatura anual desde 1951 hasta 2017.</p>
-            <p class="texto">En 1951 la temperatura anual fue de 14.1ºC, en 2017 fue de 16.7ºC. Lo cual supone un <strong>aumento de 2.6ºC</strong>.</p>
-        </div>
-        <div class="temperatura-media-chart-container chart-container" id="tmedia-chart"></div>
-    </article>
-    <div class="lluvias-por-mes" id="lluvias-por-mes">
+    <article class="lluvias-por-mes" id="lluvias-por-mes">
         <div class="wrapper-vw">
             <h2 class="subtitle">LLUVIA RECOGIDA POR MES</h2>
             <p class="texto">En esta serie historica se puede ver las precipitaciones de cada mes y compararla con las precipitaciones de otros años, desde 1941 hasta 2018.</p>
             <p class="texto">La equivalencia de 1 milímetro (mm) de agua caída, es 1 litro de lluvia caída por metro cuadrado.</p>
+            <p class="texto">La línea azul horizontal muestra el promedio de lluvias recogidas en cada mes entre 1941 y 2018.</p>
         </div>
         <div class="lluvias-por-mes-chart-container">
             <div class="wrapper-vw">
                 <div class="lluvias-por-mes-select" id="mes"></div>
             </div>
         </div>
-    </div>
+    </article>
     <article class="tabs-maximas-minimas margin-section" id="tabla-records">
         <div class="wrapper-vw">
             <h2 class="subtitle">RÉCORDS DE MÁXIMAS Y MÍNIMAS </h2>
@@ -1932,10 +1954,10 @@
                     <span class="grid-text-bold">33.6ºC</span>
                     <span class="grid-text-bold">34ºC</span>
                     <span class="grid-text-bold">33.2ºC</span>
-                    <span class="grid-text-bold">32.4ºC</span>
+                    <span class="grid-text-bold">32.8ºC</span>
                     <span class="grid-text-bold">32.8ºC</span>
                     <span class="grid-text-bold">31.8ºC</span>
-                    <span class="grid-text-bold">32.8ºC</span>
+                    <span class="grid-text-bold">34.3ºC</span>
                     <span class="grid-text-bold">32.2ºC</span>
                     <span class="grid-text-bold">34ºC</span>
                     <span class="grid-text-bold">33ºC</span>
@@ -1965,10 +1987,10 @@
                     <span class="grid-text-bold">1987</span>
                     <span class="grid-text-bold">1991</span>
                     <span class="grid-text-bold">1987</span>
-                    <span class="grid-text-bold">1987</span>
+                    <span class="grid-text-bold">2018</span>
                     <span class="grid-text-bold">1958</span>
                     <span class="grid-text-bold">1966</span>
-                    <span class="grid-text-bold">2012</span>
+                    <span class="grid-text-bold">2018</span>
                     <span class="grid-text-bold">1964</span>
                     <span class="grid-text-bold">1983</span>
                     <span class="grid-text-bold">2013</span>
@@ -2734,7 +2756,7 @@
     </article>
     <div class="wrapper-vw margin-section">
         <h2 class="roboto">METODOLOGÍA</h2>
-        <p class="texto">Las razones por las cuales he elegido el período transcurrido entre 1951 y 2017 son, el costo de <span class="bold">obtener mes a mes los datos de cada año</span>, y la legibilidad de los datos. <span class="bold">Incluir más años haría que los datos fueran menos legibles</span>.</p>
+        <p class="texto">El motivo por el cual he elegido el período transcurrido entre 1951 y la actualidad es que la estación meteorologica de la AEMET empieza a acumular grandes cantidades de datos a partir de 1951.</p>
         <p class="texto">Para contabilizar las <span class="bold">noches tropicales</span>, se ha tomado como referencia, que la temperatura mínima, <span class="bold">fuera igual o superior a 20ºC</span>.</p>
         <p class="texto">Para contabilizar las <span class="bold">heladas</span>, se ha tomado como referencia, que la temperatura mínima, <span class="bold">fuera igual o inferior a 0ºC</span>.</p>
         <p class="texto">Para los récords, solamente se tienen en cuenta el último. Es decir, si el 3 de agosto de 2010 se alcanzo la máxima y en 2017 se volvió a batir ese récord, solamente se contabiliza el de 2017.</p>
@@ -2742,7 +2764,7 @@
     <div class="wrapper-vw">
         <h2 class="roboto">DATOS</h2>
         <p class="texto">Todos los datos de las temperaturas son <a href="https://opendata.aemet.es/centrodedescargas/inicio">Información elaborada por la Agencia Estatal de Meteorología"</a>. Que es el sistema para la difusión y reutilización de la información de AEMET.</p>
-        <p class="texto">Las fechas están actualizadas hasta el 31 de agosto de 2018.</p>
+        <p class="texto">Las fechas están actualizadas hasta el 30 de septiembre de 2018.</p>
     </div>
     <section class="data-viz">
         <article class="data-viz-container">
@@ -2762,7 +2784,7 @@
     <footer class="footer">
         <div class="wrapper-footer">
             <p class="footer-texto">Hecho en Zaragoza con mucha maña por un <a class="footer-links" href="http://jorgeatgu.com" target="_blank">maño</a> - MMXVII</p>
-            <p class="footer-texto">Cualquier consulta escribid a: contacto@jorgeatgu.com</p>
+            <p class="footer-texto">Cualquier consulta escribid a: data@jorgeatgu.com</p>
             <a class="footer-links" href="http://github.com/jorgeatgu/forno">GitHub</a>
         </div>
     </footer>
@@ -2777,22 +2799,7 @@
     <script src="js/temperatura-anual.js"></script>
     <script src="js/lluvias.js"></script>
     <script src="js/tropicales-dia.js"></script>
-    <script>
-    (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-36222123-1', 'jorgeatgu.com');
-    ga('send', 'pageview');
-    </script>
+    <script src="js/temperatura-mensual.js"></script>
+    <script src="js/temperatura-mensual-minima.js"></script>
 </body>
-
 </html>

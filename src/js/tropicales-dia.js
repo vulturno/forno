@@ -25,6 +25,7 @@ function getYear(stringDate) {
     return stringDate.split('-')[2];
 }
 
+
 function removeYear(stringDay) {
     var inicio = 0;
     var fin = 5;
@@ -66,7 +67,6 @@ d3.csv('csv/tropicales-por-dia.csv', function(err, data) {
         d.dias = removeYear(d.fecha);
         d.minima = d.min;
         d.year = getYear(d.fecha);
-        console.log(d.year)
     });
 
     xRangeTD.domain([d3.min(dataTD, function(d) {

@@ -32,10 +32,6 @@ var yAxisH = d3.axisLeft()
     .tickSize(-widthH + 16)
     .ticks(5);
 
-var colorsH = d3.scaleLinear()
-    .domain([10, 35])
-    .range(["#68abb8","#4f90a6","#3b738f","#2a5674"]);
-
 d3.csv('csv/heladas.csv', function(err, data) {
 
     datosH = data;
@@ -43,7 +39,12 @@ d3.csv('csv/heladas.csv', function(err, data) {
     datosH.forEach(function(d) {
         d.anyo = d.fecha;
         d.dia = d.dias;
+        d.diaTooltip = getDay(d.dia)
     });
+
+    function getDay(stringDate) {
+        return stringDate.replace(/^0+/, '');
+    }
 
     xRangeH.domain([d3.min(datosH, function(d) {
             return d.anyo;
@@ -77,7 +78,7 @@ d3.csv('csv/heladas.csv', function(err, data) {
         .on("mouseover", function(d) {
             div.transition()
             div.style("opacity", 1)
-                .html('<p class="tooltipTropicales">En ' + d.anyo + ' se registraron ' + d.dia + ' heladas.<p/>')
+                .html('<p class="tooltipTropicales">En' + d.anyo + ' se registraron ' + d.diaTooltip + ' heladas.<p/>')
                 .style("left", (d3.event.pageX) - 50 + "px")
                 .style("top", (d3.event.pageY - 100) + "px");
         })
@@ -86,9 +87,7 @@ d3.csv('csv/heladas.csv', function(err, data) {
                 .duration(200)
                 .style("opacity", 0);
         })
-        .attr("fill",function(d,i){
-            return colorsH(i)
-        })
+        .attr("fill", "#257d98")
         .attr("x", function(d) {
             return xRangeH(d.anyo);
         })
@@ -121,9 +120,7 @@ function resize() {
 
     svgH.selectAll("rect")
         .attr("width", widthH / datosH.length - barPadding)
-        .attr("fill",function(d,i){
-            return colorsH(i)
-        })
+        .attr("fill", "#257d98")
         .attr("x", function(d) {
             return xRangeH(d.anyo);
         })

@@ -1,4 +1,4 @@
-fecha,max,minima,mes
+fecha,max,min,mes
 1951,10.8,2.8,Enero
 1951,11.0,2.4,Febrero
 1951,14.3,4.8,Marzo
@@ -810,3 +810,5 @@ fecha,max,minima,mes
 2018,24.4,12.3,Mayo
 2018,28.9,16.9,Junio
 2018,33.9,20.2,Julio
+2018,33.2,19.6,Agosto
+2018,29.7,17.6,Septiembre
