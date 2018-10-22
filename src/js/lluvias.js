@@ -68,6 +68,8 @@ function lluviaMes() {
 
         });
 
+
+
         data = data.filter(function(d) {
             return String(d.mes).match(/Enero/);
         });
