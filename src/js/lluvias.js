@@ -8,6 +8,7 @@ function lluviaMes() {
 
     widthBar = width / 90;
 
+
     var x = d3.scaleBand()
         .range([0, width]);
     var y = d3.scaleLinear()
@@ -68,7 +69,7 @@ function lluviaMes() {
         });
 
         data = data.filter(function(d) {
-            return String(d.mes).match(/ENERO/);
+            return String(d.mes).match(/Enero/);
         });
 
         data.forEach(function(d) {

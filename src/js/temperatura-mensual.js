@@ -9,7 +9,7 @@ function temperaturaMensual() {
 
     var svg = d3.select('.temperatura-mensual-chart-container')
         .append('svg')
-        .attr('class', 'lluvias-mes-media-chart-graph')
+        .attr('class', 'temperatura-mensual-chart-graph')
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
