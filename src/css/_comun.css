@@ -230,6 +230,25 @@ svg {
     font-size: 14px !important;
 }
 
+.temperatura-mensual-minima-chart-container {
+    position: relative;
+}
+
+.media-mensual {
+    position: relative;
+}
+
+.tooltip-media-mensual {
+    font-size: 1rem;
+    font-family: var(--roboto);
+    margin: 0;
+    strong {
+        font-weight: bold;
+        font-family: inherit;
+        font-size: 1.25rem;
+    }
+}
+
 .tooltip-tropical-container {
     width: 10rem;
     border-radius: 2px;

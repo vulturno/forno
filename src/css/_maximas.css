@@ -61,6 +61,18 @@ path {
             color: #1E6782;
         }
     }
+    &.tooltip-media-mensual-minima,
+    &.tooltip-media-mensual-maxima {
+        width: auto;
+        top: 80%;
+        left: 50%;
+        padding: 1rem;
+        background-color: #f2e081;
+        border-radius: 2px;
+    }
+    &.tooltip-media-mensual-maxima {
+        background-color: #eaffbd;
+    }
 }
 
 .tooltipRect,

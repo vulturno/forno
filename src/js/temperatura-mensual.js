@@ -1,4 +1,5 @@
 mesMenuMensual = []
+tempMax = []
 
 function temperaturaMensual() {
 
@@ -41,6 +42,10 @@ function temperaturaMensual() {
     var xAxisTemperaturaMM = d3.axisBottom(x)
         .tickFormat(d3.format("d"))
         .ticks(10);
+
+    var tooltipMax = d3.select(".media-mensual-maxima")
+        .append("div")
+        .attr("class", "tooltip tooltip-media-mensual-maxima");
 
     d3.csv("csv/total-media-limpio.csv", function(error, data) {
         if (error) throw error;
@@ -89,7 +94,6 @@ function temperaturaMensual() {
         x.domain([1951, 2018])
         y.domain([1,20]);
 
-
         svg.append("path")
             .data([data])
             .attr("class", "area-temperatura-mensual")
@@ -110,6 +114,9 @@ function temperaturaMensual() {
         svg.append("g")
             .attr("class", "yAxisTemperaturaMM")
             .call(yAxisTemperaturaMM);
+
+        tooltipMax.data(data)
+            .html(function(d) { return "<p class='tooltip-media-mensual'>La temperatura máxima fue de <strong>" + d3.max(data, function(d) { return d.max }) + "ºC</strong> en <strong>" + d.yearmin; + "</strong></p>" });
 
     });
 
@@ -143,8 +150,6 @@ function temperaturaMensual() {
                 .ease(d3.easeLinear)
                 .attr("d", area);
 
-
-
             var lines = svg.selectAll(".line-temperatura-mensual")
                 .data([data])
 
@@ -152,6 +157,9 @@ function temperaturaMensual() {
                 .duration(600)
                 .ease(d3.easeLinear)
                 .attr("d", line);
+
+            tooltipMax.data(data)
+                .html(function(d) { return "<p class='tooltip-media-mensual'>La temperatura máxima fue de <strong>" + d3.max(data, function(d) { return d.max }) + "ºC</strong> en <strong>" + d.yearmin; + "</strong></p>" });
 
             lines.exit()
                 .remove()

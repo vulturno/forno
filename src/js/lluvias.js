@@ -119,6 +119,8 @@ function lluviaMes() {
             .attr('stroke', '#044c71')
             .attr('stroke-width', 2)
 
+
+
     });
 
     function update(mes) {
@@ -173,13 +175,6 @@ function lluviaMes() {
             lines.exit()
                 .remove()
 
-            var textPromedio = svg.select("textoPromedio")
-            .data(data)
-
-                textPromedio.attr("y", function(d) { return y(d.media) - 5; })
-
-                textPromedio.exit()
-                .remove()
         });
 
     }

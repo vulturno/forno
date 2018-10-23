@@ -1,10 +1,16 @@
 mesMenuMensualMinima = []
+tempMin = []
+mesMin = []
 
 function temperaturaMensualMinima() {
 
     var margin = { top: 50, right: 50, bottom: 50, left: 110 },
         width = 1200 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
+
+    var tooltipMin = d3.select(".media-mensual-minima")
+        .append("div")
+        .attr("class", "tooltip tooltip-media-mensual-minima");
 
 
     var svg = d3.select('.temperatura-mensual-minima-chart-container')
@@ -15,7 +21,6 @@ function temperaturaMensualMinima() {
         .append("g")
         .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
-
 
     var x = d3.scaleTime().range([0, width]);
     var y = d3.scaleLinear().range([height, 10]);
@@ -49,7 +54,8 @@ function temperaturaMensualMinima() {
             .key(function(d) {
                 return d.mes;
             })
-            .entries(data)
+            .entries(data);
+
 
         var mesMenuMensualMinima = d3.select("#mes-mensual-minima")
 
@@ -77,14 +83,17 @@ function temperaturaMensualMinima() {
         });
 
         data = data.filter(function(d) {
-            return String(d.mes).match(/Febrero/);
+            return String(d.mes).match(/Enero/);
         });
 
         data.forEach(function(d) {
             d.min = d.min;
             d.fecha = d.fecha;
-            d.mes = d.mes
+            d.mes = d.mes;
+            d.yearmax = d.yearmax;
         });
+
+        var tempMin = "La temperatura máxima fue de " + d3.max(data, function(d) { return d.min }) + "ºC en el año ";
 
         x.domain([1951, 2018])
         y.domain([-6, 8]);
@@ -110,6 +119,9 @@ function temperaturaMensualMinima() {
             .attr("class", "yAxisTemperaturaMMinima")
             .call(yAxisTemperaturaMMinima);
 
+        tooltipMin.data(data)
+            .html(function(d) { return "<p class='tooltip-media-mensual'>La temperatura máxima fue de <strong>" + d3.max(data, function(d) { return d.min }) + "ºC</strong> en <strong>" + d.yearmin; + "</strong></p>" });
+
     });
 
 
@@ -134,6 +146,8 @@ function temperaturaMensualMinima() {
                 .duration(600)
                 .call(yAxisTemperaturaMMinima);
 
+            var tempMin = "La temperatura máxima fue de " + d3.max(data, function(d) { return d.min }) + "ºC en el año ";
+
             var areas = svg.selectAll(".area-temperatura-mensual-minima")
                 .data([data]);
 
@@ -142,8 +156,6 @@ function temperaturaMensualMinima() {
                 .ease(d3.easeLinear)
                 .attr("d", area);
 
-
-
             var lines = svg.selectAll(".line-temperatura-mensual-minima")
                 .data([data])
 
@@ -151,6 +163,9 @@ function temperaturaMensualMinima() {
                 .duration(600)
                 .ease(d3.easeLinear)
                 .attr("d", line);
+
+            tooltipMin.data(data)
+                .html(function(d) { return "<p class='tooltip-media-mensual'>La temperatura máxima fue de <strong>" + d3.max(data, function(d) { return d.min }) + "ºC</strong> en <strong>" + d.yearmin; + "</strong></p>" });
 
             lines.exit()
                 .remove()
