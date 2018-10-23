@@ -175,7 +175,6 @@ function temperaturaMensualMinima() {
 
 
         });
-
     }
 
 }
