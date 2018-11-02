@@ -78,7 +78,7 @@ d3.csv('csv/heladas.csv', function(err, data) {
         .on("mouseover", function(d) {
             div.transition()
             div.style("opacity", 1)
-                .html('<p class="tooltipTropicales">En' + d.anyo + ' se registraron ' + d.diaTooltip + ' heladas.<p/>')
+                .html('<p class="tooltipTropicales">En ' + d.anyo + ' se registraron ' + d.diaTooltip + ' heladas.<p/>')
                 .style("left", (d3.event.pageX) - 50 + "px")
                 .style("top", (d3.event.pageY - 100) + "px");
         })
