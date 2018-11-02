@@ -1,0 +1,387 @@
+[
+  {
+    "fecha": "1941-13",
+    "lluvias": "410.4",
+    "dias_lluvia": "95.0"
+  },
+  {
+    "fecha": "1942-13",
+    "lluvias": "366.4",
+    "dias_lluvia": "67.0"
+  },
+  {
+    "fecha": "1943-13",
+    "lluvias": "283.5",
+    "dias_lluvia": "43.0"
+  },
+  {
+    "fecha": "1944-13",
+    "lluvias": "215.2",
+    "dias_lluvia": "60.0"
+  },
+  {
+    "fecha": "1945-13",
+    "lluvias": "298.9",
+    "dias_lluvia": "50.0"
+  },
+  {
+    "fecha": "1946-13",
+    "lluvias": "391.2",
+    "dias_lluvia": "66.0"
+  },
+  {
+    "fecha": "1947-13",
+    "lluvias": "407.1",
+    "dias_lluvia": "81.0"
+  },
+  {
+    "fecha": "1948-13",
+    "lluvias": "221.6",
+    "dias_lluvia": "64.0"
+  },
+  {
+    "fecha": "1949-13",
+    "lluvias": "293.3",
+    "dias_lluvia": "72.0"
+  },
+  {
+    "fecha": "1950-13",
+    "lluvias": "281.1",
+    "dias_lluvia": "57.0"
+  },
+  {
+    "fecha": "1951-13",
+    "lluvias": "416.2",
+    "dias_lluvia": "89.0"
+  },
+  {
+    "fecha": "1952-13",
+    "lluvias": "292.7",
+    "dias_lluvia": "84.0"
+  },
+  {
+    "fecha": "1953-13",
+    "lluvias": "393.3",
+    "dias_lluvia": "66.0"
+  },
+  {
+    "fecha": "1954-13",
+    "lluvias": "320.8",
+    "dias_lluvia": "59.0"
+  },
+  {
+    "fecha": "1955-13",
+    "lluvias": "335.1",
+    "dias_lluvia": "89.0"
+  },
+  {
+    "fecha": "1956-13",
+    "lluvias": "391.5",
+    "dias_lluvia": "73.0"
+  },
+  {
+    "fecha": "1957-13",
+    "lluvias": "308.4",
+    "dias_lluvia": "59.0"
+  },
+  {
+    "fecha": "1958-13",
+    "lluvias": "281.2",
+    "dias_lluvia": "68.0"
+  },
+  {
+    "fecha": "1959-13",
+    "lluvias": "646.8",
+    "dias_lluvia": "101.0"
+  },
+  {
+    "fecha": "1960-13",
+    "lluvias": "370.4",
+    "dias_lluvia": "98.0"
+  },
+  {
+    "fecha": "1961-13",
+    "lluvias": "359.1",
+    "dias_lluvia": "74.0"
+  },
+  {
+    "fecha": "1962-13",
+    "lluvias": "288.1",
+    "dias_lluvia": "64.0"
+  },
+  {
+    "fecha": "1963-13",
+    "lluvias": "294.3",
+    "dias_lluvia": "85.0"
+  },
+  {
+    "fecha": "1964-13",
+    "lluvias": "204.0",
+    "dias_lluvia": "60.0"
+  },
+  {
+    "fecha": "1965-13",
+    "lluvias": "302.6",
+    "dias_lluvia": "73.0"
+  },
+  {
+    "fecha": "1966-13",
+    "lluvias": "255.7",
+    "dias_lluvia": "63.0"
+  },
+  {
+    "fecha": "1967-13",
+    "lluvias": "201.0",
+    "dias_lluvia": "57.0"
+  },
+  {
+    "fecha": "1968-13",
+    "lluvias": "311.9",
+    "dias_lluvia": "77.0"
+  },
+  {
+    "fecha": "1969-13",
+    "lluvias": "470.4",
+    "dias_lluvia": "95.0"
+  },
+  {
+    "fecha": "1970-13",
+    "lluvias": "247.0",
+    "dias_lluvia": "57.0"
+  },
+  {
+    "fecha": "1971-13",
+    "lluvias": "454.5",
+    "dias_lluvia": "89.0"
+  },
+  {
+    "fecha": "1972-13",
+    "lluvias": "415.9",
+    "dias_lluvia": "88.0"
+  },
+  {
+    "fecha": "1973-13",
+    "lluvias": "221.0",
+    "dias_lluvia": "57.0"
+  },
+  {
+    "fecha": "1974-13",
+    "lluvias": "403.0",
+    "dias_lluvia": "67.0"
+  },
+  {
+    "fecha": "1975-13",
+    "lluvias": "323.8",
+    "dias_lluvia": "75.0"
+  },
+  {
+    "fecha": "1976-13",
+    "lluvias": "279.8",
+    "dias_lluvia": "72.0"
+  },
+  {
+    "fecha": "1977-13",
+    "lluvias": "405.0",
+    "dias_lluvia": "96.0"
+  },
+  {
+    "fecha": "1978-13",
+    "lluvias": "186.8",
+    "dias_lluvia": "73.0"
+  },
+  {
+    "fecha": "1979-13",
+    "lluvias": "280.9",
+    "dias_lluvia": "77.0"
+  },
+  {
+    "fecha": "1980-13",
+    "lluvias": "269.1",
+    "dias_lluvia": "62.0"
+  },
+  {
+    "fecha": "1981-13",
+    "lluvias": "258.0",
+    "dias_lluvia": "68.0"
+  },
+  {
+    "fecha": "1982-13",
+    "lluvias": "366.5",
+    "dias_lluvia": "82.0"
+  },
+  {
+    "fecha": "1983-13",
+    "lluvias": "269.2",
+    "dias_lluvia": "59.0"
+  },
+  {
+    "fecha": "1984-13",
+    "lluvias": "351.1",
+    "dias_lluvia": "86.0"
+  },
+  {
+    "fecha": "1985-13",
+    "lluvias": "250.5",
+    "dias_lluvia": "77.0"
+  },
+  {
+    "fecha": "1986-13",
+    "lluvias": "426.3",
+    "dias_lluvia": "89.0"
+  },
+  {
+    "fecha": "1987-13",
+    "lluvias": "364.0",
+    "dias_lluvia": "87.0"
+  },
+  {
+    "fecha": "1988-13",
+    "lluvias": "369.7",
+    "dias_lluvia": "78.0"
+  },
+  {
+    "fecha": "1989-13",
+    "lluvias": "260.5",
+    "dias_lluvia": "82.0"
+  },
+  {
+    "fecha": "1990-13",
+    "lluvias": "341.4",
+    "dias_lluvia": "79.0"
+  },
+  {
+    "fecha": "1991-13",
+    "lluvias": "337.0",
+    "dias_lluvia": "82.0"
+  },
+  {
+    "fecha": "1992-13",
+    "lluvias": "278.5",
+    "dias_lluvia": "85.0"
+  },
+  {
+    "fecha": "1993-13",
+    "lluvias": "261.4",
+    "dias_lluvia": "84.0"
+  },
+  {
+    "fecha": "1994-13",
+    "lluvias": "231.5",
+    "dias_lluvia": "63.0"
+  },
+  {
+    "fecha": "1995-13",
+    "lluvias": "182.9",
+    "dias_lluvia": "74.0"
+  },
+  {
+    "fecha": "1996-13",
+    "lluvias": "391.2",
+    "dias_lluvia": "99.0"
+  },
+  {
+    "fecha": "1997-13",
+    "lluvias": "480.9",
+    "dias_lluvia": "100.0"
+  },
+  {
+    "fecha": "1998-13",
+    "lluvias": "184.1",
+    "dias_lluvia": "88.0"
+  },
+  {
+    "fecha": "1999-13",
+    "lluvias": "311.3",
+    "dias_lluvia": "92.0"
+  },
+  {
+    "fecha": "2000-13",
+    "lluvias": "375.1",
+    "dias_lluvia": "88.0"
+  },
+  {
+    "fecha": "2001-13",
+    "lluvias": "227.5",
+    "dias_lluvia": "70.0"
+  },
+  {
+    "fecha": "2002-13",
+    "lluvias": "471.9",
+    "dias_lluvia": "98.0"
+  },
+  {
+    "fecha": "2003-13",
+    "lluvias": "435.2",
+    "dias_lluvia": "96.0"
+  },
+  {
+    "fecha": "2004-13",
+    "lluvias": "327.6",
+    "dias_lluvia": "88.0"
+  },
+  {
+    "fecha": "2005-13",
+    "lluvias": "273.3",
+    "dias_lluvia": "72.0"
+  },
+  {
+    "fecha": "2006-13",
+    "lluvias": "311.6",
+    "dias_lluvia": "74.0"
+  },
+  {
+    "fecha": "2007-13",
+    "lluvias": "420.0",
+    "dias_lluvia": "78.0"
+  },
+  {
+    "fecha": "2008-13",
+    "lluvias": "413.4",
+    "dias_lluvia": "103.0"
+  },
+  {
+    "fecha": "2009-13",
+    "lluvias": "222.6",
+    "dias_lluvia": "77.0"
+  },
+  {
+    "fecha": "2010-13",
+    "lluvias": "266.5",
+    "dias_lluvia": "91.0"
+  },
+  {
+    "fecha": "2011-13",
+    "lluvias": "318.5",
+    "dias_lluvia": "77.0"
+  },
+  {
+    "fecha": "2012-13",
+    "lluvias": "260.9",
+    "dias_lluvia": "76.0"
+  },
+  {
+    "fecha": "2013-13",
+    "lluvias": "382.7",
+    "dias_lluvia": "108.0"
+  },
+  {
+    "fecha": "2014-13",
+    "lluvias": "317.6",
+    "dias_lluvia": "98.0"
+  },
+  {
+    "fecha": "2015-13",
+    "lluvias": "336.5",
+    "dias_lluvia": "82.0"
+  },
+  {
+    "fecha": "2016-13",
+    "lluvias": "361.5",
+    "dias_lluvia": "83.0"
+  },
+  {
+    "fecha": "2017-13",
+    "lluvias": "272.7",
+    "dias_lluvia": "61.0"
+  }
+]
