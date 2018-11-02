@@ -41,4 +41,16 @@ Obteniendo el record de máximas y minimas de todos los días el script esta en 
 
 ```
 jq ['.[] | {"fecha": .fecha, "maxima": .tmax, "minima": .tmin, "año": .fecha}'] 9434-total-diario.json > max-min.json
-``
+```
+
+Obteniendo del resumen anual solo el global que representa a los totales de todo el año
+
+```
+jq --raw-output ['.[]  | select(.fecha | contains("-13")) '] 9434-anual.json > 9434-13.json
+```
+
+Ahora solo nos quedamos con la fecha, lluvias y con los días de lluvia superior a 0.1mm
+
+```
+jq --raw-output ['.[] | {"fecha": .fecha, "lluvias": .p_mes, "dias_lluvia": .np_001}'] 9434-13.json > lluvias-anuales.json
+```
