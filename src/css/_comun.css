@@ -83,10 +83,6 @@ svg {
     font-family: var(--roboto);
 }
 
-.legend-text {
-    font-size: 1rem;
-}
-
 .tropicales,
 .heladas {
     position: relative;
@@ -304,7 +300,6 @@ svg {
         stroke: none;
     }
 }
-
 
 .xAxisTemperaturaMM,
 .yAxisTemperaturaMMinima {
