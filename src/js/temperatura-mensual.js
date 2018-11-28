@@ -159,7 +159,7 @@ function temperaturaMensual() {
                 .attr("d", line);
 
             tooltipMax.data(data)
-                .html(function(d) { return "<p class='tooltip-media-mensual'>La temperatura máxima fue de <strong>" + d3.max(data, function(d) { return d.max }) + "ºC</strong> en <strong>" + d.yearmin; + "</strong></p>" });
+                .html(function(d) { return "<p class='tooltip-media-mensual'>La temperatura máxima fue de <strong>" + d3.max(data, function(d) { return d.max }) + "ºC</strong> en <strong>" + d.yearmax; + "</strong></p>" });
 
             lines.exit()
                 .remove()
