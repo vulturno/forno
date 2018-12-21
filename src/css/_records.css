@@ -168,7 +168,7 @@
     width: calc(100% - 50px);
     font-size: 14px;
     font-weight: normal;
-    font-family: var(--montserrat);
+    font-family: var(--h1);
     padding-left: .5rem;
 }
 
@@ -186,7 +186,7 @@
 .recomendaciones-subtitle {
     color: var(--impureBlack);
     border-radius: 5px;
-    font-family: var(--montserrat);
+    font-family: var(--h1);
     font-size: 1rem;
     max-width: 40vw;
 }

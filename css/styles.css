@@ -1,3 +1,365 @@
+/*! normalize.css v9.0.1 | MIT License | github.com/csstools/normalize.css */
+
+/* Document
+ * ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+ * ========================================================================== */
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+ * ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * Add the correct display in IE.
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+ * ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * Add the correct text decoration in Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/* Embedded content
+ * ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+
+img {
+  border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Forms
+ * ========================================================================== */
+
+/**
+ * Remove the margin in Safari.
+ */
+
+button,
+input,
+select {
+  margin: 0;
+}
+
+/**
+ * 1. Show the overflow in IE.
+ * 2. Remove the inheritance of text transform in Edge, Firefox, and IE.
+ */
+
+button {
+  overflow: visible; /* 1 */
+  text-transform: none; /* 2 */
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * Show the overflow in Edge and IE.
+ */
+
+input {
+  overflow: visible;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * 1. Add the correct display in Edge and IE.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+
+/**
+ * Remove the inheritance of text transform in Firefox.
+ */
+
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Remove the margin in Firefox and Safari.
+ * 2. Remove the default vertical scrollbar in IE.
+ */
+
+textarea {
+  margin: 0; /* 1 */
+  overflow: auto; /* 2 */
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Safari.
+ */
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ */
+
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54;
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/**
+ * Remove the inner border and padding of focus outlines in Firefox.
+ */
+
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus outline styles unset by the previous rule in Firefox.
+ */
+
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/* Interactive
+ * ========================================================================== */
+
+/*
+ * Add the correct display in Edge and IE.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct styles in Edge, IE, and Safari.
+ */
+
+dialog {
+  background-color: white;
+  border: solid;
+  color: black;
+  display: block;
+  height: -moz-fit-content;
+  height: -webkit-fit-content;
+  height: fit-content;
+  left: 0;
+  margin: auto;
+  padding: 1em;
+  position: absolute;
+  right: 0;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+}
+
+dialog:not([open]) {
+  display: none;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Scripting
+ * ========================================================================== */
+
+/**
+ * Add the correct display in IE.
+ */
+
+template {
+  display: none;
+}
+
+/* User interaction
+ * ========================================================================== */
+
+/**
+ * Add the correct display in IE 10-.
+ */
+
+[hidden] {
+  display: none;
+}
+
 /*
   Base CSS por Jorge Aznar
   http://jorgeatgu.com
@@ -73,7 +435,7 @@ main { /* 1 */
  */
 
 figure {
-  margin: 1em 2.5rem;
+  margin: 1em 40px;
 }
 
 /**
@@ -451,61 +813,76 @@ template {
   display: none;
 }
 
-* {
-    font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
-    line-height: 1.3;
-    box-sizing: border-box;
+:root {
+    --fontSystem: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
+    --monospace: 'SFMono-Regular', Consolas, Menlo, Courier, monospace;
+    --roboto: 'Roboto Condensed', sans-serif;
+    --h1: 'Playfair Display', serif;
+    --text: 'Merriweather', serif;
+    --background: #dde8e0;
+    --barColor: #642626;
+    --impureBlack: #111;
+    --impureGrey: #ccc;
+    --gradient1: #fcde9c;
+    --gradient2: #e34f6f;
+    --gradient3: #7c1d6f;
+    --legendBgc: #ece5b3;
+    --legendTxt: #10174e;
+    --btnMinBgc: #053584;
+    --btnMinTxt: #d2f6fd;
+    --bgcTooltip: #172f6e;
+    --textTooltip: #f5d391;
+    --white: #fff;
+    --impureWhite: #f1f1f1;
+    --midnight: #2d113a;
+    --mahogany: #60ebc1;
+    --midnightBlue: #07043c;
+    --screamGreen: #2fe94a;
+    --colorlinks: #7085ee;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-span,
-p {
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
+* {
+    line-height: 1.5;
+    box-sizing: border-box;
 }
 
 body {
     background: #dde8e0;
-}
-
-svg {
-    max-width: 1200px;
-    display: block;
-    margin: 0 auto;
+    background: var(--background);
 }
 
 .bold {
-    font-family: 'Roboto Condensed', sans-serif;
     font-weight: bold;
 }
 
-.montserrat {
-    font-family: 'Montserrat', sans-serif;
+.title {
+    font-family: 'Playfair Display', serif;
+    font-family: var(--h1);
 }
 
 .roboto {
     font-family: 'Roboto Condensed', sans-serif;
+    font-family: var(--roboto);
 }
 
 .system-font {
     font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
+    font-family: var(--fontSystem);
 }
 
 .monospace {
     font-family: 'SFMono-Regular', Consolas, Menlo, Courier, monospace;
+    font-family: var(--monospace);
 }
 
 .color-title-max {
     color: #07043c;
+    color: var(--midnightBlue);
 }
 
 .color-title-min {
     color: #f1f1f1;
+    color: var(--impureWhite);
 }
 
 .wrapper-vw,
@@ -514,12 +891,18 @@ svg {
     margin: 0 auto;
 }
 
+.chart-container {
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
 .subtitle {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Playfair Display', serif;
+    font-family: var(--h1);
     color: #072a12;
     font-weight: bold;
-    font-size: 1.5rem;
-    margin: 0.31rem auto;
+    font-size: 24px;
+    margin: 5px auto;
     text-align: left;
 }
 
@@ -527,14 +910,17 @@ svg {
         content: '';
         display: block;
         border-bottom: 5px solid #e34f6f;
+        border-bottom: 5px solid var(--gradient2);
         width: 1em;
     }
 
 .texto,
 .legend-text {
-    font-size: 1.13rem;
+    font-size: 1rem;
     color: #111;
-    font-family: 'Roboto Condensed', sans-serif;
+    color: var(--impureBlack);
+    font-family: 'Merriweather', serif;
+    font-family: var(--text);
 }
 
 .tropicales,
@@ -546,11 +932,6 @@ svg {
 .tropicales .wrapper-vw, .heladas .wrapper-vw {
         margin-bottom: 0;
     }
-
-.chart-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
 .tropicales-text {
     text-align: left;
@@ -573,11 +954,11 @@ svg {
 .temperatura-mensual-select,
 .temperatura-mensual-minima-select {
     border-radius: 5px;
-    padding: 0.63rem;
+    padding: 10px;
     border: 1px solid #ddd;
     max-width: 10rem;
     background-color: #f1f1f1;
-    margin: 1.56rem 0;
+    margin: 25px 0;
 }
 
 .lluvias-por-mes-select select, .temperatura-mensual-select select, .temperatura-mensual-minima-select select {
@@ -605,7 +986,7 @@ svg {
     position: absolute;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    padding: 0.31rem 0.94rem;
+    padding: 5px 15px;
     border-left: 5px solid #34009c;
     background-color: #F3F3F3;
     box-shadow: 0 3px 4px rgba(0, 0, 0, .2);
@@ -638,7 +1019,8 @@ svg {
 
 .data-viz-title {
     font-size: 1.5rem;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Playfair Display', serif;
+    font-family: var(--h1);
     font-weight: bold;
     text-align: center;
 }
@@ -653,7 +1035,8 @@ svg {
 .data-viz-subtitle {
     font-size: 1rem;
     font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Playfair Display', serif;
+    font-family: var(--h1);
     color: #111;
     margin: .25rem 0;
     text-align: left;
@@ -668,6 +1051,7 @@ svg {
 .data-viz-element-txt {
     font-size: 1rem;
     font-family: 'Roboto Condensed', sans-serif;
+    font-family: var(--roboto);
     line-height: 1.3;
     text-align: left;
     margin-top: .25rem;
@@ -676,7 +1060,8 @@ svg {
 
 .tick text {
     font-family: 'Roboto Condensed', sans-serif !important;
-    font-size: 0.88rem !important;
+    font-family: var(--roboto) !important;
+    font-size: 14px !important;
 }
 
 .temperatura-mensual-minima-chart-container {
@@ -690,6 +1075,7 @@ svg {
 .tooltip-media-mensual {
     font-size: 1rem;
     font-family: 'Roboto Condensed', sans-serif;
+    font-family: var(--roboto);
     margin: 0;
 }
 
@@ -714,6 +1100,7 @@ svg {
         margin: 0;
         color: #fff;
         font-family: 'Roboto Condensed', sans-serif;
+        font-family: var(--roboto);
         display: inline-block;
     }
 
@@ -728,6 +1115,7 @@ svg {
 
 .legend-top {
     font-family: 'Roboto Condensed', sans-serif;
+    font-family: var(--roboto);
 }
 
 .area-temperatura-mensual {
@@ -754,6 +1142,10 @@ svg {
     }
 
 .xAxisTemperaturaMM .domain, .yAxisTemperaturaMMinima .domain {
+        stroke: none;
+    }
+
+.scatter-inputs path {
         stroke: none;
     }
 
@@ -846,6 +1238,7 @@ svg {
 .burger.clicked span:before,
 .burger.clicked span:after {
   background-color: #fff;
+  background-color: var(--white);
 }
 
 .burger:hover {
@@ -857,6 +1250,7 @@ svg {
 
 .navegacion {
   background-color: #e34f6f;
+  background-color: var(--gradient2);
   position: fixed;
   z-index: 9;
   top: 0;
@@ -925,14 +1319,16 @@ svg {
   transform: translateX(40px);
   opacity: 0;
   color: #111;
-  font-family: 'Montserrat', sans-serif;
+  color: var(--impureBlack);
+  font-family: 'Playfair Display', serif;
+  font-family: var(--h1);
   text-decoration: none;
   text-transform: uppercase;
   font-size: 1.5rem;
   display: block;
-  letter-spacing: 0.06rem;
+  letter-spacing: 1px;
   font-weight: 600;
-  padding: 0.63rem 0;
+  padding: 10px 0;
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
 
@@ -985,7 +1381,8 @@ svg {
 .menu--inola .menu__item-name {
     padding: 0 .25rem;
     color: #00032d;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Playfair Display', serif;
+    font-family: var(--h1);
 }
 
 .menu--inola .menu__item-name:before {
@@ -1011,21 +1408,24 @@ svg {
 
 .grid-intro {
     background: linear-gradient(150deg, #fcde9c 15%, #e34f6f 70%, #7c1d6f 94%);
-    padding: 1.25rem;
+    background: linear-gradient(150deg, var(--gradient1) 15%, var(--gradient2) 70%, var(--gradient3) 94%);
+    padding: 20px;
 }
 
 .title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 4.38rem;
+    font-family: 'Playfair Display', serif;
+    font-family: var(--h1);
+    font-size: 70px;
     font-weight: bold;
     color: #000;
-    margin: 0.31rem 0;
+    margin: 5px 0;
 }
 
 .title:after {
         content: '';
         display: block;
         border-bottom: 1px solid #111;
+        border-bottom: 1px solid var(--impureBlack);
         width: .6em;
     }
 
@@ -1033,31 +1433,35 @@ svg {
         content: '';
         display: block;
         border-bottom: 1px solid #111;
+        border-bottom: 1px solid var(--impureBlack);
         width: .6em;
     }
 
 .clima-intro {
     position: relative;
-    padding: 1.25rem;
+    padding: 20px;
 }
 
 .clima-subtitle {
-    font-size: 1.5rem;
-    margin: 0.31rem 0;
+    font-size: 24px;
+    margin: 5px 0;
 }
 
 .clima-pie {
     font-size: 1rem;
     font-family: 'Roboto Condensed', sans-serif;
+    font-family: var(--roboto);
     margin-top: 16px;
     color: #111;
+    color: var(--impureBlack);
     display: block;
     text-align: center;
 }
 
 .clima-legend {
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 1.13rem;
+    font-family: var(--roboto);
+    font-size: 18px;
 }
 
 .clima-link {
@@ -1089,7 +1493,7 @@ svg {
 }
 
 .textoBarras text, .xAxis text, .yAxis text, .yAxisLluvia text {
-        font-size: 0.75rem;
+        font-size: 12px;
         font-weight: bold;
     }
 
@@ -1109,6 +1513,7 @@ path {
     margin-left: 10px;
     padding: .5rem .75rem;
     background: #172f6e;
+    background: var(--bgcTooltip);
     border-radius: 4px;
     box-shadow: 0 2px 9px 0 rgba(0, 0, 0, .2);
 }
@@ -1149,8 +1554,8 @@ path {
 .tooltipRect,
 .tooltipTemp {
     font-weight: bold;
-    font-size: 0.88rem;
-    margin: 0 0 0.31rem;
+    font-size: 14px;
+    margin: 0 0 5px;
 
 }
 
@@ -1166,10 +1571,11 @@ path {
 
 .input-update-grafica {
     border: 1px solid #111;
+    border: 1px solid var(--impureBlack);
     height: 50px;
     max-width: 50px;
     box-sizing: border-box;
-    padding: 0 0.63rem;
+    padding: 0 10px;
     display: inline-block;
 }
 
@@ -1179,7 +1585,7 @@ path {
 }
 
 .container-buttons {
-    padding: 1.25rem;
+    padding: 20px;
 }
 
 .btn-update-max,
@@ -1239,7 +1645,7 @@ path {
     color: #eafd8e;
     position: relative;
     font-weight: bold;
-    letter-spacing: 0.06rem;
+    letter-spacing: 1px;
     z-index: 1;
     -webkit-backface-visibility: hidden;
     -moz-osx-font-smoothing: grayscale;
@@ -1280,10 +1686,12 @@ path {
 .chart-tropicales .tick line, .chart-heladas .tick line {
                 stroke-dasharray: 0;
                 stroke: #111;
+                stroke: var(--impureBlack);
             }
 
 .chart-tropicales .tooltip, .chart-heladas .tooltip {
         background-color: #ccc;
+        background-color: var(--impureGrey);
     }
 
 .chart-tropicales .xAxis line,
@@ -1296,8 +1704,8 @@ path {
 .tooltipHeladas,
 .tooltipTropicales {
     font-weight: bold;
-    font-size: 0.88rem;
-    margin: 0 0 0.31rem;
+    font-size: 14px;
+    margin: 0 0 5px;
     color: #fff;
 }
 
@@ -1313,6 +1721,7 @@ path {
         fill: #E8336D;
         font-weight: bold;
         font-family: 'Roboto Condensed', sans-serif;
+        font-family: var(--roboto);
     }
 
 .chart-tropicales .annotation-subject path {
@@ -1358,7 +1767,7 @@ path {
     }
 
 .chart-lluvias-recogida .tick text {
-            font-size: 0.75rem;
+            font-size: 12px;
             font-weight: bold;
         }
 
@@ -1376,6 +1785,7 @@ path {
 
 .tooltip-lluvias .tooltipYear {
         color: #fff;
+        color: var(--white);
         font-size: 1.1rem;
         font-weight: normal;
         max-width: 300px;
@@ -1389,6 +1799,7 @@ path {
 .tooltip-lluvias .tooltipYear span {
             font-weight: bold;
             font-family: 'SFMono-Regular', Consolas, Menlo, Courier, monospace;
+            font-family: var(--monospace);
         }
 
 .heladas-text {
@@ -1408,8 +1819,9 @@ path {
 
 .tabla-record {
     display: none;
-    padding: 1.25rem 0;
+    padding: 20px 0;
     border: 1px solid #ccc;
+    border: 1px solid var(--impureGrey);
     text-align: center;
 }
 
@@ -1427,18 +1839,21 @@ path {
 
 .label-record {
     display: inline-block;
-    margin: 0 0 -0.06rem;
-    padding: 0.13rem;
+    margin: 0 0 -1px;
+    padding: 2px;
     font-weight: 600;
-    font-size: 0.88rem;
+    font-size: 14px;
     text-align: center;
     color: #ccc;
+    color: var(--impureGrey);
     border: 1px solid #ccc;
+    border: 1px solid var(--impureGrey);
     width: 20%;
 }
 
 .label-record:hover {
         color: #111;
+        color: var(--impureBlack);
         cursor: pointer;
     }
 
@@ -1452,10 +1867,15 @@ path {
 
 .input-record:checked + .label-record {
     color: #111;
+    color: var(--impureBlack);
     border: 1px solid #ccc;
+    border: 1px solid var(--impureGrey);
     border-top: 5px solid #e34f6f;
+    border-top: 5px solid var(--gradient2);
     border-bottom: 1px solid #f1f1f1;
+    border-bottom: 1px solid var(--impureWhite);
     background-color: #f1f1f1;
+    background-color: var(--impureWhite);
 }
 
 #tab1:checked ~ .contenido1,
@@ -1472,13 +1892,15 @@ path {
 #tab12:checked ~ .contenido12 {
     display: block;
     background-color: #f1f1f1;
+    background-color: var(--impureWhite);
 }
 
 .grid-text,
 .grid-text-bold {
     display: block;
-    padding: 0.63rem 0;
+    padding: 10px 0;
     font-family: 'Roboto Condensed', sans-serif;
+    font-family: var(--roboto);
 }
 
 .grid-text:not(:last-child), .grid-text-bold:not(:last-child) {
@@ -1491,16 +1913,18 @@ path {
 
 .grid-title {
     border-bottom: 1px solid #ccc;
-    padding: 0.63rem;
+    padding: 10px;
     margin: 0;
 }
 
 .grid-title-min {
     background-color: #053584;
+    background-color: var(--btnMinBgc);
 }
 
 .grid-title-max {
     background-color: #e34f6f;
+    background-color: var(--gradient2);
 }
 
 .tabla-record-header {
@@ -1511,7 +1935,7 @@ path {
 
 .tabla-record-header-text {
     display: inline-block;
-    font-size: 1.88rem;
+    font-size: 30px;
     margin-bottom: 10px;
     width: 90%;
     text-align: left;
@@ -1571,9 +1995,10 @@ path {
     display: inline-block;
     vertical-align: middle;
     width: calc(100% - 50px);
-    font-size: 0.88rem;
+    font-size: 14px;
     font-weight: normal;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Playfair Display', serif;
+    font-family: var(--h1);
     padding-left: .5rem;
 }
 
@@ -1591,8 +2016,10 @@ path {
 
 .recomendaciones-subtitle {
     color: #111;
+    color: var(--impureBlack);
     border-radius: 5px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Playfair Display', serif;
+    font-family: var(--h1);
     font-size: 1rem;
     max-width: 40vw;
 }
@@ -1607,6 +2034,7 @@ path {
 .footer-links {
     color: var(--black);
     font-family: 'Roboto Condensed', sans-serif;
+    font-family: var(--roboto);
     font-size: 1rem;
 }
 
@@ -1616,6 +2044,7 @@ path {
 
 .temperatura-media-chart-graph .line {
         fill: #e34f6f;
+        fill: var(--gradient2);
         stroke: none;
     }
 
@@ -1625,11 +2054,12 @@ path {
 
 .temperatura-media-chart-graph .tick text {
             font-weight: bold;
-            font-size: 0.75rem;
+            font-size: 12px;
         }
 
 .temperatura-media-chart-graph .tick line {
             stroke: #111;
+            stroke: var(--impureBlack);
         }
 
 .temperatura-media-chart-graph .overlay {
@@ -1643,7 +2073,7 @@ path {
     }
 
 .temperatura-media-chart-graph .text-focus {
-        font-size: 0.88rem;
+        font-size: 14px;
         font-weight: bold;
     }
 
@@ -1660,7 +2090,7 @@ path {
     }
 
     .title {
-        font-size: 6.25rem;
+        font-size: 100px;
     }
 
     .container-texto {
@@ -1678,23 +2108,23 @@ path {
     }
 
     .clima-subtitle {
-        font-size: 2rem;
+        font-size: 32px;
         width: 100%;
     }
 
     .subtitle {
-        font-size: 2rem;
-        margin: 1.56rem auto;
+        font-size: 32px;
+        margin: 25px auto;
         white-space: nowrap;
     }
 
     .container-buttons {
         text-align: center;
-        padding: 0.31rem;
+        padding: 5px;
     }
 
     .label-record {
-        padding: 0.94rem;
+        padding: 15px;
         width: auto;
     }
         .label-record:nth-of-type(4n+1) {
@@ -1711,7 +2141,7 @@ path {
 
     .grid-text,
     .grid-text-bold {
-        padding: 0.5rem;
+        padding: 8px;
     }
 
     .temp-max-graph {
@@ -1736,7 +2166,7 @@ path {
     }
 
     .margin-section {
-        margin: 4rem auto;
+        margin: 64px auto;
     }
 
     .tabs-maximas-minimas {

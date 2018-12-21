@@ -1,38 +1,18 @@
 * {
-    font-family: var(--fontSystem);
-    line-height: 1.3;
+    line-height: 1.5;
     box-sizing: border-box;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-span,
-p {
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
 }
 
 body {
     background: var(--background);
 }
 
-svg {
-    max-width: 1200px;
-    display: block;
-    margin: 0 auto;
-}
-
 .bold {
-    font-family: var(--roboto);
     font-weight: bold;
 }
 
-.montserrat {
-    font-family: var(--montserrat);
+.title {
+    font-family: var(--h1);
 }
 
 .roboto {
@@ -61,8 +41,13 @@ svg {
     margin: 0 auto;
 }
 
+.chart-container {
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
 .subtitle {
-    font-family: var(--montserrat);
+    font-family: var(--h1);
     color: #072a12;
     font-weight: bold;
     font-size: 24px;
@@ -78,9 +63,9 @@ svg {
 
 .texto,
 .legend-text {
-    font-size: 18px;
+    font-size: 1rem;
     color: var(--impureBlack);
-    font-family: var(--roboto);
+    font-family: var(--text);
 }
 
 .tropicales,
@@ -90,11 +75,6 @@ svg {
     .wrapper-vw {
         margin-bottom: 0;
     }
-}
-
-.chart-container {
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .tropicales-text {
@@ -162,7 +142,7 @@ svg {
 }
 
 .tooltip-lluvia-mes {
-    font-size: 16px;
+    font-size: 1rem;
     color: #34009c;
 }
 
@@ -185,7 +165,7 @@ svg {
 
 .data-viz-title {
     font-size: 1.5rem;
-    font-family: var(--montserrat);
+    font-family: var(--h1);
     font-weight: bold;
     text-align: center;
 }
@@ -200,7 +180,7 @@ svg {
 .data-viz-subtitle {
     font-size: 1rem;
     font-weight: bold;
-    font-family: var(--montserrat);
+    font-family: var(--h1);
     color: #111;
     margin: .25rem 0;
     text-align: left;
@@ -304,6 +284,12 @@ svg {
 .xAxisTemperaturaMM,
 .yAxisTemperaturaMMinima {
     .domain {
+        stroke: none;
+    }
+}
+
+.scatter-inputs {
+    path {
         stroke: none;
     }
 }

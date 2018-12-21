@@ -106,7 +106,7 @@
     }
 
     .navegacion-btn {
-        font-size: 16px;
+        font-size: 1rem;
         &:not(:last-child) {
             padding-right: 16px;
         }

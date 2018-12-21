@@ -9,7 +9,7 @@
 }
 
 .clima-pie {
-    font-size: 16px;
+    font-size: 1rem;
     font-family: var(--roboto);
     margin-top: 16px;
     color: var(--impureBlack);
