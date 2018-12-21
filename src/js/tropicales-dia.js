@@ -116,8 +116,16 @@ d3.csv('csv/tropicales-por-dia.csv', function(err, data) {
                 .duration(4000)
                 .style("opacity", 0);
         })
+        .attr("cx", function(d) {
+            return xRangeTD(d.year);
+        })
+        .attr("cy", 0)
+        .attr('fill-opacity', 1)
         .transition()
-        .duration(1000)
+        .delay(function(d, i) {
+            return i * 10
+        })
+        .duration(300)
         .attr("cx", function(d) {
             return xRangeTD(d.year);
         })

@@ -2,6 +2,7 @@ const dedicatoria = 'Dedicado a Maria del Carmen Tobajas Urieta y Agustín Aznar
     console.log(dedicatoria);
 const temp = "ºC";
 
+
 function menu() {
     var overlay = document.querySelector('.overlay');
     var navigation = document.querySelector('.navegacion');
@@ -149,6 +150,12 @@ const scatterInput = () => {
             .transition()
             .duration(600)
             .ease(d3.easeLinear)
+            .attr("cx", d => scales.count.x(d.year))
+            .attr("cy", (d, i) => i * (Math.random() * i))
+            .attr('fill-opacity', 1)
+            .transition()
+            .delay((d, i) => i * 10)
+            .duration(300)
             .attr("cx", d => scales.count.x(d.year))
             .attr("cy", d => scales.count.y(d.minima))
             .attr("r", 6)
