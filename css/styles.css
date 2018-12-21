@@ -818,7 +818,7 @@ template {
     --monospace: 'SFMono-Regular', Consolas, Menlo, Courier, monospace;
     --roboto: 'Roboto Condensed', sans-serif;
     --h1: 'Playfair Display', serif;
-    --text: 'Merriweather', serif;
+    --text: 'Roboto', sans-serif;
     --background: #dde8e0;
     --barColor: #642626;
     --impureBlack: #111;
@@ -919,7 +919,7 @@ body {
     font-size: 1rem;
     color: #111;
     color: var(--impureBlack);
-    font-family: 'Merriweather', serif;
+    font-family: 'Roboto', sans-serif;
     font-family: var(--text);
 }
 
