@@ -1,17 +1,20 @@
-.temperatura-media-chart-graph {
+.temperatura-media {
+    .area-anual {
+        fill: #e34f6f;
+        stroke: none;
+    }
     .line {
         fill: var(--gradient2);
         stroke: none;
     }
-    .x-axis,
-    .y-axis {
+    .axis-x,
+    .axis-y {
         .domain {
             stroke: none;
         }
     }
     .tick {
         text {
-            font-weight: bold;
             font-size: 12px;
         }
         line {
@@ -27,7 +30,8 @@
         stroke: #30155d;
     }
     .text-focus {
-        font-size: 14px;
+        font-size: 1rem;
+        font-family: var(--roboto);
         font-weight: bold;
     }
 }

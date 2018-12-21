@@ -3,7 +3,6 @@ var xRangeTD;
 var yRangeTD;
 var xAxisTD;
 var yAxisTD;
-var temp = "ºC";
 var barPadding = 2;
 
 var margin = { top: 50, right: 50, bottom: 50, left: 110 },

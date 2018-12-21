@@ -2042,38 +2042,44 @@ path {
     font-weight: bold;
 }
 
-.temperatura-media-chart-graph .line {
+.temperatura-media .area-anual {
+        fill: #e34f6f;
+        stroke: none;
+    }
+
+.temperatura-media .line {
         fill: #e34f6f;
         fill: var(--gradient2);
         stroke: none;
     }
 
-.temperatura-media-chart-graph .x-axis .domain, .temperatura-media-chart-graph .y-axis .domain {
+.temperatura-media .axis-x .domain, .temperatura-media .axis-y .domain {
             stroke: none;
         }
 
-.temperatura-media-chart-graph .tick text {
-            font-weight: bold;
+.temperatura-media .tick text {
             font-size: 12px;
         }
 
-.temperatura-media-chart-graph .tick line {
+.temperatura-media .tick line {
             stroke: #111;
             stroke: var(--impureBlack);
         }
 
-.temperatura-media-chart-graph .overlay {
+.temperatura-media .overlay {
       fill: none;
       pointer-events: all;
     }
 
-.temperatura-media-chart-graph .circle-focus {
+.temperatura-media .circle-focus {
         fill: #30155d;
         stroke: #30155d;
     }
 
-.temperatura-media-chart-graph .text-focus {
-        font-size: 14px;
+.temperatura-media .text-focus {
+        font-size: 1rem;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-family: var(--roboto);
         font-weight: bold;
     }
 
