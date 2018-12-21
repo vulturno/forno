@@ -1,14 +1,13 @@
 {
-  "name": "base",
+  "name": "base-d3",
   "version": "2.0.0",
-  "description": "Base para cualquier proyecto de Jorge Aznar, front/designer en Zaragoza ⦉ http://jorgeatgu.com ⦊",
+  "description": "Base para cualquier proyecto de visualización de datos | Jorge Aznar {civic/data/designer} https://jorgeatgu.com",
   "main": "gulpfile.js",
   "repository": "jorgeatgu/base",
   "keywords": [
-    "css",
-    "postcss",
-    "gulp",
-    "init"
+    "init",
+    "d3",
+    "dataViz"
   ],
   "author": "Jorge Aznar",
   "lint-staged": {
@@ -18,38 +17,34 @@
   "scripts": {
     "server-on": "browser-sync start --server --files '*.css, *.html' --tunnel jorgeatgu",
     "lint-staged": "lint-staged",
-    "inline:css": "gulp inline",
-    "remove:uncss": "gulp remove"
+    "build:release": "gulp build"
   },
   "license": "MIT",
   "devDependencies": {
-    "browser-sync": "^2.18.13",
-    "d3-svg-annotation": "^1.18.1",
+    "@babel/preset-env": "^7.1.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.26.3",
+    "debounce": "^1.2.0",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^8.0.0",
     "gulp-cssnano": "^2.1.2",
-    "gulp-imagemin": "^3.3.0",
-    "gulp-inline-source": "^3.1.0",
+    "gulp-imagemin": "^5.0.3",
     "gulp-newer": "^1.3.0",
     "gulp-notify": "^3.0.0",
-    "gulp-postcss": "^7.0.0",
+    "gulp-postcss": "^8.0.0",
     "gulp-sourcemaps": "^2.6.0",
-    "gulp-uglify": "^3.0.0",
-    "gulp-uncss": "^1.0.6",
-    "gulp-webp": "^2.3.0",
-    "lint-staged": "^4.0.2",
-    "postcss-custom-properties": "^6.1.0",
-    "postcss-custom-selectors": "^4.0.1",
-    "postcss-import": "^10.0.0",
-    "postcss-nested": "^2.0.4",
-    "postcss-pxtorem": "^4.0.1",
-    "postcss-reporter": "^4.0.0",
-    "postcss-sorting": "^3.0.1",
+    "gulp-terser": "^1.1.5",
+    "lint-staged": "^8.1.0",
+    "postcss-custom-properties": "^8.0.8",
+    "postcss-custom-selectors": "^5.1.2",
+    "postcss-import": "^12.0.1",
+    "postcss-nested": "^4.1.0",
+    "postcss-normalize": "^7.0.1",
+    "postcss-reporter": "^6.0.0",
+    "postcss-sorting": "^4.0.0",
     "pre-commit": "^1.2.2",
-    "stylelint": "^8.0.0"
-  },
-  "dependencies": {
-    "d3": "^4.13.0",
-    "lodash": "^4.17.4"
+    "stylelint": "^9.6.0"
   }
 }
