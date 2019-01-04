@@ -1501,10 +1501,9 @@ body {
         stroke: none;
     }
 
-path {
-    fill: none;
-    stroke: black;
-}
+.media-mensual-maxima-chart .domain, .media-mensual-minima-chart .domain {
+        stroke: none;
+    }
 
 .tooltip {
     position: absolute;

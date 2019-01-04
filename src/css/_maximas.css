@@ -32,9 +32,11 @@
     }
 }
 
-path {
-    fill: none;
-    stroke: black;
+.media-mensual-maxima-chart,
+.media-mensual-minima-chart {
+    .domain {
+        stroke: none;
+    }
 }
 
 .tooltip {
