@@ -1,6 +1,7 @@
 const dedicatoria = 'Dedicado a Maria del Carmen Tobajas Urieta y Agustín Aznar Gracia. Gracias por todo.';
     console.log(dedicatoria);
 const temp = "ºC";
+const widthMobile = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 
 
 function menu() {
@@ -559,3 +560,672 @@ const areaTooltip = () => {
 }
 
 areaTooltip()
+
+const mediaMensualMaxima = () => {
+
+    //Estructura similar a la que utilizan en algunos proyectos de pudding.cool
+    const margin = { top: 16, right: 16, bottom: 24, left: 32 };
+    let width = 0;
+    let height = 0;
+    const chart = d3.select('.media-mensual-maxima-chart');
+    const svg = chart.select('svg');
+    let scales = {};
+    const temp = "ºC";
+
+    //Escala para los ejes X e Y
+    const setupScales = () => {
+
+        const countX = d3.scaleTime()
+            .domain([1951, 2018]);
+
+
+        const countY = d3.scaleLinear()
+            .domain([0,20]);
+
+        scales.count = { x: countX, y: countY };
+
+    }
+
+    //Seleccionamos el contenedor donde irán las escalas y en este caso el area donde se pirntara nuestra gráfica
+    const setupElements = () => {
+
+        const g = svg.select('.media-mensual-maxima-container');
+
+        g.append('g').attr('class', 'axis axis-x');
+
+        g.append('g').attr('class', 'axis axis-y');
+
+        g.append('g').attr('class', 'media-mensual-maxima-container-bis');
+
+    }
+
+    //Actualizando escalas
+    const updateScales = (width, height) => {
+        scales.count.x.range([0, width]);
+        scales.count.y.range([height, 0]);
+    }
+
+    //Dibujando ejes
+    const drawAxes = (g) => {
+
+        const axisX = d3.axisBottom(scales.count.x)
+            .tickPadding(5)
+            .tickFormat(d3.format("d"))
+            .ticks(13)
+
+        g.select(".axis-x")
+            .attr("transform", "translate(0," + height + ")")
+            .transition()
+            .duration(300)
+            .ease(d3.easeLinear)
+            .call(axisX);
+
+        const axisY = d3.axisLeft(scales.count.y)
+            .tickPadding(5)
+            .tickFormat(d => d + temp)
+            .tickSize(-width)
+            .ticks(6);
+
+        g.select(".axis-y")
+            .transition()
+            .duration(300)
+            .ease(d3.easeLinear)
+            .call(axisY)
+    }
+
+    function updateChart(data) {
+        const w = chart.node().offsetWidth;
+        const h = 400;
+
+
+        width = w - margin.left - margin.right;
+        height = h - margin.top - margin.bottom;
+
+        svg
+            .attr('width', w)
+            .attr('height', h);
+
+        const translate = "translate(" + margin.left + "," + margin.top + ")";
+
+        const g = svg.select('.media-mensual-maxima-container')
+
+        g.attr("transform", translate)
+
+        const area = d3.area()
+            .x(d => scales.count.x(d.fecha))
+            .y0(height)
+            .y1(d => scales.count.y(d.max));
+
+        updateScales(width, height)
+
+        const container = chart.select('.media-mensual-maxima-container-bis')
+
+        const layer = container.selectAll('.area')
+            .data([data])
+
+        const newLayer = layer.enter()
+            .append('path')
+            .attr('class', 'area area-temperatura-mensual')
+
+        layer.merge(newLayer)
+            .transition()
+            .duration(600)
+            .ease(d3.easeLinear)
+            .attr('d', area)
+
+        drawAxes(g)
+
+    }
+
+    function update(mes) {
+
+        d3.csv("csv/total-media-limpio.csv", (error, data) => {
+
+            data = data.filter(function(d) {
+                return String(d.mes).match(mes);
+            });
+
+            data.forEach(d => {
+                d.max = +d.max;
+            });
+
+            scales.count.x.range([0, width]);
+            scales.count.y.range([height, 0]);
+
+            const countX = d3.scaleTime()
+                .domain([1951, 2018]);
+
+            const countY = d3.scaleLinear()
+                .domain([d3.min(data, d => d.max - 5), d3.max(data, d => d.max + 5 )]);
+
+            scales.count = { x: countX, y: countY };
+            updateChart(data)
+
+        });
+
+
+    }
+
+    const resize = () => {
+
+        d3.csv("csv/total-media-limpio.csv", (error, data) => {
+
+            const mesActual = d3.select("#mes-mensual-maxima")
+                .select("select")
+                .property("value")
+
+            data = data.filter(d => String(d.mes).match(mesActual));
+            updateChart(data)
+
+
+        });
+
+    }
+
+    const menuMes = () => {
+        d3.csv('csv/total-media-limpio.csv', (error, data) => {
+            if (error) {
+                console.log(error);
+            } else {
+
+                const nest = d3.nest()
+                    .key(d => d.mes)
+                    .entries(data);
+
+                const mesMenuMensualMaxima = d3.select("#mes-mensual-maxima");
+
+                mesMenuMensualMaxima
+                    .append("select")
+                    .selectAll("option")
+                    .data(nest)
+                    .enter()
+                    .append("option")
+                    .attr("value", d => d.key)
+                    .text(d => d.key)
+
+                mesMenuMensualMaxima.on('change', function() {
+
+                    const mes = d3.select(this)
+                        .select("select")
+                        .property("value")
+
+                    update(mes)
+
+                });
+
+
+            }
+
+        });
+
+    }
+
+    // LOAD THE DATA
+    const loadData = () => {
+
+        d3.csv('csv/total-media-limpio.csv', (error, data) => {
+            if (error) {
+                console.log(error);
+            } else {
+
+                data = data.filter(d => String(d.mes).match(/Enero/));
+
+                data.forEach(d => {
+                    d.max = +d.max;
+                    d.fecha = d.fecha;
+                    d.mes = d.mes;
+                });
+                setupElements()
+                setupScales()
+                updateChart(data)
+            }
+
+        });
+    }
+
+    window.addEventListener('resize', resize)
+
+    loadData()
+    menuMes()
+
+}
+
+mediaMensualMaxima()
+
+const mediaMensualMinima = () => {
+
+    //Estructura similar a la que utilizan en algunos proyectos de pudding.cool
+    const margin = { top: 16, right: 16, bottom: 24, left: 32 };
+    let width = 0;
+    let height = 0;
+    const chart = d3.select('.media-mensual-minima-chart');
+    const svg = chart.select('svg');
+    let scales = {};
+    const temp = "ºC";
+
+    //Escala para los ejes X e Y
+    const setupScales = () => {
+
+        const countX = d3.scaleTime()
+            .domain([1951, 2018]);
+
+
+        const countY = d3.scaleLinear()
+            .domain([0,20]);
+
+        scales.count = { x: countX, y: countY };
+
+    }
+
+    //Seleccionamos el contenedor donde irán las escalas y en este caso el area donde se pirntara nuestra gráfica
+    const setupElements = () => {
+
+        const g = svg.select('.media-mensual-minima-container');
+
+        g.append('g').attr('class', 'axis axis-x');
+
+        g.append('g').attr('class', 'axis axis-y');
+
+        g.append('g').attr('class', 'media-mensual-minima-container-bis');
+
+    }
+
+    //Actualizando escalas
+    const updateScales = (width, height) => {
+        scales.count.x.range([0, width]);
+        scales.count.y.range([height, 0]);
+    }
+
+    //Dibujando ejes
+    const drawAxes = (g) => {
+
+        const axisX = d3.axisBottom(scales.count.x)
+            .tickPadding(5)
+            .tickFormat(d3.format("d"))
+            .ticks(13)
+
+        g.select(".axis-x")
+            .attr("transform", "translate(0," + height + ")")
+            .transition()
+            .duration(300)
+            .ease(d3.easeLinear)
+            .call(axisX);
+
+        const axisY = d3.axisLeft(scales.count.y)
+            .tickPadding(5)
+            .tickFormat(d => d + temp)
+            .tickSize(-width)
+            .ticks(6);
+
+        g.select(".axis-y")
+            .transition()
+            .duration(300)
+            .ease(d3.easeLinear)
+            .call(axisY)
+    }
+
+    function updateChart(data) {
+        const w = chart.node().offsetWidth;
+        const h = 400;
+
+
+        width = w - margin.left - margin.right;
+        height = h - margin.top - margin.bottom;
+
+        svg
+            .attr('width', w)
+            .attr('height', h);
+
+        const translate = "translate(" + margin.left + "," + margin.top + ")";
+
+        const g = svg.select('.media-mensual-minima-container')
+
+        g.attr("transform", translate)
+
+        const area = d3.area()
+            .x(d => scales.count.x(d.fecha))
+            .y0(height)
+            .y1(d => scales.count.y(d.max));
+
+        updateScales(width, height)
+
+        const container = chart.select('.media-mensual-minima-container-bis')
+
+        const layer = container.selectAll('.area')
+            .data([data])
+
+        const newLayer = layer.enter()
+            .append('path')
+            .attr('class', 'area area-temperatura-mensual-minima')
+
+        layer.merge(newLayer)
+            .transition()
+            .duration(600)
+            .ease(d3.easeLinear)
+            .attr('d', area)
+
+        drawAxes(g)
+
+    }
+
+    function update(mes) {
+
+        d3.csv("csv/total-media-limpio.csv", (error, data) => {
+
+            data = data.filter(function(d) {
+                return String(d.mes).match(mes);
+            });
+
+            data.forEach(d => {
+                d.max = +d.max;
+            });
+
+            scales.count.x.range([0, width]);
+            scales.count.y.range([height, 0]);
+
+            const countX = d3.scaleTime()
+                .domain([1951, 2018]);
+
+            const countY = d3.scaleLinear()
+                .domain([d3.min(data, d => d.max - 5), d3.max(data, d => d.max + 5 )]);
+
+            scales.count = { x: countX, y: countY };
+            updateChart(data)
+
+        });
+
+
+    }
+
+    const resize = () => {
+
+        d3.csv("csv/total-media-limpio.csv", (error, data) => {
+
+            const mesActual = d3.select("#mes-mensual-minima")
+                .select("select")
+                .property("value")
+
+            data = data.filter(d => String(d.mes).match(mesActual));
+
+            updateChart(data)
+
+
+        });
+
+    }
+
+    const menuMes = () => {
+        d3.csv('csv/total-media-limpio.csv', (error, data) => {
+            if (error) {
+                console.log(error);
+            } else {
+
+                const nest = d3.nest()
+                    .key(d => d.mes)
+                    .entries(data);
+
+                const mesMenuMensualMinima = d3.select("#mes-mensual-minima");
+
+                mesMenuMensualMinima
+                    .append("select")
+                    .selectAll("option")
+                    .data(nest)
+                    .enter()
+                    .append("option")
+                    .attr("value", d => d.key)
+                    .text(d => d.key)
+
+                mesMenuMensualMinima.on('change', function() {
+
+                    const mes = d3.select(this)
+                        .select("select")
+                        .property("value")
+
+                    update(mes)
+
+                });
+
+
+            }
+
+        });
+
+    }
+
+    // LOAD THE DATA
+    const loadData = () => {
+
+        d3.csv('csv/total-media-limpio.csv', (error, data) => {
+            if (error) {
+                console.log(error);
+            } else {
+
+                data = data.filter(d => String(d.mes).match(/Enero/));
+
+                data.forEach(d => {
+                    d.max = +d.max;
+                    d.fecha = d.fecha;
+                    d.mes = d.mes;
+                });
+                setupElements()
+                setupScales()
+                updateChart(data)
+            }
+
+        });
+    }
+
+    window.addEventListener('resize', resize)
+
+    loadData()
+    menuMes()
+
+}
+
+mediaMensualMinima()
+
+const tropicalesHorizontal = () => {
+    //Estructura similar a la que utilizan en algunos proyectos de pudding.cool
+    const margin = { top: 24, right: 24, bottom: 24, left: 24 };
+    let width = 0;
+    let height = 0;
+    const chart = d3.select('.noches-tropicales-chart');
+    const svg = chart.select('svg');
+    const scales = {};
+    let dataz;
+    const tooltip = chart.append("div")
+        .attr("class", "tooltip-container")
+        .style("opacity", 1);
+
+    function getDay(stringDate) {
+        return stringDate.replace(/^0+/, '');
+    }
+
+    //Escala para los ejes X e Y
+    const setupScales = () => {
+
+        const countX = d3.scaleLinear()
+            .domain([d3.min(dataz, d => d.fecha
+        ),
+        d3.max(dataz, d => d.fecha)
+    ]);
+
+        const countY = d3.scaleLinear()
+            .domain([0, 60]);
+
+        scales.count = { x: countX,  y: countY };
+
+    }
+
+    //Seleccionamos el contenedor donde irán las escalas y en este caso el area donde se pirntara nuestra gráfica
+    const setupElements = () => {
+
+        const g = svg.select('.noches-tropicales-chart-container');
+
+        g.append('g').attr('class', 'axis axis-x');
+
+        g.append('g').attr('class', 'axis axis-y');
+
+        g.append('g').attr('class', 'noches-tropicales-chart-container-bis');
+
+    }
+
+    //Actualizando escalas
+    const updateScales = (width, height) => {
+        scales.count.x.range([0, width]);
+        scales.count.y.range([height, 0]);
+    }
+
+    //Dibujando ejes
+    const drawAxes = (g) => {
+
+        const axisX = d3.axisBottom(scales.count.x)
+            .tickFormat(d3.format("d"))
+
+        g.select(".axis-x")
+            .attr("transform", "translate(0," + height + ")")
+            .call(axisX)
+
+        const axisY = d3.axisLeft(scales.count.y)
+            .tickFormat(d3.format("d"))
+            .ticks(5)
+            .tickSize(-width)
+
+        g.select(".axis-y")
+            .call(axisY)
+
+    }
+
+    const updateChart = (dataz) => {
+        const w = chart.node().offsetWidth;
+        const h = 600;
+
+        width = w - margin.left - margin.right;
+        height = h - margin.top - margin.bottom;
+
+        svg
+            .attr('width', w)
+            .attr('height', h);
+
+        const translate = "translate(" + margin.left + "," + margin.top + ")";
+
+        const g = svg.select('.noches-tropicales-chart-container')
+
+        g.attr("transform", translate)
+
+        updateScales(width, height)
+
+        const container = chart.select('.noches-tropicales-chart-container-bis')
+
+        const layer = container.selectAll('.bar-vertical')
+               .data(dataz)
+
+        const newLayer = layer.enter()
+                .append('rect')
+                .attr('class', 'bar-vertical bar-bgc4')
+
+
+        layer.merge(newLayer)
+            .on("mouseover", d => {
+                tooltip.transition()
+                .duration(300)
+                .style("opacity", 1);
+                tooltip.html('<div class="tooltip-lluvia-mes-container"><p class="tooltip-lluvia-mes">Lluvia acumulada en ' + d.dias + '<span class="tooltip-lluvia-mes-total">: ' + d.fecha + 'mm</span><p/><p class="tooltip-lluvia-mes">Lluvia acumulada en ' + d.precipitacion_anual + '<span class="tooltip-lluvia-mes-total">: ' + d.fecha + 'mm</span><p/></div>')
+            })
+            .on("mouseout", d => {
+                tooltip.style("opacity", 0)
+            })
+            .attr("width", width / dataz.length - 1)
+            .attr("x", d => scales.count.x(d.fecha))
+            .attr("y", d => scales.count.y(d.dias))
+            .attr("height", d => height - scales.count.y(d.dias));
+
+        drawAxes(g)
+
+        if (width > 768) {
+            var labels = [{
+              note: {
+                  label: "En 1991 se superan por primera vez las 30 noches",
+                  wrap: 430
+                },
+              data: { anyo: "1991", dias: 33 },
+              dy: -15,
+              dx: -142
+            }, {
+              note: {
+                  label: "En 2003 se superan por primera vez las 40 noches",
+                  wrap: 430
+              },
+              data: { anyo: "2003", dias: 47 },
+              dy: -10,
+              dx: -252
+            }, {
+              note: {
+                  label: "El 14 de junio de 2009 se registra la mínima más alta, 24.7ºC",
+                  wrap: 500
+              },
+              data: { anyo: "2009", dias: 40 },
+              dy: -10,
+              dx: -252
+            }].map(function (l) {
+              l.note = Object.assign({}, l.note);
+              l.subject = { radius: 6 };
+
+              return l;
+            });
+
+
+            window.makeAnnotations = d3.annotation()
+                .annotations(labels)
+                .type(d3.annotationCalloutCircle)
+                .accessors({
+                    x: d => scales.count.x(d.anyo),
+                    y: d => scales.count.y(d.dias)
+                }).accessorsInverse({
+                    fecha: d => scales.count.x.invert(d.x),
+                    dia: d => scales.count.y.invert(d.y)
+                }).on('subjectover', function (annotation) {
+                  annotation.type.a.selectAll("g.annotation-connector, g.annotation-note").classed("hidden", false);
+                }).on('subjectout', function (annotation) {
+                  annotation.type.a.selectAll("g.annotation-connector, g.annotation-note").classed("hidden", true);
+            });
+
+            svg.append("g").attr("class", "annotation-test").call(makeAnnotations);
+
+            svg.selectAll("g.annotation-connector, g.annotation-note").classed("hidden", true);
+        }
+
+    }
+
+    const resize = () => {
+        updateChart(dataz)
+    }
+
+    // LOAD THE DATA
+    const loadData = () => {
+
+        d3.csv('csv/tropicales.csv', (error, data) => {
+                if (error) {
+                      console.log(error);
+                } else {
+                      dataz = data
+                      dataz.forEach( d => {
+                          d.anyo = d.fecha;
+                          d.dia = d.dias;
+                          d.diaTooltip = getDay(d.dia);
+                      });
+                      setupElements()
+                      setupScales()
+                      updateChart(dataz)
+                }
+
+        });
+    }
+
+    window.addEventListener('resize', resize)
+
+    loadData()
+
+}
+
+tropicalesHorizontal()

@@ -10,8 +10,6 @@
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700|Roboto+Condensed:400,700|Roboto:400,700" rel="stylesheet">
 </head>
 <body id="forno">
-    <script src="https://infobawards.s3.amazonaws.com/2018/badges/iiba-ll-s.js" id="iib-awards-badge"></script>
-
     <div class="grid-intro" id="inicio">
         <h1 class="title">FORNO</h1>
         <div class="container-texto">
@@ -82,34 +80,47 @@
             </article>
         </article>
     </article>
-    <article class="media-mensual media-mensual-maxima">
-        <div class="wrapper-vw">
-            <h2 class="subtitle">Media mensual máxima</h2>
-            <p class="texto">En estas gráficas podemos ver como ha ido variando la temperatura mensual máxima desde 1951 hasta 2018.</p>
-        </div>
-        <div class="temperatura-mensual-chart-container">
-            <div class="wrapper-vw">
-                <div class="temperatura-mensual-select" id="mes-mensual"></div>
-            </div>
-        </div>
-    </article>
 
-    <article class="media-mensual media-mensual-minima">
-        <div class="wrapper-vw">
-            <h2 class="subtitle">Media mensual mínima</h2>
-            <p class="texto">En estas gráficas podemos ver como ha ido variando la temperatura mensual mínima desde 1951 hasta 2018.</p>
-        </div>
-        <div class="temperatura-mensual-minima-chart-container">
+    <article class="media-mensual media-mensual-maxima margin-section">
+        <article class="chart-container">
             <div class="wrapper-vw">
-                <div class="temperatura-mensual-minima-select" id="mes-mensual-minima"></div>
+                <h2 class="subtitle">Media mensual máxima</h2>
+                <p class="texto">En estas gráficas podemos ver como ha ido variando la temperatura máxima de cada mes desde 1951 hasta 2018.</p>
             </div>
-        </div>
+            <article class="media-mensual-maxima-chart">
+                <div class="temperatura-mensual-minima-select" id="mes-mensual-maxima"></div>
+                <svg>
+                    <g class="media-mensual-maxima-container"></g>
+                </svg>
+            </article>
+        </article>
+    </article>
+    <article class="media-mensual media-mensual-minima margin-section">
+        <article class="chart-container">
+            <div class="wrapper-vw">
+                <h2 class="subtitle">Media mensual mínima</h2>
+                <p class="texto">En estas gráficas podemos ver como ha ido variando la temperatura mínima de cada mes desde 1951 hasta 2018.</p>
+            </div>
+            <article class="media-mensual-minima-chart">
+                <div class="temperatura-mensual-minima-select" id="mes-mensual-minima"></div>
+                <svg>
+                    <g class="media-mensual-minima-container"></g>
+                </svg>
+            </article>
+        </article>
     </article>
     <article class="tropicales grid-chart margin-section" id="tropicales">
-        <div class="tropicales-text wrapper-vw">
-            <h2 class="subtitle">Noches tropicales</h2>
-            <p class="texto">Se podría definir como una noche en la que la <span class="bold">temperatura mínima es igual o superior a 20ºC</span>. Esta temperatura se suele alcanzar poco después del amanecer.</p>
-        </div>
+        <article class="chart-container">
+            <div class="tropicales-text wrapper-vw">
+                <h2 class="subtitle">Noches tropicales</h2>
+                <p class="texto">Se podría definir como una noche en la que la <span class="bold">temperatura mínima es igual o superior a 20ºC</span>. Esta temperatura se suele alcanzar poco después del amanecer.</p>
+            </div>
+            <article class="noches-tropicales-chart">
+                <svg>
+                    <g class="noches-tropicales-chart-container"></g>
+                </svg>
+            </article>
+        </article>
     </article>
     <article class="tropicales-dia grid-chart margin-section" id="tropicales-dia">
         <div class="tropicales-text wrapper-vw">
@@ -188,7 +199,7 @@
     </section>
     <footer class="footer">
         <div class="wrapper-footer">
-            <p class="footer-texto">Hecho en Zaragoza con mucha maña por un <a class="footer-links" href="http://jorgeatgu.com" target="_blank">maño</a> - MMXVII</p>
+            <p class="footer-texto">Hecho en Zaragoza con mucha maña por un <a class="footer-links" href="http://jorgeatgu.com" target="_blank">maño</a> - MMXIX</p>
             <p class="footer-texto">Cualquier consulta escribid a: data@jorgeatgu.com</p>
             <a class="footer-links" href="http://github.com/jorgeatgu/forno">GitHub</a>
         </div>
@@ -198,13 +209,13 @@
     <script src="js/v2.js"></script>
     <script src="js/record-heladas.js"></script>
     <script src="js/record-maximas.js"></script>
-    <script src="js/tropicales.js"></script>
+    <!-- <script src="js/tropicales.js"></script> -->
     <script src="js/heladas.js"></script>
     <script src="js/lluvia-recogida.js"></script>
     <script src="js/temperatura-anual.js"></script>
     <script src="js/lluvias.js"></script>
     <script src="js/tropicales-dia.js"></script>
-    <script src="js/temperatura-mensual.js"></script>
-    <script src="js/temperatura-mensual-minima.js"></script>
+    <!-- <script src="js/temperatura-mensual.js"></script>
+    <script src="js/temperatura-mensual-minima.js"></script> -->
 </body>
 </html>
